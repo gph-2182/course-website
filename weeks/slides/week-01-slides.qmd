@@ -10,6 +10,7 @@ format:
     preview-links: auto
     chalkboard: true
     transition: slide
+    navigation-mode: linear
     width: 1200
     height: 700
     footer: "GPH-GU 2182 · Week 1"
