@@ -53,13 +53,17 @@ In this course, you will master four core technologies:
 
 We do **not** do passive lectures. Each class is split into **interactive cycles**:
 
+```{mermaid}
+%%| fig-align: center
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '18px'}}}%%
+flowchart LR
+    A["💻 Mini-Demo<br/>(15–20 min)<br/>Instructor Live Code"] --> B["👥 Paired Exercise<br/>(10–15 min)<br/>Hands-on Problem"]
+    B --> C["💡 Debrief<br/>(2 min)<br/>Solution & Takeaways"]
+    style A fill:#e8f4f8,stroke:#2980b9,stroke-width:2px
+    style B fill:#eafaf1,stroke:#27ae60,stroke-width:2px
+    style C fill:#fef9e7,stroke:#f39c12,stroke-width:2px
 ```
-┌─────────────────┐       ┌─────────────────┐       ┌─────────────────┐
-│    Mini-Demo    │  ──►  │ Paired Exercise │  ──►  │     Debrief     │
-│   (15–20 min)   │       │   (10–15 min)   │       │     (2 min)     │
-│ Instructor live │       │ Hands-on coding │       │ Solution & tips │
-└─────────────────┘       └─────────────────┘       └─────────────────┘
-```
+
 
 * **CAs & Instructor** circulate during exercise blocks to assist.
 * You push your in-class exercises to GitHub for participation credit.
@@ -270,19 +274,20 @@ Click the **Render** button (or `Ctrl/Cmd + Shift + K`) in RStudio to generate y
 
 ## The Core Git Workflow in RStudio
 
+```{mermaid}
+%%| fig-align: center
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '16px'}}}%%
+flowchart LR
+    A["📝 <b>Working Copy</b><br/>Edit files & .qmd"] -->|"1. git add<br/>(Stage)"| B["📦 <b>Staged Changes</b><br/>Check boxes in RStudio"]
+    B -->|"2. git commit<br/>(Snapshot)"| C["💾 <b>Local Repo</b><br/>Saved history"]
+    C -->|"3. git push<br/>(Upload)"| D["☁️ <b>GitHub Remote</b><br/>Autograder checks code"]
+    
+    style A fill:#e8f4f8,stroke:#2980b9,stroke-width:2px
+    style B fill:#fef9e7,stroke:#f39c12,stroke-width:2px
+    style C fill:#eafaf1,stroke:#27ae60,stroke-width:2px
+    style D fill:#f4ecf7,stroke:#8e44ad,stroke-width:2px
 ```
-┌──────────────────┐               ┌──────────────────┐               ┌──────────────────┐
-│   Working Copy   │  ─ git add ─► │  Staged Changes  │ ─ git commit ─►│   Local Repo     │
-│ (Edit files/qmd) │               │ (Check boxes)    │               │ (Saved snapshot) │
-└──────────────────┘               └──────────────────┘               └──────────────────┘
-                                                                               │
-                                                                           git push
-                                                                               ▼
-                                                                      ┌──────────────────┐
-                                                                      │ GitHub / Remote  │
-                                                                      │ (Autograder runs)│
-                                                                      └──────────────────┘
-```
+
 
 ---
 

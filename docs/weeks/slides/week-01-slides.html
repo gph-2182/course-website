@@ -388,6 +388,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -446,11 +449,24 @@ Yang Feng
 <section id="how-our-160-minute-sessions-work" class="slide level2">
 <h2>How Our 160-Minute Sessions Work</h2>
 <p>We do <strong>not</strong> do passive lectures. Each class is split into <strong>interactive cycles</strong>:</p>
-<pre><code>┌─────────────────┐       ┌─────────────────┐       ┌─────────────────┐
-│    Mini-Demo    │  ──►  │ Paired Exercise │  ──►  │     Debrief     │
-│   (15–20 min)   │       │   (10–15 min)   │       │     (2 min)     │
-│ Instructor live │       │ Hands-on coding │       │ Solution &amp; tips │
-└─────────────────┘       └─────────────────┘       └─────────────────┘</code></pre>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '18px'}}}%%
+flowchart LR
+    A["💻 Mini-Demo&lt;br/&gt;(15–20 min)&lt;br/&gt;Instructor Live Code"] --&gt; B["👥 Paired Exercise&lt;br/&gt;(10–15 min)&lt;br/&gt;Hands-on Problem"]
+    B --&gt; C["💡 Debrief&lt;br/&gt;(2 min)&lt;br/&gt;Solution &amp; Takeaways"]
+    style A fill:#e8f4f8,stroke:#2980b9,stroke-width:2px
+    style B fill:#eafaf1,stroke:#27ae60,stroke-width:2px
+    style C fill:#fef9e7,stroke:#f39c12,stroke-width:2px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 <ul>
 <li><strong>CAs &amp; Instructor</strong> circulate during exercise blocks to assist.</li>
 <li>You push your in-class exercises to GitHub for participation credit.</li>
@@ -468,15 +484,15 @@ Yang Feng
 <section id="r-as-an-interactive-calculator" class="slide level2">
 <h2>R as an Interactive Calculator</h2>
 <p>You type commands into the <strong>Console</strong>; R evaluates them and prints results.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># Arithmetic</span></span>
-<span id="cb2-2"><a></a><span class="dv">12</span> <span class="sc">+</span> <span class="dv">35</span></span>
-<span id="cb2-3"><a></a>(<span class="dv">100</span> <span class="sc">-</span> <span class="dv">32</span>) <span class="sc">*</span> <span class="dv">5</span> <span class="sc">/</span> <span class="dv">9</span>   <span class="co"># Fahrenheit to Celsius</span></span>
-<span id="cb2-4"><a></a></span>
-<span id="cb2-5"><a></a><span class="co"># Math functions</span></span>
-<span id="cb2-6"><a></a><span class="fu">sqrt</span>(<span class="dv">64</span>)</span>
-<span id="cb2-7"><a></a><span class="fu">exp</span>(<span class="dv">1</span>)</span>
-<span id="cb2-8"><a></a><span class="fu">log</span>(<span class="dv">10</span>)              <span class="co"># Natural logarithm (base e)</span></span>
-<span id="cb2-9"><a></a><span class="fu">log10</span>(<span class="dv">100</span>)           <span class="co"># Common logarithm (base 10)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Arithmetic</span></span>
+<span id="cb1-2"><a></a><span class="dv">12</span> <span class="sc">+</span> <span class="dv">35</span></span>
+<span id="cb1-3"><a></a>(<span class="dv">100</span> <span class="sc">-</span> <span class="dv">32</span>) <span class="sc">*</span> <span class="dv">5</span> <span class="sc">/</span> <span class="dv">9</span>   <span class="co"># Fahrenheit to Celsius</span></span>
+<span id="cb1-4"><a></a></span>
+<span id="cb1-5"><a></a><span class="co"># Math functions</span></span>
+<span id="cb1-6"><a></a><span class="fu">sqrt</span>(<span class="dv">64</span>)</span>
+<span id="cb1-7"><a></a><span class="fu">exp</span>(<span class="dv">1</span>)</span>
+<span id="cb1-8"><a></a><span class="fu">log</span>(<span class="dv">10</span>)              <span class="co"># Natural logarithm (base e)</span></span>
+<span id="cb1-9"><a></a><span class="fu">log10</span>(<span class="dv">100</span>)           <span class="co"># Common logarithm (base 10)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -494,14 +510,14 @@ Yang Feng
 <section id="objects-and-variable-assignment" class="slide level2">
 <h2>Objects and Variable Assignment</h2>
 <p>We store values in named objects using the assignment operator <code>&lt;-</code> (<code>Alt + -</code> or <code>Option + -</code>):</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Assigning a value</span></span>
-<span id="cb3-2"><a></a>participant_age <span class="ot">&lt;-</span> <span class="dv">28</span></span>
-<span id="cb3-3"><a></a>height_m <span class="ot">&lt;-</span> <span class="fl">1.75</span></span>
-<span id="cb3-4"><a></a>weight_kg <span class="ot">&lt;-</span> <span class="fl">68.5</span></span>
-<span id="cb3-5"><a></a></span>
-<span id="cb3-6"><a></a><span class="co"># Using objects in expressions</span></span>
-<span id="cb3-7"><a></a>bmi <span class="ot">&lt;-</span> weight_kg <span class="sc">/</span> (height_m<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb3-8"><a></a>bmi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># Assigning a value</span></span>
+<span id="cb2-2"><a></a>participant_age <span class="ot">&lt;-</span> <span class="dv">28</span></span>
+<span id="cb2-3"><a></a>height_m <span class="ot">&lt;-</span> <span class="fl">1.75</span></span>
+<span id="cb2-4"><a></a>weight_kg <span class="ot">&lt;-</span> <span class="fl">68.5</span></span>
+<span id="cb2-5"><a></a></span>
+<span id="cb2-6"><a></a><span class="co"># Using objects in expressions</span></span>
+<span id="cb2-7"><a></a>bmi <span class="ot">&lt;-</span> weight_kg <span class="sc">/</span> (height_m<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb2-8"><a></a>bmi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Names must start with a letter and can contain letters, numbers, <code>_</code>, and <code>.</code>.</li>
 <li>R is <strong>case-sensitive</strong> (<code>bmi</code> <span class="math inline">\(\neq\)</span> <code>BMI</code>).</li>
@@ -510,12 +526,12 @@ Yang Feng
 <section id="functions-and-getting-help" class="slide level2">
 <h2>Functions and Getting Help</h2>
 <p>Functions take <strong>arguments</strong> (inputs) and return an <strong>output</strong>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Rounding</span></span>
-<span id="cb4-2"><a></a><span class="fu">round</span>(bmi, <span class="at">digits =</span> <span class="dv">1</span>)</span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a><span class="co"># Summary statistics</span></span>
-<span id="cb4-5"><a></a>vals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="cn">NA</span>)</span>
-<span id="cb4-6"><a></a><span class="fu">mean</span>(vals, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Rounding</span></span>
+<span id="cb3-2"><a></a><span class="fu">round</span>(bmi, <span class="at">digits =</span> <span class="dv">1</span>)</span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="co"># Summary statistics</span></span>
+<span id="cb3-5"><a></a>vals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="cn">NA</span>)</span>
+<span id="cb3-6"><a></a><span class="fu">mean</span>(vals, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h3 id="getting-help-in-r">Getting help in R:</h3>
 <ul>
 <li><code>?round</code> or <code>help(round)</code> — opens the official documentation.</li>
@@ -525,11 +541,11 @@ Yang Feng
 <section id="packages-the-course-textbook-r02pro" class="slide level2">
 <h2>Packages &amp; The Course Textbook: R02Pro</h2>
 <p>R packages extend R with datasets and specialized functions.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># Install once per computer (done in Console, not script):</span></span>
-<span id="cb5-2"><a></a><span class="fu">install.packages</span>(<span class="st">"r02pro"</span>)</span>
-<span id="cb5-3"><a></a></span>
-<span id="cb5-4"><a></a><span class="co"># Load in every session where you need it:</span></span>
-<span id="cb5-5"><a></a><span class="fu">library</span>(r02pro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Install once per computer (done in Console, not script):</span></span>
+<span id="cb4-2"><a></a><span class="fu">install.packages</span>(<span class="st">"r02pro"</span>)</span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a><span class="co"># Load in every session where you need it:</span></span>
+<span id="cb4-5"><a></a><span class="fu">library</span>(r02pro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><strong>Textbook:</strong> <em>R Programming: Zero to Pro</em> (Free online: <a href="https://r02pro.github.io/">r02pro.github.io</a>).</li>
 </ul>
@@ -575,16 +591,16 @@ Yang Feng
 <section id="anatomy-of-a-quarto-document-.qmd" class="slide level2">
 <h2>Anatomy of a Quarto Document (<code>.qmd</code>)</h2>
 <p>A <code>.qmd</code> document has three parts:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a></a><span class="pp">---</span></span>
-<span id="cb6-2"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Analysis"</span></span>
-<span id="cb6-3"><a></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your Name"</span></span>
-<span id="cb6-4"><a></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
-<span id="cb6-5"><a></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a></a><span class="fu">## Introduction</span></span>
-<span id="cb7-2"><a></a>Here is some narrative text with **bold** and *italics*.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># An R code chunk</span></span>
-<span id="cb8-2"><a></a>mean_age <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">45</span>))</span>
-<span id="cb8-3"><a></a>mean_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a></a><span class="pp">---</span></span>
+<span id="cb5-2"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Analysis"</span></span>
+<span id="cb5-3"><a></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your Name"</span></span>
+<span id="cb5-4"><a></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb5-5"><a></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a></a><span class="fu">## Introduction</span></span>
+<span id="cb6-2"><a></a>Here is some narrative text with **bold** and *italics*.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># An R code chunk</span></span>
+<span id="cb7-2"><a></a>mean_age <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">45</span>))</span>
+<span id="cb7-3"><a></a>mean_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="markdown-text-formatting-cheat-sheet" class="slide level2">
 <h2>Markdown Text Formatting Cheat Sheet</h2>
@@ -630,11 +646,11 @@ Yang Feng
 <section id="code-chunk-options" class="slide level2">
 <h2>Code Chunk Options</h2>
 <p>Control how code executes and displays using <code>#|</code>:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co">#| echo: true       # Show code in final report (default)</span></span>
-<span id="cb9-2"><a></a><span class="co">#| eval: true       # Run code (default)</span></span>
-<span id="cb9-3"><a></a><span class="co">#| warning: false   # Suppress package warnings</span></span>
-<span id="cb9-4"><a></a><span class="co">#| message: false   # Suppress package startup messages</span></span>
-<span id="cb9-5"><a></a><span class="co">#| fig-width: 7     # Control plot width</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co">#| echo: true       # Show code in final report (default)</span></span>
+<span id="cb8-2"><a></a><span class="co">#| eval: true       # Run code (default)</span></span>
+<span id="cb8-3"><a></a><span class="co">#| warning: false   # Suppress package warnings</span></span>
+<span id="cb8-4"><a></a><span class="co">#| message: false   # Suppress package startup messages</span></span>
+<span id="cb8-5"><a></a><span class="co">#| fig-width: 7     # Control plot width</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Click the <strong>Render</strong> button (or <code>Ctrl/Cmd + Shift + K</code>) in RStudio to generate your HTML report!</p>
 </section>
 <section id="in-class-exercise-1b-15-min" class="slide level2">
@@ -690,17 +706,27 @@ Yang Feng
 </section>
 <section id="the-core-git-workflow-in-rstudio" class="slide level2">
 <h2>The Core Git Workflow in RStudio</h2>
-<pre><code>┌──────────────────┐               ┌──────────────────┐               ┌──────────────────┐
-│   Working Copy   │  ─ git add ─► │  Staged Changes  │ ─ git commit ─►│   Local Repo     │
-│ (Edit files/qmd) │               │ (Check boxes)    │               │ (Saved snapshot) │
-└──────────────────┘               └──────────────────┘               └──────────────────┘
-                                                                               │
-                                                                           git push
-                                                                               ▼
-                                                                      ┌──────────────────┐
-                                                                      │ GitHub / Remote  │
-                                                                      │ (Autograder runs)│
-                                                                      └──────────────────┘</code></pre>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '16px'}}}%%
+flowchart LR
+    A["📝 &lt;b&gt;Working Copy&lt;/b&gt;&lt;br/&gt;Edit files &amp; .qmd"] --&gt;|"1. git add&lt;br/&gt;(Stage)"| B["📦 &lt;b&gt;Staged Changes&lt;/b&gt;&lt;br/&gt;Check boxes in RStudio"]
+    B --&gt;|"2. git commit&lt;br/&gt;(Snapshot)"| C["💾 &lt;b&gt;Local Repo&lt;/b&gt;&lt;br/&gt;Saved history"]
+    C --&gt;|"3. git push&lt;br/&gt;(Upload)"| D["☁️ &lt;b&gt;GitHub Remote&lt;/b&gt;&lt;br/&gt;Autograder checks code"]
+    
+    style A fill:#e8f4f8,stroke:#2980b9,stroke-width:2px
+    style B fill:#fef9e7,stroke:#f39c12,stroke-width:2px
+    style C fill:#eafaf1,stroke:#27ae60,stroke-width:2px
+    style D fill:#f4ecf7,stroke:#8e44ad,stroke-width:2px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 </section>
 <section id="how-homework-works-instant-feedback" class="slide level2">
 <h2>How Homework Works (Instant Feedback)</h2>
