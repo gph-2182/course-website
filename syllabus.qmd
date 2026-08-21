@@ -1,0 +1,59 @@
+---
+title: "Syllabus"
+---
+
+The official syllabus PDF is posted on Brightspace. Key points are summarized
+below.
+
+## Logistics
+
+- **Course:** GPH-GU 2182 Statistical Programming in R (3 credits)
+- **Time:** Wednesdays 2:00–4:40 PM, Fall 2026
+- **Location:** 70 Washington Sq S (Bobst), Room LL138
+- **Instructor:** Yang Feng · yf31@nyu.edu · Office: 708 Broadway, Room 433
+- **Office hours:** TBD
+- **Course assistants:** TBD
+
+## Grading
+
+| Component | Weight | Notes |
+|---|---|---|
+| Attendance | 5% | Checked every session |
+| In-class exercises (14) | 10% | Good-faith completion; lowest 2 dropped |
+| Weekly exercises (12) | 35% | Autograded on GitHub; lowest 2 dropped |
+| In-class quizzes (5) | 20% | Weeks 3, 6, 9, 11, 13; no AI; lowest dropped |
+| Final individual project | 30% | Quarto report + video walkthrough + AI appendix |
+
+**Grading scale (graduate).** A: 94–100 · A−: 90–93 · B+: 87–89 · B: 83–86 ·
+B−: 80–82 · C+: 77–79 · C: 73–76 · C−: 70–72 · F: below 70
+
+## Assessments in brief
+
+**Weekly exercises** are released after class in Weeks 1–12 and due 11:59 PM
+the following Tuesday. They are distributed and submitted through GitHub
+Classroom; an autograder reports which questions pass every time you push, and
+you may resubmit freely before the deadline. Late: 20% penalty within 24h, 40%
+within 48h, zero after that.
+
+**In-class quizzes** (15–20 minutes, five total) are done individually without
+AI tools during the last part of class.
+
+**The final project** is an individual analysis of a public-health dataset:
+a reproducible Quarto report in a GitHub repository, a 5-minute recorded video
+walkthrough, and an AI-use appendix. Released Week 10, due 11:59 PM December
+16. No late submissions.
+
+## Software (all free)
+
+R, RStudio, Quarto, Git, and a free GitHub account. Free-tier AI chatbots are
+sufficient for all coursework. No purchases are required.
+
+## AI policy
+
+See the [AI Policy page](ai-policy.qmd) for the three-zone policy.
+
+## University policies
+
+The full statements on academic integrity, plagiarism, disability
+accommodations (Moses Center), and the GPH DEI statement are in the official
+syllabus PDF on Brightspace.

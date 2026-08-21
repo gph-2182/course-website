@@ -1,0 +1,33 @@
+---
+title: "Week 13: Simulation and Statistics"
+subtitle: "Dec 2, 2026 · 2:00–4:40 PM · Bobst LL138"
+---
+
+## Before class
+
+- **Read:** R02Pro Ch 11
+- Complete the previous weekly exercise (due Tuesday 11:59 PM).
+
+## Topics
+
+- Common distributions; random number generation
+- Random sampling and permutation
+- Monte Carlo simulation with public-health examples
+
+::: {.callout-important}
+**Quiz 5** takes place during the last part of this class. No AI tools during the quiz.
+:::
+
+## Materials
+
+::: {.callout-note appearance="simple"}
+Slides and in-class exercise links will be posted here before class.
+:::
+
+- Slides: *coming soon*
+- In-class exercise: *coming soon*
+
+
+## Due
+
+Weekly exercise 12 · In-class exercise 13 · **Quiz 5**

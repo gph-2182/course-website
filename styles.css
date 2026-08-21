@@ -1,0 +1,12 @@
+/* Course website tweaks */
+.navbar-brand {
+  font-weight: 600;
+}
+
+h1, h2 {
+  letter-spacing: -0.01em;
+}
+
+table {
+  font-size: 0.95em;
+}

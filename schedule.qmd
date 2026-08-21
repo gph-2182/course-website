@@ -1,0 +1,29 @@
+---
+title: "Schedule"
+toc: false
+---
+
+All sessions meet Wednesdays 2:00–4:40 PM in Bobst LL138. Readings should be
+completed **before** class. Weekly exercises are due at 11:59 PM on the
+Tuesday after release (the day before the next class).
+
+| Date | Topic | Readings | Assignments due |
+|------|-------|----------|-----------------|
+| Sep 2 | [Week 1: Welcome + the Modern R Toolkit](weeks/week-01.qmd) | R02Pro Ch 1 | In-class exercise 1 |
+| Sep 9 | [Week 2: Vectors and Subsetting](weeks/week-02.qmd) | R02Pro Ch 2–3 | Weekly exercise 1 · In-class exercise 2 |
+| Sep 16 | [Week 3: Data Frames, Tibbles, and Friends](weeks/week-03.qmd) | R02Pro Ch 3–4 | Weekly exercise 2 · In-class exercise 3 · **Quiz 1** |
+| Sep 23 | [Week 4: Data Import and Export](weeks/week-04.qmd) | R02Pro Ch 5 | Weekly exercise 3 · In-class exercise 4 |
+| Sep 30 | [Week 5: Data Visualization I](weeks/week-05.qmd) | R02Pro Ch 6 | Weekly exercise 4 · In-class exercise 5 |
+| Oct 7 | [Week 6: Data Visualization II](weeks/week-06.qmd) | R02Pro Ch 6–7 | Weekly exercise 5 · In-class exercise 6 · **Quiz 2** |
+| Oct 14 | *No class (Legislative Monday)* | | |
+| Oct 21 | [Week 7: Data Manipulation with dplyr](weeks/week-07.qmd) | R02Pro Ch 8 | Weekly exercise 6 · In-class exercise 7 |
+| Oct 28 | [Week 8: AI-Assisted R Programming Workshop](weeks/week-08.qmd) | Course materials (provided) | Weekly exercise 7 · In-class exercise 8 |
+| Nov 4 | [Week 9: Tidy Data and Joins](weeks/week-09.qmd) | R02Pro Ch 8–9 | Weekly exercise 8 · In-class exercise 9 · **Quiz 3** |
+| Nov 11 | [Week 10: Case Study: A Full Public-Health Data Pipeline](weeks/week-10.qmd) | R02Pro Ch 14 | Weekly exercise 9 · In-class exercise 10 |
+| Nov 18 | [Week 11: Strings and Regular Expressions](weeks/week-11.qmd) | R02Pro Ch 10 | Weekly exercise 10 · In-class exercise 11 · **Quiz 4** |
+| Nov 25 | [Week 12: Functions and Control Flow](weeks/week-12.qmd) | R02Pro Ch 12–13 | Weekly exercise 11 · In-class exercise 12 |
+| Dec 2 | [Week 13: Simulation and Statistics](weeks/week-13.qmd) | R02Pro Ch 11 | Weekly exercise 12 · In-class exercise 13 · **Quiz 5** |
+| Dec 9 | [Week 14: Communicating with Quarto + Project Workshop](weeks/week-14.qmd) | Course materials (provided) | In-class exercise 14 |
+| Dec 16 | **Final project due, 11:59 PM** | | Final individual project |
+
+: {tbl-colwidths="[10,45,20,25]"}

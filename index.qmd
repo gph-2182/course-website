@@ -1,0 +1,49 @@
+---
+title: "Statistical Programming in R"
+subtitle: "GPH-GU 2182 · Fall 2026 · NYU School of Global Public Health"
+toc: false
+---
+
+::: {.callout-note appearance="simple"}
+**Wednesdays 2:00–4:40 PM** · 70 Washington Sq S (Bobst), Room LL138 · Sep 2 – Dec 9, 2026 (no class Oct 14)
+:::
+
+Welcome! This course teaches R programming for the full data-analysis workflow:
+wrangling, visualization, simulation, and reproducible reporting with
+[Quarto](https://quarto.org), using public-health data throughout. You will
+also learn two skills that now define professional statistical programming:
+managing code with **Git and GitHub**, and using **AI coding assistants
+responsibly** (prompting, verifying, and debugging AI-generated code).
+
+No prior programming or statistics experience is required.
+
+## How the course works
+
+- **Hands-on classes.** Every session alternates short live-coding demos with
+  paired exercises, so you write code in every class.
+- **Instant feedback.** Weekly exercises are submitted on GitHub and checked
+  automatically: push your work, see which questions pass, revise, and resubmit
+  until the deadline.
+- **AI, embraced and verified.** AI tools are allowed on homework and the
+  project (with disclosure), taught explicitly in Week 8, and set aside during
+  short in-class quizzes where your own fluency is certified.
+- **One real project.** The course builds to an individual analysis of a
+  public-health dataset: a reproducible Quarto report, a GitHub repo, and a
+  5-minute video walkthrough.
+
+## Quick links
+
+| | |
+|---|---|
+| Instructor | [Yang Feng](https://yangfengstat.github.io/) (yf31@nyu.edu) |
+| Textbook | [R02Pro: R Programming, Zero to Pro](https://r02pro.github.io/) (free) |
+| Schedule | [Week-by-week schedule](schedule.qmd) |
+| Syllabus | [Full syllabus](syllabus.qmd) |
+| AI policy | [The three zones](ai-policy.qmd) |
+
+## Getting started (before Week 1)
+
+1. Install [R](https://cloud.r-project.org/), then
+   [RStudio Desktop](https://posit.co/download/rstudio-desktop/) (both free).
+2. Create a free [GitHub account](https://github.com/signup) with your NYU email.
+3. That's it. We will set up everything else together in the first class.

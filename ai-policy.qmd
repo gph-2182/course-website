@@ -1,0 +1,45 @@
+---
+title: "AI Policy: The Three Zones"
+---
+
+This course treats AI coding assistants (ChatGPT, Claude, Gemini, and similar)
+as professional tools: you will learn to use them effectively and critically,
+and you will also develop the individual fluency to program without them.
+
+::: {.callout-tip icon="false"}
+## Zone 1 — Weekly exercises and final project: AI allowed and encouraged
+
+Use the **verify-then-use** workflow taught in class. You must be able to
+understand and explain every line of code you submit. The final project
+requires an **AI-use appendix** disclosing what you asked, what the AI
+produced, and what you verified or changed.
+:::
+
+::: {.callout-important icon="false"}
+## Zone 2 — In-class quizzes: no AI
+
+Quizzes are where your individual fluency is certified. AI tools are strictly
+prohibited during quizzes.
+:::
+
+::: {.callout-note icon="false"}
+## Zone 3 — In-class exercises: AI allowed, partner first
+
+Discuss the problem with your partner before consulting an AI tool.
+:::
+
+## Why this policy
+
+Statistical programmers now work alongside AI tools daily. Banning them would
+prepare you for a world that no longer exists; letting them do your thinking
+would leave you unable to catch their mistakes, and they make plenty. The
+course therefore teaches the skill that actually matters: **directing AI
+tools and verifying their output**. Week 8 is a dedicated workshop, and every
+week includes a short "AI corner" showing one good and one bad AI use for that
+week's topic.
+
+Free-tier AI tools are sufficient for all coursework; no paid subscriptions
+are required or expected.
+
+Submitting AI-generated work you do not understand, using AI during a quiz, or
+omitting required disclosure is an academic-integrity violation.

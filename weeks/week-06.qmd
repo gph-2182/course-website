@@ -1,0 +1,35 @@
+---
+title: "Week 6: Data Visualization II"
+subtitle: "Oct 7, 2026 · 2:00–4:40 PM · Bobst LL138"
+---
+
+## Before class
+
+- **Read:** R02Pro Ch 6–7
+- Complete the previous weekly exercise (due Tuesday 11:59 PM).
+
+## Topics
+
+- Bar charts, histograms, density plots, boxplots
+- Faceting and arranging multiple plots
+- Labels, titles, and themes
+- A taste of interactive plots with plotly
+- Critique-this-chart activity
+
+::: {.callout-important}
+**Quiz 2** takes place during the last part of this class. No AI tools during the quiz.
+:::
+
+## Materials
+
+::: {.callout-note appearance="simple"}
+Slides and in-class exercise links will be posted here before class.
+:::
+
+- Slides: *coming soon*
+- In-class exercise: *coming soon*
+- Weekly exercise 6: *released after class on GitHub Classroom*
+
+## Due
+
+Weekly exercise 5 · In-class exercise 6 · **Quiz 2**

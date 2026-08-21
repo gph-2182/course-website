@@ -1,0 +1,58 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Statistical Programming in R"
+  description: "GPH-GU 2182, NYU School of Global Public Health, Fall 2026"
+  navbar:
+    background: primary
+    left:
+      - href: index.qmd
+        text: Home
+      - href: syllabus.qmd
+        text: Syllabus
+      - href: schedule.qmd
+        text: Schedule
+      - href: project.qmd
+        text: Final Project
+      - href: ai-policy.qmd
+        text: AI Policy
+    right:
+      - icon: github
+        href: https://github.com/yangfengstat
+        aria-label: GitHub
+      - href: https://r02pro.github.io/
+        text: R02Pro
+  sidebar:
+    - title: "Weeks"
+      style: docked
+      collapse-level: 1
+      contents:
+        - section: "Weekly Pages"
+          contents:
+            - weeks/week-01.qmd
+            - weeks/week-02.qmd
+            - weeks/week-03.qmd
+            - weeks/week-04.qmd
+            - weeks/week-05.qmd
+            - weeks/week-06.qmd
+            - weeks/week-07.qmd
+            - weeks/week-08.qmd
+            - weeks/week-09.qmd
+            - weeks/week-10.qmd
+            - weeks/week-11.qmd
+            - weeks/week-12.qmd
+            - weeks/week-13.qmd
+            - weeks/week-14.qmd
+  page-footer:
+    left: "GPH-GU 2182 · Fall 2026 · Yang Feng, NYU School of Global Public Health"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: true
