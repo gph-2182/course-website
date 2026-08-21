@@ -35,8 +35,6 @@ format:
 :::
 :::
 
----
-
 ## The Modern Data Science Stack
 
 In this course, you will master four core technologies:
@@ -46,8 +44,6 @@ In this course, you will master four core technologies:
 3. **Quarto (`.qmd`):** Reproducible scientific publishing (replaces Word/PDF/slides).
 4. **Git & GitHub:** Version control, collaboration, and automated grading.
 5. **AI Assistants:** Prompting, verifying, and debugging code with LLMs.
-
----
 
 ## How Our 160-Minute Sessions Work
 
@@ -64,12 +60,9 @@ flowchart LR
     style C fill:#fef9e7,stroke:#f39c12,stroke-width:2px
 ```
 
-
 * **CAs & Instructor** circulate during exercise blocks to assist.
 * You push your in-class exercises to GitHub for participation credit.
 * Bi-weekly 15-minute no-AI quizzes certify your personal hand-fluency.
-
----
 
 # Cycle 1: R Fundamentals & Packages {background-color="#2c3e50"}
 
@@ -93,8 +86,6 @@ log10(100)           # Common logarithm (base 10)
 Everything after `#` is a comment and is ignored by R. Use comments to document your thinking!
 :::
 
----
-
 ## Objects and Variable Assignment
 
 We store values in named objects using the assignment operator `<-` (`Alt + -` or `Option + -`):
@@ -113,8 +104,6 @@ bmi
 * Names must start with a letter and can contain letters, numbers, `_`, and `.`.
 * R is **case-sensitive** (`bmi` $\neq$ `BMI`).
 
----
-
 ## Functions and Getting Help
 
 Functions take **arguments** (inputs) and return an **output**:
@@ -132,8 +121,6 @@ mean(vals, na.rm = TRUE)
 * `?round` or `help(round)` — opens the official documentation.
 * `example(round)` — runs examples from the help page.
 
----
-
 ## Packages & The Course Textbook: R02Pro
 
 R packages extend R with datasets and specialized functions.
@@ -148,8 +135,6 @@ library(r02pro)
 
 * **Textbook:** *R Programming: Zero to Pro* (Free online: [r02pro.github.io](https://r02pro.github.io/)).
 
----
-
 ## 💻 In-Class Exercise 1A (12 min)
 
 ::: {.callout-important}
@@ -159,8 +144,6 @@ library(r02pro)
 3. Verify that `r02pro` is installed: run `library(r02pro)` and look at the `ahp` dataset (`head(ahp)`).
 4. Look up the documentation for `log()` using `?log`. What is the default base?
 :::
-
----
 
 # Cycle 2: Reproducible Reports with Quarto {background-color="#2c3e50"}
 
@@ -177,8 +160,6 @@ One single document (`.qmd`) containing:
 * Your live R code (````{r}````)
 * Rendered figures and tables generated directly on compilation.
 :::
-
----
 
 ## Anatomy of a Quarto Document (`.qmd`)
 
@@ -203,8 +184,6 @@ mean_age <- mean(c(25, 30, 45))
 mean_age
 ```
 
----
-
 ## Markdown Text Formatting Cheat Sheet
 
 | Syntax | Rendered Output |
@@ -216,8 +195,6 @@ mean_age
 | `- item 1` | Bulleted list |
 | `1. item 1` | Numbered list |
 | `$E = mc^2$` | Inline math: $E = mc^2$ |
-
----
 
 ## Code Chunk Options
 
@@ -233,9 +210,6 @@ Control how code executes and displays using `#|`:
 
 Click the **Render** button (or `Ctrl/Cmd + Shift + K`) in RStudio to generate your HTML report!
 
-
----
-
 ## 💻 In-Class Exercise 1B (15 min)
 
 ::: {.callout-important}
@@ -246,8 +220,6 @@ Click the **Render** button (or `Ctrl/Cmd + Shift + K`) in RStudio to generate y
 4. Insert an R chunk calculating the mean and standard deviation of five systolic blood pressure readings: `120, 134, 118, 142, 128`.
 5. Click **Render** and inspect the output in your browser!
 :::
-
----
 
 # Cycle 3: Git, GitHub, and Classroom {background-color="#2c3e50"}
 
@@ -270,8 +242,6 @@ Click the **Render** button (or `Ctrl/Cmd + Shift + K`) in RStudio to generate y
 :::
 :::
 
----
-
 ## The Core Git Workflow in RStudio
 
 ```{mermaid}
@@ -288,9 +258,6 @@ flowchart LR
     style D fill:#f4ecf7,stroke:#8e44ad,stroke-width:2px
 ```
 
-
----
-
 ## How Homework Works (Instant Feedback)
 
 1. **Accept:** Click the invitation link for `weekly-exercise-01`.
@@ -300,8 +267,6 @@ flowchart LR
 5. **Push:** Commit and push to GitHub.
 6. **Instant Report:** Go to the **Actions** tab on GitHub: within 2 minutes, see which questions pass.
 7. **Iterate:** Revise and re-push freely until Tuesday 11:59 PM!
-
----
 
 # Cycle 4: AI Policy & Next Steps {background-color="#57068c"}
 
@@ -330,8 +295,6 @@ flowchart LR
 :::
 :::
 
----
-
 ## AI Corner: The "Verify-Then-Use" Rule
 
 ::: {.columns}
@@ -351,8 +314,6 @@ flowchart LR
 :::
 :::
 
----
-
 ## Summary & What To Do Before Week 2
 
 1. **Complete & Push:** In-class exercise 1 `.qmd` to your GitHub repo.
@@ -363,4 +324,3 @@ flowchart LR
 ### 🔗 Useful Links:
 * Course Website: [gph-2182.github.io/course-website](https://gph-2182.github.io/course-website/)
 * Textbook: [r02pro.github.io](https://r02pro.github.io/)
-
