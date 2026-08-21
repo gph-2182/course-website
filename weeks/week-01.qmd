@@ -18,14 +18,12 @@ subtitle: "Sep 2, 2026 · 2:00–4:40 PM · Bobst LL138"
 
 ## Materials
 
-::: {.callout-note appearance="simple"}
-Slides and in-class exercise links will be posted here before class.
-:::
-
-- Slides: *coming soon*
-- In-class exercise: *coming soon*
-- Weekly exercise 1: *released after class on GitHub Classroom*
+- 📊 **Lecture Slides:** [Week 1 Slides (Interactive Presentation)](slides/week-01-slides.qmd)
+- 📝 **In-Class Exercise:** [Week 1 In-Class Worksheet (.qmd)](inclass/week-01-inclass.qmd)
+- 💻 **Weekly Exercise 1:** Available on Classroom 50 and Gradescope (Due Tuesday Sep 8, 11:59 PM)
 
 ## Due
 
-In-class exercise 1
+- In-class exercise 1 (pushed to GitHub by end of class)
+- Weekly exercise 1 (due Tuesday Sep 8, 11:59 PM)
+
