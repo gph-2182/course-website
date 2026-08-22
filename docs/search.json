@@ -32,7 +32,7 @@
     "href": "syllabus.html#assessments-in-brief",
     "title": "Syllabus",
     "section": "Assessments in brief",
-    "text": "Assessments in brief\nWeekly exercises are released after class in Weeks 1–12 and due 11:59 PM the following Tuesday. They are distributed and submitted through GitHub Classroom; an autograder reports which questions pass every time you push, and you may resubmit freely before the deadline. Late: 20% penalty within 24h, 40% within 48h, zero after that.\nIn-class quizzes (15–20 minutes, five total) are done individually without AI tools during the last part of class.\nThe final project is an individual analysis of a public-health dataset: a reproducible Quarto report in a GitHub repository, a 5-minute recorded video walkthrough, and an AI-use appendix. Released Week 10, due 11:59 PM December 16. No late submissions."
+    "text": "Assessments in brief\nWeekly exercises are released before class on Wednesdays in Weeks 1–12 and due 11:59 PM the following Wednesday. They are distributed and submitted through GitHub; an autograder reports which questions pass every time you push, and you may resubmit freely before the deadline. Late: 20% penalty within 24h, 40% within 48h, zero after that.\nIn-class quizzes (15–20 minutes, five total) are done individually without AI tools during the last part of class.\nThe final project is an individual analysis of a public-health dataset: a reproducible Quarto report in a GitHub repository, a 5-minute recorded video walkthrough, and an AI-use appendix. Released Week 10, due 11:59 PM December 16. No late submissions."
   },
   {
     "objectID": "syllabus.html#software-all-free",
@@ -84,333 +84,382 @@
     "text": "Getting started (before Week 1)\n\nInstall R, then RStudio Desktop (both free).\nCreate a free GitHub account with your NYU email.\nThat’s it. We will set up everything else together in the first class."
   },
   {
-    "objectID": "weeks/week-14.html",
-    "href": "weeks/week-14.html",
-    "title": "Week 14: Communicating with Quarto + Project Workshop",
+    "objectID": "weeks/inclass/week-01-inclass.html",
+    "href": "weeks/inclass/week-01-inclass.html",
+    "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
     "section": "",
-    "text": "Read: Course materials (provided)\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Instructions\n\n\n\nWork in pairs during class.\n\n📥 Download week-01-inclass.qmd to open and edit in RStudio (or use the &lt;/&gt; Source Code button at the top right).\nRender this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit."
+  },
+  {
+    "objectID": "weeks/inclass/week-01-inclass.html#basic-arithmetic-calculations",
+    "href": "weeks/inclass/week-01-inclass.html#basic-arithmetic-calculations",
+    "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
+    "section": "1.1 Basic Arithmetic & Calculations",
+    "text": "1.1 Basic Arithmetic & Calculations\nIn the code chunk below, compute the Body Mass Index (BMI) for three study participants:\n\nParticipant A: Weight 70\\text{ kg}, Height 1.75\\text{ m}\nParticipant B: Weight 85\\text{ kg}, Height 1.80\\text{ m}\nParticipant C: Weight 58\\text{ kg}, Height 1.62\\text{ m}\n\n\\text{BMI} = \\frac{\\text{weight in kg}}{(\\text{height in meters})^2}\n\n# Write your calculations below:"
+  },
+  {
+    "objectID": "weeks/inclass/week-01-inclass.html#exploring-built-in-functions",
+    "href": "weeks/inclass/week-01-inclass.html#exploring-built-in-functions",
+    "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
+    "section": "1.2 Exploring Built-in Functions",
+    "text": "1.2 Exploring Built-in Functions\nCompute the mean of the three BMIs you calculated above. Round the result to 2 decimal places using round().\n\n# Write your summary code below:"
+  },
+  {
+    "objectID": "weeks/inclass/week-01-inclass.html#r-packages-and-documentation",
+    "href": "weeks/inclass/week-01-inclass.html#r-packages-and-documentation",
+    "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
+    "section": "1.3 R Packages and Documentation",
+    "text": "1.3 R Packages and Documentation\n\nLoad the r02pro package (install it in the Console with install.packages(\"r02pro\") if you haven’t already).\nDisplay the first 6 rows of the ahp dataset using the head() function.\nOpen the help file for the median() function using ?median.\n\n\n# Load library and inspect data:"
+  },
+  {
+    "objectID": "weeks/inclass/week-01-inclass.html#text-formatting-markdown",
+    "href": "weeks/inclass/week-01-inclass.html#text-formatting-markdown",
+    "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
+    "section": "2.1 Text Formatting & Markdown",
+    "text": "2.1 Text Formatting & Markdown\nIn the space below:\n\nWrite a short 2-sentence paragraph describing the purpose of reproducible research in public health.\nInclude at least one bold phrase and one italicized word.\nAdd a bulleted list of two advantages of Quarto over traditional copy-pasting into Word.\n\n(Type your text response here)"
+  },
+  {
+    "objectID": "weeks/inclass/week-01-inclass.html#code-chunk-customization",
+    "href": "weeks/inclass/week-01-inclass.html#code-chunk-customization",
+    "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
+    "section": "2.2 Code Chunk Customization",
+    "text": "2.2 Code Chunk Customization\nCreate an R code chunk below with chunk option #| echo: true that creates a vector of systolic blood pressure readings: 120, 134, 118, 142, 128 and calculates their standard deviation using sd().\n\n# Write your code here:"
+  },
+  {
+    "objectID": "weeks/inclass/week-01-inclass.html#submission-checklist",
+    "href": "weeks/inclass/week-01-inclass.html#submission-checklist",
+    "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
+    "section": "4.1 Submission Checklist",
+    "text": "4.1 Submission Checklist\n\nBoth your name and your partner’s name are in the author field at the top.\nClick Render in RStudio and verify the HTML looks clean.\nCommit and push your changes to GitHub."
+  },
+  {
+    "objectID": "weeks/week-01.html",
+    "href": "weeks/week-01.html",
+    "title": "Week 1: Welcome + the Modern R Toolkit",
+    "section": "",
+    "text": "Read: R02Pro Ch 1\nInstall R and RStudio, and create a free GitHub account (see Home).",
     "crumbs": [
       "Weekly Pages",
-      "Week 14: Communicating with Quarto + Project Workshop"
+      "Week 1: Welcome + the Modern R Toolkit"
     ]
   },
   {
-    "objectID": "weeks/week-14.html#before-class",
-    "href": "weeks/week-14.html#before-class",
-    "title": "Week 14: Communicating with Quarto + Project Workshop",
+    "objectID": "weeks/week-01.html#before-class",
+    "href": "weeks/week-01.html#before-class",
+    "title": "Week 1: Welcome + the Modern R Toolkit",
     "section": "",
-    "text": "Read: Course materials (provided)\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 1\nInstall R and RStudio, and create a free GitHub account (see Home).",
     "crumbs": [
       "Weekly Pages",
-      "Week 14: Communicating with Quarto + Project Workshop"
+      "Week 1: Welcome + the Modern R Toolkit"
     ]
   },
   {
-    "objectID": "weeks/week-14.html#topics",
-    "href": "weeks/week-14.html#topics",
-    "title": "Week 14: Communicating with Quarto + Project Workshop",
+    "objectID": "weeks/week-01.html#topics",
+    "href": "weeks/week-01.html#topics",
+    "title": "Week 1: Welcome + the Modern R Toolkit",
     "section": "Topics",
-    "text": "Topics\n\nPolished Quarto reports\nQuarto websites and dashboards\nReproducibility checklist\nIn-class final project workshop with instructor and CA support",
+    "text": "Topics\n\nInstalling R, RStudio, and Quarto\nRunning R code; R as a calculator; getting help\nQuarto documents: text formatting, code chunks, rendering\nGitHub onboarding: accept, clone, edit, render, push\nCourse workflow and AI policy overview",
     "crumbs": [
       "Weekly Pages",
-      "Week 14: Communicating with Quarto + Project Workshop"
+      "Week 1: Welcome + the Modern R Toolkit"
     ]
   },
   {
-    "objectID": "weeks/week-14.html#materials",
-    "href": "weeks/week-14.html#materials",
-    "title": "Week 14: Communicating with Quarto + Project Workshop",
+    "objectID": "weeks/week-01.html#materials",
+    "href": "weeks/week-01.html#materials",
+    "title": "Week 1: Welcome + the Modern R Toolkit",
+    "section": "Materials",
+    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 1: Accept Assignment on Classroom 50 · View Template Repo (Due Wednesday Sep 9, 11:59 PM)",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 1: Welcome + the Modern R Toolkit"
+    ]
+  },
+  {
+    "objectID": "weeks/week-01.html#due",
+    "href": "weeks/week-01.html#due",
+    "title": "Week 1: Welcome + the Modern R Toolkit",
+    "section": "Due",
+    "text": "Due\n\nIn-class exercise 1 (pushed to GitHub by end of class)\nWeekly exercise 1 (due Wednesday Sep 9, 11:59 PM)",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 1: Welcome + the Modern R Toolkit"
+    ]
+  },
+  {
+    "objectID": "weeks/week-02.html",
+    "href": "weeks/week-02.html",
+    "title": "Week 2: Vectors and Subsetting",
+    "section": "",
+    "text": "Read: R02Pro Ch 2–3\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 2: Vectors and Subsetting"
+    ]
+  },
+  {
+    "objectID": "weeks/week-02.html#before-class",
+    "href": "weeks/week-02.html#before-class",
+    "title": "Week 2: Vectors and Subsetting",
+    "section": "",
+    "text": "Read: R02Pro Ch 2–3\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 2: Vectors and Subsetting"
+    ]
+  },
+  {
+    "objectID": "weeks/week-02.html#topics",
+    "href": "weeks/week-02.html#topics",
+    "title": "Week 2: Vectors and Subsetting",
+    "section": "Topics",
+    "text": "Topics\n\nObject assignment and naming\nNumeric, character, and logical vectors\nPatterned vectors; sorting; summary statistics\nComparisons, subsetting, logical and set operations",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 2: Vectors and Subsetting"
+    ]
+  },
+  {
+    "objectID": "weeks/week-02.html#materials",
+    "href": "weeks/week-02.html#materials",
+    "title": "Week 2: Vectors and Subsetting",
+    "section": "Materials",
+    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 2: View Template Repo on GitHub (Due Wednesday Sep 16, 11:59 PM)",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 2: Vectors and Subsetting"
+    ]
+  },
+  {
+    "objectID": "weeks/week-02.html#due",
+    "href": "weeks/week-02.html#due",
+    "title": "Week 2: Vectors and Subsetting",
+    "section": "Due",
+    "text": "Due\n\nWeekly Exercise 1 (due tonight at 11:59 PM)\nIn-class exercise 2 (pushed to GitHub by end of class)\nWeekly Exercise 2 (due Wednesday Sep 16, 11:59 PM)",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 2: Vectors and Subsetting"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html",
+    "href": "weeks/week-06.html",
+    "title": "Week 6: Data Visualization II",
+    "section": "",
+    "text": "Read: R02Pro Ch 6–7\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 6: Data Visualization II"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html#before-class",
+    "href": "weeks/week-06.html#before-class",
+    "title": "Week 6: Data Visualization II",
+    "section": "",
+    "text": "Read: R02Pro Ch 6–7\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 6: Data Visualization II"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html#topics",
+    "href": "weeks/week-06.html#topics",
+    "title": "Week 6: Data Visualization II",
+    "section": "Topics",
+    "text": "Topics\n\nBar charts, histograms, density plots, boxplots\nFaceting and arranging multiple plots\nLabels, titles, and themes\nA taste of interactive plots with plotly\nCritique-this-chart activity\n\n\n\n\n\n\n\nImportant\n\n\n\nQuiz 2 takes place during the last part of this class. No AI tools during the quiz.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 6: Data Visualization II"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html#materials",
+    "href": "weeks/week-06.html#materials",
+    "title": "Week 6: Data Visualization II",
+    "section": "Materials",
+    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 6: released after class on GitHub Classroom",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 6: Data Visualization II"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html#due",
+    "href": "weeks/week-06.html#due",
+    "title": "Week 6: Data Visualization II",
+    "section": "Due",
+    "text": "Due\nWeekly exercise 5 · In-class exercise 6 · Quiz 2",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 6: Data Visualization II"
+    ]
+  },
+  {
+    "objectID": "weeks/week-13.html",
+    "href": "weeks/week-13.html",
+    "title": "Week 13: Simulation and Statistics",
+    "section": "",
+    "text": "Read: R02Pro Ch 11\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 13: Simulation and Statistics"
+    ]
+  },
+  {
+    "objectID": "weeks/week-13.html#before-class",
+    "href": "weeks/week-13.html#before-class",
+    "title": "Week 13: Simulation and Statistics",
+    "section": "",
+    "text": "Read: R02Pro Ch 11\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 13: Simulation and Statistics"
+    ]
+  },
+  {
+    "objectID": "weeks/week-13.html#topics",
+    "href": "weeks/week-13.html#topics",
+    "title": "Week 13: Simulation and Statistics",
+    "section": "Topics",
+    "text": "Topics\n\nCommon distributions; random number generation\nRandom sampling and permutation\nMonte Carlo simulation with public-health examples\n\n\n\n\n\n\n\nImportant\n\n\n\nQuiz 5 takes place during the last part of this class. No AI tools during the quiz.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 13: Simulation and Statistics"
+    ]
+  },
+  {
+    "objectID": "weeks/week-13.html#materials",
+    "href": "weeks/week-13.html#materials",
+    "title": "Week 13: Simulation and Statistics",
     "section": "Materials",
     "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon",
     "crumbs": [
       "Weekly Pages",
-      "Week 14: Communicating with Quarto + Project Workshop"
+      "Week 13: Simulation and Statistics"
     ]
   },
   {
-    "objectID": "weeks/week-14.html#due",
-    "href": "weeks/week-14.html#due",
-    "title": "Week 14: Communicating with Quarto + Project Workshop",
+    "objectID": "weeks/week-13.html#due",
+    "href": "weeks/week-13.html#due",
+    "title": "Week 13: Simulation and Statistics",
     "section": "Due",
-    "text": "Due\nIn-class exercise 14",
+    "text": "Due\nWeekly exercise 12 · In-class exercise 13 · Quiz 5",
     "crumbs": [
       "Weekly Pages",
-      "Week 14: Communicating with Quarto + Project Workshop"
+      "Week 13: Simulation and Statistics"
     ]
   },
   {
-    "objectID": "weeks/week-03.html",
-    "href": "weeks/week-03.html",
-    "title": "Week 3: Data Frames, Tibbles, and Friends",
+    "objectID": "weeks/week-11.html",
+    "href": "weeks/week-11.html",
+    "title": "Week 11: Strings and Regular Expressions",
     "section": "",
-    "text": "Read: R02Pro Ch 3–4\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 10\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
-      "Week 3: Data Frames, Tibbles, and Friends"
+      "Week 11: Strings and Regular Expressions"
     ]
   },
   {
-    "objectID": "weeks/week-03.html#before-class",
-    "href": "weeks/week-03.html#before-class",
-    "title": "Week 3: Data Frames, Tibbles, and Friends",
+    "objectID": "weeks/week-11.html#before-class",
+    "href": "weeks/week-11.html#before-class",
+    "title": "Week 11: Strings and Regular Expressions",
     "section": "",
-    "text": "Read: R02Pro Ch 3–4\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 10\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
-      "Week 3: Data Frames, Tibbles, and Friends"
+      "Week 11: Strings and Regular Expressions"
     ]
   },
   {
-    "objectID": "weeks/week-03.html#topics",
-    "href": "weeks/week-03.html#topics",
-    "title": "Week 3: Data Frames, Tibbles, and Friends",
+    "objectID": "weeks/week-11.html#topics",
+    "href": "weeks/week-11.html#topics",
+    "title": "Week 11: Strings and Regular Expressions",
     "section": "Topics",
-    "text": "Topics\n\nMissing values (NA)\nFactors; matrices\nData frames, tibbles, lists\nNULL, NaN, Inf\n\n\n\n\n\n\n\nImportant\n\n\n\nQuiz 1 takes place during the last part of this class. No AI tools during the quiz.",
+    "text": "Topics\n\nCombining and subsetting strings\nPattern matching with regular expressions\nAI-augmented regex workflow: AI drafts, you verify\n\n\n\n\n\n\n\nImportant\n\n\n\nQuiz 4 takes place during the last part of this class. No AI tools during the quiz.",
     "crumbs": [
       "Weekly Pages",
-      "Week 3: Data Frames, Tibbles, and Friends"
+      "Week 11: Strings and Regular Expressions"
     ]
   },
   {
-    "objectID": "weeks/week-03.html#materials",
-    "href": "weeks/week-03.html#materials",
-    "title": "Week 3: Data Frames, Tibbles, and Friends",
+    "objectID": "weeks/week-11.html#materials",
+    "href": "weeks/week-11.html#materials",
+    "title": "Week 11: Strings and Regular Expressions",
     "section": "Materials",
-    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 3: released after class on GitHub Classroom",
+    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 11: released after class on GitHub Classroom",
     "crumbs": [
       "Weekly Pages",
-      "Week 3: Data Frames, Tibbles, and Friends"
+      "Week 11: Strings and Regular Expressions"
     ]
   },
   {
-    "objectID": "weeks/week-03.html#due",
-    "href": "weeks/week-03.html#due",
-    "title": "Week 3: Data Frames, Tibbles, and Friends",
+    "objectID": "weeks/week-11.html#due",
+    "href": "weeks/week-11.html#due",
+    "title": "Week 11: Strings and Regular Expressions",
     "section": "Due",
-    "text": "Due\nWeekly exercise 2 · In-class exercise 3 · Quiz 1",
+    "text": "Due\nWeekly exercise 10 · In-class exercise 11 · Quiz 4",
     "crumbs": [
       "Weekly Pages",
-      "Week 3: Data Frames, Tibbles, and Friends"
+      "Week 11: Strings and Regular Expressions"
     ]
   },
   {
-    "objectID": "weeks/week-12.html",
-    "href": "weeks/week-12.html",
-    "title": "Week 12: Functions and Control Flow",
+    "objectID": "weeks/week-04.html",
+    "href": "weeks/week-04.html",
+    "title": "Week 4: Data Import and Export",
     "section": "",
-    "text": "Read: R02Pro Ch 12–13\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 5\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
-      "Week 12: Functions and Control Flow"
+      "Week 4: Data Import and Export"
     ]
   },
   {
-    "objectID": "weeks/week-12.html#before-class",
-    "href": "weeks/week-12.html#before-class",
-    "title": "Week 12: Functions and Control Flow",
+    "objectID": "weeks/week-04.html#before-class",
+    "href": "weeks/week-04.html#before-class",
+    "title": "Week 4: Data Import and Export",
     "section": "",
-    "text": "Read: R02Pro Ch 12–13\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 5\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
-      "Week 12: Functions and Control Flow"
+      "Week 4: Data Import and Export"
     ]
   },
   {
-    "objectID": "weeks/week-12.html#topics",
-    "href": "weeks/week-12.html#topics",
-    "title": "Week 12: Functions and Control Flow",
+    "objectID": "weeks/week-04.html#topics",
+    "href": "weeks/week-04.html#topics",
+    "title": "Week 4: Data Import and Export",
     "section": "Topics",
-    "text": "Topics\n\nif/else and conditional execution\nfor and while loops\nWriting functions: arguments, return values, scoping\nThe apply family and purrr map functions",
+    "text": "Topics\n\nWorking directories and projects\nDelimited files; Excel files\nSPSS, SAS, and Stata files\nSaving and restoring objects\nThe messy-data mindset",
     "crumbs": [
       "Weekly Pages",
-      "Week 12: Functions and Control Flow"
+      "Week 4: Data Import and Export"
     ]
   },
   {
-    "objectID": "weeks/week-12.html#materials",
-    "href": "weeks/week-12.html#materials",
-    "title": "Week 12: Functions and Control Flow",
+    "objectID": "weeks/week-04.html#materials",
+    "href": "weeks/week-04.html#materials",
+    "title": "Week 4: Data Import and Export",
     "section": "Materials",
-    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 12: released after class on GitHub Classroom",
+    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 4: released after class on GitHub Classroom",
     "crumbs": [
       "Weekly Pages",
-      "Week 12: Functions and Control Flow"
+      "Week 4: Data Import and Export"
     ]
   },
   {
-    "objectID": "weeks/week-12.html#due",
-    "href": "weeks/week-12.html#due",
-    "title": "Week 12: Functions and Control Flow",
+    "objectID": "weeks/week-04.html#due",
+    "href": "weeks/week-04.html#due",
+    "title": "Week 4: Data Import and Export",
     "section": "Due",
-    "text": "Due\nWeekly exercise 11 · In-class exercise 12",
+    "text": "Due\nWeekly exercise 3 · In-class exercise 4",
     "crumbs": [
       "Weekly Pages",
-      "Week 12: Functions and Control Flow"
-    ]
-  },
-  {
-    "objectID": "weeks/week-07.html",
-    "href": "weeks/week-07.html",
-    "title": "Week 7: Data Manipulation with dplyr",
-    "section": "",
-    "text": "Read: R02Pro Ch 8\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 7: Data Manipulation with dplyr"
-    ]
-  },
-  {
-    "objectID": "weeks/week-07.html#before-class",
-    "href": "weeks/week-07.html#before-class",
-    "title": "Week 7: Data Manipulation with dplyr",
-    "section": "",
-    "text": "Read: R02Pro Ch 8\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 7: Data Manipulation with dplyr"
-    ]
-  },
-  {
-    "objectID": "weeks/week-07.html#topics",
-    "href": "weeks/week-07.html#topics",
-    "title": "Week 7: Data Manipulation with dplyr",
-    "section": "Topics",
-    "text": "Topics\n\nFiltering, arranging, selecting, renaming\nCreating new variables with mutate\nGrouped summaries\nThe pipe",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 7: Data Manipulation with dplyr"
-    ]
-  },
-  {
-    "objectID": "weeks/week-07.html#materials",
-    "href": "weeks/week-07.html#materials",
-    "title": "Week 7: Data Manipulation with dplyr",
-    "section": "Materials",
-    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 7: released after class on GitHub Classroom",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 7: Data Manipulation with dplyr"
-    ]
-  },
-  {
-    "objectID": "weeks/week-07.html#due",
-    "href": "weeks/week-07.html#due",
-    "title": "Week 7: Data Manipulation with dplyr",
-    "section": "Due",
-    "text": "Due\nWeekly exercise 6 · In-class exercise 7",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 7: Data Manipulation with dplyr"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html",
-    "href": "weeks/week-05.html",
-    "title": "Week 5: Data Visualization I",
-    "section": "",
-    "text": "Read: R02Pro Ch 6\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 5: Data Visualization I"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html#before-class",
-    "href": "weeks/week-05.html#before-class",
-    "title": "Week 5: Data Visualization I",
-    "section": "",
-    "text": "Read: R02Pro Ch 6\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 5: Data Visualization I"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html#topics",
-    "href": "weeks/week-05.html#topics",
-    "title": "Week 5: Data Visualization I",
-    "section": "Topics",
-    "text": "Topics\n\nThe grammar of graphics with ggplot2\nScatterplots; aesthetics and mappings\nSmoothline fits; multiple geoms\nCustomizing axes",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 5: Data Visualization I"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html#materials",
-    "href": "weeks/week-05.html#materials",
-    "title": "Week 5: Data Visualization I",
-    "section": "Materials",
-    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 5: released after class on GitHub Classroom",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 5: Data Visualization I"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html#due",
-    "href": "weeks/week-05.html#due",
-    "title": "Week 5: Data Visualization I",
-    "section": "Due",
-    "text": "Due\nWeekly exercise 4 · In-class exercise 5",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 5: Data Visualization I"
-    ]
-  },
-  {
-    "objectID": "weeks/week-10.html",
-    "href": "weeks/week-10.html",
-    "title": "Week 10: Case Study: A Full Public-Health Data Pipeline",
-    "section": "",
-    "text": "Read: R02Pro Ch 14\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 10: Case Study: A Full Public-Health Data Pipeline"
-    ]
-  },
-  {
-    "objectID": "weeks/week-10.html#before-class",
-    "href": "weeks/week-10.html#before-class",
-    "title": "Week 10: Case Study: A Full Public-Health Data Pipeline",
-    "section": "",
-    "text": "Read: R02Pro Ch 14\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 10: Case Study: A Full Public-Health Data Pipeline"
-    ]
-  },
-  {
-    "objectID": "weeks/week-10.html#topics",
-    "href": "weeks/week-10.html#topics",
-    "title": "Week 10: Case Study: A Full Public-Health Data Pipeline",
-    "section": "Topics",
-    "text": "Topics\n\nImport, tidy, transform, visualize, and communicate on a real public-health dataset\nTemplate for the final project\nFinal project released",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 10: Case Study: A Full Public-Health Data Pipeline"
-    ]
-  },
-  {
-    "objectID": "weeks/week-10.html#materials",
-    "href": "weeks/week-10.html#materials",
-    "title": "Week 10: Case Study: A Full Public-Health Data Pipeline",
-    "section": "Materials",
-    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 10: released after class on GitHub Classroom",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 10: Case Study: A Full Public-Health Data Pipeline"
-    ]
-  },
-  {
-    "objectID": "weeks/week-10.html#due",
-    "href": "weeks/week-10.html#due",
-    "title": "Week 10: Case Study: A Full Public-Health Data Pipeline",
-    "section": "Due",
-    "text": "Due\nWeekly exercise 9 · In-class exercise 10",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 10: Case Study: A Full Public-Health Data Pipeline"
+      "Week 4: Data Import and Export"
     ]
   },
   {
@@ -523,7 +572,7 @@
     "href": "weeks/slides/week-01-slides.html#how-homework-works-instant-feedback",
     "title": "Week 1: Welcome & The Modern R Toolkit",
     "section": "How Homework Works (Instant Feedback)",
-    "text": "How Homework Works (Instant Feedback)\n\nAccept: Click the invitation link for weekly-exercise-01.\nClone: In RStudio \\(\\rightarrow\\) New Project \\(\\rightarrow\\) Version Control \\(\\rightarrow\\) Git \\(\\rightarrow\\) Paste URL.\nSolve: Open exercise.qmd, assign answers to q1, q2, etc.\nRender: Confirm the HTML compiles cleanly.\nPush: Commit and push to GitHub.\nInstant Report: Go to the Actions tab on GitHub: within 2 minutes, see which questions pass.\nIterate: Revise and re-push freely until Tuesday 11:59 PM!"
+    "text": "How Homework Works (Instant Feedback)\n\nAccept: Click the invitation link for weekly-exercise-01.\nClone: In RStudio \\(\\rightarrow\\) New Project \\(\\rightarrow\\) Version Control \\(\\rightarrow\\) Git \\(\\rightarrow\\) Paste URL.\nSolve: Open exercise.qmd, assign answers to q1, q2, etc.\nRender: Confirm the HTML compiles cleanly.\nPush: Commit and push to GitHub.\nInstant Report: Go to the Actions tab on GitHub: within 2 minutes, see which questions pass.\nIterate: Revise and re-push freely until Wednesday 11:59 PM!"
   },
   {
     "objectID": "weeks/slides/week-01-slides.html#the-three-ai-zones",
@@ -544,14 +593,14 @@
     "href": "weeks/slides/week-01-slides.html#summary-what-to-do-before-week-2",
     "title": "Week 1: Welcome & The Modern R Toolkit",
     "section": "Summary & What To Do Before Week 2",
-    "text": "Summary & What To Do Before Week 2\n\nComplete & Push: In-class exercise 1 .qmd to your GitHub repo.\nWeekly Exercise 1: Released on Classroom 50 / Gradescope. Due Tuesday Sep 8 at 11:59 PM.\nRead for Next Week: R02Pro Chapters 2–3 (Vectors & Subsetting).\nOffice Hours: Posted on the course website.\n\n🔗 Useful Links:\n\nCourse Website: gph-2182.github.io/course-website\nTextbook: r02pro.github.io\n\n\n\n\nGPH-GU 2182 · Week 1"
+    "text": "Summary & What To Do Before Week 2\n\nComplete & Push: In-class exercise 1 .qmd to your GitHub repo.\nWeekly Exercise 1: Released before class on GitHub. Due Wednesday Sep 9 at 11:59 PM.\nRead for Next Week: R02Pro Chapters 2–3 (Vectors & Subsetting).\nOffice Hours: Posted on the course website.\n\n🔗 Useful Links:\n\nCourse Website: gph-2182.github.io/course-website\nTextbook: r02pro.github.io\n\n\n\n\nGPH-GU 2182 · Week 1"
   },
   {
     "objectID": "weeks/week-08.html",
     "href": "weeks/week-08.html",
     "title": "Week 8: AI-Assisted R Programming Workshop",
     "section": "",
-    "text": "Read: Course materials (provided)\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: Course materials (provided)\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 8: AI-Assisted R Programming Workshop"
@@ -562,7 +611,7 @@
     "href": "weeks/week-08.html#before-class",
     "title": "Week 8: AI-Assisted R Programming Workshop",
     "section": "",
-    "text": "Read: Course materials (provided)\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: Course materials (provided)\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 8: AI-Assisted R Programming Workshop"
@@ -606,7 +655,7 @@
     "href": "weeks/week-09.html",
     "title": "Week 9: Tidy Data and Joins",
     "section": "",
-    "text": "Read: R02Pro Ch 8–9\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 8–9\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 9: Tidy Data and Joins"
@@ -617,7 +666,7 @@
     "href": "weeks/week-09.html#before-class",
     "title": "Week 9: Tidy Data and Joins",
     "section": "",
-    "text": "Read: R02Pro Ch 8–9\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 8–9\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 9: Tidy Data and Joins"
@@ -657,383 +706,523 @@
     ]
   },
   {
-    "objectID": "weeks/week-04.html",
-    "href": "weeks/week-04.html",
-    "title": "Week 4: Data Import and Export",
+    "objectID": "weeks/slides/week-02-slides.html#todays-roadmap-the-backbone-of-r",
+    "href": "weeks/slides/week-02-slides.html#todays-roadmap-the-backbone-of-r",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "Today’s Roadmap: The Backbone of R",
+    "text": "Today’s Roadmap: The Backbone of R\nVectors are the fundamental building block of all data structures in R (matrices, data frames, lists).\n\n\n\n\n\n%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '16px'}}}%%\nflowchart LR\n    A[\"&lt;b&gt;Cycle 1&lt;/b&gt;&lt;br/&gt;Vector Types &&lt;br/&gt;Coercion Rules\"] --&gt; B[\"&lt;b&gt;Cycle 2&lt;/b&gt;&lt;br/&gt;Pattern Creation&lt;br/&gt;(seq, rep, %%)\"]\n    B --&gt; C[\"&lt;b&gt;Cycle 3&lt;/b&gt;&lt;br/&gt;Indexing, Filtering&lt;br/&gt;& Mutation\"]\n    C --&gt; D[\"&lt;b&gt;Cycle 4&lt;/b&gt;&lt;br/&gt;Sorting, Ranking &&lt;br/&gt;AI Corner\"]\n    style A fill:#e8f4f8,stroke:#2980b9,stroke-width:2px\n    style B fill:#fef9e7,stroke:#f39c12,stroke-width:2px\n    style C fill:#eafaf1,stroke:#27ae60,stroke-width:2px\n    style D fill:#f4ecf7,stroke:#8e44ad,stroke-width:2px\n\n\n\n\n\n\n\nTextbook Reading: R02Pro Chapters 2–3 (r02pro.github.io)\nHomework 1: Due tonight at 11:59 PM on GitHub!\nHomework 2: Released before class; due next Wednesday at 11:59 PM."
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#the-four-atomic-vector-types",
+    "href": "weeks/slides/week-02-slides.html#the-four-atomic-vector-types",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "The Four Atomic Vector Types",
+    "text": "The Four Atomic Vector Types\nIn R, every element in an atomic vector must have the same type:\n\n\n1. Numeric (Double)\nDecimal numbers (default in R):\nweights &lt;- c(68.5, 72.0, 81.3)\ntypeof(weights) # \"double\"\n2. Integer\nExplicit whole numbers with L:\ncounts &lt;- c(1L, 5L, 12L)\ntypeof(counts)  # \"integer\"\n\n3. Character (Strings)\nText enclosed in quotes:\ndrugs &lt;- c(\"aspirin\", \"statin\", \"placebo\")\ntypeof(drugs)   # \"character\"\n4. Logical (Booleans)\nTRUE or FALSE (all caps):\nadherent &lt;- c(TRUE, FALSE, TRUE)\ntypeof(adherent)# \"logical\""
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#the-type-hierarchy-implicit-coercion",
+    "href": "weeks/slides/week-02-slides.html#the-type-hierarchy-implicit-coercion",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "The Type Hierarchy & Implicit Coercion",
+    "text": "The Type Hierarchy & Implicit Coercion\nWhat happens when you mix different types in c(...)?\nR silently converts everything to the least restrictive type:\n\\[\\text{logical} \\longrightarrow \\text{integer} \\longrightarrow \\text{double} \\longrightarrow \\text{character}\\]\n# Logical to numeric (TRUE becomes 1, FALSE becomes 0)\nsum(c(TRUE, FALSE, TRUE, TRUE))  # Count how many TRUEs: 3\nmean(c(TRUE, FALSE, TRUE, FALSE))# Proportion of TRUEs: 0.5\n\n# Numeric + Character becomes Character\nc(10, 25, \"missing\")             # c(\"10\", \"25\", \"missing\")\n\n\n\n\n\n\nPro-Tip for Health Data\n\n\nmean(bp &gt; 140, na.rm = TRUE) directly calculates the prevalence of hypertension by coercing logicals to 1s and 0s!"
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#summary-statistics-on-vectors",
+    "href": "weeks/slides/week-02-slides.html#summary-statistics-on-vectors",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "Summary Statistics on Vectors",
+    "text": "Summary Statistics on Vectors\nR has built-in vector aggregators:\nchol &lt;- c(185, 220, 240, 195, 210, NA)\n\nlength(chol)              # Total elements including NA (6)\nsum(is.na(chol))          # Count missing values (1)\nmean(chol, na.rm = TRUE)  # Arithmetic mean (212)\nsd(chol, na.rm = TRUE)    # Standard deviation (20.8)\nsummary(chol)             # 5-number summary + Mean + NAs"
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#in-class-exercise-2a-12-min",
+    "href": "weeks/slides/week-02-slides.html#in-class-exercise-2a-12-min",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "💻 In-Class Exercise 2A (12 min)",
+    "text": "💻 In-Class Exercise 2A (12 min)\n\n\n\n\n\n\nPaired Hands-on Exercise\n\n\n\nOpen RStudio and your week-02-inclass.qmd worksheet.\nPredict the typeof() and value of:\n\nc(4, 7, FALSE)\nc(3L, 5.5, \"control\")\nc(TRUE, FALSE) + 5\n\nA clinical trial enrolled 8 patients with viral loads: 1200, 450, 0, 8900, 320, 0, 1500, 60. Calculate the proportion of patients with undetectable viral load (viral_load == 0) using mean()."
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#sequences-with-and-seq",
+    "href": "weeks/slides/week-02-slides.html#sequences-with-and-seq",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "Sequences with : and seq()",
+    "text": "Sequences with : and seq()\nInstead of typing numbers manually, generate sequences automatically:\n\n\nThe Colon Operator :\nConsecutive integer sequences:\n1:10\n20:15    # Counts backward!\n-3:3\n\nThe seq() Function\nFlexible step sizes & lengths:\n# By step size\nseq(from = 0, to = 100, by = 20)\n# Output: 0 20 40 60 80 100\n\n# By total length\nseq(from = 0, to = 1, length.out = 5)\n# Output: 0.00 0.25 0.50 0.75 1.00"
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#repetition-with-rep",
+    "href": "weeks/slides/week-02-slides.html#repetition-with-rep",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "Repetition with rep()",
+    "text": "Repetition with rep()\nThe rep() function replicates values using times or each:\n\n\ntimes (Pattern repetition)\nRepeats the whole vector:\nrep(c(\"A\", \"B\"), times = 3)\n# \"A\" \"B\" \"A\" \"B\" \"A\" \"B\"\n\n# Unequal repetitions per element:\nrep(c(\"Control\", \"Treated\"), times = c(4, 2))\n# \"Control\" \"Control\" \"Control\" \"Control\" \"Treated\" \"Treated\"\n\neach (Element repetition)\nRepeats each item before moving to next:\nrep(c(\"A\", \"B\"), each = 3)\n# \"A\" \"A\" \"A\" \"B\" \"B\" \"B\"\n\n# Combining both:\nrep(c(\"Dose1\", \"Dose2\"), each = 2, times = 2)\n# \"Dose1\" \"Dose1\" \"Dose2\" \"Dose2\" \"Dose1\" \"Dose1\" \"Dose2\" \"Dose2\""
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#modulo-arithmetic",
+    "href": "weeks/slides/week-02-slides.html#modulo-arithmetic",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "Modulo Arithmetic %%",
+    "text": "Modulo Arithmetic %%\nThe modulo operator %% calculates the remainder of division:\n14 %% 3   # 2  (14 = 4 * 3 + 2)\n10 %% 2   # 0  (10 is even)\n\n\n\n\n\n\nCommon Applications in Data Science\n\n\n\nEven numbers: x %% 2 == 0\nDivisible by 5: x %% 5 == 0\nAssigning participants to \\(K\\) rotating study groups: (1:N) %% K + 1"
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#in-class-exercise-2b-12-min",
+    "href": "weeks/slides/week-02-slides.html#in-class-exercise-2b-12-min",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "💻 In-Class Exercise 2B (12 min)",
+    "text": "💻 In-Class Exercise 2B (12 min)\n\n\n\n\n\n\nPaired Hands-on Exercise\n\n\n\nCreate a sequence of drug dosing times from hour 0 to hour 72 spaced every 8 hours using seq().\nGenerate study cohort labels for 12 participants: 4 “Control”, 4 “Low-Dose”, and 4 “High-Dose” using rep().\nGiven numbers &lt;- 1:50, extract all numbers that are multiples of 7 using %%."
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#the-three-subsetting-methods",
+    "href": "weeks/slides/week-02-slides.html#the-three-subsetting-methods",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "The Three Subsetting Methods",
+    "text": "The Three Subsetting Methods\nWe extract elements using square brackets x[...]:\nages &lt;- c(23, 45, 19, 31, 56, 42)\n\n\n1. Positive Indices\nExtract by position (1-indexed):\nages[1]        # 23\nages[c(1, 4)]  # 23 31\nages[2:4]      # 45 19 31\n\n2. Negative Indices\nExclude specific positions:\nages[-1]       # All except 1st\nages[-c(2, 5)] # Drop 2nd & 5th\n# ages[-2:4]   # ERROR! Use -(2:4)\n\n3. Logical Subsetting\nExtract where TRUE:\nages[ages &gt; 40]\n# 45 56 42\n\nages[ages &gt;= 30 & ages &lt;= 50]\n# 45 31 42"
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#logical-operators-for-filtering",
+    "href": "weeks/slides/week-02-slides.html#logical-operators-for-filtering",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "Logical Operators for Filtering",
+    "text": "Logical Operators for Filtering\nCombine conditions using element-wise logical operators:\n\n\n\n\n\n\n\n\nOperator\nMeaning\nExample\n\n\n\n\n&\nElement-wise AND (both true)\n(bmi &gt; 25) & (age &gt; 50)\n\n\n\\|\nElement-wise OR (either true)\n(status == \"Severe\") \\| (fever == TRUE)\n\n\n!\nLogical NOT (inversion)\n!(city %in% c(\"NY\", \"CA\"))\n\n\n%in%\nValue matching (set membership)\nid %in% confirmed_cases\n\n\n\nsbp &lt;- c(118, 142, 135, 160, 122)\nstage2_htn &lt;- sbp &gt;= 140\nsbp[stage2_htn]   # 142 160"
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#modifying-vectors-in-place-mutation",
+    "href": "weeks/slides/week-02-slides.html#modifying-vectors-in-place-mutation",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "Modifying Vectors in Place (Mutation)",
+    "text": "Modifying Vectors in Place (Mutation)\nUse subsetting on the left side of &lt;- to update specific elements:\nscores &lt;- c(88, -99, 95, -99, 72)\n\n# Replace survey code -99 with NA:\nscores[scores == -99] &lt;- NA\nscores\n# 88 NA 95 NA 72\n\n# Cap values at 90 (winsorizing):\nscores[scores &gt; 90 & !is.na(scores)] &lt;- 90\nscores\n# 88 NA 90 NA 72"
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#in-class-exercise-2c-15-min",
+    "href": "weeks/slides/week-02-slides.html#in-class-exercise-2c-15-min",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "💻 In-Class Exercise 2C (15 min)",
+    "text": "💻 In-Class Exercise 2C (15 min)\n\n\n\n\n\n\nPaired Hands-on Exercise\n\n\nGiven the patient glucose vector:\nglucose &lt;- c(95, 142, 180, 88, 210, 115, -1, 104)\n\nExtract the glucose readings that are in the pre-diabetes range (\\(100 \\le \\text{glucose} \\le 125\\)).\nPatient 7 was miscoded as -1. Replace all negative values with NA.\nExtract all valid readings (ignoring NA) that indicate diabetes (\\(\\text{glucose} \\ge 126\\))."
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#sorting-ranking-and-ordering",
+    "href": "weeks/slides/week-02-slides.html#sorting-ranking-and-ordering",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "Sorting, Ranking, and Ordering",
+    "text": "Sorting, Ranking, and Ordering\nUnderstanding the difference between sort(), rank(), and order():\nvals &lt;- c(30, 10, 50, 20)\n\n\nsort(x)\nReturns sorted values:\nsort(vals)\n# 10 20 30 50\n\nsort(vals, decreasing = TRUE)\n# 50 30 20 10\n\nrank(x)\nReturns rank position of each element:\nrank(vals)\n# 3 1 4 2\n# (30 is 3rd, 10 is 1st, etc.)\n\norder(x)\nReturns indices that would sort x:\norder(vals)\n# 2 4 1 3\nvals[order(vals)] # sorted!"
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#handling-ties-in-rank",
+    "href": "weeks/slides/week-02-slides.html#handling-ties-in-rank",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "Handling Ties in rank()",
+    "text": "Handling Ties in rank()\nWhen numbers repeat, how should ranks be assigned?\nscores &lt;- c(80, 95, 80, 70)\n\nrank(scores)                        # Default: average ranks (2.5 4.0 2.5 1.0)\nrank(scores, ties.method = \"first\") # By appearance: (2 4 3 1)\nrank(scores, ties.method = \"min\")   # Sports ranking: (2 4 2 1)\n\n\n\n\n\n\nTip\n\n\nties.method = \"first\" is essential for deterministic top-\\(K\\) rankings in data pipelines!"
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#ai-corner-beware-vector-recycling",
+    "href": "weeks/slides/week-02-slides.html#ai-corner-beware-vector-recycling",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "AI Corner: Beware Vector Recycling!",
+    "text": "AI Corner: Beware Vector Recycling!\nWhen R operates on vectors of different lengths, it silently recycles the shorter one:\n\n\nWhat R Does:\nx &lt;- c(10, 20, 30, 40)\ny &lt;- c(1, 2)\nx + y\n# Computes: 10+1, 20+2, 30+1, 40+2\n# Output: 11 22 31 42\n\n⚠️ The Danger with AI:\n\nLLMs often generate code that accidentally recycles vectors when filtering or standardizing.\nAlways check length(x) == length(y) before element-wise operations!"
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#summary-week-2-checklist",
+    "href": "weeks/slides/week-02-slides.html#summary-week-2-checklist",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "Summary & Week 2 Checklist",
+    "text": "Summary & Week 2 Checklist\n\nSubmit Homework 1: Due tonight at 11:59 PM on GitHub.\nWeekly Exercise 2: Released on GitHub. Due Wednesday Sep 16 at 11:59 PM.\nFinish & Push In-Class 2: Push your rendered week-02-inclass.html for participation credit.\nUpcoming in Week 3: Matrices, Lists, Data Frames + In-Class Quiz 1 (15 min, Weeks 1–2).\n\n🔗 Quick Links:\n\nCourse Website: gph-2182.github.io/course-website\nTextbook Chapters 2–3: r02pro.github.io\n\n\n\n\nGPH-GU 2182 · Week 2"
+  },
+  {
+    "objectID": "weeks/week-10.html",
+    "href": "weeks/week-10.html",
+    "title": "Week 10: Case Study: A Full Public-Health Data Pipeline",
     "section": "",
-    "text": "Read: R02Pro Ch 5\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 14\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
-      "Week 4: Data Import and Export"
+      "Week 10: Case Study: A Full Public-Health Data Pipeline"
     ]
   },
   {
-    "objectID": "weeks/week-04.html#before-class",
-    "href": "weeks/week-04.html#before-class",
-    "title": "Week 4: Data Import and Export",
+    "objectID": "weeks/week-10.html#before-class",
+    "href": "weeks/week-10.html#before-class",
+    "title": "Week 10: Case Study: A Full Public-Health Data Pipeline",
     "section": "",
-    "text": "Read: R02Pro Ch 5\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 14\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
-      "Week 4: Data Import and Export"
+      "Week 10: Case Study: A Full Public-Health Data Pipeline"
     ]
   },
   {
-    "objectID": "weeks/week-04.html#topics",
-    "href": "weeks/week-04.html#topics",
-    "title": "Week 4: Data Import and Export",
+    "objectID": "weeks/week-10.html#topics",
+    "href": "weeks/week-10.html#topics",
+    "title": "Week 10: Case Study: A Full Public-Health Data Pipeline",
     "section": "Topics",
-    "text": "Topics\n\nWorking directories and projects\nDelimited files; Excel files\nSPSS, SAS, and Stata files\nSaving and restoring objects\nThe messy-data mindset",
+    "text": "Topics\n\nImport, tidy, transform, visualize, and communicate on a real public-health dataset\nTemplate for the final project\nFinal project released",
     "crumbs": [
       "Weekly Pages",
-      "Week 4: Data Import and Export"
+      "Week 10: Case Study: A Full Public-Health Data Pipeline"
     ]
   },
   {
-    "objectID": "weeks/week-04.html#materials",
-    "href": "weeks/week-04.html#materials",
-    "title": "Week 4: Data Import and Export",
+    "objectID": "weeks/week-10.html#materials",
+    "href": "weeks/week-10.html#materials",
+    "title": "Week 10: Case Study: A Full Public-Health Data Pipeline",
     "section": "Materials",
-    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 4: released after class on GitHub Classroom",
+    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 10: released after class on GitHub Classroom",
     "crumbs": [
       "Weekly Pages",
-      "Week 4: Data Import and Export"
+      "Week 10: Case Study: A Full Public-Health Data Pipeline"
     ]
   },
   {
-    "objectID": "weeks/week-04.html#due",
-    "href": "weeks/week-04.html#due",
-    "title": "Week 4: Data Import and Export",
+    "objectID": "weeks/week-10.html#due",
+    "href": "weeks/week-10.html#due",
+    "title": "Week 10: Case Study: A Full Public-Health Data Pipeline",
     "section": "Due",
-    "text": "Due\nWeekly exercise 3 · In-class exercise 4",
+    "text": "Due\nWeekly exercise 9 · In-class exercise 10",
     "crumbs": [
       "Weekly Pages",
-      "Week 4: Data Import and Export"
+      "Week 10: Case Study: A Full Public-Health Data Pipeline"
     ]
   },
   {
-    "objectID": "weeks/week-11.html",
-    "href": "weeks/week-11.html",
-    "title": "Week 11: Strings and Regular Expressions",
+    "objectID": "weeks/week-05.html",
+    "href": "weeks/week-05.html",
+    "title": "Week 5: Data Visualization I",
     "section": "",
-    "text": "Read: R02Pro Ch 10\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 6\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
-      "Week 11: Strings and Regular Expressions"
+      "Week 5: Data Visualization I"
     ]
   },
   {
-    "objectID": "weeks/week-11.html#before-class",
-    "href": "weeks/week-11.html#before-class",
-    "title": "Week 11: Strings and Regular Expressions",
+    "objectID": "weeks/week-05.html#before-class",
+    "href": "weeks/week-05.html#before-class",
+    "title": "Week 5: Data Visualization I",
     "section": "",
-    "text": "Read: R02Pro Ch 10\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 6\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
-      "Week 11: Strings and Regular Expressions"
+      "Week 5: Data Visualization I"
     ]
   },
   {
-    "objectID": "weeks/week-11.html#topics",
-    "href": "weeks/week-11.html#topics",
-    "title": "Week 11: Strings and Regular Expressions",
+    "objectID": "weeks/week-05.html#topics",
+    "href": "weeks/week-05.html#topics",
+    "title": "Week 5: Data Visualization I",
     "section": "Topics",
-    "text": "Topics\n\nCombining and subsetting strings\nPattern matching with regular expressions\nAI-augmented regex workflow: AI drafts, you verify\n\n\n\n\n\n\n\nImportant\n\n\n\nQuiz 4 takes place during the last part of this class. No AI tools during the quiz.",
+    "text": "Topics\n\nThe grammar of graphics with ggplot2\nScatterplots; aesthetics and mappings\nSmoothline fits; multiple geoms\nCustomizing axes",
     "crumbs": [
       "Weekly Pages",
-      "Week 11: Strings and Regular Expressions"
+      "Week 5: Data Visualization I"
     ]
   },
   {
-    "objectID": "weeks/week-11.html#materials",
-    "href": "weeks/week-11.html#materials",
-    "title": "Week 11: Strings and Regular Expressions",
+    "objectID": "weeks/week-05.html#materials",
+    "href": "weeks/week-05.html#materials",
+    "title": "Week 5: Data Visualization I",
     "section": "Materials",
-    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 11: released after class on GitHub Classroom",
+    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 5: released after class on GitHub Classroom",
     "crumbs": [
       "Weekly Pages",
-      "Week 11: Strings and Regular Expressions"
+      "Week 5: Data Visualization I"
     ]
   },
   {
-    "objectID": "weeks/week-11.html#due",
-    "href": "weeks/week-11.html#due",
-    "title": "Week 11: Strings and Regular Expressions",
+    "objectID": "weeks/week-05.html#due",
+    "href": "weeks/week-05.html#due",
+    "title": "Week 5: Data Visualization I",
     "section": "Due",
-    "text": "Due\nWeekly exercise 10 · In-class exercise 11 · Quiz 4",
+    "text": "Due\nWeekly exercise 4 · In-class exercise 5",
     "crumbs": [
       "Weekly Pages",
-      "Week 11: Strings and Regular Expressions"
+      "Week 5: Data Visualization I"
     ]
   },
   {
-    "objectID": "weeks/week-13.html",
-    "href": "weeks/week-13.html",
-    "title": "Week 13: Simulation and Statistics",
+    "objectID": "weeks/week-07.html",
+    "href": "weeks/week-07.html",
+    "title": "Week 7: Data Manipulation with dplyr",
     "section": "",
-    "text": "Read: R02Pro Ch 11\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 8\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
-      "Week 13: Simulation and Statistics"
+      "Week 7: Data Manipulation with dplyr"
     ]
   },
   {
-    "objectID": "weeks/week-13.html#before-class",
-    "href": "weeks/week-13.html#before-class",
-    "title": "Week 13: Simulation and Statistics",
+    "objectID": "weeks/week-07.html#before-class",
+    "href": "weeks/week-07.html#before-class",
+    "title": "Week 7: Data Manipulation with dplyr",
     "section": "",
-    "text": "Read: R02Pro Ch 11\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 8\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
-      "Week 13: Simulation and Statistics"
+      "Week 7: Data Manipulation with dplyr"
     ]
   },
   {
-    "objectID": "weeks/week-13.html#topics",
-    "href": "weeks/week-13.html#topics",
-    "title": "Week 13: Simulation and Statistics",
+    "objectID": "weeks/week-07.html#topics",
+    "href": "weeks/week-07.html#topics",
+    "title": "Week 7: Data Manipulation with dplyr",
     "section": "Topics",
-    "text": "Topics\n\nCommon distributions; random number generation\nRandom sampling and permutation\nMonte Carlo simulation with public-health examples\n\n\n\n\n\n\n\nImportant\n\n\n\nQuiz 5 takes place during the last part of this class. No AI tools during the quiz.",
+    "text": "Topics\n\nFiltering, arranging, selecting, renaming\nCreating new variables with mutate\nGrouped summaries\nThe pipe",
     "crumbs": [
       "Weekly Pages",
-      "Week 13: Simulation and Statistics"
+      "Week 7: Data Manipulation with dplyr"
     ]
   },
   {
-    "objectID": "weeks/week-13.html#materials",
-    "href": "weeks/week-13.html#materials",
-    "title": "Week 13: Simulation and Statistics",
+    "objectID": "weeks/week-07.html#materials",
+    "href": "weeks/week-07.html#materials",
+    "title": "Week 7: Data Manipulation with dplyr",
+    "section": "Materials",
+    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 7: released after class on GitHub Classroom",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 7: Data Manipulation with dplyr"
+    ]
+  },
+  {
+    "objectID": "weeks/week-07.html#due",
+    "href": "weeks/week-07.html#due",
+    "title": "Week 7: Data Manipulation with dplyr",
+    "section": "Due",
+    "text": "Due\nWeekly exercise 6 · In-class exercise 7",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 7: Data Manipulation with dplyr"
+    ]
+  },
+  {
+    "objectID": "weeks/week-12.html",
+    "href": "weeks/week-12.html",
+    "title": "Week 12: Functions and Control Flow",
+    "section": "",
+    "text": "Read: R02Pro Ch 12–13\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 12: Functions and Control Flow"
+    ]
+  },
+  {
+    "objectID": "weeks/week-12.html#before-class",
+    "href": "weeks/week-12.html#before-class",
+    "title": "Week 12: Functions and Control Flow",
+    "section": "",
+    "text": "Read: R02Pro Ch 12–13\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 12: Functions and Control Flow"
+    ]
+  },
+  {
+    "objectID": "weeks/week-12.html#topics",
+    "href": "weeks/week-12.html#topics",
+    "title": "Week 12: Functions and Control Flow",
+    "section": "Topics",
+    "text": "Topics\n\nif/else and conditional execution\nfor and while loops\nWriting functions: arguments, return values, scoping\nThe apply family and purrr map functions",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 12: Functions and Control Flow"
+    ]
+  },
+  {
+    "objectID": "weeks/week-12.html#materials",
+    "href": "weeks/week-12.html#materials",
+    "title": "Week 12: Functions and Control Flow",
+    "section": "Materials",
+    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 12: released after class on GitHub Classroom",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 12: Functions and Control Flow"
+    ]
+  },
+  {
+    "objectID": "weeks/week-12.html#due",
+    "href": "weeks/week-12.html#due",
+    "title": "Week 12: Functions and Control Flow",
+    "section": "Due",
+    "text": "Due\nWeekly exercise 11 · In-class exercise 12",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 12: Functions and Control Flow"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html",
+    "href": "weeks/week-03.html",
+    "title": "Week 3: Data Frames, Tibbles, and Friends",
+    "section": "",
+    "text": "Read: R02Pro Ch 3–4\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 3: Data Frames, Tibbles, and Friends"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#before-class",
+    "href": "weeks/week-03.html#before-class",
+    "title": "Week 3: Data Frames, Tibbles, and Friends",
+    "section": "",
+    "text": "Read: R02Pro Ch 3–4\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 3: Data Frames, Tibbles, and Friends"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#topics",
+    "href": "weeks/week-03.html#topics",
+    "title": "Week 3: Data Frames, Tibbles, and Friends",
+    "section": "Topics",
+    "text": "Topics\n\nMissing values (NA)\nFactors; matrices\nData frames, tibbles, lists\nNULL, NaN, Inf\n\n\n\n\n\n\n\nImportant\n\n\n\nQuiz 1 takes place during the last part of this class. No AI tools during the quiz.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 3: Data Frames, Tibbles, and Friends"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#materials",
+    "href": "weeks/week-03.html#materials",
+    "title": "Week 3: Data Frames, Tibbles, and Friends",
+    "section": "Materials",
+    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 3: released after class on GitHub Classroom",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 3: Data Frames, Tibbles, and Friends"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#due",
+    "href": "weeks/week-03.html#due",
+    "title": "Week 3: Data Frames, Tibbles, and Friends",
+    "section": "Due",
+    "text": "Due\nWeekly exercise 2 · In-class exercise 3 · Quiz 1",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 3: Data Frames, Tibbles, and Friends"
+    ]
+  },
+  {
+    "objectID": "weeks/week-14.html",
+    "href": "weeks/week-14.html",
+    "title": "Week 14: Communicating with Quarto + Project Workshop",
+    "section": "",
+    "text": "Read: Course materials (provided)\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 14: Communicating with Quarto + Project Workshop"
+    ]
+  },
+  {
+    "objectID": "weeks/week-14.html#before-class",
+    "href": "weeks/week-14.html#before-class",
+    "title": "Week 14: Communicating with Quarto + Project Workshop",
+    "section": "",
+    "text": "Read: Course materials (provided)\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 14: Communicating with Quarto + Project Workshop"
+    ]
+  },
+  {
+    "objectID": "weeks/week-14.html#topics",
+    "href": "weeks/week-14.html#topics",
+    "title": "Week 14: Communicating with Quarto + Project Workshop",
+    "section": "Topics",
+    "text": "Topics\n\nPolished Quarto reports\nQuarto websites and dashboards\nReproducibility checklist\nIn-class final project workshop with instructor and CA support",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 14: Communicating with Quarto + Project Workshop"
+    ]
+  },
+  {
+    "objectID": "weeks/week-14.html#materials",
+    "href": "weeks/week-14.html#materials",
+    "title": "Week 14: Communicating with Quarto + Project Workshop",
     "section": "Materials",
     "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon",
     "crumbs": [
       "Weekly Pages",
-      "Week 13: Simulation and Statistics"
+      "Week 14: Communicating with Quarto + Project Workshop"
     ]
   },
   {
-    "objectID": "weeks/week-13.html#due",
-    "href": "weeks/week-13.html#due",
-    "title": "Week 13: Simulation and Statistics",
+    "objectID": "weeks/week-14.html#due",
+    "href": "weeks/week-14.html#due",
+    "title": "Week 14: Communicating with Quarto + Project Workshop",
     "section": "Due",
-    "text": "Due\nWeekly exercise 12 · In-class exercise 13 · Quiz 5",
+    "text": "Due\nIn-class exercise 14",
     "crumbs": [
       "Weekly Pages",
-      "Week 13: Simulation and Statistics"
+      "Week 14: Communicating with Quarto + Project Workshop"
     ]
   },
   {
-    "objectID": "weeks/week-06.html",
-    "href": "weeks/week-06.html",
-    "title": "Week 6: Data Visualization II",
+    "objectID": "weeks/inclass/week-02-inclass.html",
+    "href": "weeks/inclass/week-02-inclass.html",
+    "title": "Week 2 In-Class Exercise: Vectors & Subsetting",
     "section": "",
-    "text": "Read: R02Pro Ch 6–7\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 6: Data Visualization II"
-    ]
+    "text": "Instructions\n\n\n\nWork in pairs during class.\n\n📥 Download week-02-inclass.qmd to open and edit in RStudio (or use the &lt;/&gt; Source Code button at the top right).\nRender this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit."
   },
   {
-    "objectID": "weeks/week-06.html#before-class",
-    "href": "weeks/week-06.html#before-class",
-    "title": "Week 6: Data Visualization II",
-    "section": "",
-    "text": "Read: R02Pro Ch 6–7\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 6: Data Visualization II"
-    ]
+    "objectID": "weeks/inclass/week-02-inclass.html#type-predictions-and-verification",
+    "href": "weeks/inclass/week-02-inclass.html#type-predictions-and-verification",
+    "title": "Week 2 In-Class Exercise: Vectors & Subsetting",
+    "section": "1.1 Type Predictions and Verification",
+    "text": "1.1 Type Predictions and Verification\nIn the code chunk below, write R code to check the typeof() of each of the following expressions:\n\nvec_a &lt;- c(4, 7, FALSE)\nvec_b &lt;- c(3L, 5.5, \"control\")\nvec_c &lt;- c(TRUE, FALSE) + 5\n\n\n# Create the vectors and check their types:"
   },
   {
-    "objectID": "weeks/week-06.html#topics",
-    "href": "weeks/week-06.html#topics",
-    "title": "Week 6: Data Visualization II",
-    "section": "Topics",
-    "text": "Topics\n\nBar charts, histograms, density plots, boxplots\nFaceting and arranging multiple plots\nLabels, titles, and themes\nA taste of interactive plots with plotly\nCritique-this-chart activity\n\n\n\n\n\n\n\nImportant\n\n\n\nQuiz 2 takes place during the last part of this class. No AI tools during the quiz.",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 6: Data Visualization II"
-    ]
+    "objectID": "weeks/inclass/week-02-inclass.html#public-health-prevalence-calculation",
+    "href": "weeks/inclass/week-02-inclass.html#public-health-prevalence-calculation",
+    "title": "Week 2 In-Class Exercise: Vectors & Subsetting",
+    "section": "1.2 Public Health Prevalence Calculation",
+    "text": "1.2 Public Health Prevalence Calculation\nA study recorded the HIV viral load copies/mL for 8 participants: 1200, 450, 0, 8900, 320, 0, 1500, 60.\n\nCreate a numeric vector named viral_load with these measurements.\nUse a logical comparison and the mean() function to calculate the proportion of patients with undetectable viral load (\\text{viral load} = 0).\n\n\n# Calculate undetectable proportion:"
   },
   {
-    "objectID": "weeks/week-06.html#materials",
-    "href": "weeks/week-06.html#materials",
-    "title": "Week 6: Data Visualization II",
-    "section": "Materials",
-    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 6: released after class on GitHub Classroom",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 6: Data Visualization II"
-    ]
+    "objectID": "weeks/inclass/week-02-inclass.html#dosage-schedules-with-seq",
+    "href": "weeks/inclass/week-02-inclass.html#dosage-schedules-with-seq",
+    "title": "Week 2 In-Class Exercise: Vectors & Subsetting",
+    "section": "2.1 Dosage Schedules with seq()",
+    "text": "2.1 Dosage Schedules with seq()\nAn intravenous antibiotic is administered every 8 hours across a 72-hour hospital observation period.\nCreate a sequence named dose_hours starting at hour 0 up to hour 72 with increments of 8.\n\n# Create dosage hours:"
   },
   {
-    "objectID": "weeks/week-06.html#due",
-    "href": "weeks/week-06.html#due",
-    "title": "Week 6: Data Visualization II",
-    "section": "Due",
-    "text": "Due\nWeekly exercise 5 · In-class exercise 6 · Quiz 2",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 6: Data Visualization II"
-    ]
+    "objectID": "weeks/inclass/week-02-inclass.html#cohort-generation-with-rep",
+    "href": "weeks/inclass/week-02-inclass.html#cohort-generation-with-rep",
+    "title": "Week 2 In-Class Exercise: Vectors & Subsetting",
+    "section": "2.2 Cohort Generation with rep()",
+    "text": "2.2 Cohort Generation with rep()\nA vaccine trial requires creating treatment labels for 12 participants: - 4 “Control” - 4 “Low-Dose” - 4 “High-Dose”\nGenerate this character vector using the rep() function and assign it to treatment_groups.\n\n# Generate treatment labels:"
   },
   {
-    "objectID": "weeks/week-02.html",
-    "href": "weeks/week-02.html",
-    "title": "Week 2: Vectors and Subsetting",
-    "section": "",
-    "text": "Read: R02Pro Ch 2–3\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 2: Vectors and Subsetting"
-    ]
+    "objectID": "weeks/inclass/week-02-inclass.html#extracting-multiples-with-modulo",
+    "href": "weeks/inclass/week-02-inclass.html#extracting-multiples-with-modulo",
+    "title": "Week 2 In-Class Exercise: Vectors & Subsetting",
+    "section": "2.3 Extracting Multiples with Modulo %%",
+    "text": "2.3 Extracting Multiples with Modulo %%\nGiven the sequence numbers &lt;- 1:50, extract all numbers that are divisible by 7.\n\nnumbers &lt;- 1:50\n# Extract multiples of 7:"
   },
   {
-    "objectID": "weeks/week-02.html#before-class",
-    "href": "weeks/week-02.html#before-class",
-    "title": "Week 2: Vectors and Subsetting",
-    "section": "",
-    "text": "Read: R02Pro Ch 2–3\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 2: Vectors and Subsetting"
-    ]
+    "objectID": "weeks/inclass/week-02-inclass.html#glucose-filtering-and-cleaning",
+    "href": "weeks/inclass/week-02-inclass.html#glucose-filtering-and-cleaning",
+    "title": "Week 2 In-Class Exercise: Vectors & Subsetting",
+    "section": "3.1 Glucose Filtering and Cleaning",
+    "text": "3.1 Glucose Filtering and Cleaning\nA metabolic health study collected fasting blood glucose levels (mg/dL) from 8 patients: glucose &lt;- c(95, 142, 180, 88, 210, 115, -1, 104)\n\nExtract all values in the pre-diabetes range (100 \\le \\text{glucose} \\le 125).\nThe measurement -1 is a missing value code. Replace all negative values in glucose with NA.\nExtract all valid readings (\\ge 126, excluding NA) indicating diabetes.\n\n\nglucose &lt;- c(95, 142, 180, 88, 210, 115, -1, 104)\n\n# 1. Pre-diabetes subset:\n\n# 2. In-place replacement of negative values with NA:\n\n# 3. Diabetes subset (&gt;= 126, non-NA):"
   },
   {
-    "objectID": "weeks/week-02.html#topics",
-    "href": "weeks/week-02.html#topics",
-    "title": "Week 2: Vectors and Subsetting",
-    "section": "Topics",
-    "text": "Topics\n\nObject assignment and naming\nNumeric, character, and logical vectors\nPatterned vectors; sorting; summary statistics\nComparisons, subsetting, logical and set operations",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 2: Vectors and Subsetting"
-    ]
+    "objectID": "weeks/inclass/week-02-inclass.html#patient-rankings",
+    "href": "weeks/inclass/week-02-inclass.html#patient-rankings",
+    "title": "Week 2 In-Class Exercise: Vectors & Subsetting",
+    "section": "4.1 Patient Rankings",
+    "text": "4.1 Patient Rankings\nA clinic recorded wait times (minutes) for 5 emergency room patients: wait_times &lt;- c(45, 12, 85, 30, 45)\n\nSort the wait times in descending order (longest to shortest).\nCompute the ranks of each patient’s wait time using rank(..., ties.method = \"first\").\n\n\nwait_times &lt;- c(45, 12, 85, 30, 45)\n\n# 1. Descending sort:\n\n# 2. First-appearance ranking:"
   },
   {
-    "objectID": "weeks/week-02.html#materials",
-    "href": "weeks/week-02.html#materials",
-    "title": "Week 2: Vectors and Subsetting",
-    "section": "Materials",
-    "text": "Materials\n\n\n\n\n\n\nSlides and in-class exercise links will be posted here before class.\n\n\n\n\nSlides: coming soon\nIn-class exercise: coming soon\nWeekly exercise 2: released after class on GitHub Classroom",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 2: Vectors and Subsetting"
-    ]
+    "objectID": "weeks/inclass/week-02-inclass.html#ai-corner-spotting-vector-recycling-errors",
+    "href": "weeks/inclass/week-02-inclass.html#ai-corner-spotting-vector-recycling-errors",
+    "title": "Week 2 In-Class Exercise: Vectors & Subsetting",
+    "section": "4.2 AI Corner: Spotting Vector Recycling Errors",
+    "text": "4.2 AI Corner: Spotting Vector Recycling Errors\nAn AI assistant was asked to calculate the Body Mass Index for 4 patients with heights (in meters) c(1.70, 1.85, 1.62, 1.78) and weights (in kg) c(65, 82).\nThe AI produced this code:\n\n# AI Generated code:\nheights &lt;- c(1.70, 1.85, 1.62, 1.78)\nweights &lt;- c(65, 82)\nbmi_calc &lt;- weights / (heights^2)\n\n\n4.2.1 Questions:\n\nWhat did R do when computing bmi_calc? Why is the result clinically invalid?\nHow would you write a defensive check in R to prevent vector recycling when calculating BMI?\n\n(Write your explanation and defensive check below)"
   },
   {
-    "objectID": "weeks/week-02.html#due",
-    "href": "weeks/week-02.html#due",
-    "title": "Week 2: Vectors and Subsetting",
-    "section": "Due",
-    "text": "Due\nWeekly exercise 1 · In-class exercise 2",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 2: Vectors and Subsetting"
-    ]
-  },
-  {
-    "objectID": "weeks/week-01.html",
-    "href": "weeks/week-01.html",
-    "title": "Week 1: Welcome + the Modern R Toolkit",
-    "section": "",
-    "text": "Read: R02Pro Ch 1\nInstall R and RStudio, and create a free GitHub account (see Home).",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 1: Welcome + the Modern R Toolkit"
-    ]
-  },
-  {
-    "objectID": "weeks/week-01.html#before-class",
-    "href": "weeks/week-01.html#before-class",
-    "title": "Week 1: Welcome + the Modern R Toolkit",
-    "section": "",
-    "text": "Read: R02Pro Ch 1\nInstall R and RStudio, and create a free GitHub account (see Home).",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 1: Welcome + the Modern R Toolkit"
-    ]
-  },
-  {
-    "objectID": "weeks/week-01.html#topics",
-    "href": "weeks/week-01.html#topics",
-    "title": "Week 1: Welcome + the Modern R Toolkit",
-    "section": "Topics",
-    "text": "Topics\n\nInstalling R, RStudio, and Quarto\nRunning R code; R as a calculator; getting help\nQuarto documents: text formatting, code chunks, rendering\nGitHub onboarding: accept, clone, edit, render, push\nCourse workflow and AI policy overview",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 1: Welcome + the Modern R Toolkit"
-    ]
-  },
-  {
-    "objectID": "weeks/week-01.html#materials",
-    "href": "weeks/week-01.html#materials",
-    "title": "Week 1: Welcome + the Modern R Toolkit",
-    "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 1: Accept Assignment on Classroom 50 · View Template Repo (Due Wednesday Sep 9, 11:59 PM)",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 1: Welcome + the Modern R Toolkit"
-    ]
-  },
-  {
-    "objectID": "weeks/week-01.html#due",
-    "href": "weeks/week-01.html#due",
-    "title": "Week 1: Welcome + the Modern R Toolkit",
-    "section": "Due",
-    "text": "Due\n\nIn-class exercise 1 (pushed to GitHub by end of class)\nWeekly exercise 1 (due Wednesday Sep 9, 11:59 PM)",
-    "crumbs": [
-      "Weekly Pages",
-      "Week 1: Welcome + the Modern R Toolkit"
-    ]
-  },
-  {
-    "objectID": "weeks/inclass/week-01-inclass.html",
-    "href": "weeks/inclass/week-01-inclass.html",
-    "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
-    "section": "",
-    "text": "Note\n\n\n\nInstructions: Work in pairs. Complete each part during the designated in-class exercise blocks. Render this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit."
-  },
-  {
-    "objectID": "weeks/inclass/week-01-inclass.html#basic-arithmetic-calculations",
-    "href": "weeks/inclass/week-01-inclass.html#basic-arithmetic-calculations",
-    "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
-    "section": "1.1 Basic Arithmetic & Calculations",
-    "text": "1.1 Basic Arithmetic & Calculations\nIn the code chunk below, compute the Body Mass Index (BMI) for three study participants:\n\nParticipant A: Weight \\(70\\text{ kg}\\), Height \\(1.75\\text{ m}\\)\nParticipant B: Weight \\(85\\text{ kg}\\), Height \\(1.80\\text{ m}\\)\nParticipant C: Weight \\(58\\text{ kg}\\), Height \\(1.62\\text{ m}\\)\n\n\\[\\text{BMI} = \\frac{\\text{weight in kg}}{(\\text{height in meters})^2}\\]\n\n# Write your calculations below:"
-  },
-  {
-    "objectID": "weeks/inclass/week-01-inclass.html#exploring-built-in-functions",
-    "href": "weeks/inclass/week-01-inclass.html#exploring-built-in-functions",
-    "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
-    "section": "1.2 Exploring Built-in Functions",
-    "text": "1.2 Exploring Built-in Functions\nCompute the mean of the three BMIs you calculated above. Round the result to 2 decimal places using round().\n\n# Write your summary code below:"
-  },
-  {
-    "objectID": "weeks/inclass/week-01-inclass.html#r-packages-and-documentation",
-    "href": "weeks/inclass/week-01-inclass.html#r-packages-and-documentation",
-    "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
-    "section": "1.3 R Packages and Documentation",
-    "text": "1.3 R Packages and Documentation\n\nLoad the r02pro package (install it in the Console with install.packages(\"r02pro\") if you haven’t already).\nDisplay the first 6 rows of the ahp dataset using the head() function.\nOpen the help file for the median() function using ?median.\n\n\n# Load library and inspect data:"
-  },
-  {
-    "objectID": "weeks/inclass/week-01-inclass.html#text-formatting-markdown",
-    "href": "weeks/inclass/week-01-inclass.html#text-formatting-markdown",
-    "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
-    "section": "2.1 Text Formatting & Markdown",
-    "text": "2.1 Text Formatting & Markdown\nIn the space below:\n\nWrite a short 2-sentence paragraph describing the purpose of reproducible research in public health.\nInclude at least one bold phrase and one italicized word.\nAdd a bulleted list of two advantages of Quarto over traditional copy-pasting into Word.\n\n(Type your text response here)"
-  },
-  {
-    "objectID": "weeks/inclass/week-01-inclass.html#code-chunk-customization",
-    "href": "weeks/inclass/week-01-inclass.html#code-chunk-customization",
-    "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
-    "section": "2.2 Code Chunk Customization",
-    "text": "2.2 Code Chunk Customization\nCreate an R code chunk below with chunk option #| echo: true that creates a vector of systolic blood pressure readings: 120, 134, 118, 142, 128 and calculates their standard deviation using sd().\n\n# Write your code here:"
-  },
-  {
-    "objectID": "weeks/inclass/week-01-inclass.html#submission-checklist",
-    "href": "weeks/inclass/week-01-inclass.html#submission-checklist",
-    "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
-    "section": "4.1 Submission Checklist",
-    "text": "4.1 Submission Checklist\n\nBoth your name and your partner’s name are in the author field at the top.\nClick Render in RStudio and verify the HTML looks clean.\nCommit and push your changes to GitHub."
+    "objectID": "weeks/inclass/week-02-inclass.html#submission-checklist",
+    "href": "weeks/inclass/week-02-inclass.html#submission-checklist",
+    "title": "Week 2 In-Class Exercise: Vectors & Subsetting",
+    "section": "4.3 Submission Checklist",
+    "text": "4.3 Submission Checklist\n\nBoth your name and your partner’s name are in the author field at the top.\nClick Render in RStudio and verify the HTML compiles cleanly.\nCommit and push your changes to your GitHub repository."
   },
   {
     "objectID": "ai-policy.html",

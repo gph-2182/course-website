@@ -1,0 +1,409 @@
+---
+title: "Week 2: Vectors & Subsetting"
+subtitle: "GPH-GU 2182 · Statistical Programming in R"
+author: "Yang Feng"
+date: "September 9, 2026"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    preview-links: auto
+    chalkboard: true
+    transition: slide
+    navigation-mode: linear
+    scrollable: true
+    width: 1200
+    height: 700
+    css: ../../styles.css
+    footer: "GPH-GU 2182 · Week 2"
+---
+
+# Welcome to Week 2! {background-color="#57068c"}
+
+## Today's Roadmap: The Backbone of R
+
+Vectors are the fundamental building block of all data structures in R (matrices, data frames, lists).
+
+```{mermaid}
+%%| fig-align: center
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '16px'}}}%%
+flowchart LR
+    A["<b>Cycle 1</b><br/>Vector Types &<br/>Coercion Rules"] --> B["<b>Cycle 2</b><br/>Pattern Creation<br/>(seq, rep, %%)"]
+    B --> C["<b>Cycle 3</b><br/>Indexing, Filtering<br/>& Mutation"]
+    C --> D["<b>Cycle 4</b><br/>Sorting, Ranking &<br/>AI Corner"]
+    style A fill:#e8f4f8,stroke:#2980b9,stroke-width:2px
+    style B fill:#fef9e7,stroke:#f39c12,stroke-width:2px
+    style C fill:#eafaf1,stroke:#27ae60,stroke-width:2px
+    style D fill:#f4ecf7,stroke:#8e44ad,stroke-width:2px
+```
+
+* **Textbook Reading:** R02Pro Chapters 2–3 ([r02pro.github.io](https://r02pro.github.io/))
+* **Homework 1:** Due **tonight at 11:59 PM** on GitHub!
+* **Homework 2:** Released before class; due next Wednesday at 11:59 PM.
+
+# Cycle 1: Vector Types & Coercion {background-color="#2c3e50"}
+
+## The Four Atomic Vector Types
+
+In R, every element in an atomic vector **must have the same type**:
+
+::: {.columns}
+::: {.column width="48%"}
+### 1. Numeric (Double)
+Decimal numbers (default in R):
+```r
+weights <- c(68.5, 72.0, 81.3)
+typeof(weights) # "double"
+```
+
+### 2. Integer
+Explicit whole numbers with `L`:
+```r
+counts <- c(1L, 5L, 12L)
+typeof(counts)  # "integer"
+```
+:::
+
+::: {.column width="48%"}
+### 3. Character (Strings)
+Text enclosed in quotes:
+```r
+drugs <- c("aspirin", "statin", "placebo")
+typeof(drugs)   # "character"
+```
+
+### 4. Logical (Booleans)
+`TRUE` or `FALSE` (all caps):
+```r
+adherent <- c(TRUE, FALSE, TRUE)
+typeof(adherent)# "logical"
+```
+:::
+:::
+
+## The Type Hierarchy & Implicit Coercion
+
+What happens when you mix different types in `c(...)`?
+
+R silently converts everything to the **least restrictive** type:
+
+$$\text{logical} \longrightarrow \text{integer} \longrightarrow \text{double} \longrightarrow \text{character}$$
+
+```r
+# Logical to numeric (TRUE becomes 1, FALSE becomes 0)
+sum(c(TRUE, FALSE, TRUE, TRUE))  # Count how many TRUEs: 3
+mean(c(TRUE, FALSE, TRUE, FALSE))# Proportion of TRUEs: 0.5
+
+# Numeric + Character becomes Character
+c(10, 25, "missing")             # c("10", "25", "missing")
+```
+
+::: {.callout-tip}
+### Pro-Tip for Health Data
+`mean(bp > 140, na.rm = TRUE)` directly calculates the **prevalence of hypertension** by coercing logicals to 1s and 0s!
+:::
+
+## Summary Statistics on Vectors
+
+R has built-in vector aggregators:
+
+```r
+chol <- c(185, 220, 240, 195, 210, NA)
+
+length(chol)              # Total elements including NA (6)
+sum(is.na(chol))          # Count missing values (1)
+mean(chol, na.rm = TRUE)  # Arithmetic mean (212)
+sd(chol, na.rm = TRUE)    # Standard deviation (20.8)
+summary(chol)             # 5-number summary + Mean + NAs
+```
+
+## 💻 In-Class Exercise 2A (12 min)
+
+::: {.callout-important}
+### Paired Hands-on Exercise
+
+1. Open RStudio and your `week-02-inclass.qmd` worksheet.
+2. Predict the `typeof()` and value of:
+   * `c(4, 7, FALSE)`
+   * `c(3L, 5.5, "control")`
+   * `c(TRUE, FALSE) + 5`
+3. A clinical trial enrolled 8 patients with viral loads: `1200, 450, 0, 8900, 320, 0, 1500, 60`. Calculate the **proportion of patients with undetectable viral load** (`viral_load == 0`) using `mean()`.
+:::
+
+# Cycle 2: Creating Patterned Vectors {background-color="#2c3e50"}
+
+## Sequences with `:` and `seq()`
+
+Instead of typing numbers manually, generate sequences automatically:
+
+::: {.columns}
+::: {.column width="48%"}
+### The Colon Operator `:`
+Consecutive integer sequences:
+```r
+1:10
+20:15    # Counts backward!
+-3:3
+```
+:::
+
+::: {.column width="48%"}
+### The `seq()` Function
+Flexible step sizes & lengths:
+```r
+# By step size
+seq(from = 0, to = 100, by = 20)
+# Output: 0 20 40 60 80 100
+
+# By total length
+seq(from = 0, to = 1, length.out = 5)
+# Output: 0.00 0.25 0.50 0.75 1.00
+```
+:::
+:::
+
+## Repetition with `rep()`
+
+The `rep()` function replicates values using `times` or `each`:
+
+::: {.columns}
+::: {.column width="48%"}
+### `times` (Pattern repetition)
+Repeats the whole vector:
+```r
+rep(c("A", "B"), times = 3)
+# "A" "B" "A" "B" "A" "B"
+
+# Unequal repetitions per element:
+rep(c("Control", "Treated"), times = c(4, 2))
+# "Control" "Control" "Control" "Control" "Treated" "Treated"
+```
+:::
+
+::: {.column width="48%"}
+### `each` (Element repetition)
+Repeats each item before moving to next:
+```r
+rep(c("A", "B"), each = 3)
+# "A" "A" "A" "B" "B" "B"
+
+# Combining both:
+rep(c("Dose1", "Dose2"), each = 2, times = 2)
+# "Dose1" "Dose1" "Dose2" "Dose2" "Dose1" "Dose1" "Dose2" "Dose2"
+```
+:::
+:::
+
+## Modulo Arithmetic `%%`
+
+The modulo operator `%%` calculates the **remainder of division**:
+
+```r
+14 %% 3   # 2  (14 = 4 * 3 + 2)
+10 %% 2   # 0  (10 is even)
+```
+
+::: {.callout-tip}
+### Common Applications in Data Science
+* **Even numbers:** `x %% 2 == 0`
+* **Divisible by 5:** `x %% 5 == 0`
+* **Assigning participants to $K$ rotating study groups:** `(1:N) %% K + 1`
+:::
+
+## 💻 In-Class Exercise 2B (12 min)
+
+::: {.callout-important}
+### Paired Hands-on Exercise
+
+1. Create a sequence of drug dosing times from **hour 0 to hour 72** spaced every **8 hours** using `seq()`.
+2. Generate study cohort labels for 12 participants: 4 "Control", 4 "Low-Dose", and 4 "High-Dose" using `rep()`.
+3. Given `numbers <- 1:50`, extract all numbers that are multiples of 7 using `%%`.
+:::
+
+# Cycle 3: Subsetting & Mutating Vectors {background-color="#2c3e50"}
+
+## The Three Subsetting Methods
+
+We extract elements using square brackets `x[...]`:
+
+```r
+ages <- c(23, 45, 19, 31, 56, 42)
+```
+
+::: {.columns}
+::: {.column width="33%"}
+### 1. Positive Indices
+Extract by position (1-indexed):
+```r
+ages[1]        # 23
+ages[c(1, 4)]  # 23 31
+ages[2:4]      # 45 19 31
+```
+:::
+
+::: {.column width="33%"}
+### 2. Negative Indices
+Exclude specific positions:
+```r
+ages[-1]       # All except 1st
+ages[-c(2, 5)] # Drop 2nd & 5th
+# ages[-2:4]   # ERROR! Use -(2:4)
+```
+:::
+
+::: {.column width="33%"}
+### 3. Logical Subsetting
+Extract where `TRUE`:
+```r
+ages[ages > 40]
+# 45 56 42
+
+ages[ages >= 30 & ages <= 50]
+# 45 31 42
+```
+:::
+:::
+
+## Logical Operators for Filtering
+
+Combine conditions using element-wise logical operators:
+
+| Operator | Meaning | Example |
+| :--- | :--- | :--- |
+| `&` | Element-wise **AND** (both true) | `(bmi > 25) & (age > 50)` |
+| `\|` | Element-wise **OR** (either true) | `(status == "Severe") \| (fever == TRUE)` |
+| `!` | Logical **NOT** (inversion) | `!(city %in% c("NY", "CA"))` |
+| `%in%` | **Value matching** (set membership) | `id %in% confirmed_cases` |
+
+```r
+sbp <- c(118, 142, 135, 160, 122)
+stage2_htn <- sbp >= 140
+sbp[stage2_htn]   # 142 160
+```
+
+## Modifying Vectors in Place (Mutation)
+
+Use subsetting on the left side of `<-` to update specific elements:
+
+```r
+scores <- c(88, -99, 95, -99, 72)
+
+# Replace survey code -99 with NA:
+scores[scores == -99] <- NA
+scores
+# 88 NA 95 NA 72
+
+# Cap values at 90 (winsorizing):
+scores[scores > 90 & !is.na(scores)] <- 90
+scores
+# 88 NA 90 NA 72
+```
+
+## 💻 In-Class Exercise 2C (15 min)
+
+::: {.callout-important}
+### Paired Hands-on Exercise
+
+Given the patient glucose vector:
+```r
+glucose <- c(95, 142, 180, 88, 210, 115, -1, 104)
+```
+
+1. Extract the glucose readings that are in the pre-diabetes range ($100 \le \text{glucose} \le 125$).
+2. Patient 7 was miscoded as `-1`. Replace all negative values with `NA`.
+3. Extract all valid readings (ignoring `NA`) that indicate diabetes ($\text{glucose} \ge 126$).
+:::
+
+# Cycle 4: Sorting, Ranking & AI Corner {background-color="#57068c"}
+
+## Sorting, Ranking, and Ordering
+
+Understanding the difference between `sort()`, `rank()`, and `order()`:
+
+```r
+vals <- c(30, 10, 50, 20)
+```
+
+::: {.columns}
+::: {.column width="33%"}
+### `sort(x)`
+Returns **sorted values**:
+```r
+sort(vals)
+# 10 20 30 50
+
+sort(vals, decreasing = TRUE)
+# 50 30 20 10
+```
+:::
+
+::: {.column width="33%"}
+### `rank(x)`
+Returns **rank position** of each element:
+```r
+rank(vals)
+# 3 1 4 2
+# (30 is 3rd, 10 is 1st, etc.)
+```
+:::
+
+::: {.column width="33%"}
+### `order(x)`
+Returns **indices that would sort `x`**:
+```r
+order(vals)
+# 2 4 1 3
+vals[order(vals)] # sorted!
+```
+:::
+:::
+
+## Handling Ties in `rank()`
+
+When numbers repeat, how should ranks be assigned?
+
+```r
+scores <- c(80, 95, 80, 70)
+
+rank(scores)                        # Default: average ranks (2.5 4.0 2.5 1.0)
+rank(scores, ties.method = "first") # By appearance: (2 4 3 1)
+rank(scores, ties.method = "min")   # Sports ranking: (2 4 2 1)
+```
+
+::: {.callout-tip}
+`ties.method = "first"` is essential for deterministic top-$K$ rankings in data pipelines!
+:::
+
+## AI Corner: Beware Vector Recycling!
+
+When R operates on vectors of different lengths, it **silently recycles** the shorter one:
+
+::: {.columns}
+::: {.column width="50%"}
+### What R Does:
+```r
+x <- c(10, 20, 30, 40)
+y <- c(1, 2)
+x + y
+# Computes: 10+1, 20+2, 30+1, 40+2
+# Output: 11 22 31 42
+```
+:::
+
+::: {.column width="50%"}
+### ⚠️ The Danger with AI:
+* LLMs often generate code that accidentally recycles vectors when filtering or standardizing.
+* Always check `length(x) == length(y)` before element-wise operations!
+:::
+:::
+
+## Summary & Week 2 Checklist
+
+1. **Submit Homework 1:** Due **tonight at 11:59 PM** on GitHub.
+2. **Weekly Exercise 2:** Released on GitHub. Due **Wednesday Sep 16 at 11:59 PM**.
+3. **Finish & Push In-Class 2:** Push your rendered `week-02-inclass.html` for participation credit.
+4. **Upcoming in Week 3:** Matrices, Lists, Data Frames + **In-Class Quiz 1** (15 min, Weeks 1–2).
+
+### 🔗 Quick Links:
+* Course Website: [gph-2182.github.io/course-website](https://gph-2182.github.io/course-website/)
+* Textbook Chapters 2–3: [r02pro.github.io](https://r02pro.github.io/)

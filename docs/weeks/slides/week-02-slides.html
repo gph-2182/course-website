@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.4.537">
 
   <meta name="author" content="Yang Feng">
-  <meta name="dcterms.date" content="2026-09-02">
-  <title>Statistical Programming in R - Week 1: Welcome &amp; The Modern R Toolkit</title>
+  <meta name="dcterms.date" content="2026-09-09">
+  <title>Statistical Programming in R - Week 2: Vectors &amp; Subsetting</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -399,7 +399,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Week 1: Welcome &amp; The Modern R Toolkit</h1>
+  <h1 class="title">Week 2: Vectors &amp; Subsetting</h1>
   <p class="subtitle">GPH-GU 2182 · Statistical Programming in R</p>
 
 <div class="quarto-title-authors">
@@ -410,316 +410,16 @@ Yang Feng
 </div>
 </div>
 
-  <p class="date">2026-09-02</p>
+  <p class="date">2026-09-09</p>
 </section>
 <section>
-<section id="welcome-to-gph-gu-2182" class="title-slide slide level1 center" data-background-color="#57068c">
-<h1>Welcome to GPH-GU 2182!</h1>
+<section id="welcome-to-week-2" class="title-slide slide level1 center" data-background-color="#57068c">
+<h1>Welcome to Week 2!</h1>
 
 </section>
-<section id="why-statistical-programming-in-r" class="slide level2">
-<h2>Why Statistical Programming in R?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="why-r">Why R?</h3>
-<ul>
-<li><strong>Public Health Standard:</strong> CDC, WHO, FDA, academic journals, and health agencies run on R.</li>
-<li><strong>Tidyverse Ecosystem:</strong> Unmatched tools for data wrangling (<code>dplyr</code>), visualization (<code>ggplot2</code>), and modeling.</li>
-<li><strong>Open &amp; Reproducible:</strong> Free, community-driven, transparent science.</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="why-this-course">Why <em>This</em> Course?</h3>
-<ul>
-<li>No prior programming required.</li>
-<li><strong>Full data pipeline:</strong> Import <span class="math inline">\(\rightarrow\)</span> Clean <span class="math inline">\(\rightarrow\)</span> Visualize <span class="math inline">\(\rightarrow\)</span> Simulate <span class="math inline">\(\rightarrow\)</span> Report.</li>
-<li><strong>Modern professional toolkit:</strong> Quarto + Git/GitHub + Responsible AI assistance.</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="the-modern-data-science-stack" class="slide level2 scrollable">
-<h2>The Modern Data Science Stack</h2>
-<p>In this course, you will master four core technologies:</p>
-<ol type="1">
-<li><strong>R:</strong> The statistical computing engine.</li>
-<li><strong>RStudio:</strong> The integrated development environment (IDE).</li>
-<li><strong>Quarto (<code>.qmd</code>):</strong> Reproducible scientific publishing (replaces Word/PDF/slides).</li>
-<li><strong>Git &amp; GitHub:</strong> Version control, collaboration, and automated grading.</li>
-<li><strong>AI Assistants:</strong> Prompting, verifying, and debugging code with LLMs.</li>
-</ol>
-</section>
-<section id="how-our-160-minute-sessions-work" class="slide level2">
-<h2>How Our 160-Minute Sessions Work</h2>
-<p>We do <strong>not</strong> do passive lectures. Each class is split into <strong>interactive cycles</strong>:</p>
-<div class="cell" data-reveal="true" data-layout-align="center">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '18px'}}}%%
-flowchart LR
-    A["💻 Mini-Demo&lt;br/&gt;(15–20 min)&lt;br/&gt;Instructor Live Code"] --&gt; B["👥 Paired Exercise&lt;br/&gt;(10–15 min)&lt;br/&gt;Hands-on Problem"]
-    B --&gt; C["💡 Debrief&lt;br/&gt;(2 min)&lt;br/&gt;Solution &amp; Takeaways"]
-    style A fill:#e8f4f8,stroke:#2980b9,stroke-width:2px
-    style B fill:#eafaf1,stroke:#27ae60,stroke-width:2px
-    style C fill:#fef9e7,stroke:#f39c12,stroke-width:2px
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<ul>
-<li><strong>CAs &amp; Instructor</strong> circulate during exercise blocks to assist.</li>
-<li>You push your in-class exercises to GitHub for participation credit.</li>
-<li>Bi-weekly 15-minute no-AI quizzes certify your personal hand-fluency.</li>
-</ul>
-</section></section>
-<section>
-<section id="cycle-1-r-fundamentals-packages" class="title-slide slide level1 center" data-background-color="#2c3e50">
-<h1>Cycle 1: R Fundamentals &amp; Packages</h1>
-
-</section>
-<section id="r-as-an-interactive-calculator" class="slide level2">
-<h2>R as an Interactive Calculator</h2>
-<p>You type commands into the <strong>Console</strong>; R evaluates them and prints results.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Arithmetic</span></span>
-<span id="cb1-2"><a></a><span class="dv">12</span> <span class="sc">+</span> <span class="dv">35</span></span>
-<span id="cb1-3"><a></a>(<span class="dv">100</span> <span class="sc">-</span> <span class="dv">32</span>) <span class="sc">*</span> <span class="dv">5</span> <span class="sc">/</span> <span class="dv">9</span>   <span class="co"># Fahrenheit to Celsius</span></span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a><span class="co"># Math functions</span></span>
-<span id="cb1-6"><a></a><span class="fu">sqrt</span>(<span class="dv">64</span>)</span>
-<span id="cb1-7"><a></a><span class="fu">exp</span>(<span class="dv">1</span>)</span>
-<span id="cb1-8"><a></a><span class="fu">log</span>(<span class="dv">10</span>)              <span class="co"># Natural logarithm (base e)</span></span>
-<span id="cb1-9"><a></a><span class="fu">log10</span>(<span class="dv">100</span>)           <span class="co"># Common logarithm (base 10)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p>Everything after <code>#</code> is a comment and is ignored by R. Use comments to document your thinking!</p>
-</div>
-</div>
-</div>
-</section>
-<section id="objects-and-variable-assignment" class="slide level2">
-<h2>Objects and Variable Assignment</h2>
-<p>We store values in named objects using the assignment operator <code>&lt;-</code> (<code>Alt + -</code> or <code>Option + -</code>):</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># Assigning a value</span></span>
-<span id="cb2-2"><a></a>participant_age <span class="ot">&lt;-</span> <span class="dv">28</span></span>
-<span id="cb2-3"><a></a>height_m <span class="ot">&lt;-</span> <span class="fl">1.75</span></span>
-<span id="cb2-4"><a></a>weight_kg <span class="ot">&lt;-</span> <span class="fl">68.5</span></span>
-<span id="cb2-5"><a></a></span>
-<span id="cb2-6"><a></a><span class="co"># Using objects in expressions</span></span>
-<span id="cb2-7"><a></a>bmi <span class="ot">&lt;-</span> weight_kg <span class="sc">/</span> (height_m<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb2-8"><a></a>bmi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Names must start with a letter and can contain letters, numbers, <code>_</code>, and <code>.</code>.</li>
-<li>R is <strong>case-sensitive</strong> (<code>bmi</code> <span class="math inline">\(\neq\)</span> <code>BMI</code>).</li>
-</ul>
-</section>
-<section id="functions-and-getting-help" class="slide level2">
-<h2>Functions and Getting Help</h2>
-<p>Functions take <strong>arguments</strong> (inputs) and return an <strong>output</strong>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Rounding</span></span>
-<span id="cb3-2"><a></a><span class="fu">round</span>(bmi, <span class="at">digits =</span> <span class="dv">1</span>)</span>
-<span id="cb3-3"><a></a></span>
-<span id="cb3-4"><a></a><span class="co"># Summary statistics</span></span>
-<span id="cb3-5"><a></a>vals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="cn">NA</span>)</span>
-<span id="cb3-6"><a></a><span class="fu">mean</span>(vals, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<h3 id="getting-help-in-r">Getting help in R:</h3>
-<ul>
-<li><code>?round</code> or <code>help(round)</code> — opens the official documentation.</li>
-<li><code>example(round)</code> — runs examples from the help page.</li>
-</ul>
-</section>
-<section id="packages-the-course-textbook-r02pro" class="slide level2">
-<h2>Packages &amp; The Course Textbook: R02Pro</h2>
-<p>R packages extend R with datasets and specialized functions.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Install once per computer (done in Console, not script):</span></span>
-<span id="cb4-2"><a></a><span class="fu">install.packages</span>(<span class="st">"r02pro"</span>)</span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a><span class="co"># Load in every session where you need it:</span></span>
-<span id="cb4-5"><a></a><span class="fu">library</span>(r02pro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><strong>Textbook:</strong> <em>R Programming: Zero to Pro</em> (Free online: <a href="https://r02pro.github.io/">r02pro.github.io</a>).</li>
-</ul>
-</section>
-<section id="in-class-exercise-1a-12-min" class="slide level2 scrollable">
-<h2>💻 In-Class Exercise 1A (12 min)</h2>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Paired Hands-on Exercise</strong></p>
-</div>
-<div class="callout-content">
-<ol type="1">
-<li>Open RStudio.</li>
-<li>In the console, calculate the Body Mass Index (BMI) for a person who is <span class="math inline">\(1.82\text{ m}\)</span> tall and weighs <span class="math inline">\(79\text{ kg}\)</span>. Round the answer to 2 decimal places.</li>
-<li>Verify that <code>r02pro</code> is installed: run <code>library(r02pro)</code> and look at the <code>ahp</code> dataset (<code>head(ahp)</code>).</li>
-<li>Look up the documentation for <code>log()</code> using <code>?log</code>. What is the default base?</li>
-</ol>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="cycle-2-reproducible-reports-with-quarto" class="title-slide slide level1 center" data-background-color="#2c3e50">
-<h1>Cycle 2: Reproducible Reports with Quarto</h1>
-
-</section>
-<section id="why-quarto" class="slide level2 scrollable">
-<h2>Why Quarto?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="the-traditional-way">❌ The Traditional Way</h3>
-<ol type="1">
-<li>Run code in R <span class="math inline">\(\rightarrow\)</span> Copy table to Excel <span class="math inline">\(\rightarrow\)</span> Paste into Word <span class="math inline">\(\rightarrow\)</span> Export PDF.</li>
-<li><strong>Data changes?</strong> Repeat everything manually and risk copy-paste errors!</li>
-</ol>
-</div><div class="column" style="width:50%;">
-<h3 id="the-quarto-way">✅ The Quarto Way</h3>
-<p>One reproducible <code>.qmd</code> document combining:</p>
-<ul>
-<li><strong>Narrative text</strong> (Markdown)</li>
-<li><strong>Executable code</strong> (R chunks)</li>
-<li><strong>Dynamic tables &amp; plots</strong> compiled directly on demand.</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="anatomy-of-a-quarto-document-.qmd" class="slide level2">
-<h2>Anatomy of a Quarto Document (<code>.qmd</code>)</h2>
-<p>A <code>.qmd</code> document combines three elements:</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>1. YAML Metadata (Header):</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a></a><span class="pp">---</span></span>
-<span id="cb5-2"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Analysis"</span></span>
-<span id="cb5-3"><a></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your Name"</span></span>
-<span id="cb5-4"><a></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
-<span id="cb5-5"><a></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>2. Markdown Narrative (Text):</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a></a><span class="fu">## Introduction</span></span>
-<span id="cb6-2"><a></a>Here is text with **bold** &amp; *italics*.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-<p><strong>3. Code Chunks (Live Computation):</strong></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># An R code chunk</span></span>
-<span id="cb7-2"><a></a>mean_age <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">45</span>))</span>
-<span id="cb7-3"><a></a>mean_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong><span class="math inline">\(\longrightarrow\)</span> Click Render (<code>Ctrl/Cmd + Shift + K</code>)</strong> to compile directly into a polished HTML report!</p>
-</div>
-</div>
-</section>
-<section id="markdown-text-formatting-cheat-sheet" class="slide level2">
-<h2>Markdown Text Formatting Cheat Sheet</h2>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Syntax</th>
-<th style="text-align: left;">Rendered Output</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code># Heading 1</code></td>
-<td style="text-align: left;"><strong>Largest Section Header</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>## Heading 2</code></td>
-<td style="text-align: left;"><strong>Sub-section Header</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>**bold text**</code></td>
-<td style="text-align: left;"><strong>bold text</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>*italic text*</code></td>
-<td style="text-align: left;"><em>italic text</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>- item 1</code></td>
-<td style="text-align: left;">Bulleted list</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>1. item 1</code></td>
-<td style="text-align: left;">Numbered list</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>$E = mc^2$</code></td>
-<td style="text-align: left;">Inline math: <span class="math inline">\(E = mc^2\)</span></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="code-chunk-options" class="slide level2">
-<h2>Code Chunk Options</h2>
-<p>Control how code executes and displays using <code>#|</code>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co">#| echo: true       # Show code in final report (default)</span></span>
-<span id="cb8-2"><a></a><span class="co">#| eval: true       # Run code (default)</span></span>
-<span id="cb8-3"><a></a><span class="co">#| warning: false   # Suppress package warnings</span></span>
-<span id="cb8-4"><a></a><span class="co">#| message: false   # Suppress package startup messages</span></span>
-<span id="cb8-5"><a></a><span class="co">#| fig-width: 7     # Control plot width</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Click the <strong>Render</strong> button (or <code>Ctrl/Cmd + Shift + K</code>) in RStudio to generate your HTML report!</p>
-</section>
-<section id="in-class-exercise-1b-15-min" class="slide level2 scrollable">
-<h2>💻 In-Class Exercise 1B (15 min)</h2>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Paired Hands-on Exercise</strong></p>
-</div>
-<div class="callout-content">
-<ol type="1">
-<li>In RStudio: <strong>File <span class="math inline">\(\rightarrow\)</span> New File <span class="math inline">\(\rightarrow\)</span> Quarto Document…</strong></li>
-<li>Title: <code>Week 1 In-Class</code>, Format: <code>HTML</code>.</li>
-<li>Add a level-2 header <code>## Health Calculation</code>.</li>
-<li>Insert an R chunk calculating the mean and standard deviation of five systolic blood pressure readings: <code>120, 134, 118, 142, 128</code>.</li>
-<li>Click <strong>Render</strong> and inspect the output in your browser!</li>
-</ol>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="cycle-3-git-github-and-classroom" class="title-slide slide level1 center" data-background-color="#2c3e50">
-<h1>Cycle 3: Git, GitHub, and Classroom</h1>
-
-</section>
-<section id="why-version-control" class="slide level2">
-<h2>Why Version Control?</h2>
-<div class="columns">
-<div class="column" style="width:48%;">
-<h3 id="the-file-chaos-without-git">❌ The File Chaos (Without Git)</h3>
-<ul>
-<li><code>report_v1.docx</code></li>
-<li><code>report_v2.docx</code></li>
-<li><code>report_v2_edit.docx</code></li>
-<li><code>report_final_REALLY_FINAL.docx</code></li>
-<li>😱 <em>Which file has the correct numbers?</em></li>
-</ul>
-</div><div class="column" style="width:48%;">
-<h3 id="the-git-way">✅ The Git Way</h3>
-<ul>
-<li><strong>Recorded history:</strong> Every change is a snapshot with a commit message.</li>
-<li><strong>Safe experiments:</strong> Try new ideas on branches without breaking main code.</li>
-<li><strong>Seamless team collaboration:</strong> No emailed zip files or overwritten work.</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="the-core-git-workflow-in-rstudio" class="slide level2">
-<h2>The Core Git Workflow in RStudio</h2>
+<section id="todays-roadmap-the-backbone-of-r" class="slide level2">
+<h2>Today’s Roadmap: The Backbone of R</h2>
+<p>Vectors are the fundamental building block of all data structures in R (matrices, data frames, lists).</p>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
 <div>
@@ -727,10 +427,9 @@ flowchart LR
 <div>
 <pre class="mermaid mermaid-js">%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '16px'}}}%%
 flowchart LR
-    A["📝 &lt;b&gt;Working Copy&lt;/b&gt;&lt;br/&gt;Edit files &amp; .qmd"] --&gt;|"1. git add&lt;br/&gt;(Stage)"| B["📦 &lt;b&gt;Staged Changes&lt;/b&gt;&lt;br/&gt;Check boxes in RStudio"]
-    B --&gt;|"2. git commit&lt;br/&gt;(Snapshot)"| C["💾 &lt;b&gt;Local Repo&lt;/b&gt;&lt;br/&gt;Saved history"]
-    C --&gt;|"3. git push&lt;br/&gt;(Upload)"| D["☁️ &lt;b&gt;GitHub Remote&lt;/b&gt;&lt;br/&gt;Autograder checks code"]
-    
+    A["&lt;b&gt;Cycle 1&lt;/b&gt;&lt;br/&gt;Vector Types &amp;&lt;br/&gt;Coercion Rules"] --&gt; B["&lt;b&gt;Cycle 2&lt;/b&gt;&lt;br/&gt;Pattern Creation&lt;br/&gt;(seq, rep, %%)"]
+    B --&gt; C["&lt;b&gt;Cycle 3&lt;/b&gt;&lt;br/&gt;Indexing, Filtering&lt;br/&gt;&amp; Mutation"]
+    C --&gt; D["&lt;b&gt;Cycle 4&lt;/b&gt;&lt;br/&gt;Sorting, Ranking &amp;&lt;br/&gt;AI Corner"]
     style A fill:#e8f4f8,stroke:#2980b9,stroke-width:2px
     style B fill:#fef9e7,stroke:#f39c12,stroke-width:2px
     style C fill:#eafaf1,stroke:#27ae60,stroke-width:2px
@@ -741,89 +440,404 @@ flowchart LR
 </div>
 </div>
 </div>
-</section>
-<section id="how-homework-works-instant-feedback" class="slide level2 scrollable">
-<h2>How Homework Works (Instant Feedback)</h2>
-<ol type="1">
-<li><strong>Accept:</strong> Click the invitation link for <code>weekly-exercise-01</code>.</li>
-<li><strong>Clone:</strong> In RStudio <span class="math inline">\(\rightarrow\)</span> <em>New Project <span class="math inline">\(\rightarrow\)</span> Version Control <span class="math inline">\(\rightarrow\)</span> Git <span class="math inline">\(\rightarrow\)</span> Paste URL</em>.</li>
-<li><strong>Solve:</strong> Open <code>exercise.qmd</code>, assign answers to <code>q1</code>, <code>q2</code>, etc.</li>
-<li><strong>Render:</strong> Confirm the HTML compiles cleanly.</li>
-<li><strong>Push:</strong> Commit and push to GitHub.</li>
-<li><strong>Instant Report:</strong> Go to the <strong>Actions</strong> tab on GitHub: within 2 minutes, see which questions pass.</li>
-<li><strong>Iterate:</strong> Revise and re-push freely until Wednesday 11:59 PM!</li>
-</ol>
+<ul>
+<li><strong>Textbook Reading:</strong> R02Pro Chapters 2–3 (<a href="https://r02pro.github.io/">r02pro.github.io</a>)</li>
+<li><strong>Homework 1:</strong> Due <strong>tonight at 11:59 PM</strong> on GitHub!</li>
+<li><strong>Homework 2:</strong> Released before class; due next Wednesday at 11:59 PM.</li>
+</ul>
 </section></section>
 <section>
-<section id="cycle-4-ai-policy-next-steps" class="title-slide slide level1 center" data-background-color="#57068c">
-<h1>Cycle 4: AI Policy &amp; Next Steps</h1>
+<section id="cycle-1-vector-types-coercion" class="title-slide slide level1 center" data-background-color="#2c3e50">
+<h1>Cycle 1: Vector Types &amp; Coercion</h1>
 
 </section>
-<section id="the-three-ai-zones" class="slide level2">
-<h2>The Three AI Zones</h2>
+<section id="the-four-atomic-vector-types" class="slide level2">
+<h2>The Four Atomic Vector Types</h2>
+<p>In R, every element in an atomic vector <strong>must have the same type</strong>:</p>
+<div class="columns">
+<div class="column" style="width:48%;">
+<h3 id="numeric-double">1. Numeric (Double)</h3>
+<p>Decimal numbers (default in R):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>weights <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">68.5</span>, <span class="fl">72.0</span>, <span class="fl">81.3</span>)</span>
+<span id="cb1-2"><a></a><span class="fu">typeof</span>(weights) <span class="co"># "double"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="integer">2. Integer</h3>
+<p>Explicit whole numbers with <code>L</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>counts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>L, <span class="dv">5</span>L, <span class="dv">12</span>L)</span>
+<span id="cb2-2"><a></a><span class="fu">typeof</span>(counts)  <span class="co"># "integer"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:48%;">
+<h3 id="character-strings">3. Character (Strings)</h3>
+<p>Text enclosed in quotes:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>drugs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"aspirin"</span>, <span class="st">"statin"</span>, <span class="st">"placebo"</span>)</span>
+<span id="cb3-2"><a></a><span class="fu">typeof</span>(drugs)   <span class="co"># "character"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="logical-booleans">4. Logical (Booleans)</h3>
+<p><code>TRUE</code> or <code>FALSE</code> (all caps):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>adherent <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb4-2"><a></a><span class="fu">typeof</span>(adherent)<span class="co"># "logical"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="the-type-hierarchy-implicit-coercion" class="slide level2">
+<h2>The Type Hierarchy &amp; Implicit Coercion</h2>
+<p>What happens when you mix different types in <code>c(...)</code>?</p>
+<p>R silently converts everything to the <strong>least restrictive</strong> type:</p>
+<p><span class="math display">\[\text{logical} \longrightarrow \text{integer} \longrightarrow \text{double} \longrightarrow \text{character}\]</span></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># Logical to numeric (TRUE becomes 1, FALSE becomes 0)</span></span>
+<span id="cb5-2"><a></a><span class="fu">sum</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>))  <span class="co"># Count how many TRUEs: 3</span></span>
+<span id="cb5-3"><a></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>))<span class="co"># Proportion of TRUEs: 0.5</span></span>
+<span id="cb5-4"><a></a></span>
+<span id="cb5-5"><a></a><span class="co"># Numeric + Character becomes Character</span></span>
+<span id="cb5-6"><a></a><span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">25</span>, <span class="st">"missing"</span>)             <span class="co"># c("10", "25", "missing")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Pro-Tip for Health Data</strong></p>
+</div>
+<div class="callout-content">
+<p><code>mean(bp &gt; 140, na.rm = TRUE)</code> directly calculates the <strong>prevalence of hypertension</strong> by coercing logicals to 1s and 0s!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="summary-statistics-on-vectors" class="slide level2">
+<h2>Summary Statistics on Vectors</h2>
+<p>R has built-in vector aggregators:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>chol <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">185</span>, <span class="dv">220</span>, <span class="dv">240</span>, <span class="dv">195</span>, <span class="dv">210</span>, <span class="cn">NA</span>)</span>
+<span id="cb6-2"><a></a></span>
+<span id="cb6-3"><a></a><span class="fu">length</span>(chol)              <span class="co"># Total elements including NA (6)</span></span>
+<span id="cb6-4"><a></a><span class="fu">sum</span>(<span class="fu">is.na</span>(chol))          <span class="co"># Count missing values (1)</span></span>
+<span id="cb6-5"><a></a><span class="fu">mean</span>(chol, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)  <span class="co"># Arithmetic mean (212)</span></span>
+<span id="cb6-6"><a></a><span class="fu">sd</span>(chol, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)    <span class="co"># Standard deviation (20.8)</span></span>
+<span id="cb6-7"><a></a><span class="fu">summary</span>(chol)             <span class="co"># 5-number summary + Mean + NAs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="in-class-exercise-2a-12-min" class="slide level2 scrollable">
+<h2>💻 In-Class Exercise 2A (12 min)</h2>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Paired Hands-on Exercise</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>Open RStudio and your <code>week-02-inclass.qmd</code> worksheet.</li>
+<li>Predict the <code>typeof()</code> and value of:
+<ul>
+<li><code>c(4, 7, FALSE)</code></li>
+<li><code>c(3L, 5.5, "control")</code></li>
+<li><code>c(TRUE, FALSE) + 5</code></li>
+</ul></li>
+<li>A clinical trial enrolled 8 patients with viral loads: <code>1200, 450, 0, 8900, 320, 0, 1500, 60</code>. Calculate the <strong>proportion of patients with undetectable viral load</strong> (<code>viral_load == 0</code>) using <code>mean()</code>.</li>
+</ol>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="cycle-2-creating-patterned-vectors" class="title-slide slide level1 center" data-background-color="#2c3e50">
+<h1>Cycle 2: Creating Patterned Vectors</h1>
+
+</section>
+<section id="sequences-with-and-seq" class="slide level2">
+<h2>Sequences with <code>:</code> and <code>seq()</code></h2>
+<p>Instead of typing numbers manually, generate sequences automatically:</p>
+<div class="columns">
+<div class="column" style="width:48%;">
+<h3 id="the-colon-operator">The Colon Operator <code>:</code></h3>
+<p>Consecutive integer sequences:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb7-2"><a></a><span class="dv">20</span><span class="sc">:</span><span class="dv">15</span>    <span class="co"># Counts backward!</span></span>
+<span id="cb7-3"><a></a><span class="sc">-</span><span class="dv">3</span><span class="sc">:</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:48%;">
+<h3 id="the-seq-function">The <code>seq()</code> Function</h3>
+<p>Flexible step sizes &amp; lengths:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># By step size</span></span>
+<span id="cb8-2"><a></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">20</span>)</span>
+<span id="cb8-3"><a></a><span class="co"># Output: 0 20 40 60 80 100</span></span>
+<span id="cb8-4"><a></a></span>
+<span id="cb8-5"><a></a><span class="co"># By total length</span></span>
+<span id="cb8-6"><a></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">length.out =</span> <span class="dv">5</span>)</span>
+<span id="cb8-7"><a></a><span class="co"># Output: 0.00 0.25 0.50 0.75 1.00</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="repetition-with-rep" class="slide level2">
+<h2>Repetition with <code>rep()</code></h2>
+<p>The <code>rep()</code> function replicates values using <code>times</code> or <code>each</code>:</p>
+<div class="columns">
+<div class="column" style="width:48%;">
+<h3 id="times-pattern-repetition"><code>times</code> (Pattern repetition)</h3>
+<p>Repeats the whole vector:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">times =</span> <span class="dv">3</span>)</span>
+<span id="cb9-2"><a></a><span class="co"># "A" "B" "A" "B" "A" "B"</span></span>
+<span id="cb9-3"><a></a></span>
+<span id="cb9-4"><a></a><span class="co"># Unequal repetitions per element:</span></span>
+<span id="cb9-5"><a></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Control"</span>, <span class="st">"Treated"</span>), <span class="at">times =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">2</span>))</span>
+<span id="cb9-6"><a></a><span class="co"># "Control" "Control" "Control" "Control" "Treated" "Treated"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:48%;">
+<h3 id="each-element-repetition"><code>each</code> (Element repetition)</h3>
+<p>Repeats each item before moving to next:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">each =</span> <span class="dv">3</span>)</span>
+<span id="cb10-2"><a></a><span class="co"># "A" "A" "A" "B" "B" "B"</span></span>
+<span id="cb10-3"><a></a></span>
+<span id="cb10-4"><a></a><span class="co"># Combining both:</span></span>
+<span id="cb10-5"><a></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Dose1"</span>, <span class="st">"Dose2"</span>), <span class="at">each =</span> <span class="dv">2</span>, <span class="at">times =</span> <span class="dv">2</span>)</span>
+<span id="cb10-6"><a></a><span class="co"># "Dose1" "Dose1" "Dose2" "Dose2" "Dose1" "Dose1" "Dose2" "Dose2"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="modulo-arithmetic" class="slide level2">
+<h2>Modulo Arithmetic <code>%%</code></h2>
+<p>The modulo operator <code>%%</code> calculates the <strong>remainder of division</strong>:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="dv">14</span> <span class="sc">%%</span> <span class="dv">3</span>   <span class="co"># 2  (14 = 4 * 3 + 2)</span></span>
+<span id="cb11-2"><a></a><span class="dv">10</span> <span class="sc">%%</span> <span class="dv">2</span>   <span class="co"># 0  (10 is even)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Common Applications in Data Science</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><strong>Even numbers:</strong> <code>x %% 2 == 0</code></li>
+<li><strong>Divisible by 5:</strong> <code>x %% 5 == 0</code></li>
+<li><strong>Assigning participants to <span class="math inline">\(K\)</span> rotating study groups:</strong> <code>(1:N) %% K + 1</code></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="in-class-exercise-2b-12-min" class="slide level2 scrollable">
+<h2>💻 In-Class Exercise 2B (12 min)</h2>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Paired Hands-on Exercise</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>Create a sequence of drug dosing times from <strong>hour 0 to hour 72</strong> spaced every <strong>8 hours</strong> using <code>seq()</code>.</li>
+<li>Generate study cohort labels for 12 participants: 4 “Control”, 4 “Low-Dose”, and 4 “High-Dose” using <code>rep()</code>.</li>
+<li>Given <code>numbers &lt;- 1:50</code>, extract all numbers that are multiples of 7 using <code>%%</code>.</li>
+</ol>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="cycle-3-subsetting-mutating-vectors" class="title-slide slide level1 center" data-background-color="#2c3e50">
+<h1>Cycle 3: Subsetting &amp; Mutating Vectors</h1>
+
+</section>
+<section id="the-three-subsetting-methods" class="slide level2">
+<h2>The Three Subsetting Methods</h2>
+<p>We extract elements using square brackets <code>x[...]</code>:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">45</span>, <span class="dv">19</span>, <span class="dv">31</span>, <span class="dv">56</span>, <span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="columns">
 <div class="column" style="width:33%;">
-<h3 id="zone-1-hw-project">🟢 Zone 1: HW &amp; Project</h3>
-<ul>
-<li><strong>AI Encouraged</strong></li>
-<li>Use verify-then-use.</li>
-<li>Disclose prompts &amp; changes in AI appendix.</li>
-</ul>
+<h3 id="positive-indices">1. Positive Indices</h3>
+<p>Extract by position (1-indexed):</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>ages[<span class="dv">1</span>]        <span class="co"># 23</span></span>
+<span id="cb13-2"><a></a>ages[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)]  <span class="co"># 23 31</span></span>
+<span id="cb13-3"><a></a>ages[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]      <span class="co"># 45 19 31</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:33%;">
-<h3 id="zone-2-quizzes">🔴 Zone 2: Quizzes</h3>
-<ul>
-<li><strong>Strictly No AI</strong></li>
-<li>5 bi-weekly 15-min hand-fluency checks.</li>
-<li>Paper or locked browser.</li>
-</ul>
+<h3 id="negative-indices">2. Negative Indices</h3>
+<p>Exclude specific positions:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>ages[<span class="sc">-</span><span class="dv">1</span>]       <span class="co"># All except 1st</span></span>
+<span id="cb14-2"><a></a>ages[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">5</span>)] <span class="co"># Drop 2nd &amp; 5th</span></span>
+<span id="cb14-3"><a></a><span class="co"># ages[-2:4]   # ERROR! Use -(2:4)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:33%;">
-<h3 id="zone-3-in-class">🟡 Zone 3: In-Class</h3>
-<ul>
-<li><strong>AI Allowed</strong></li>
-<li>Discuss with pair first.</li>
-<li>Ask CA / Instructor if stuck.</li>
-</ul>
+<h3 id="logical-subsetting">3. Logical Subsetting</h3>
+<p>Extract where <code>TRUE</code>:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>ages[ages <span class="sc">&gt;</span> <span class="dv">40</span>]</span>
+<span id="cb15-2"><a></a><span class="co"># 45 56 42</span></span>
+<span id="cb15-3"><a></a></span>
+<span id="cb15-4"><a></a>ages[ages <span class="sc">&gt;=</span> <span class="dv">30</span> <span class="sc">&amp;</span> ages <span class="sc">&lt;=</span> <span class="dv">50</span>]</span>
+<span id="cb15-5"><a></a><span class="co"># 45 31 42</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
-<section id="ai-corner-the-verify-then-use-rule" class="slide level2">
-<h2>AI Corner: The “Verify-Then-Use” Rule</h2>
+<section id="logical-operators-for-filtering" class="slide level2">
+<h2>Logical Operators for Filtering</h2>
+<p>Combine conditions using element-wise logical operators:</p>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operator</th>
+<th style="text-align: left;">Meaning</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>&amp;</code></td>
+<td style="text-align: left;">Element-wise <strong>AND</strong> (both true)</td>
+<td style="text-align: left;"><code>(bmi &gt; 25) &amp; (age &gt; 50)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>\|</code></td>
+<td style="text-align: left;">Element-wise <strong>OR</strong> (either true)</td>
+<td style="text-align: left;"><code>(status == "Severe") \| (fever == TRUE)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>!</code></td>
+<td style="text-align: left;">Logical <strong>NOT</strong> (inversion)</td>
+<td style="text-align: left;"><code>!(city %in% c("NY", "CA"))</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>%in%</code></td>
+<td style="text-align: left;"><strong>Value matching</strong> (set membership)</td>
+<td style="text-align: left;"><code>id %in% confirmed_cases</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>sbp <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">118</span>, <span class="dv">142</span>, <span class="dv">135</span>, <span class="dv">160</span>, <span class="dv">122</span>)</span>
+<span id="cb16-2"><a></a>stage2_htn <span class="ot">&lt;-</span> sbp <span class="sc">&gt;=</span> <span class="dv">140</span></span>
+<span id="cb16-3"><a></a>sbp[stage2_htn]   <span class="co"># 142 160</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="modifying-vectors-in-place-mutation" class="slide level2">
+<h2>Modifying Vectors in Place (Mutation)</h2>
+<p>Use subsetting on the left side of <code>&lt;-</code> to update specific elements:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">88</span>, <span class="sc">-</span><span class="dv">99</span>, <span class="dv">95</span>, <span class="sc">-</span><span class="dv">99</span>, <span class="dv">72</span>)</span>
+<span id="cb17-2"><a></a></span>
+<span id="cb17-3"><a></a><span class="co"># Replace survey code -99 with NA:</span></span>
+<span id="cb17-4"><a></a>scores[scores <span class="sc">==</span> <span class="sc">-</span><span class="dv">99</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb17-5"><a></a>scores</span>
+<span id="cb17-6"><a></a><span class="co"># 88 NA 95 NA 72</span></span>
+<span id="cb17-7"><a></a></span>
+<span id="cb17-8"><a></a><span class="co"># Cap values at 90 (winsorizing):</span></span>
+<span id="cb17-9"><a></a>scores[scores <span class="sc">&gt;</span> <span class="dv">90</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(scores)] <span class="ot">&lt;-</span> <span class="dv">90</span></span>
+<span id="cb17-10"><a></a>scores</span>
+<span id="cb17-11"><a></a><span class="co"># 88 NA 90 NA 72</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="in-class-exercise-2c-15-min" class="slide level2 scrollable">
+<h2>💻 In-Class Exercise 2C (15 min)</h2>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Paired Hands-on Exercise</strong></p>
+</div>
+<div class="callout-content">
+<p>Given the patient glucose vector:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>glucose <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">95</span>, <span class="dv">142</span>, <span class="dv">180</span>, <span class="dv">88</span>, <span class="dv">210</span>, <span class="dv">115</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">104</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>Extract the glucose readings that are in the pre-diabetes range (<span class="math inline">\(100 \le \text{glucose} \le 125\)</span>).</li>
+<li>Patient 7 was miscoded as <code>-1</code>. Replace all negative values with <code>NA</code>.</li>
+<li>Extract all valid readings (ignoring <code>NA</code>) that indicate diabetes (<span class="math inline">\(\text{glucose} \ge 126\)</span>).</li>
+</ol>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="cycle-4-sorting-ranking-ai-corner" class="title-slide slide level1 center" data-background-color="#57068c">
+<h1>Cycle 4: Sorting, Ranking &amp; AI Corner</h1>
+
+</section>
+<section id="sorting-ranking-and-ordering" class="slide level2">
+<h2>Sorting, Ranking, and Ordering</h2>
+<p>Understanding the difference between <code>sort()</code>, <code>rank()</code>, and <code>order()</code>:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>vals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">10</span>, <span class="dv">50</span>, <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<h3 id="sortx"><code>sort(x)</code></h3>
+<p>Returns <strong>sorted values</strong>:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">sort</span>(vals)</span>
+<span id="cb20-2"><a></a><span class="co"># 10 20 30 50</span></span>
+<span id="cb20-3"><a></a></span>
+<span id="cb20-4"><a></a><span class="fu">sort</span>(vals, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb20-5"><a></a><span class="co"># 50 30 20 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:33%;">
+<h3 id="rankx"><code>rank(x)</code></h3>
+<p>Returns <strong>rank position</strong> of each element:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">rank</span>(vals)</span>
+<span id="cb21-2"><a></a><span class="co"># 3 1 4 2</span></span>
+<span id="cb21-3"><a></a><span class="co"># (30 is 3rd, 10 is 1st, etc.)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:33%;">
+<h3 id="orderx"><code>order(x)</code></h3>
+<p>Returns <strong>indices that would sort <code>x</code></strong>:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">order</span>(vals)</span>
+<span id="cb22-2"><a></a><span class="co"># 2 4 1 3</span></span>
+<span id="cb22-3"><a></a>vals[<span class="fu">order</span>(vals)] <span class="co"># sorted!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="handling-ties-in-rank" class="slide level2">
+<h2>Handling Ties in <code>rank()</code></h2>
+<p>When numbers repeat, how should ranks be assigned?</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">95</span>, <span class="dv">80</span>, <span class="dv">70</span>)</span>
+<span id="cb23-2"><a></a></span>
+<span id="cb23-3"><a></a><span class="fu">rank</span>(scores)                        <span class="co"># Default: average ranks (2.5 4.0 2.5 1.0)</span></span>
+<span id="cb23-4"><a></a><span class="fu">rank</span>(scores, <span class="at">ties.method =</span> <span class="st">"first"</span>) <span class="co"># By appearance: (2 4 3 1)</span></span>
+<span id="cb23-5"><a></a><span class="fu">rank</span>(scores, <span class="at">ties.method =</span> <span class="st">"min"</span>)   <span class="co"># Sports ranking: (2 4 2 1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><code>ties.method = "first"</code> is essential for deterministic top-<span class="math inline">\(K\)</span> rankings in data pipelines!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="ai-corner-beware-vector-recycling" class="slide level2">
+<h2>AI Corner: Beware Vector Recycling!</h2>
+<p>When R operates on vectors of different lengths, it <strong>silently recycles</strong> the shorter one:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="the-bad-ai-user">❌ The Bad AI User</h3>
-<ul>
-<li>Prompts: <em>“Do my homework question 3.”</em></li>
-<li>Copies and pastes code blindly.</li>
-<li>Submits hallucinated functions or incorrect math without understanding.</li>
-</ul>
+<h3 id="what-r-does">What R Does:</h3>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>)</span>
+<span id="cb24-2"><a></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb24-3"><a></a>x <span class="sc">+</span> y</span>
+<span id="cb24-4"><a></a><span class="co"># Computes: 10+1, 20+2, 30+1, 40+2</span></span>
+<span id="cb24-5"><a></a><span class="co"># Output: 11 22 31 42</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<h3 id="the-statistical-programmer">✅ The Statistical Programmer</h3>
+<h3 id="the-danger-with-ai">⚠️ The Danger with AI:</h3>
 <ul>
-<li>Prompts: <em>“How do I compute the trimmed mean in R while handling NAs?”</em></li>
-<li>Inspects the output against R documentation.</li>
-<li>Tests edge cases.</li>
-<li>Owns and understands every line.</li>
+<li>LLMs often generate code that accidentally recycles vectors when filtering or standardizing.</li>
+<li>Always check <code>length(x) == length(y)</code> before element-wise operations!</li>
 </ul>
 </div>
 </div>
 </section>
-<section id="summary-what-to-do-before-week-2" class="slide level2 scrollable">
-<h2>Summary &amp; What To Do Before Week 2</h2>
+<section id="summary-week-2-checklist" class="slide level2 scrollable">
+<h2>Summary &amp; Week 2 Checklist</h2>
 <ol type="1">
-<li><p><strong>Complete &amp; Push:</strong> In-class exercise 1 <code>.qmd</code> to your GitHub repo.</p></li>
-<li><p><strong>Weekly Exercise 1:</strong> Released before class on GitHub. Due <strong>Wednesday Sep 9 at 11:59 PM</strong>.</p></li>
-<li><p><strong>Read for Next Week:</strong> R02Pro Chapters 2–3 (Vectors &amp; Subsetting).</p></li>
-<li><p><strong>Office Hours:</strong> Posted on the course website.</p></li>
+<li><strong>Submit Homework 1:</strong> Due <strong>tonight at 11:59 PM</strong> on GitHub.</li>
+<li><strong>Weekly Exercise 2:</strong> Released on GitHub. Due <strong>Wednesday Sep 16 at 11:59 PM</strong>.</li>
+<li><strong>Finish &amp; Push In-Class 2:</strong> Push your rendered <code>week-02-inclass.html</code> for participation credit.</li>
+<li><strong>Upcoming in Week 3:</strong> Matrices, Lists, Data Frames + <strong>In-Class Quiz 1</strong> (15 min, Weeks 1–2).</li>
 </ol>
-<h3 id="useful-links">🔗 Useful Links:</h3>
+<h3 id="quick-links">🔗 Quick Links:</h3>
 <ul>
 <li>Course Website: <a href="https://gph-2182.github.io/course-website/">gph-2182.github.io/course-website</a></li>
-<li>Textbook: <a href="https://r02pro.github.io/">r02pro.github.io</a></li>
+<li>Textbook Chapters 2–3: <a href="https://r02pro.github.io/">r02pro.github.io</a></li>
 </ul>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
-<p>GPH-GU 2182 · Week 1</p>
+<p>GPH-GU 2182 · Week 2</p>
 </div>
 </div>
 </section></section>
