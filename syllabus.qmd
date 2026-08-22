@@ -29,11 +29,12 @@ B−: 80–82 · C+: 77–79 · C: 73–76 · C−: 70–72 · F: below 70
 
 ## Assessments in brief
 
-**Weekly exercises** are released after class in Weeks 1–12 and due 11:59 PM
-the following Tuesday. They are distributed and submitted through GitHub
-Classroom; an autograder reports which questions pass every time you push, and
-you may resubmit freely before the deadline. Late: 20% penalty within 24h, 40%
-within 48h, zero after that.
+**Weekly exercises** are released before class on Wednesdays in Weeks 1–12
+and due 11:59 PM the following Wednesday. They are distributed and submitted
+through GitHub; an autograder reports which questions pass every time you push,
+and you may resubmit freely before the deadline. Late: 20% penalty within 24h,
+40% within 48h, zero after that.
+
 
 **In-class quizzes** (15–20 minutes, five total) are done individually without
 AI tools during the last part of class.

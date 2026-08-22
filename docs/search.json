@@ -32,7 +32,7 @@
     "href": "syllabus.html#assessments-in-brief",
     "title": "Syllabus",
     "section": "Assessments in brief",
-    "text": "Assessments in brief\nWeekly exercises are released after class in Weeks 1–12 and due 11:59 PM the following Tuesday. They are distributed and submitted through GitHub Classroom; an autograder reports which questions pass every time you push, and you may resubmit freely before the deadline. Late: 20% penalty within 24h, 40% within 48h, zero after that.\nIn-class quizzes (15–20 minutes, five total) are done individually without AI tools during the last part of class.\nThe final project is an individual analysis of a public-health dataset: a reproducible Quarto report in a GitHub repository, a 5-minute recorded video walkthrough, and an AI-use appendix. Released Week 10, due 11:59 PM December 16. No late submissions."
+    "text": "Assessments in brief\nWeekly exercises are released before class on Wednesdays in Weeks 1–12 and due 11:59 PM the following Wednesday. They are distributed and submitted through GitHub; an autograder reports which questions pass every time you push, and you may resubmit freely before the deadline. Late: 20% penalty within 24h, 40% within 48h, zero after that.\nIn-class quizzes (15–20 minutes, five total) are done individually without AI tools during the last part of class.\nThe final project is an individual analysis of a public-health dataset: a reproducible Quarto report in a GitHub repository, a 5-minute recorded video walkthrough, and an AI-use appendix. Released Week 10, due 11:59 PM December 16. No late submissions."
   },
   {
     "objectID": "syllabus.html#software-all-free",
@@ -88,7 +88,7 @@
     "href": "weeks/week-14.html",
     "title": "Week 14: Communicating with Quarto + Project Workshop",
     "section": "",
-    "text": "Read: Course materials (provided)\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: Course materials (provided)\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 14: Communicating with Quarto + Project Workshop"
@@ -99,7 +99,7 @@
     "href": "weeks/week-14.html#before-class",
     "title": "Week 14: Communicating with Quarto + Project Workshop",
     "section": "",
-    "text": "Read: Course materials (provided)\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: Course materials (provided)\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 14: Communicating with Quarto + Project Workshop"
@@ -143,7 +143,7 @@
     "href": "weeks/week-03.html",
     "title": "Week 3: Data Frames, Tibbles, and Friends",
     "section": "",
-    "text": "Read: R02Pro Ch 3–4\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 3–4\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 3: Data Frames, Tibbles, and Friends"
@@ -154,7 +154,7 @@
     "href": "weeks/week-03.html#before-class",
     "title": "Week 3: Data Frames, Tibbles, and Friends",
     "section": "",
-    "text": "Read: R02Pro Ch 3–4\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 3–4\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 3: Data Frames, Tibbles, and Friends"
@@ -198,7 +198,7 @@
     "href": "weeks/week-12.html",
     "title": "Week 12: Functions and Control Flow",
     "section": "",
-    "text": "Read: R02Pro Ch 12–13\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 12–13\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 12: Functions and Control Flow"
@@ -209,7 +209,7 @@
     "href": "weeks/week-12.html#before-class",
     "title": "Week 12: Functions and Control Flow",
     "section": "",
-    "text": "Read: R02Pro Ch 12–13\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 12–13\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 12: Functions and Control Flow"
@@ -253,7 +253,7 @@
     "href": "weeks/week-07.html",
     "title": "Week 7: Data Manipulation with dplyr",
     "section": "",
-    "text": "Read: R02Pro Ch 8\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 8\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 7: Data Manipulation with dplyr"
@@ -264,7 +264,7 @@
     "href": "weeks/week-07.html#before-class",
     "title": "Week 7: Data Manipulation with dplyr",
     "section": "",
-    "text": "Read: R02Pro Ch 8\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 8\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 7: Data Manipulation with dplyr"
@@ -308,7 +308,7 @@
     "href": "weeks/week-05.html",
     "title": "Week 5: Data Visualization I",
     "section": "",
-    "text": "Read: R02Pro Ch 6\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 6\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 5: Data Visualization I"
@@ -319,7 +319,7 @@
     "href": "weeks/week-05.html#before-class",
     "title": "Week 5: Data Visualization I",
     "section": "",
-    "text": "Read: R02Pro Ch 6\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 6\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 5: Data Visualization I"
@@ -363,7 +363,7 @@
     "href": "weeks/week-10.html",
     "title": "Week 10: Case Study: A Full Public-Health Data Pipeline",
     "section": "",
-    "text": "Read: R02Pro Ch 14\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 14\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 10: Case Study: A Full Public-Health Data Pipeline"
@@ -374,7 +374,7 @@
     "href": "weeks/week-10.html#before-class",
     "title": "Week 10: Case Study: A Full Public-Health Data Pipeline",
     "section": "",
-    "text": "Read: R02Pro Ch 14\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 14\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 10: Case Study: A Full Public-Health Data Pipeline"
@@ -523,7 +523,7 @@
     "href": "weeks/slides/week-01-slides.html#how-homework-works-instant-feedback",
     "title": "Week 1: Welcome & The Modern R Toolkit",
     "section": "How Homework Works (Instant Feedback)",
-    "text": "How Homework Works (Instant Feedback)\n\nAccept: Click the invitation link for weekly-exercise-01.\nClone: In RStudio \\(\\rightarrow\\) New Project \\(\\rightarrow\\) Version Control \\(\\rightarrow\\) Git \\(\\rightarrow\\) Paste URL.\nSolve: Open exercise.qmd, assign answers to q1, q2, etc.\nRender: Confirm the HTML compiles cleanly.\nPush: Commit and push to GitHub.\nInstant Report: Go to the Actions tab on GitHub: within 2 minutes, see which questions pass.\nIterate: Revise and re-push freely until Tuesday 11:59 PM!"
+    "text": "How Homework Works (Instant Feedback)\n\nAccept: Click the invitation link for weekly-exercise-01.\nClone: In RStudio \\(\\rightarrow\\) New Project \\(\\rightarrow\\) Version Control \\(\\rightarrow\\) Git \\(\\rightarrow\\) Paste URL.\nSolve: Open exercise.qmd, assign answers to q1, q2, etc.\nRender: Confirm the HTML compiles cleanly.\nPush: Commit and push to GitHub.\nInstant Report: Go to the Actions tab on GitHub: within 2 minutes, see which questions pass.\nIterate: Revise and re-push freely until Wednesday 11:59 PM!"
   },
   {
     "objectID": "weeks/slides/week-01-slides.html#the-three-ai-zones",
@@ -544,14 +544,14 @@
     "href": "weeks/slides/week-01-slides.html#summary-what-to-do-before-week-2",
     "title": "Week 1: Welcome & The Modern R Toolkit",
     "section": "Summary & What To Do Before Week 2",
-    "text": "Summary & What To Do Before Week 2\n\nComplete & Push: In-class exercise 1 .qmd to your GitHub repo.\nWeekly Exercise 1: Released on Classroom 50 / Gradescope. Due Tuesday Sep 8 at 11:59 PM.\nRead for Next Week: R02Pro Chapters 2–3 (Vectors & Subsetting).\nOffice Hours: Posted on the course website.\n\n🔗 Useful Links:\n\nCourse Website: gph-2182.github.io/course-website\nTextbook: r02pro.github.io\n\n\n\n\nGPH-GU 2182 · Week 1"
+    "text": "Summary & What To Do Before Week 2\n\nComplete & Push: In-class exercise 1 .qmd to your GitHub repo.\nWeekly Exercise 1: Released before class on GitHub. Due Wednesday Sep 9 at 11:59 PM.\nRead for Next Week: R02Pro Chapters 2–3 (Vectors & Subsetting).\nOffice Hours: Posted on the course website.\n\n🔗 Useful Links:\n\nCourse Website: gph-2182.github.io/course-website\nTextbook: r02pro.github.io\n\n\n\n\nGPH-GU 2182 · Week 1"
   },
   {
     "objectID": "weeks/week-08.html",
     "href": "weeks/week-08.html",
     "title": "Week 8: AI-Assisted R Programming Workshop",
     "section": "",
-    "text": "Read: Course materials (provided)\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: Course materials (provided)\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 8: AI-Assisted R Programming Workshop"
@@ -562,7 +562,7 @@
     "href": "weeks/week-08.html#before-class",
     "title": "Week 8: AI-Assisted R Programming Workshop",
     "section": "",
-    "text": "Read: Course materials (provided)\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: Course materials (provided)\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 8: AI-Assisted R Programming Workshop"
@@ -606,7 +606,7 @@
     "href": "weeks/week-09.html",
     "title": "Week 9: Tidy Data and Joins",
     "section": "",
-    "text": "Read: R02Pro Ch 8–9\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 8–9\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 9: Tidy Data and Joins"
@@ -617,7 +617,7 @@
     "href": "weeks/week-09.html#before-class",
     "title": "Week 9: Tidy Data and Joins",
     "section": "",
-    "text": "Read: R02Pro Ch 8–9\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 8–9\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 9: Tidy Data and Joins"
@@ -661,7 +661,7 @@
     "href": "weeks/week-04.html",
     "title": "Week 4: Data Import and Export",
     "section": "",
-    "text": "Read: R02Pro Ch 5\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 5\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 4: Data Import and Export"
@@ -672,7 +672,7 @@
     "href": "weeks/week-04.html#before-class",
     "title": "Week 4: Data Import and Export",
     "section": "",
-    "text": "Read: R02Pro Ch 5\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 5\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 4: Data Import and Export"
@@ -716,7 +716,7 @@
     "href": "weeks/week-11.html",
     "title": "Week 11: Strings and Regular Expressions",
     "section": "",
-    "text": "Read: R02Pro Ch 10\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 10\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 11: Strings and Regular Expressions"
@@ -727,7 +727,7 @@
     "href": "weeks/week-11.html#before-class",
     "title": "Week 11: Strings and Regular Expressions",
     "section": "",
-    "text": "Read: R02Pro Ch 10\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 10\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 11: Strings and Regular Expressions"
@@ -771,7 +771,7 @@
     "href": "weeks/week-13.html",
     "title": "Week 13: Simulation and Statistics",
     "section": "",
-    "text": "Read: R02Pro Ch 11\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 11\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 13: Simulation and Statistics"
@@ -782,7 +782,7 @@
     "href": "weeks/week-13.html#before-class",
     "title": "Week 13: Simulation and Statistics",
     "section": "",
-    "text": "Read: R02Pro Ch 11\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 11\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 13: Simulation and Statistics"
@@ -826,7 +826,7 @@
     "href": "weeks/week-06.html",
     "title": "Week 6: Data Visualization II",
     "section": "",
-    "text": "Read: R02Pro Ch 6–7\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 6–7\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 6: Data Visualization II"
@@ -837,7 +837,7 @@
     "href": "weeks/week-06.html#before-class",
     "title": "Week 6: Data Visualization II",
     "section": "",
-    "text": "Read: R02Pro Ch 6–7\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 6–7\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 6: Data Visualization II"
@@ -881,7 +881,7 @@
     "href": "weeks/week-02.html",
     "title": "Week 2: Vectors and Subsetting",
     "section": "",
-    "text": "Read: R02Pro Ch 2–3\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 2–3\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 2: Vectors and Subsetting"
@@ -892,7 +892,7 @@
     "href": "weeks/week-02.html#before-class",
     "title": "Week 2: Vectors and Subsetting",
     "section": "",
-    "text": "Read: R02Pro Ch 2–3\nComplete the previous weekly exercise (due Tuesday 11:59 PM).",
+    "text": "Read: R02Pro Ch 2–3\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
       "Week 2: Vectors and Subsetting"
@@ -969,7 +969,7 @@
     "href": "weeks/week-01.html#materials",
     "title": "Week 1: Welcome + the Modern R Toolkit",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Week 1 Slides (Interactive Presentation)\n📝 In-Class Exercise: Week 1 In-Class Worksheet (.qmd)\n💻 Weekly Exercise 1: Available on Classroom 50 and Gradescope (Due Tuesday Sep 8, 11:59 PM)",
+    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 1: Available on GitHub (Due Wednesday Sep 9, 11:59 PM)",
     "crumbs": [
       "Weekly Pages",
       "Week 1: Welcome + the Modern R Toolkit"
@@ -980,7 +980,7 @@
     "href": "weeks/week-01.html#due",
     "title": "Week 1: Welcome + the Modern R Toolkit",
     "section": "Due",
-    "text": "Due\n\nIn-class exercise 1 (pushed to GitHub by end of class)\nWeekly exercise 1 (due Tuesday Sep 8, 11:59 PM)",
+    "text": "Due\n\nIn-class exercise 1 (pushed to GitHub by end of class)\nWeekly exercise 1 (due Wednesday Sep 9, 11:59 PM)",
     "crumbs": [
       "Weekly Pages",
       "Week 1: Welcome + the Modern R Toolkit"
@@ -991,14 +991,14 @@
     "href": "weeks/inclass/week-01-inclass.html",
     "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
     "section": "",
-    "text": "Note\n\n\n\nInstructions: Work in pairs. Complete each part during the designated in-class exercise blocks. Render this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit."
+    "text": "Instructions\n\n\n\nWork in pairs during class.\n\n📥 Download week-01-inclass.qmd to open and edit in RStudio (or use the &lt;/&gt; Source Code button at the top right).\nRender this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit."
   },
   {
     "objectID": "weeks/inclass/week-01-inclass.html#basic-arithmetic-calculations",
     "href": "weeks/inclass/week-01-inclass.html#basic-arithmetic-calculations",
     "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
     "section": "1.1 Basic Arithmetic & Calculations",
-    "text": "1.1 Basic Arithmetic & Calculations\nIn the code chunk below, compute the Body Mass Index (BMI) for three study participants:\n\nParticipant A: Weight \\(70\\text{ kg}\\), Height \\(1.75\\text{ m}\\)\nParticipant B: Weight \\(85\\text{ kg}\\), Height \\(1.80\\text{ m}\\)\nParticipant C: Weight \\(58\\text{ kg}\\), Height \\(1.62\\text{ m}\\)\n\n\\[\\text{BMI} = \\frac{\\text{weight in kg}}{(\\text{height in meters})^2}\\]\n\n# Write your calculations below:"
+    "text": "1.1 Basic Arithmetic & Calculations\nIn the code chunk below, compute the Body Mass Index (BMI) for three study participants:\n\nParticipant A: Weight 70\\text{ kg}, Height 1.75\\text{ m}\nParticipant B: Weight 85\\text{ kg}, Height 1.80\\text{ m}\nParticipant C: Weight 58\\text{ kg}, Height 1.62\\text{ m}\n\n\\text{BMI} = \\frac{\\text{weight in kg}}{(\\text{height in meters})^2}\n\n# Write your calculations below:"
   },
   {
     "objectID": "weeks/inclass/week-01-inclass.html#exploring-built-in-functions",
