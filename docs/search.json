@@ -998,7 +998,7 @@
     "href": "weeks/inclass/week-01-inclass.html#basic-arithmetic-calculations",
     "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
     "section": "1.1 Basic Arithmetic & Calculations",
-    "text": "1.1 Basic Arithmetic & Calculations\nIn the code chunk below, compute the Body Mass Index (BMI) for three study participants:\n\nParticipant A: Weight \\(70\\text{ kg}\\), Height \\(1.75\\text{ m}\\)\nParticipant B: Weight \\(85\\text{ kg}\\), Height \\(1.80\\text{ m}\\)\nParticipant C: Weight \\(58\\text{ kg}\\), Height \\(1.62\\text{ m}\\)\n\n\\[\\text{BMI} = \\frac{\\text{weight in kg}}{(\\text{height in meters})^2}\\]\n\n# Write your calculations below:"
+    "text": "1.1 Basic Arithmetic & Calculations\nIn the code chunk below, compute the Body Mass Index (BMI) for three study participants:\n\nParticipant A: Weight 70\\text{ kg}, Height 1.75\\text{ m}\nParticipant B: Weight 85\\text{ kg}, Height 1.80\\text{ m}\nParticipant C: Weight 58\\text{ kg}, Height 1.62\\text{ m}\n\n\\text{BMI} = \\frac{\\text{weight in kg}}{(\\text{height in meters})^2}\n\n# Write your calculations below:"
   },
   {
     "objectID": "weeks/inclass/week-01-inclass.html#exploring-built-in-functions",
