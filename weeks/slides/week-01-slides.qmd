@@ -14,6 +14,7 @@ format:
     scrollable: true
     width: 1200
     height: 700
+    css: ../../styles.css
     footer: "GPH-GU 2182 · Week 1"
 ---
 
@@ -252,23 +253,25 @@ Click the **Render** button (or `Ctrl/Cmd + Shift + K`) in RStudio to generate y
 ## Why Version Control?
 
 ::: {.columns}
-::: {.column width="50%"}
-### The Chaos:
+::: {.column width="48%"}
+### ❌ The File Chaos (Without Git)
 
-* `report_final.docx`
-* `report_final_v2.docx`
-* `report_final_v2_EDITED.docx`
+* `report_v1.docx`
+* `report_v2.docx`
+* `report_v2_edit.docx`
 * `report_final_REALLY_FINAL.docx`
+* 😱 *Which file has the correct numbers?*
 :::
 
-::: {.column width="50%"}
-### The Git Way:
+::: {.column width="48%"}
+### ✅ The Git Way
 
-* Every change is a snapshot with a message.
-* Full history: who changed what, when, and why.
-* Safe experimentation via branches.
+* **Recorded history:** Every change is a snapshot with a commit message.
+* **Safe experiments:** Try new ideas on branches without breaking main code.
+* **Seamless team collaboration:** No emailed zip files or overwritten work.
 :::
 :::
+
 
 ## The Core Git Workflow in RStudio
 

@@ -509,7 +509,7 @@
     "href": "weeks/slides/week-01-slides.html#why-version-control",
     "title": "Week 1: Welcome & The Modern R Toolkit",
     "section": "Why Version Control?",
-    "text": "Why Version Control?\n\n\nThe Chaos:\n\nreport_final.docx\nreport_final_v2.docx\nreport_final_v2_EDITED.docx\nreport_final_REALLY_FINAL.docx\n\n\nThe Git Way:\n\nEvery change is a snapshot with a message.\nFull history: who changed what, when, and why.\nSafe experimentation via branches."
+    "text": "Why Version Control?\n\n\n❌ The File Chaos (Without Git)\n\nreport_v1.docx\nreport_v2.docx\nreport_v2_edit.docx\nreport_final_REALLY_FINAL.docx\n😱 Which file has the correct numbers?\n\n\n✅ The Git Way\n\nRecorded history: Every change is a snapshot with a commit message.\nSafe experiments: Try new ideas on branches without breaking main code.\nSeamless team collaboration: No emailed zip files or overwritten work."
   },
   {
     "objectID": "weeks/slides/week-01-slides.html#the-core-git-workflow-in-rstudio",

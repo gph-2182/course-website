@@ -10,3 +10,21 @@ h1, h2 {
 table {
   font-size: 0.95em;
 }
+
+/* RevealJS Slide Column Spacing & Text Wrap */
+.reveal .columns {
+  display: flex !important;
+  gap: 35px !important;
+  align-items: flex-start;
+}
+
+.reveal .column {
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  box-sizing: border-box;
+}
+
+.reveal code {
+  word-break: break-word !important;
+}
+

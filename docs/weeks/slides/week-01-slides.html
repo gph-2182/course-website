@@ -97,6 +97,7 @@
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="../../styles.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -698,20 +699,21 @@ flowchart LR
 <section id="why-version-control" class="slide level2">
 <h2>Why Version Control?</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="the-chaos">The Chaos:</h3>
+<div class="column" style="width:48%;">
+<h3 id="the-file-chaos-without-git">❌ The File Chaos (Without Git)</h3>
 <ul>
-<li><code>report_final.docx</code></li>
-<li><code>report_final_v2.docx</code></li>
-<li><code>report_final_v2_EDITED.docx</code></li>
+<li><code>report_v1.docx</code></li>
+<li><code>report_v2.docx</code></li>
+<li><code>report_v2_edit.docx</code></li>
 <li><code>report_final_REALLY_FINAL.docx</code></li>
+<li>😱 <em>Which file has the correct numbers?</em></li>
 </ul>
-</div><div class="column" style="width:50%;">
-<h3 id="the-git-way">The Git Way:</h3>
+</div><div class="column" style="width:48%;">
+<h3 id="the-git-way">✅ The Git Way</h3>
 <ul>
-<li>Every change is a snapshot with a message.</li>
-<li>Full history: who changed what, when, and why.</li>
-<li>Safe experimentation via branches.</li>
+<li><strong>Recorded history:</strong> Every change is a snapshot with a commit message.</li>
+<li><strong>Safe experiments:</strong> Try new ideas on branches without breaking main code.</li>
+<li><strong>Seamless team collaboration:</strong> No emailed zip files or overwritten work.</li>
 </ul>
 </div>
 </div>
