@@ -474,7 +474,7 @@
     "href": "weeks/slides/week-01-slides.html#why-quarto",
     "title": "Week 1: Welcome & The Modern R Toolkit",
     "section": "Why Quarto?",
-    "text": "Why Quarto?\nTraditional data analysis workflow: 1. Run code in R \\(\\rightarrow\\) Copy table to Excel \\(\\rightarrow\\) Paste chart into Word \\(\\rightarrow\\) Save as PDF. 2. Data changes? Repeat everything manually and risk copy-paste errors!\n\n\nThe Quarto Way:\nOne single document (.qmd) containing: * Your narrative text (Markdown) * Your live R code ({r}) * Rendered figures and tables generated directly on compilation."
+    "text": "Why Quarto?\nTraditional data analysis workflow:\n\nRun code in R \\(\\rightarrow\\) Copy table to Excel \\(\\rightarrow\\) Paste chart into Word \\(\\rightarrow\\) Save as PDF.\nData changes? Repeat everything manually and risk copy-paste errors!\n\n\n\nThe Quarto Way:\nOne single document (.qmd) containing:\n\nYour narrative text (Markdown)\nYour live R code ({r})\nRendered figures and tables generated directly on compilation."
   },
   {
     "objectID": "weeks/slides/week-01-slides.html#anatomy-of-a-quarto-document-.qmd",
@@ -998,7 +998,7 @@
     "href": "weeks/inclass/week-01-inclass.html#basic-arithmetic-calculations",
     "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
     "section": "1.1 Basic Arithmetic & Calculations",
-    "text": "1.1 Basic Arithmetic & Calculations\nIn the code chunk below, compute the Body Mass Index (BMI) for three study participants: - Participant A: Weight \\(70\\text{ kg}\\), Height \\(1.75\\text{ m}\\) - Participant B: Weight \\(85\\text{ kg}\\), Height \\(1.80\\text{ m}\\) - Participant C: Weight \\(58\\text{ kg}\\), Height \\(1.62\\text{ m}\\)\n\\[\\text{BMI} = \\frac{\\text{weight in kg}}{(\\text{height in meters})^2}\\]\n\n# Write your calculations below:"
+    "text": "1.1 Basic Arithmetic & Calculations\nIn the code chunk below, compute the Body Mass Index (BMI) for three study participants:\n\nParticipant A: Weight \\(70\\text{ kg}\\), Height \\(1.75\\text{ m}\\)\nParticipant B: Weight \\(85\\text{ kg}\\), Height \\(1.80\\text{ m}\\)\nParticipant C: Weight \\(58\\text{ kg}\\), Height \\(1.62\\text{ m}\\)\n\n\\[\\text{BMI} = \\frac{\\text{weight in kg}}{(\\text{height in meters})^2}\\]\n\n# Write your calculations below:"
   },
   {
     "objectID": "weeks/inclass/week-01-inclass.html#exploring-built-in-functions",
@@ -1019,7 +1019,7 @@
     "href": "weeks/inclass/week-01-inclass.html#text-formatting-markdown",
     "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
     "section": "2.1 Text Formatting & Markdown",
-    "text": "2.1 Text Formatting & Markdown\nIn the space below: - Write a short 2-sentence paragraph describing the purpose of reproducible research in public health. - Include at least one bold phrase and one italicized word. - Add a bulleted list of two advantages of Quarto over traditional copy-pasting into Word.\n(Type your text response here)"
+    "text": "2.1 Text Formatting & Markdown\nIn the space below:\n\nWrite a short 2-sentence paragraph describing the purpose of reproducible research in public health.\nInclude at least one bold phrase and one italicized word.\nAdd a bulleted list of two advantages of Quarto over traditional copy-pasting into Word.\n\n(Type your text response here)"
   },
   {
     "objectID": "weeks/inclass/week-01-inclass.html#code-chunk-customization",

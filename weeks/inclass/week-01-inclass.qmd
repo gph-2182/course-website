@@ -19,6 +19,7 @@ format:
 ## Basic Arithmetic & Calculations
 
 In the code chunk below, compute the Body Mass Index (BMI) for three study participants:
+
 - Participant A: Weight $70\text{ kg}$, Height $1.75\text{ m}$
 - Participant B: Weight $85\text{ kg}$, Height $1.80\text{ m}$
 - Participant C: Weight $58\text{ kg}$, Height $1.62\text{ m}$
@@ -57,6 +58,7 @@ Compute the mean of the three BMIs you calculated above. Round the result to 2 d
 ## Text Formatting & Markdown
 
 In the space below:
+
 - Write a short 2-sentence paragraph describing the purpose of reproducible research in public health.
 - Include at least one **bold** phrase and one *italicized* word.
 - Add a bulleted list of two advantages of Quarto over traditional copy-pasting into Word.
@@ -78,6 +80,7 @@ Create an R code chunk below with chunk option `#| echo: true` that creates a ve
 # Cycle 3: Git & GitHub Workflow
 
 Confirm the following steps with your partner:
+
 - [ ] You have initialized Git in your local R project.
 - [ ] You have configured your Git identity in RStudio (`git config --global user.name` and `user.email`).
 - [ ] You rendered this `.qmd` document to `.html` without any errors.
@@ -97,6 +100,7 @@ area <- 3.14 * (radius * 2)
 ```
 
 ### Questions:
+
 1. Is the AI-generated code correct? What error did it make?
 2. Correct the code below using R's built-in constant `pi` and proper formula ($\text{Area} = \pi r^2$):
 
@@ -108,6 +112,8 @@ area <- 3.14 * (radius * 2)
 ---
 
 ## Submission Checklist
+
 - [ ] Both your name and your partner's name are in the `author` field at the top.
 - [ ] Click **Render** in RStudio and verify the HTML looks clean.
 - [ ] Commit and push your changes to GitHub.
+

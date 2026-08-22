@@ -23,6 +23,7 @@ format:
 ::: {.columns}
 ::: {.column width="50%"}
 ### Why R?
+
 * **Public Health Standard:** CDC, WHO, FDA, academic journals, and health agencies run on R.
 * **Tidyverse Ecosystem:** Unmatched tools for data wrangling (`dplyr`), visualization (`ggplot2`), and modeling.
 * **Open & Reproducible:** Free, community-driven, transparent science.
@@ -30,6 +31,7 @@ format:
 
 ::: {.column width="50%"}
 ### Why *This* Course?
+
 * No prior programming required.
 * **Full data pipeline:** Import $\rightarrow$ Clean $\rightarrow$ Visualize $\rightarrow$ Simulate $\rightarrow$ Report.
 * **Modern professional toolkit:** Quarto + Git/GitHub + Responsible AI assistance.
@@ -119,6 +121,7 @@ mean(vals, na.rm = TRUE)
 ```
 
 ### Getting help in R:
+
 * `?round` or `help(round)` — opens the official documentation.
 * `example(round)` — runs examples from the help page.
 
@@ -140,6 +143,7 @@ library(r02pro)
 
 ::: {.callout-important}
 ### Paired Hands-on Exercise
+
 1. Open RStudio.
 2. In the console, calculate the Body Mass Index (BMI) for a person who is $1.82\text{ m}$ tall and weighs $79\text{ kg}$. Round the answer to 2 decimal places.
 3. Verify that `r02pro` is installed: run `library(r02pro)` and look at the `ahp` dataset (`head(ahp)`).
@@ -151,12 +155,15 @@ library(r02pro)
 ## Why Quarto?
 
 Traditional data analysis workflow:
+
 1. Run code in R $\rightarrow$ Copy table to Excel $\rightarrow$ Paste chart into Word $\rightarrow$ Save as PDF.
 2. *Data changes?* Repeat everything manually and risk copy-paste errors!
 
 ::: {.fragment}
 ### The Quarto Way:
+
 One single document (`.qmd`) containing:
+
 * Your narrative text (Markdown)
 * Your live R code (````{r}````)
 * Rendered figures and tables generated directly on compilation.
@@ -215,6 +222,7 @@ Click the **Render** button (or `Ctrl/Cmd + Shift + K`) in RStudio to generate y
 
 ::: {.callout-important}
 ### Paired Hands-on Exercise
+
 1. In RStudio: **File $\rightarrow$ New File $\rightarrow$ Quarto Document...**
 2. Title: `Week 1 In-Class`, Format: `HTML`.
 3. Add a level-2 header `## Health Calculation`.
@@ -229,6 +237,7 @@ Click the **Render** button (or `Ctrl/Cmd + Shift + K`) in RStudio to generate y
 ::: {.columns}
 ::: {.column width="50%"}
 ### The Chaos:
+
 * `report_final.docx`
 * `report_final_v2.docx`
 * `report_final_v2_EDITED.docx`
@@ -237,6 +246,7 @@ Click the **Render** button (or `Ctrl/Cmd + Shift + K`) in RStudio to generate y
 
 ::: {.column width="50%"}
 ### The Git Way:
+
 * Every change is a snapshot with a message.
 * Full history: who changed what, when, and why.
 * Safe experimentation via branches.
@@ -276,6 +286,7 @@ flowchart LR
 ::: {.columns}
 ::: {.column width="33%"}
 ### 🟢 Zone 1: HW & Project
+
 * **AI Encouraged**
 * Use verify-then-use.
 * Disclose prompts & changes in AI appendix.
@@ -283,6 +294,7 @@ flowchart LR
 
 ::: {.column width="33%"}
 ### 🔴 Zone 2: Quizzes
+
 * **Strictly No AI**
 * 5 bi-weekly 15-min hand-fluency checks.
 * Paper or locked browser.
@@ -290,6 +302,7 @@ flowchart LR
 
 ::: {.column width="33%"}
 ### 🟡 Zone 3: In-Class
+
 * **AI Allowed**
 * Discuss with pair first.
 * Ask CA / Instructor if stuck.
@@ -301,6 +314,7 @@ flowchart LR
 ::: {.columns}
 ::: {.column width="50%"}
 ### ❌ The Bad AI User
+
 * Prompts: *"Do my homework question 3."*
 * Copies and pastes code blindly.
 * Submits hallucinated functions or incorrect math without understanding.
@@ -308,6 +322,7 @@ flowchart LR
 
 ::: {.column width="50%"}
 ### ✅ The Statistical Programmer
+
 * Prompts: *"How do I compute the trimmed mean in R while handling NAs?"*
 * Inspects the output against R documentation.
 * Tests edge cases.
@@ -323,5 +338,6 @@ flowchart LR
 4. **Office Hours:** Posted on the course website.
 
 ### 🔗 Useful Links:
+
 * Course Website: [gph-2182.github.io/course-website](https://gph-2182.github.io/course-website/)
 * Textbook: [r02pro.github.io](https://r02pro.github.io/)
