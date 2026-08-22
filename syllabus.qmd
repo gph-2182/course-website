@@ -36,8 +36,12 @@ and you may resubmit freely before the deadline. Late: 20% penalty within 24h,
 40% within 48h, zero after that.
 
 
-**In-class quizzes** (15–20 minutes, five total) are done individually without
-AI tools during the last part of class.
+**In-class quizzes** (15 minutes, five total: Weeks 3, 5, 7, 9, 11) are
+paper-based hand-fluency checks completed individually without laptops, phones,
+or AI assistance during the last 20 minutes of class. To provide flexibility for
+unexpected illness or travel, your **lowest quiz score is automatically dropped**
+(the best 4 of 5 count, 3.75% each, 15% total).
+
 
 **The final project** is an individual analysis of a public-health dataset:
 a reproducible Quarto report in a GitHub repository, a 5-minute recorded video
