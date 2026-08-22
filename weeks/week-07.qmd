@@ -1,30 +1,31 @@
 ---
-title: "Week 7: Data Manipulation with dplyr"
-subtitle: "Oct 21, 2026 · 2:00–4:40 PM · Bobst LL138"
+title: "Week 7: Strings, Factors & Dates"
+subtitle: "Oct 14, 2026 · 2:00–4:40 PM · Bobst LL138"
 ---
 
 ## Before class
 
-- **Read:** R02Pro Ch 8
-- Complete the previous weekly exercise (due tonight at 11:59 PM).
+- **Read:** R02Pro Ch 10, Ch 3.6, Ch 3.11
+- Review the newly released weekly exercise and prepare questions.
+- Complete Weekly Exercise 6 (due tonight at 11:59 PM).
+- 📝 **Quiz 3 (15 min, covers Weeks 5–6)** will be held during the final 20 minutes of class.
 
 ## Topics
 
-- Filtering, arranging, selecting, renaming
-- Creating new variables with mutate
-- Grouped summaries
-- The pipe
+- String manipulation with stringr: str_detect(), str_extract(), str_replace()
+- Regular expressions: character classes, anchors, and quantifiers
+- Categorical data with forcats: fct_reorder(), fct_lump(), factor level releveling
+- Working with dates and times via lubridate: ymd(), dmy(), intervals, durations
 
 ## Materials
 
-::: {.callout-note appearance="simple"}
-Slides and in-class exercise links will be posted here before class.
-:::
-
-- Slides: *coming soon*
-- In-class exercise: *coming soon*
-- Weekly exercise 7: *released after class on GitHub Classroom*
+- 📊 **Lecture Slides:** [Interactive Presentation (HTML)](slides/week-07-slides.html)
+- 📝 **In-Class Exercise:** [View Worksheet (HTML)](inclass/week-07-inclass.html) · [Download Starter Code (`.qmd`)](https://raw.githubusercontent.com/gph-2182/course-website/main/weeks/inclass/week-07-inclass.qmd)
+- 💻 **Weekly Exercise 7:** [View Template Repo on GitHub](https://github.com/gph-2182/weekly-exercise-7)
 
 ## Due
 
-Weekly exercise 6 · In-class exercise 7
+- Weekly Exercise 6 (due tonight at 11:59 PM)
+- In-class exercise 7 (pushed to GitHub by end of class)
+- Quiz 3 (15 min, covers Weeks 5–6)
+

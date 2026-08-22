@@ -1,33 +1,32 @@
 ---
-title: "Week 11: Strings and Regular Expressions"
-subtitle: "Nov 18, 2026 · 2:00–4:40 PM · Bobst LL138"
+title: "Week 11: Statistical Modeling & Regression"
+subtitle: "Nov 11, 2026 · 2:00–4:40 PM · Bobst LL138"
 ---
 
 ## Before class
 
-- **Read:** R02Pro Ch 10
-- Complete the previous weekly exercise (due tonight at 11:59 PM).
+- **Read:** R02Pro Ch 11.5–11.6
+- Review the newly released weekly exercise and prepare questions.
+- Complete Weekly Exercise 10 (due tonight at 11:59 PM).
+- 📝 **Quiz 5 (15 min, covers Weeks 9–10)** will be held during the final 20 minutes of class.
 
 ## Topics
 
-- Combining and subsetting strings
-- Pattern matching with regular expressions
-- AI-augmented regex workflow: AI drafts, you verify
-
-::: {.callout-important}
-**Quiz 4** takes place during the last part of this class. No AI tools during the quiz.
-:::
+- Hypothesis testing in R: t.test(), prop.test(), chisq.test()
+- Linear regression with lm(): formulas, coefficients, and R-squared
+- Logistic regression with glm(family = binomial): Odds Ratios and 95% CIs
+- Tidy model summaries with broom (tidy(), glance(), augment())
+- Formatting regression tables for publication
 
 ## Materials
 
-::: {.callout-note appearance="simple"}
-Slides and in-class exercise links will be posted here before class.
-:::
-
-- Slides: *coming soon*
-- In-class exercise: *coming soon*
-- Weekly exercise 11: *released after class on GitHub Classroom*
+- 📊 **Lecture Slides:** [Interactive Presentation (HTML)](slides/week-11-slides.html)
+- 📝 **In-Class Exercise:** [View Worksheet (HTML)](inclass/week-11-inclass.html) · [Download Starter Code (`.qmd`)](https://raw.githubusercontent.com/gph-2182/course-website/main/weeks/inclass/week-11-inclass.qmd)
+- 💻 **Weekly Exercise 11:** [View Template Repo on GitHub](https://github.com/gph-2182/weekly-exercise-11)
 
 ## Due
 
-Weekly exercise 10 · In-class exercise 11 · **Quiz 4**
+- Weekly Exercise 10 (due tonight at 11:59 PM)
+- In-class exercise 11 (pushed to GitHub by end of class)
+- Quiz 5 (15 min, covers Weeks 9–10)
+

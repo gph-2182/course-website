@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistical Programming in R - Week 7: Data Manipulation with dplyr</title>
+<title>Statistical Programming in R - Week 7: Strings, Factors &amp; Dates</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-01.html">Weekly Pages</a></li><li class="breadcrumb-item"><a href="../weeks/week-07.html">Week 7: Data Manipulation with dplyr</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-01.html">Weekly Pages</a></li><li class="breadcrumb-item"><a href="../weeks/week-07.html">Week 7: Strings, Factors &amp; Dates</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -169,73 +169,73 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 3: Data Frames, Tibbles, and Friends</span></a>
+ <span class="menu-text">Week 3: Matrices, Lists, Data Frames &amp; Data Import</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 4: Data Import and Export</span></a>
+ <span class="menu-text">Week 4: Data Visualization with ggplot2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 5: Data Visualization I</span></a>
+ <span class="menu-text">Week 5: Data Wrangling with dplyr &amp; Pipes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 6: Data Visualization II</span></a>
+ <span class="menu-text">Week 6: Advanced Wrangling, Joins &amp; Tidy Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-07.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 7: Data Manipulation with dplyr</span></a>
+ <span class="menu-text">Week 7: Strings, Factors &amp; Dates</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 8: AI-Assisted R Programming Workshop</span></a>
+ <span class="menu-text">Week 8: Control Flow &amp; Iteration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 9: Tidy Data and Joins</span></a>
+ <span class="menu-text">Week 9: Writing Custom Functions &amp; purrr</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 10: Case Study: A Full Public-Health Data Pipeline</span></a>
+ <span class="menu-text">Week 10: Statistical Simulation &amp; Sampling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 11: Strings and Regular Expressions</span></a>
+ <span class="menu-text">Week 11: Statistical Modeling &amp; Regression</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 12: Functions and Control Flow</span></a>
+ <span class="menu-text">Week 12: Advanced Quarto, Tables &amp; Case Studies</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 13: Simulation and Statistics</span></a>
+ <span class="menu-text">Week 13: Scientific Communication &amp; Project Workshop</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 14: Communicating with Quarto + Project Workshop</span></a>
+ <span class="menu-text">Week 14: Project Presentations &amp; The Future of R</span></a>
   </div>
 </li>
       </ul>
@@ -260,10 +260,10 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-01.html">Weekly Pages</a></li><li class="breadcrumb-item"><a href="../weeks/week-07.html">Week 7: Data Manipulation with dplyr</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-01.html">Weekly Pages</a></li><li class="breadcrumb-item"><a href="../weeks/week-07.html">Week 7: Strings, Factors &amp; Dates</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Week 7: Data Manipulation with dplyr</h1>
-<p class="subtitle lead">Oct 21, 2026 · 2:00–4:40 PM · Bobst LL138</p>
+<h1 class="title">Week 7: Strings, Factors &amp; Dates</h1>
+<p class="subtitle lead">Oct 14, 2026 · 2:00–4:40 PM · Bobst LL138</p>
 </div>
 
 
@@ -283,40 +283,36 @@ ul.task-list li input[type="checkbox"] {
 <section id="before-class" class="level2">
 <h2 class="anchored" data-anchor-id="before-class">Before class</h2>
 <ul>
-<li><strong>Read:</strong> R02Pro Ch 8</li>
-<li>Complete the previous weekly exercise (due tonight at 11:59 PM).</li>
+<li><strong>Read:</strong> R02Pro Ch 10, Ch 3.6, Ch 3.11</li>
+<li>Review the newly released weekly exercise and prepare questions.</li>
+<li>Complete Weekly Exercise 6 (due tonight at 11:59 PM).</li>
+<li>📝 <strong>Quiz 3 (15 min, covers Weeks 5–6)</strong> will be held during the final 20 minutes of class.</li>
 </ul>
 </section>
 <section id="topics" class="level2">
 <h2 class="anchored" data-anchor-id="topics">Topics</h2>
 <ul>
-<li>Filtering, arranging, selecting, renaming</li>
-<li>Creating new variables with mutate</li>
-<li>Grouped summaries</li>
-<li>The pipe</li>
+<li>String manipulation with stringr: str_detect(), str_extract(), str_replace()</li>
+<li>Regular expressions: character classes, anchors, and quantifiers</li>
+<li>Categorical data with forcats: fct_reorder(), fct_lump(), factor level releveling</li>
+<li>Working with dates and times via lubridate: ymd(), dmy(), intervals, durations</li>
 </ul>
 </section>
 <section id="materials" class="level2">
 <h2 class="anchored" data-anchor-id="materials">Materials</h2>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Slides and in-class exercise links will be posted here before class.</p>
-</div>
-</div>
-</div>
 <ul>
-<li>Slides: <em>coming soon</em></li>
-<li>In-class exercise: <em>coming soon</em></li>
-<li>Weekly exercise 7: <em>released after class on GitHub Classroom</em></li>
+<li>📊 <strong>Lecture Slides:</strong> <a href="slides/week-07-slides.html">Interactive Presentation (HTML)</a></li>
+<li>📝 <strong>In-Class Exercise:</strong> <a href="inclass/week-07-inclass.html">View Worksheet (HTML)</a> · <a href="https://raw.githubusercontent.com/gph-2182/course-website/main/weeks/inclass/week-07-inclass.qmd">Download Starter Code (<code>.qmd</code>)</a></li>
+<li>💻 <strong>Weekly Exercise 7:</strong> <a href="https://github.com/gph-2182/weekly-exercise-7">View Template Repo on GitHub</a></li>
 </ul>
 </section>
 <section id="due" class="level2">
 <h2 class="anchored" data-anchor-id="due">Due</h2>
-<p>Weekly exercise 6 · In-class exercise 7</p>
+<ul>
+<li>Weekly Exercise 6 (due tonight at 11:59 PM)</li>
+<li>In-class exercise 7 (pushed to GitHub by end of class)</li>
+<li>Quiz 3 (15 min, covers Weeks 5–6)</li>
+</ul>
 
 
 </section>

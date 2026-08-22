@@ -1,30 +1,32 @@
 ---
-title: "Week 5: Data Visualization I"
+title: "Week 5: Data Wrangling with dplyr & Pipes"
 subtitle: "Sep 30, 2026 · 2:00–4:40 PM · Bobst LL138"
 ---
 
 ## Before class
 
-- **Read:** R02Pro Ch 6
-- Complete the previous weekly exercise (due tonight at 11:59 PM).
+- **Read:** R02Pro Ch 8.1–8.4, 8.9
+- Review the newly released weekly exercise and prepare questions.
+- Complete Weekly Exercise 4 (due tonight at 11:59 PM).
+- 📝 **Quiz 2 (15 min, covers Weeks 3–4)** will be held during the final 20 minutes of class.
 
 ## Topics
 
-- The grammar of graphics with ggplot2
-- Scatterplots; aesthetics and mappings
-- Smoothline fits; multiple geoms
-- Customizing axes
+- The tidyverse data philosophy and the native pipe (|>)
+- Row filtering with filter() and logical conditions
+- Column selection, renaming, and helpers with select() and rename()
+- Creating and modifying variables with mutate()
+- Sorting datasets with arrange() and desc()
 
 ## Materials
 
-::: {.callout-note appearance="simple"}
-Slides and in-class exercise links will be posted here before class.
-:::
-
-- Slides: *coming soon*
-- In-class exercise: *coming soon*
-- Weekly exercise 5: *released after class on GitHub Classroom*
+- 📊 **Lecture Slides:** [Interactive Presentation (HTML)](slides/week-05-slides.html)
+- 📝 **In-Class Exercise:** [View Worksheet (HTML)](inclass/week-05-inclass.html) · [Download Starter Code (`.qmd`)](https://raw.githubusercontent.com/gph-2182/course-website/main/weeks/inclass/week-05-inclass.qmd)
+- 💻 **Weekly Exercise 5:** [View Template Repo on GitHub](https://github.com/gph-2182/weekly-exercise-5)
 
 ## Due
 
-Weekly exercise 4 · In-class exercise 5
+- Weekly Exercise 4 (due tonight at 11:59 PM)
+- In-class exercise 5 (pushed to GitHub by end of class)
+- Quiz 2 (15 min, covers Weeks 3–4)
+

@@ -1,33 +1,28 @@
 ---
-title: "Week 13: Simulation and Statistics"
+title: "Week 13: Scientific Communication & Project Workshop"
 subtitle: "Dec 2, 2026 · 2:00–4:40 PM · Bobst LL138"
 ---
 
 ## Before class
 
-- **Read:** R02Pro Ch 11
-- Complete the previous weekly exercise (due tonight at 11:59 PM).
+- **Read:** Supplementary materials
+- Review the newly released weekly exercise and prepare questions.
+- Complete Weekly Exercise 12 (due tonight at 11:59 PM).
 
 ## Topics
 
-- Common distributions; random number generation
-- Random sampling and permutation
-- Monte Carlo simulation with public-health examples
-
-::: {.callout-important}
-**Quiz 5** takes place during the last part of this class. No AI tools during the quiz.
-:::
+- Code quality, profiling, and benchmarking with microbenchmark
+- Structuring reproducible GitHub repositories for scientific audit
+- Responsible AI auditing & constructing the AI-Use Appendix
+- In-class final project peer review & consultation clinic
 
 ## Materials
 
-::: {.callout-note appearance="simple"}
-Slides and in-class exercise links will be posted here before class.
-:::
-
-- Slides: *coming soon*
-- In-class exercise: *coming soon*
-
+- 📊 **Lecture Slides:** [Interactive Presentation (HTML)](slides/week-13-slides.html)
+- 📝 **In-Class Exercise:** [View Worksheet (HTML)](inclass/week-13-inclass.html) · [Download Starter Code (`.qmd`)](https://raw.githubusercontent.com/gph-2182/course-website/main/weeks/inclass/week-13-inclass.qmd)
 
 ## Due
 
-Weekly exercise 12 · In-class exercise 13 · **Quiz 5**
+- Weekly Exercise 12 (due tonight at 11:59 PM)
+- In-class exercise 13 (pushed to GitHub by end of class)
+

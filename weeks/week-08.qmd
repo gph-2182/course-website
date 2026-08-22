@@ -1,32 +1,30 @@
 ---
-title: "Week 8: AI-Assisted R Programming Workshop"
-subtitle: "Oct 28, 2026 · 2:00–4:40 PM · Bobst LL138"
+title: "Week 8: Control Flow & Iteration"
+subtitle: "Oct 21, 2026 · 2:00–4:40 PM · Bobst LL138"
 ---
 
 ## Before class
 
-- **Read:** Course materials (provided)
-- Complete the previous weekly exercise (due tonight at 11:59 PM).
+- **Read:** R02Pro Ch 12
+- Review the newly released weekly exercise and prepare questions.
+- Complete Weekly Exercise 7 (due tonight at 11:59 PM).
 
 ## Topics
 
-- How large language models write (and break) R code
-- Prompting strategies for coding tasks
-- Verifying and testing AI-generated code
-- Debugging with AI assistance
-- “AI wrote this, find the bug”: guided exercises
-- Drafting your personal AI-use policy for the final project
+- Conditional execution: if, else if, else
+- Vectorized conditionals: ifelse() and dplyr::case_when()
+- Iteration with for loops: sequence iteration and pre-allocating output vectors
+- While loops and repeat loops
+- Loop control: next and break
 
 ## Materials
 
-::: {.callout-note appearance="simple"}
-Slides and in-class exercise links will be posted here before class.
-:::
-
-- Slides: *coming soon*
-- In-class exercise: *coming soon*
-- Weekly exercise 8: *released after class on GitHub Classroom*
+- 📊 **Lecture Slides:** [Interactive Presentation (HTML)](slides/week-08-slides.html)
+- 📝 **In-Class Exercise:** [View Worksheet (HTML)](inclass/week-08-inclass.html) · [Download Starter Code (`.qmd`)](https://raw.githubusercontent.com/gph-2182/course-website/main/weeks/inclass/week-08-inclass.qmd)
+- 💻 **Weekly Exercise 8:** [View Template Repo on GitHub](https://github.com/gph-2182/weekly-exercise-8)
 
 ## Due
 
-Weekly exercise 7 · In-class exercise 8
+- Weekly Exercise 7 (due tonight at 11:59 PM)
+- In-class exercise 8 (pushed to GitHub by end of class)
+

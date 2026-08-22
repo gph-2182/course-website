@@ -1,30 +1,27 @@
 ---
-title: "Week 14: Communicating with Quarto + Project Workshop"
+title: "Week 14: Project Presentations & The Future of R"
 subtitle: "Dec 9, 2026 · 2:00–4:40 PM · Bobst LL138"
 ---
 
 ## Before class
 
-- **Read:** Course materials (provided)
-- Complete the previous weekly exercise (due tonight at 11:59 PM).
+- **Read:** Supplementary materials
+- Review the newly released weekly exercise and prepare questions.
 
 ## Topics
 
-- Polished Quarto reports
-- Quarto websites and dashboards
-- Reproducibility checklist
-- In-class final project workshop with instructor and CA support
+- Lightning project presentations (student highlights)
+- Overview of R package development (usethis, devtools, roxygen2)
+- Interactive web dashboards with Shiny
+- Course wrap-up and next steps in advanced statistical data science
 
 ## Materials
 
-::: {.callout-note appearance="simple"}
-Slides and in-class exercise links will be posted here before class.
-:::
-
-- Slides: *coming soon*
-- In-class exercise: *coming soon*
-
+- 📊 **Lecture Slides:** [Interactive Presentation (HTML)](slides/week-14-slides.html)
+- 📝 **In-Class Exercise:** [View Worksheet (HTML)](inclass/week-14-inclass.html) · [Download Starter Code (`.qmd`)](https://raw.githubusercontent.com/gph-2182/course-website/main/weeks/inclass/week-14-inclass.qmd)
 
 ## Due
 
-In-class exercise 14
+- In-class exercise 14 (pushed to GitHub by end of class)
+- Final Project (due Wednesday Dec 16 at 11:59 PM)
+

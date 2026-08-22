@@ -1,35 +1,30 @@
 ---
-title: "Week 6: Data Visualization II"
+title: "Week 6: Advanced Wrangling, Joins & Tidy Data"
 subtitle: "Oct 7, 2026 · 2:00–4:40 PM · Bobst LL138"
 ---
 
 ## Before class
 
-- **Read:** R02Pro Ch 6–7
-- Complete the previous weekly exercise (due tonight at 11:59 PM).
+- **Read:** R02Pro Ch 8.5–8.8, Ch 9
+- Review the newly released weekly exercise and prepare questions.
+- Complete Weekly Exercise 5 (due tonight at 11:59 PM).
 
 ## Topics
 
-- Bar charts, histograms, density plots, boxplots
-- Faceting and arranging multiple plots
-- Labels, titles, and themes
-- A taste of interactive plots with plotly
-- Critique-this-chart activity
-
-::: {.callout-important}
-**Quiz 2** takes place during the last part of this class. No AI tools during the quiz.
-:::
+- Grouped operations: group_by() and summarize()
+- Counting and proportions: count(), n()
+- Relational data & two-table joins: left_join(), inner_join(), anti_join()
+- Tidy data principles and reshaping: tidyr::pivot_longer() and pivot_wider()
+- Handling missing values: drop_na(), replace_na()
 
 ## Materials
 
-::: {.callout-note appearance="simple"}
-Slides and in-class exercise links will be posted here before class.
-:::
-
-- Slides: *coming soon*
-- In-class exercise: *coming soon*
-- Weekly exercise 6: *released after class on GitHub Classroom*
+- 📊 **Lecture Slides:** [Interactive Presentation (HTML)](slides/week-06-slides.html)
+- 📝 **In-Class Exercise:** [View Worksheet (HTML)](inclass/week-06-inclass.html) · [Download Starter Code (`.qmd`)](https://raw.githubusercontent.com/gph-2182/course-website/main/weeks/inclass/week-06-inclass.qmd)
+- 💻 **Weekly Exercise 6:** [View Template Repo on GitHub](https://github.com/gph-2182/weekly-exercise-6)
 
 ## Due
 
-Weekly exercise 5 · In-class exercise 6 · **Quiz 2**
+- Weekly Exercise 5 (due tonight at 11:59 PM)
+- In-class exercise 6 (pushed to GitHub by end of class)
+
