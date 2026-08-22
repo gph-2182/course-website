@@ -7,11 +7,18 @@ format:
   html:
     toc: true
     number-sections: true
-    code-tools: true
+    code-tools:
+      source: true
+      toggle: false
+      caption: "Source Code"
 ---
 
 ::: {.callout-note}
-**Instructions:** Work in pairs. Complete each part during the designated in-class exercise blocks. Render this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit.
+### Instructions
+Work in pairs during class. 
+
+* 📥 **[Download `week-01-inclass.qmd`](https://raw.githubusercontent.com/gph-2182/course-website/main/weeks/inclass/week-01-inclass.qmd)** to open and edit in RStudio (or use the **`</> Source Code`** button at the top right).
+* Render this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit.
 :::
 
 # Cycle 1: R as a Calculator and Environment Setup

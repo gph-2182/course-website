@@ -969,7 +969,7 @@
     "href": "weeks/week-01.html#materials",
     "title": "Week 1: Welcome + the Modern R Toolkit",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Week 1 Slides (Interactive Presentation)\n📝 In-Class Exercise: Week 1 In-Class Worksheet (.qmd)\n💻 Weekly Exercise 1: Available on Classroom 50 and Gradescope (Due Tuesday Sep 8, 11:59 PM)",
+    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 1: Available on Classroom 50 (Due Tuesday Sep 8, 11:59 PM)",
     "crumbs": [
       "Weekly Pages",
       "Week 1: Welcome + the Modern R Toolkit"
@@ -991,7 +991,7 @@
     "href": "weeks/inclass/week-01-inclass.html",
     "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
     "section": "",
-    "text": "Note\n\n\n\nInstructions: Work in pairs. Complete each part during the designated in-class exercise blocks. Render this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit."
+    "text": "Instructions\n\n\n\nWork in pairs during class.\n\n📥 Download week-01-inclass.qmd to open and edit in RStudio (or use the &lt;/&gt; Source Code button at the top right).\nRender this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit."
   },
   {
     "objectID": "weeks/inclass/week-01-inclass.html#basic-arithmetic-calculations",
