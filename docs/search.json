@@ -135,111 +135,111 @@
   {
     "objectID": "weeks/week-01.html",
     "href": "weeks/week-01.html",
-    "title": "Week 1: Welcome + the Modern R Toolkit",
+    "title": "Week 1: Welcome + The Modern R Toolkit",
     "section": "",
-    "text": "Read: R02Pro Ch 1\nInstall R and RStudio, and create a free GitHub account (see Home).",
+    "text": "Read: R02Pro Ch 1\nReview the newly released weekly exercise and prepare questions.",
     "crumbs": [
       "Weekly Pages",
-      "Week 1: Welcome + the Modern R Toolkit"
+      "Week 1: Welcome + The Modern R Toolkit"
     ]
   },
   {
     "objectID": "weeks/week-01.html#before-class",
     "href": "weeks/week-01.html#before-class",
-    "title": "Week 1: Welcome + the Modern R Toolkit",
+    "title": "Week 1: Welcome + The Modern R Toolkit",
     "section": "",
-    "text": "Read: R02Pro Ch 1\nInstall R and RStudio, and create a free GitHub account (see Home).",
+    "text": "Read: R02Pro Ch 1\nReview the newly released weekly exercise and prepare questions.",
     "crumbs": [
       "Weekly Pages",
-      "Week 1: Welcome + the Modern R Toolkit"
+      "Week 1: Welcome + The Modern R Toolkit"
     ]
   },
   {
     "objectID": "weeks/week-01.html#topics",
     "href": "weeks/week-01.html#topics",
-    "title": "Week 1: Welcome + the Modern R Toolkit",
+    "title": "Week 1: Welcome + The Modern R Toolkit",
     "section": "Topics",
     "text": "Topics\n\nInstalling R, RStudio, and Quarto\nRunning R code; R as a calculator; getting help\nQuarto documents: text formatting, code chunks, rendering\nGitHub onboarding: accept, clone, edit, render, push\nCourse workflow and AI policy overview",
     "crumbs": [
       "Weekly Pages",
-      "Week 1: Welcome + the Modern R Toolkit"
+      "Week 1: Welcome + The Modern R Toolkit"
     ]
   },
   {
     "objectID": "weeks/week-01.html#materials",
     "href": "weeks/week-01.html#materials",
-    "title": "Week 1: Welcome + the Modern R Toolkit",
+    "title": "Week 1: Welcome + The Modern R Toolkit",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 1: Accept Assignment on Classroom 50 · View Template Repo (Due Wednesday Sep 9, 11:59 PM)",
+    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 1: Accept Assignment on Classroom 50 · View Template Repo",
     "crumbs": [
       "Weekly Pages",
-      "Week 1: Welcome + the Modern R Toolkit"
+      "Week 1: Welcome + The Modern R Toolkit"
     ]
   },
   {
     "objectID": "weeks/week-01.html#due",
     "href": "weeks/week-01.html#due",
-    "title": "Week 1: Welcome + the Modern R Toolkit",
+    "title": "Week 1: Welcome + The Modern R Toolkit",
     "section": "Due",
-    "text": "Due\n\nIn-class exercise 1 (pushed to GitHub by end of class)\nWeekly exercise 1 (due Wednesday Sep 9, 11:59 PM)",
+    "text": "Due\n\nIn-class exercise 1 (pushed to GitHub by end of class)",
     "crumbs": [
       "Weekly Pages",
-      "Week 1: Welcome + the Modern R Toolkit"
+      "Week 1: Welcome + The Modern R Toolkit"
     ]
   },
   {
     "objectID": "weeks/week-02.html",
     "href": "weeks/week-02.html",
-    "title": "Week 2: Vectors and Subsetting",
+    "title": "Week 2: Vectors & Subsetting",
     "section": "",
-    "text": "Read: R02Pro Ch 2–3\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
+    "text": "Read: R02Pro Ch 2–3\nReview the newly released weekly exercise and prepare questions.\nComplete Weekly Exercise 1 (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
-      "Week 2: Vectors and Subsetting"
+      "Week 2: Vectors & Subsetting"
     ]
   },
   {
     "objectID": "weeks/week-02.html#before-class",
     "href": "weeks/week-02.html#before-class",
-    "title": "Week 2: Vectors and Subsetting",
+    "title": "Week 2: Vectors & Subsetting",
     "section": "",
-    "text": "Read: R02Pro Ch 2–3\nComplete the previous weekly exercise (due tonight at 11:59 PM).",
+    "text": "Read: R02Pro Ch 2–3\nReview the newly released weekly exercise and prepare questions.\nComplete Weekly Exercise 1 (due tonight at 11:59 PM).",
     "crumbs": [
       "Weekly Pages",
-      "Week 2: Vectors and Subsetting"
+      "Week 2: Vectors & Subsetting"
     ]
   },
   {
     "objectID": "weeks/week-02.html#topics",
     "href": "weeks/week-02.html#topics",
-    "title": "Week 2: Vectors and Subsetting",
+    "title": "Week 2: Vectors & Subsetting",
     "section": "Topics",
     "text": "Topics\n\nObject assignment and naming\nNumeric, character, and logical vectors\nPatterned vectors; sorting; summary statistics\nComparisons, subsetting, logical and set operations",
     "crumbs": [
       "Weekly Pages",
-      "Week 2: Vectors and Subsetting"
+      "Week 2: Vectors & Subsetting"
     ]
   },
   {
     "objectID": "weeks/week-02.html#materials",
     "href": "weeks/week-02.html#materials",
-    "title": "Week 2: Vectors and Subsetting",
+    "title": "Week 2: Vectors & Subsetting",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 2: View Template Repo on GitHub (Due Wednesday Sep 16, 11:59 PM)",
+    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 2: View Template Repo on GitHub",
     "crumbs": [
       "Weekly Pages",
-      "Week 2: Vectors and Subsetting"
+      "Week 2: Vectors & Subsetting"
     ]
   },
   {
     "objectID": "weeks/week-02.html#due",
     "href": "weeks/week-02.html#due",
-    "title": "Week 2: Vectors and Subsetting",
+    "title": "Week 2: Vectors & Subsetting",
     "section": "Due",
-    "text": "Due\n\nWeekly Exercise 1 (due tonight at 11:59 PM)\nIn-class exercise 2 (pushed to GitHub by end of class)\nWeekly Exercise 2 (due Wednesday Sep 16, 11:59 PM)",
+    "text": "Due\n\nWeekly Exercise 1 (due tonight at 11:59 PM)\nIn-class exercise 2 (pushed to GitHub by end of class)",
     "crumbs": [
       "Weekly Pages",
-      "Week 2: Vectors and Subsetting"
+      "Week 2: Vectors & Subsetting"
     ]
   },
   {
@@ -280,7 +280,7 @@
     "href": "weeks/week-06.html#materials",
     "title": "Week 6: Advanced Wrangling, Joins & Tidy Data",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 6: View Template Repo on GitHub",
+    "text": "Materials\n\n\n\n\n\n\nMaterials will be posted here before class.\n\n\n\n\n📊 Lecture Slides: Available before class\n📝 In-Class Exercise: Available before class\n💻 Weekly Exercise 6: Released before class on GitHub",
     "crumbs": [
       "Weekly Pages",
       "Week 6: Advanced Wrangling, Joins & Tidy Data"
@@ -335,7 +335,7 @@
     "href": "weeks/week-13.html#materials",
     "title": "Week 13: Scientific Communication & Project Workshop",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)",
+    "text": "Materials\n\n\n\n\n\n\nMaterials will be posted here before class.\n\n\n\n\n📊 Lecture Slides: Available before class\n📝 In-Class Exercise: Available before class",
     "crumbs": [
       "Weekly Pages",
       "Week 13: Scientific Communication & Project Workshop"
@@ -390,7 +390,7 @@
     "href": "weeks/week-11.html#materials",
     "title": "Week 11: Statistical Modeling & Regression",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 11: View Template Repo on GitHub",
+    "text": "Materials\n\n\n\n\n\n\nMaterials will be posted here before class.\n\n\n\n\n📊 Lecture Slides: Available before class\n📝 In-Class Exercise: Available before class\n💻 Weekly Exercise 11: Released before class on GitHub",
     "crumbs": [
       "Weekly Pages",
       "Week 11: Statistical Modeling & Regression"
@@ -445,7 +445,7 @@
     "href": "weeks/week-04.html#materials",
     "title": "Week 4: Data Visualization with ggplot2",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 4: View Template Repo on GitHub",
+    "text": "Materials\n\n\n\n\n\n\nMaterials will be posted here before class.\n\n\n\n\n📊 Lecture Slides: Available before class\n📝 In-Class Exercise: Available before class\n💻 Weekly Exercise 4: Released before class on GitHub",
     "crumbs": [
       "Weekly Pages",
       "Week 4: Data Visualization with ggplot2"
@@ -633,7 +633,7 @@
     "href": "weeks/week-08.html#materials",
     "title": "Week 8: Control Flow & Iteration",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 8: View Template Repo on GitHub",
+    "text": "Materials\n\n\n\n\n\n\nMaterials will be posted here before class.\n\n\n\n\n📊 Lecture Slides: Available before class\n📝 In-Class Exercise: Available before class\n💻 Weekly Exercise 8: Released before class on GitHub",
     "crumbs": [
       "Weekly Pages",
       "Week 8: Control Flow & Iteration"
@@ -688,7 +688,7 @@
     "href": "weeks/week-09.html#materials",
     "title": "Week 9: Writing Custom Functions & purrr",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 9: View Template Repo on GitHub",
+    "text": "Materials\n\n\n\n\n\n\nMaterials will be posted here before class.\n\n\n\n\n📊 Lecture Slides: Available before class\n📝 In-Class Exercise: Available before class\n💻 Weekly Exercise 9: Released before class on GitHub",
     "crumbs": [
       "Weekly Pages",
       "Week 9: Writing Custom Functions & purrr"
@@ -862,7 +862,7 @@
     "href": "weeks/week-10.html#materials",
     "title": "Week 10: Statistical Simulation & Sampling",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 10: View Template Repo on GitHub",
+    "text": "Materials\n\n\n\n\n\n\nMaterials will be posted here before class.\n\n\n\n\n📊 Lecture Slides: Available before class\n📝 In-Class Exercise: Available before class\n💻 Weekly Exercise 10: Released before class on GitHub",
     "crumbs": [
       "Weekly Pages",
       "Week 10: Statistical Simulation & Sampling"
@@ -917,7 +917,7 @@
     "href": "weeks/week-05.html#materials",
     "title": "Week 5: Data Wrangling with dplyr & Pipes",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 5: View Template Repo on GitHub",
+    "text": "Materials\n\n\n\n\n\n\nMaterials will be posted here before class.\n\n\n\n\n📊 Lecture Slides: Available before class\n📝 In-Class Exercise: Available before class\n💻 Weekly Exercise 5: Released before class on GitHub",
     "crumbs": [
       "Weekly Pages",
       "Week 5: Data Wrangling with dplyr & Pipes"
@@ -972,7 +972,7 @@
     "href": "weeks/week-07.html#materials",
     "title": "Week 7: Strings, Factors & Dates",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 7: View Template Repo on GitHub",
+    "text": "Materials\n\n\n\n\n\n\nMaterials will be posted here before class.\n\n\n\n\n📊 Lecture Slides: Available before class\n📝 In-Class Exercise: Available before class\n💻 Weekly Exercise 7: Released before class on GitHub",
     "crumbs": [
       "Weekly Pages",
       "Week 7: Strings, Factors & Dates"
@@ -1027,7 +1027,7 @@
     "href": "weeks/week-12.html#materials",
     "title": "Week 12: Advanced Quarto, Tables & Case Studies",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 12: View Template Repo on GitHub",
+    "text": "Materials\n\n\n\n\n\n\nMaterials will be posted here before class.\n\n\n\n\n📊 Lecture Slides: Available before class\n📝 In-Class Exercise: Available before class\n💻 Weekly Exercise 12: Released before class on GitHub",
     "crumbs": [
       "Weekly Pages",
       "Week 12: Advanced Quarto, Tables & Case Studies"
@@ -1082,7 +1082,7 @@
     "href": "weeks/week-03.html#materials",
     "title": "Week 3: Matrices, Lists, Data Frames & Data Import",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 3: View Template Repo on GitHub",
+    "text": "Materials\n\n\n\n\n\n\nMaterials will be posted here before class.\n\n\n\n\n📊 Lecture Slides: Available before class\n📝 In-Class Exercise: Available before class\n💻 Weekly Exercise 3: Released before class on GitHub",
     "crumbs": [
       "Weekly Pages",
       "Week 3: Matrices, Lists, Data Frames & Data Import"
@@ -1137,7 +1137,7 @@
     "href": "weeks/week-14.html#materials",
     "title": "Week 14: Project Presentations & The Future of R",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)",
+    "text": "Materials\n\n\n\n\n\n\nMaterials will be posted here before class.\n\n\n\n\n📊 Lecture Slides: Available before class\n📝 In-Class Exercise: Available before class",
     "crumbs": [
       "Weekly Pages",
       "Week 14: Project Presentations & The Future of R"

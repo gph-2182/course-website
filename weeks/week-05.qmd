@@ -20,9 +20,13 @@ subtitle: "Sep 30, 2026 · 2:00–4:40 PM · Bobst LL138"
 
 ## Materials
 
-- 📊 **Lecture Slides:** [Interactive Presentation (HTML)](slides/week-05-slides.html)
-- 📝 **In-Class Exercise:** [View Worksheet (HTML)](inclass/week-05-inclass.html) · [Download Starter Code (`.qmd`)](https://raw.githubusercontent.com/gph-2182/course-website/main/weeks/inclass/week-05-inclass.qmd)
-- 💻 **Weekly Exercise 5:** [View Template Repo on GitHub](https://github.com/gph-2182/weekly-exercise-5)
+::: {.callout-note appearance="simple"}
+Materials will be posted here before class.
+:::
+
+- 📊 **Lecture Slides:** *Available before class*
+- 📝 **In-Class Exercise:** *Available before class*
+- 💻 **Weekly Exercise 5:** *Released before class on GitHub*
 
 ## Due
 
