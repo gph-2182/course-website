@@ -312,6 +312,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -435,7 +436,7 @@ Yang Feng
 </div>
 </div>
 </section>
-<section id="the-modern-data-science-stack" class="slide level2">
+<section id="the-modern-data-science-stack" class="slide level2 scrollable">
 <h2>The Modern Data Science Stack</h2>
 <p>In this course, you will master four core technologies:</p>
 <ol type="1">
@@ -547,7 +548,7 @@ flowchart LR
 <li><strong>Textbook:</strong> <em>R Programming: Zero to Pro</em> (Free online: <a href="https://r02pro.github.io/">r02pro.github.io</a>).</li>
 </ul>
 </section>
-<section id="in-class-exercise-1a-12-min" class="slide level2">
+<section id="in-class-exercise-1a-12-min" class="slide level2 scrollable">
 <h2>💻 In-Class Exercise 1A (12 min)</h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -573,37 +574,48 @@ flowchart LR
 <h1>Cycle 2: Reproducible Reports with Quarto</h1>
 
 </section>
-<section id="why-quarto" class="slide level2">
+<section id="why-quarto" class="slide level2 scrollable">
 <h2>Why Quarto?</h2>
-<p>Traditional data analysis workflow:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="the-traditional-way">❌ The Traditional Way</h3>
 <ol type="1">
-<li>Run code in R <span class="math inline">\(\rightarrow\)</span> Copy table to Excel <span class="math inline">\(\rightarrow\)</span> Paste chart into Word <span class="math inline">\(\rightarrow\)</span> Save as PDF.</li>
-<li><em>Data changes?</em> Repeat everything manually and risk copy-paste errors!</li>
+<li>Run code in R <span class="math inline">\(\rightarrow\)</span> Copy table to Excel <span class="math inline">\(\rightarrow\)</span> Paste into Word <span class="math inline">\(\rightarrow\)</span> Export PDF.</li>
+<li><strong>Data changes?</strong> Repeat everything manually and risk copy-paste errors!</li>
 </ol>
-<div class="fragment">
-<!-- -->
-<h3 id="the-quarto-way">The Quarto Way:</h3>
-<p>One single document (<code>.qmd</code>) containing:</p>
+</div><div class="column" style="width:50%;">
+<h3 id="the-quarto-way">✅ The Quarto Way</h3>
+<p>One reproducible <code>.qmd</code> document combining:</p>
 <ul>
-<li>Your narrative text (Markdown)</li>
-<li>Your live R code (<code>{r}</code>)</li>
-<li>Rendered figures and tables generated directly on compilation.</li>
+<li><strong>Narrative text</strong> (Markdown)</li>
+<li><strong>Executable code</strong> (R chunks)</li>
+<li><strong>Dynamic tables &amp; plots</strong> compiled directly on demand.</li>
 </ul>
+</div>
 </div>
 </section>
 <section id="anatomy-of-a-quarto-document-.qmd" class="slide level2">
 <h2>Anatomy of a Quarto Document (<code>.qmd</code>)</h2>
-<p>A <code>.qmd</code> document has three parts:</p>
+<p>A <code>.qmd</code> document combines three elements:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>1. YAML Metadata (Header):</strong></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a></a><span class="pp">---</span></span>
 <span id="cb5-2"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Analysis"</span></span>
 <span id="cb5-3"><a></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your Name"</span></span>
 <span id="cb5-4"><a></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
 <span id="cb5-5"><a></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>2. Markdown Narrative (Text):</strong></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a></a><span class="fu">## Introduction</span></span>
-<span id="cb6-2"><a></a>Here is some narrative text with **bold** and *italics*.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-2"><a></a>Here is text with **bold** &amp; *italics*.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<p><strong>3. Code Chunks (Live Computation):</strong></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># An R code chunk</span></span>
 <span id="cb7-2"><a></a>mean_age <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">45</span>))</span>
 <span id="cb7-3"><a></a>mean_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong><span class="math inline">\(\longrightarrow\)</span> Click Render (<code>Ctrl/Cmd + Shift + K</code>)</strong> to compile directly into a polished HTML report!</p>
+</div>
+</div>
 </section>
 <section id="markdown-text-formatting-cheat-sheet" class="slide level2">
 <h2>Markdown Text Formatting Cheat Sheet</h2>
@@ -656,7 +668,7 @@ flowchart LR
 <span id="cb8-5"><a></a><span class="co">#| fig-width: 7     # Control plot width</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Click the <strong>Render</strong> button (or <code>Ctrl/Cmd + Shift + K</code>) in RStudio to generate your HTML report!</p>
 </section>
-<section id="in-class-exercise-1b-15-min" class="slide level2">
+<section id="in-class-exercise-1b-15-min" class="slide level2 scrollable">
 <h2>💻 In-Class Exercise 1B (15 min)</h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -728,7 +740,7 @@ flowchart LR
 </div>
 </div>
 </section>
-<section id="how-homework-works-instant-feedback" class="slide level2">
+<section id="how-homework-works-instant-feedback" class="slide level2 scrollable">
 <h2>How Homework Works (Instant Feedback)</h2>
 <ol type="1">
 <li><strong>Accept:</strong> Click the invitation link for <code>weekly-exercise-01</code>.</li>
@@ -793,7 +805,7 @@ flowchart LR
 </div>
 </div>
 </section>
-<section id="summary-what-to-do-before-week-2" class="slide level2">
+<section id="summary-what-to-do-before-week-2" class="slide level2 scrollable">
 <h2>Summary &amp; What To Do Before Week 2</h2>
 <ol type="1">
 <li><strong>Complete &amp; Push:</strong> In-class exercise 1 <code>.qmd</code> to your GitHub repo.</li>

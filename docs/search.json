@@ -474,14 +474,14 @@
     "href": "weeks/slides/week-01-slides.html#why-quarto",
     "title": "Week 1: Welcome & The Modern R Toolkit",
     "section": "Why Quarto?",
-    "text": "Why Quarto?\nTraditional data analysis workflow:\n\nRun code in R \\(\\rightarrow\\) Copy table to Excel \\(\\rightarrow\\) Paste chart into Word \\(\\rightarrow\\) Save as PDF.\nData changes? Repeat everything manually and risk copy-paste errors!\n\n\n\nThe Quarto Way:\nOne single document (.qmd) containing:\n\nYour narrative text (Markdown)\nYour live R code ({r})\nRendered figures and tables generated directly on compilation."
+    "text": "Why Quarto?\n\n\n❌ The Traditional Way\n\nRun code in R \\(\\rightarrow\\) Copy table to Excel \\(\\rightarrow\\) Paste into Word \\(\\rightarrow\\) Export PDF.\nData changes? Repeat everything manually and risk copy-paste errors!\n\n\n✅ The Quarto Way\nOne reproducible .qmd document combining:\n\nNarrative text (Markdown)\nExecutable code (R chunks)\nDynamic tables & plots compiled directly on demand."
   },
   {
     "objectID": "weeks/slides/week-01-slides.html#anatomy-of-a-quarto-document-.qmd",
     "href": "weeks/slides/week-01-slides.html#anatomy-of-a-quarto-document-.qmd",
     "title": "Week 1: Welcome & The Modern R Toolkit",
     "section": "Anatomy of a Quarto Document (.qmd)",
-    "text": "Anatomy of a Quarto Document (.qmd)\nA .qmd document has three parts:\n---\ntitle: \"My Analysis\"\nauthor: \"Your Name\"\nformat: html\n---\n## Introduction\nHere is some narrative text with **bold** and *italics*.\n# An R code chunk\nmean_age &lt;- mean(c(25, 30, 45))\nmean_age"
+    "text": "Anatomy of a Quarto Document (.qmd)\nA .qmd document combines three elements:\n\n\n1. YAML Metadata (Header):\n---\ntitle: \"My Analysis\"\nauthor: \"Your Name\"\nformat: html\n---\n2. Markdown Narrative (Text):\n## Introduction\nHere is text with **bold** & *italics*.\n\n3. Code Chunks (Live Computation):\n# An R code chunk\nmean_age &lt;- mean(c(25, 30, 45))\nmean_age\n\\(\\longrightarrow\\) Click Render (Ctrl/Cmd + Shift + K) to compile directly into a polished HTML report!"
   },
   {
     "objectID": "weeks/slides/week-01-slides.html#markdown-text-formatting-cheat-sheet",
@@ -969,7 +969,7 @@
     "href": "weeks/week-01.html#materials",
     "title": "Week 1: Welcome + the Modern R Toolkit",
     "section": "Materials",
-    "text": "Materials\n\n📊 Lecture Slides: Interactive Presentation (HTML)\n📝 In-Class Exercise: View Worksheet (HTML) · Download Starter Code (.qmd)\n💻 Weekly Exercise 1: Available on Classroom 50 (Due Tuesday Sep 8, 11:59 PM)",
+    "text": "Materials\n\n📊 Lecture Slides: Week 1 Slides (Interactive Presentation)\n📝 In-Class Exercise: Week 1 In-Class Worksheet (.qmd)\n💻 Weekly Exercise 1: Available on Classroom 50 and Gradescope (Due Tuesday Sep 8, 11:59 PM)",
     "crumbs": [
       "Weekly Pages",
       "Week 1: Welcome + the Modern R Toolkit"
@@ -991,14 +991,14 @@
     "href": "weeks/inclass/week-01-inclass.html",
     "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
     "section": "",
-    "text": "Instructions\n\n\n\nWork in pairs during class.\n\n📥 Download week-01-inclass.qmd to open and edit in RStudio (or use the &lt;/&gt; Source Code button at the top right).\nRender this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit."
+    "text": "Note\n\n\n\nInstructions: Work in pairs. Complete each part during the designated in-class exercise blocks. Render this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit."
   },
   {
     "objectID": "weeks/inclass/week-01-inclass.html#basic-arithmetic-calculations",
     "href": "weeks/inclass/week-01-inclass.html#basic-arithmetic-calculations",
     "title": "Week 1 In-Class Exercise: Welcome & Modern Toolkit",
     "section": "1.1 Basic Arithmetic & Calculations",
-    "text": "1.1 Basic Arithmetic & Calculations\nIn the code chunk below, compute the Body Mass Index (BMI) for three study participants:\n\nParticipant A: Weight 70\\text{ kg}, Height 1.75\\text{ m}\nParticipant B: Weight 85\\text{ kg}, Height 1.80\\text{ m}\nParticipant C: Weight 58\\text{ kg}, Height 1.62\\text{ m}\n\n\\text{BMI} = \\frac{\\text{weight in kg}}{(\\text{height in meters})^2}\n\n# Write your calculations below:"
+    "text": "1.1 Basic Arithmetic & Calculations\nIn the code chunk below, compute the Body Mass Index (BMI) for three study participants:\n\nParticipant A: Weight \\(70\\text{ kg}\\), Height \\(1.75\\text{ m}\\)\nParticipant B: Weight \\(85\\text{ kg}\\), Height \\(1.80\\text{ m}\\)\nParticipant C: Weight \\(58\\text{ kg}\\), Height \\(1.62\\text{ m}\\)\n\n\\[\\text{BMI} = \\frac{\\text{weight in kg}}{(\\text{height in meters})^2}\\]\n\n# Write your calculations below:"
   },
   {
     "objectID": "weeks/inclass/week-01-inclass.html#exploring-built-in-functions",

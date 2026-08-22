@@ -11,6 +11,7 @@ format:
     chalkboard: true
     transition: slide
     navigation-mode: linear
+    scrollable: true
     width: 1200
     height: 700
     footer: "GPH-GU 2182 · Week 1"
@@ -154,25 +155,32 @@ library(r02pro)
 
 ## Why Quarto?
 
-Traditional data analysis workflow:
+::: {.columns}
+::: {.column width="50%"}
+### ❌ The Traditional Way
 
-1. Run code in R $\rightarrow$ Copy table to Excel $\rightarrow$ Paste chart into Word $\rightarrow$ Save as PDF.
-2. *Data changes?* Repeat everything manually and risk copy-paste errors!
+1. Run code in R $\rightarrow$ Copy table to Excel $\rightarrow$ Paste into Word $\rightarrow$ Export PDF.
+2. **Data changes?** Repeat everything manually and risk copy-paste errors!
+:::
 
-::: {.fragment}
-### The Quarto Way:
+::: {.column width="50%"}
+### ✅ The Quarto Way
 
-One single document (`.qmd`) containing:
+One reproducible `.qmd` document combining:
 
-* Your narrative text (Markdown)
-* Your live R code (````{r}````)
-* Rendered figures and tables generated directly on compilation.
+* **Narrative text** (Markdown)
+* **Executable code** (R chunks)
+* **Dynamic tables & plots** compiled directly on demand.
+:::
 :::
 
 ## Anatomy of a Quarto Document (`.qmd`)
 
-A `.qmd` document has three parts:
+A `.qmd` document combines three elements:
 
+::: {.columns}
+::: {.column width="50%"}
+**1. YAML Metadata (Header):**
 ```yaml
 ---
 title: "My Analysis"
@@ -181,16 +189,25 @@ format: html
 ---
 ```
 
+**2. Markdown Narrative (Text):**
 ```markdown
 ## Introduction
-Here is some narrative text with **bold** and *italics*.
+Here is text with **bold** & *italics*.
 ```
+:::
 
+::: {.column width="50%"}
+**3. Code Chunks (Live Computation):**
 ```r
 # An R code chunk
 mean_age <- mean(c(25, 30, 45))
 mean_age
 ```
+
+**$\longrightarrow$ Click Render (`Ctrl/Cmd + Shift + K`)** to compile directly into a polished HTML report!
+:::
+:::
+
 
 ## Markdown Text Formatting Cheat Sheet
 
