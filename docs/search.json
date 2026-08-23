@@ -1243,20 +1243,20 @@
     "href": "project.html",
     "title": "Final Project",
     "section": "",
-    "text": "Note\n\n\n\nFull instructions and the grading rubric will be released in Week 10 (November 11). This page summarizes the shape of the project so you can plan ahead.\nEach student produces a comprehensive statistical analysis of a public-health dataset, modeled on the Week 10 case study."
+    "text": "Note\n\n\n\nFull instructions, dataset options, and the grading rubric will be released in Week 10 (November 4). This page summarizes the shape of the project so you can plan ahead.\nEach student produces a comprehensive statistical analysis of a public-health dataset, modeled on a reproducible data science pipeline."
   },
   {
     "objectID": "project.html#deliverables-due-1159-pm-wednesday-december-16",
     "href": "project.html#deliverables-due-1159-pm-wednesday-december-16",
     "title": "Final Project",
     "section": "Deliverables (due 11:59 PM, Wednesday December 16)",
-    "text": "Deliverables (due 11:59 PM, Wednesday December 16)\n\nA GitHub repository containing all code and a reproducible Quarto report with sections on introduction, data preparation, exploratory data analysis (tables, plots, results, interpretations), and summary. The report must render from your repository as submitted.\nA 5-minute recorded video walkthrough of your analysis: what question you asked, what you found, and a tour of your key figures.\nAn AI-use appendix: what you asked AI tools, what they produced, and what you verified or changed."
+    "text": "Deliverables (due 11:59 PM, Wednesday December 16)\n\nA GitHub repository containing all code and a reproducible Quarto report with sections on introduction, data preparation, exploratory data analysis (publication tables, ggplot2 figures, statistical results, interpretations), and summary. The report must render cleanly from your repository as submitted.\nA 5-minute recorded video walkthrough (via Loom, Zoom, or similar screen recorder) summarizing your research question, key findings, and a tour of your visualizations.\nAn AI-use appendix: disclosing what you asked AI assistants, what code was generated, and how you verified or debugged the output."
   },
   {
     "objectID": "project.html#milestones",
     "href": "project.html#milestones",
     "title": "Final Project",
     "section": "Milestones",
-    "text": "Milestones\n\n\n\nDate\nMilestone\n\n\n\n\nNov 11 (Week 10)\nProject released; case-study template in class\n\n\nNov–Dec\n30-minute mandatory online office hour about the project\n\n\nDec 9 (Week 14)\nIn-class project workshop\n\n\nDec 16, 11:59 PM\nEverything due. No late submissions."
+    "text": "Milestones\n\n\n\n\n\n\n\nDate\nMilestone\n\n\n\n\nNov 4 (Week 10)\nFinal Project released with sample public health datasets & starter template\n\n\nNov–Dec\nDrop-in project support available during instructor & CA weekly office hours\n\n\nDec 9 (Week 14)\nIn-class project workshop & consultation clinic in Bobst LL138\n\n\nDec 16, 11:59 PM\nFinal project submission due on GitHub. No late submissions accepted."
   }
 ]

@@ -3,30 +3,30 @@ title: "Final Project"
 ---
 
 ::: {.callout-note}
-Full instructions and the grading rubric will be released in **Week 10
-(November 11)**. This page summarizes the shape of the project so you can plan
+Full instructions, dataset options, and the grading rubric will be released in **Week 10
+(November 4)**. This page summarizes the shape of the project so you can plan
 ahead.
 :::
 
 Each student produces a comprehensive statistical analysis of a public-health
-dataset, modeled on the Week 10 case study.
+dataset, modeled on a reproducible data science pipeline.
 
 ## Deliverables (due 11:59 PM, Wednesday December 16)
 
 1. **A GitHub repository** containing all code and a reproducible **Quarto
    report** with sections on introduction, data preparation, exploratory data
-   analysis (tables, plots, results, interpretations), and summary. The report
-   must render from your repository as submitted.
-2. **A 5-minute recorded video walkthrough** of your analysis: what question
-   you asked, what you found, and a tour of your key figures.
-3. **An AI-use appendix**: what you asked AI tools, what they produced, and
-   what you verified or changed.
+   analysis (publication tables, `ggplot2` figures, statistical results, interpretations), and summary. The report
+   must render cleanly from your repository as submitted.
+2. **A 5-minute recorded video walkthrough** (via Loom, Zoom, or similar screen recorder) summarizing your research question, key findings, and a tour of your visualizations.
+3. **An AI-use appendix**: disclosing what you asked AI assistants, what code was generated, and
+   how you verified or debugged the output.
 
 ## Milestones
 
 | Date | Milestone |
 |---|---|
-| Nov 11 (Week 10) | Project released; case-study template in class |
-| Nov–Dec | 30-minute mandatory online office hour about the project |
-| Dec 9 (Week 14) | In-class project workshop |
-| Dec 16, 11:59 PM | Everything due. No late submissions. |
+| **Nov 4 (Week 10)** | Final Project released with sample public health datasets & starter template |
+| **Nov–Dec** | Drop-in project support available during instructor & CA weekly office hours |
+| **Dec 9 (Week 14)** | In-class project workshop & consultation clinic in Bobst LL138 |
+| **Dec 16, 11:59 PM** | Final project submission due on GitHub. No late submissions accepted. |
+
