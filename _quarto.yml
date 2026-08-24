@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: docs
+  pre-render: tools/prepare-release.sh
 
 website:
   title: "Statistical Programming in R"

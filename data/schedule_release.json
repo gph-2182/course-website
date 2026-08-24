@@ -1,0 +1,128 @@
+[
+  {
+    "week": 1,
+    "class_date": "2026-09-02",
+    "release_date": "2026-08-30T08:00:00-04:00",
+    "topic": "Welcome + The Modern R Toolkit",
+    "readings": "R02Pro Ch 1",
+    "has_hw": true,
+    "hw_num": 1
+  },
+  {
+    "week": 2,
+    "class_date": "2026-09-09",
+    "release_date": "2026-09-06T08:00:00-04:00",
+    "topic": "Vectors & Subsetting",
+    "readings": "R02Pro Ch 2–3",
+    "has_hw": true,
+    "hw_num": 2
+  },
+  {
+    "week": 3,
+    "class_date": "2026-09-16",
+    "release_date": "2026-09-13T08:00:00-04:00",
+    "topic": "Matrices, Lists, Data Frames & Data Import",
+    "readings": "R02Pro Ch 4–5",
+    "has_hw": true,
+    "hw_num": 3
+  },
+  {
+    "week": 4,
+    "class_date": "2026-09-23",
+    "release_date": "2026-09-20T08:00:00-04:00",
+    "topic": "Data Visualization with ggplot2",
+    "readings": "R02Pro Ch 6–7",
+    "has_hw": true,
+    "hw_num": 4
+  },
+  {
+    "week": 5,
+    "class_date": "2026-09-30",
+    "release_date": "2026-09-27T08:00:00-04:00",
+    "topic": "Data Wrangling with dplyr & Pipes",
+    "readings": "R02Pro Ch 8.1–8.4, 8.9",
+    "has_hw": true,
+    "hw_num": 5
+  },
+  {
+    "week": 6,
+    "class_date": "2026-10-07",
+    "release_date": "2026-10-04T08:00:00-04:00",
+    "topic": "Advanced Wrangling, Joins & Tidy Data",
+    "readings": "R02Pro Ch 8.5–8.8, Ch 9",
+    "has_hw": true,
+    "hw_num": 6
+  },
+  {
+    "week": 7,
+    "class_date": "2026-10-14",
+    "release_date": "2026-10-11T08:00:00-04:00",
+    "topic": "Strings, Factors & Dates",
+    "readings": "R02Pro Ch 10, Ch 3.6, Ch 3.11",
+    "has_hw": true,
+    "hw_num": 7
+  },
+  {
+    "week": 8,
+    "class_date": "2026-10-21",
+    "release_date": "2026-10-18T08:00:00-04:00",
+    "topic": "Control Flow & Iteration",
+    "readings": "R02Pro Ch 12",
+    "has_hw": true,
+    "hw_num": 8
+  },
+  {
+    "week": 9,
+    "class_date": "2026-10-28",
+    "release_date": "2026-10-25T08:00:00-04:00",
+    "topic": "Writing Custom Functions & purrr",
+    "readings": "R02Pro Ch 13",
+    "has_hw": true,
+    "hw_num": 9
+  },
+  {
+    "week": 10,
+    "class_date": "2026-11-04",
+    "release_date": "2026-11-01T08:00:00-05:00",
+    "topic": "Statistical Simulation & Sampling",
+    "readings": "R02Pro Ch 11.1–11.4",
+    "has_hw": true,
+    "hw_num": 10
+  },
+  {
+    "week": 11,
+    "class_date": "2026-11-11",
+    "release_date": "2026-11-08T08:00:00-05:00",
+    "topic": "Statistical Modeling & Regression",
+    "readings": "R02Pro Ch 11.5–11.6",
+    "has_hw": true,
+    "hw_num": 11
+  },
+  {
+    "week": 12,
+    "class_date": "2026-11-18",
+    "release_date": "2026-11-15T08:00:00-05:00",
+    "topic": "Advanced Quarto, Tables & Case Studies",
+    "readings": "R02Pro Ch 14",
+    "has_hw": true,
+    "hw_num": 12
+  },
+  {
+    "week": 13,
+    "class_date": "2026-12-02",
+    "release_date": "2026-11-29T08:00:00-05:00",
+    "topic": "Scientific Communication & Project Workshop",
+    "readings": "Supplementary",
+    "has_hw": false,
+    "hw_num": null
+  },
+  {
+    "week": 14,
+    "class_date": "2026-12-09",
+    "release_date": "2026-12-06T08:00:00-05:00",
+    "topic": "Project Presentations & The Future of R",
+    "readings": "Supplementary",
+    "has_hw": false,
+    "hw_num": null
+  }
+]
