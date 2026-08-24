@@ -39,7 +39,7 @@
     "href": "syllabus.html#software-all-free",
     "title": "Syllabus",
     "section": "Software (all free)",
-    "text": "Software (all free)\nR, RStudio, Quarto, Git, and a free GitHub account. Free-tier AI chatbots are sufficient for all coursework. No purchases are required."
+    "text": "Software (all free)\nR, RStudio (primary in-class demo IDE) / Positron (supported next-gen IDE), Quarto, Git, and a free GitHub account. Free-tier AI chatbots are sufficient for all coursework. No purchases are required."
   },
   {
     "objectID": "syllabus.html#ai-policy",
@@ -474,7 +474,14 @@
     "href": "weeks/slides/week-01-slides.html#the-modern-data-science-stack",
     "title": "Week 1: Welcome & The Modern R Toolkit",
     "section": "The Modern Data Science Stack",
-    "text": "The Modern Data Science Stack\nIn this course, you will master four core technologies:\n\nR: The statistical computing engine.\nRStudio: The integrated development environment (IDE).\nQuarto (.qmd): Reproducible scientific publishing (replaces Word/PDF/slides).\nGit & GitHub: Version control, collaboration, and automated grading.\nAI Assistants: Prompting, verifying, and debugging code with LLMs."
+    "text": "The Modern Data Science Stack\nIn this course, you will master five core technologies:\n\nR: The statistical computing engine.\nRStudio / Positron: The integrated development environment (IDE).\nQuarto (.qmd): Reproducible scientific publishing (replaces Word/PDF/slides).\nGit & GitHub: Version control, collaboration, and automated grading.\nAI Assistants: Prompting, verifying, and debugging code with LLMs."
+  },
+  {
+    "objectID": "weeks/slides/week-01-slides.html#choosing-your-ide-rstudio-vs.-positron",
+    "href": "weeks/slides/week-01-slides.html#choosing-your-ide-rstudio-vs.-positron",
+    "title": "Week 1: Welcome & The Modern R Toolkit",
+    "section": "Choosing Your IDE: RStudio vs. Positron",
+    "text": "Choosing Your IDE: RStudio vs. Positron\n\n\n🟦 RStudio Desktop (Class Standard)\n\nPrimary demo environment used on screen during class.\nMatches 1-to-1 with screenshots in R Programming: Zero to Pro (Ch 1).\nClassic 4-pane layout (Source, Console, Environment, Plots).\nPre-installed on NYU Bobst library workstations.\n\n\n🟣 Positron (Supported Alternative)\n\nPosit’s next-generation IDE built on VS Code.\nSuperb native GitHub Copilot & AI sidecar integration (we will demo this in Week 8!).\nNative R + Python multi-language switching.\n100% compatible: All course Quarto files and Git repos run identically in both!"
   },
   {
     "objectID": "weeks/slides/week-01-slides.html#how-our-160-minute-sessions-work",
@@ -622,7 +629,7 @@
     "href": "weeks/week-08.html#topics",
     "title": "Week 8: Control Flow & Iteration",
     "section": "Topics",
-    "text": "Topics\n\nConditional execution: if, else if, else\nVectorized conditionals: ifelse() and dplyr::case_when()\nIteration with for loops: sequence iteration and pre-allocating output vectors\nWhile loops and repeat loops\nLoop control: next and break",
+    "text": "Topics\n\nConditional execution: if, else if, else\nVectorized conditionals: ifelse() and dplyr::case_when()\nIteration with for loops: sequence iteration and pre-allocating output vectors\nWhile loops and repeat loops\nLoop control: next and break\nAI Tooling Spotlight: Next-gen IDE workflows with Positron and GitHub Copilot",
     "crumbs": [
       "Weekly Pages",
       "Week 8: Control Flow & Iteration"

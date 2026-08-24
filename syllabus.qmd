@@ -50,8 +50,9 @@ walkthrough, and an AI-use appendix. Released Week 10, due 11:59 PM December
 
 ## Software (all free)
 
-R, RStudio, Quarto, Git, and a free GitHub account. Free-tier AI chatbots are
+R, RStudio (primary in-class demo IDE) / Positron (supported next-gen IDE), Quarto, Git, and a free GitHub account. Free-tier AI chatbots are
 sufficient for all coursework. No purchases are required.
+
 
 ## AI policy
 

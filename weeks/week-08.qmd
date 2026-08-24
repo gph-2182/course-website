@@ -16,6 +16,8 @@ subtitle: "Oct 21, 2026 · 2:00–4:40 PM · Bobst LL138"
 - Iteration with for loops: sequence iteration and pre-allocating output vectors
 - While loops and repeat loops
 - Loop control: next and break
+- **AI Tooling Spotlight:** Next-gen IDE workflows with Positron and GitHub Copilot
+
 
 ## Materials
 

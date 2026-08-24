@@ -42,13 +42,36 @@ format:
 
 ## The Modern Data Science Stack
 
-In this course, you will master four core technologies:
+In this course, you will master five core technologies:
 
 1. **R:** The statistical computing engine.
-2. **RStudio:** The integrated development environment (IDE).
+2. **RStudio / Positron:** The integrated development environment (IDE).
 3. **Quarto (`.qmd`):** Reproducible scientific publishing (replaces Word/PDF/slides).
 4. **Git & GitHub:** Version control, collaboration, and automated grading.
 5. **AI Assistants:** Prompting, verifying, and debugging code with LLMs.
+
+## Choosing Your IDE: RStudio vs. Positron
+
+::: {.columns}
+::: {.column width="50%"}
+### 🟦 RStudio Desktop (Class Standard)
+
+* **Primary demo environment** used on screen during class.
+* Matches 1-to-1 with screenshots in **_R Programming: Zero to Pro_** (Ch 1).
+* Classic 4-pane layout (Source, Console, Environment, Plots).
+* Pre-installed on NYU Bobst library workstations.
+:::
+
+::: {.column width="50%"}
+### 🟣 Positron (Supported Alternative)
+
+* Posit's next-generation IDE built on **VS Code**.
+* Superb native **GitHub Copilot & AI sidecar** integration *(we will demo this in Week 8!)*.
+* Native R + Python multi-language switching.
+* **100% compatible:** All course Quarto files and Git repos run identically in both!
+:::
+:::
+
 
 ## How Our 160-Minute Sessions Work
 
