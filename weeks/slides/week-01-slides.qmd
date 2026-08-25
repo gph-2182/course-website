@@ -387,5 +387,5 @@ flowchart LR
 
 ### 🔗 Useful Links:
 
-* Course Website: [gph-2182.github.io/course-website](https://gph-2182.github.io/course-website/)
+* Course Website: [gph-2182.github.io/course-website](https://gph-2182.github.io/)
 * Textbook: [r02pro.github.io](https://r02pro.github.io/)

@@ -21,7 +21,7 @@ below.
 | Attendance | 5% | Checked every session |
 | In-class exercises (14) | 10% | Good-faith completion; lowest 2 dropped |
 | Weekly exercises (12) | 35% | Autograded on GitHub; lowest 2 dropped |
-| In-class quizzes (5) | 20% | Weeks 3, 6, 9, 11, 13; no AI; lowest dropped |
+| In-class quizzes (5) | 20% | Weeks 3, 5, 7, 9, 11; no AI; lowest dropped |
 | Final individual project | 30% | Quarto report + video walkthrough + AI appendix |
 
 **Grading scale (graduate).** A: 94–100 · A−: 90–93 · B+: 87–89 · B: 83–86 ·

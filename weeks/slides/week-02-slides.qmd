@@ -408,5 +408,5 @@ x + y
 4. **Upcoming in Week 3:** Matrices, Lists, Data Frames + **In-Class Quiz 1** (15 min, Weeks 1–2).
 
 ### 🔗 Quick Links:
-* Course Website: [gph-2182.github.io/course-website](https://gph-2182.github.io/course-website/)
+* Course Website: [gph-2182.github.io/course-website](https://gph-2182.github.io/)
 * Textbook Chapters 2–3: [r02pro.github.io](https://r02pro.github.io/)

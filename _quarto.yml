@@ -4,6 +4,7 @@ project:
   pre-render: tools/prepare-release.sh
 
 website:
+  site-url: "https://gph-2182.github.io/"
   title: "Statistical Programming in R"
   description: "GPH-GU 2182, NYU School of Global Public Health, Fall 2026"
   navbar:
