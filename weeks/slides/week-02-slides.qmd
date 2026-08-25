@@ -11,7 +11,10 @@ format:
     chalkboard: true
     transition: slide
     navigation-mode: linear
-    scrollable: true
+    margin: 0.06
+    min-scale: 0.2
+    max-scale: 2.0
+    auto-stretch: false
     width: 1200
     height: 700
     css: ../../styles.css

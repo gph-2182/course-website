@@ -12,9 +12,12 @@ format:
     preview-links: auto
     chalkboard: true
     transition: slide
-    scrollable: true
     width: 1280
     height: 720
+    margin: 0.06
+    min-scale: 0.2
+    max-scale: 2.0
+    auto-stretch: false
 ---
 
 ## Welcome to Week 3!
@@ -49,10 +52,9 @@ A **matrix** is a 2-dimensional collection of elements of the **same basic type*
 
 ::: {.columns}
 ::: {.column width="50%"}
-### Creating a Matrix
+### Column-by-Column (Default)
 
 ```r
-# By default, R fills matrices COLUMN-BY-COLUMN
 m1 <- matrix(1:6, nrow = 2, ncol = 3)
 m1
 ```
@@ -65,10 +67,9 @@ m1
 :::
 
 ::: {.column width="50%"}
-### Filling Row-by-Row
+### Row-by-Row (`byrow = TRUE`)
 
 ```r
-# Use byrow = TRUE to fill row-by-row
 m2 <- matrix(1:6, nrow = 2, ncol = 3, byrow = TRUE)
 m2
 ```
@@ -80,6 +81,8 @@ m2
 ```
 :::
 :::
+
+---
 
 ## Dimensions & Naming
 
@@ -100,6 +103,8 @@ m2
 Hospital_A        1           2      3
 Hospital_B        4           5      6
 ```
+
+---
 
 ## 2D Matrix Subsetting: `[row, column]`
 
@@ -170,6 +175,8 @@ In public health and clinical research, real records contain **heterogeneous dat
 
 A **list** is a flexible container whose elements can be of **any type, length, or structure**!
 
+---
+
 ## Creating & Inspecting Lists
 
 ```r
@@ -195,6 +202,8 @@ List of 5
   ..$ clinic  : chr "Bellevue"
   ..$ enrolled: chr "2026-01-15"
 ```
+
+---
 
 ## The Crucial Difference: `$` vs `[[ ]]` vs `[ ]`
 
@@ -236,7 +245,7 @@ typeof(sub_list) # "list"
 
 ---
 
-## 👥 Paired Exercise 2: Clinical Trial Patient List (10 min)
+## 👥 Paired Exercise 2: Patient Trial List (10 min)
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -292,6 +301,8 @@ ncol(cohort)       # 4 variables
 summary(cohort)    # Summary statistics for each column
 ```
 
+---
+
 ## Tibbles vs. Base Data Frames
 
 A **tibble** (`tibble::tibble()`) is a modern data frame with refined behavior:
@@ -312,11 +323,7 @@ A **tibble** (`tibble::tibble()`) is a modern data frame with refined behavior:
 :::
 :::
 
-```r
-library(tibble)
-cohort_tb <- as_tibble(cohort)
-cohort_tb
-```
+---
 
 ## Subsetting & Filtering Data Frames
 
@@ -328,8 +335,7 @@ cohort[["age"]]
 # 2. Creating a new computed column
 cohort$bmi_high <- cohort$bmi >= 30.0
 
-# 3. Filtering rows by condition
-# Syntax: df[condition, ]
+# 3. Filtering rows by condition: df[condition, ]
 seniors <- cohort[cohort$age >= 60, ]
 seniors
 
@@ -339,7 +345,7 @@ overweight_non_diab <- cohort[cohort$bmi > 25 & !cohort$diabetes, ]
 
 ---
 
-## 👥 Paired Exercise 3: Cohort Filtering & Mutating (10 min)
+## 👥 Paired Exercise 3: Cohort Filtering (10 min)
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -357,8 +363,8 @@ In `week-03-inclass.qmd`:
 ::: {.column width="50%"}
 ### Hints
 
-* Remember to put a comma after the row condition: `patients[condition, ]`
-* Use `mean(..., na.rm = TRUE)` if missing values are present.
+* Remember the comma after row condition: `patients[condition, ]`
+* Use `mean(..., na.rm = TRUE)` if missing values exist.
 :::
 :::
 
@@ -366,13 +372,11 @@ In `week-03-inclass.qmd`:
 
 # Cycle 4: Data Import & Export {background-color="#2c3e50"}
 
-## Importing Real Data
-
-Most health data arrives as **CSV** (Comma-Separated Values) or **Excel** spreadsheets.
+## Importing Real Data (CSV & Excel)
 
 ::: {.columns}
 ::: {.column width="50%"}
-### 1. Reading CSV Files with `readr`
+### 1. Reading CSV Files (`readr`)
 
 ```r
 library(readr)
@@ -388,7 +392,7 @@ head(nhanes_data)
 :::
 
 ::: {.column width="50%"}
-### 2. Reading Excel with `readxl`
+### 2. Reading Excel (`readxl`)
 
 ```r
 library(readxl)
@@ -405,6 +409,8 @@ trial_data <- read_excel(
 ```
 :::
 :::
+
+---
 
 ## Exporting Cleaned Datasets
 
@@ -431,15 +437,13 @@ restored_cohort <- readRDS("data/cleaned_cohort.rds")
 
 ```r
 # Prompt: "Read this blood pressure dataset from CSV"
-# AI code:
 bp_df <- read.csv("bp_data.csv")
 mean(bp_df$systolic)
 ```
 
-**Output:**  
-`[1] NA` (or `Warning: argument is not numeric`)
+**Output:** `[1] NA`
 
-**Why?** In the CSV, row 42 contained `"Unknown"` instead of a number. Base `read.csv` converted the **entire `systolic` column to character**!
+**Why?** In the CSV, row 42 contained `"Unknown"`. Base `read.csv` converted the **entire `systolic` column to character**!
 :::
 
 ::: {.column width="50%"}
@@ -458,8 +462,6 @@ bp_df <- read_csv(
 spec(bp_df)
 mean(bp_df$systolic, na.rm = TRUE)
 ```
-
-*Never trust that numbers imported as numeric — always check `str()` or `glimpse()`!*
 :::
 :::
 

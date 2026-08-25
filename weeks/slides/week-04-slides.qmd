@@ -12,9 +12,12 @@ format:
     preview-links: auto
     chalkboard: true
     transition: slide
-    scrollable: true
     width: 1280
     height: 720
+    margin: 0.06
+    min-scale: 0.2
+    max-scale: 2.0
+    auto-stretch: false
 ---
 
 ## Welcome to Week 4!
@@ -23,56 +26,72 @@ format:
 ::: {.column width="50%"}
 ### Today\'s Roadmap
 
-1. **The Grammar of Graphics:** Data, aesthetics, and geometric layers.
-2. **Visualizing Distributions:** Histograms, densities, boxplots, and violin plots.
-3. **Small Multiples & Trends:** Faceting and smooth regression curves.
-4. **Publication Polish:** Scales, colorblind-safe palettes, and themes.
-5. **AI Corner:** Spotting misleading axes and accessibility traps.
+1. **The Grammar of Graphics:** Data, aesthetics, geometries.
+2. **Visualizing Distributions:** Histograms, densities, boxplots.
+3. **Small Multiples & Trends:** Faceting & smooth curves.
+4. **Publication Polish:** Scales, viridis palettes, themes.
+5. **AI Corner:** Spotting misleading axes and chartjunk.
 :::
 
 ::: {.column width="50%"}
 ### Today\'s Milestones
 
 * **Homework 3:** Due tonight at 11:59 PM.
-* **Homework 4:** Released today (Data Visualization with `ggplot2`).
-* **Looking Ahead:** Quiz 2 will take place next week (Week 5).
+* **Homework 4:** Released today (`ggplot2` visualization).
+* **Looking Ahead:** Quiz 2 takes place next week in Week 5.
 :::
 :::
 
 ---
 
-# Cycle 1: The Grammar of Graphics & Scatterplots {background-color="#2c3e50"}
+# Cycle 1: The Grammar of Graphics {background-color="#2c3e50"}
 
 ## Why `ggplot2`?
 
 Created by Hadley Wickham based on Leland Wilkinson\'s *The Grammar of Graphics*.
 
+* **Declarative System:** You describe *what* you want to see, not low-level drawing steps.
+* **Layered Composition:** Stack data, aesthetics, geometries, facets, and themes using `+`.
+* **Publication Standard:** Automatic legends, consistent scales, and reproducible output.
+
+---
+
+## Base R vs. `ggplot2`
+
 ::: {.columns}
 ::: {.column width="50%"}
-### Base R Graphics (`plot()`)
-* Fast for quick sketches.
-* Hard to customize multi-layer legends, colors, and facets.
-* Uses pen-on-paper model (cannot easily modify earlier elements).
+### Base R (`plot()`)
+
+* Fast for quick disposable sketches.
+* Pen-on-paper model (cannot easily modify earlier layers).
+* Hard to build multi-panel legends or faceting.
 :::
 
 ::: {.column width="50%"}
 ### `ggplot2` (`library(ggplot2)`)
-* **Layered system:** Add data, aesthetics, geometries, facets, and themes step-by-step using `+`.
-* Automatic, consistent legends and scales.
-* Standard across global health, epidemiology, and statistical science.
+
+* Object-oriented: store plots in variables (`p <- ggplot(...)`).
+* Effortless layering and faceting.
+* Standard across biomedical and epidemiology research.
 :::
 :::
+
+---
 
 ## The 3 Core Components of Every Plot
 
-```text
+$$	ext{Plot} = 	ext{Data} + 	ext{Aesthetic Mappings} + 	ext{Geometric Layers}$$
+
+```r
 ggplot(data = <DATA>, mapping = aes(<MAPPINGS>)) +
   <GEOM_FUNCTION>()
 ```
 
 1. **Data:** A `data.frame` or `tibble`.
-2. **Aesthetic Mapping (`aes()`):** How variables connect to visual properties ($x$-axis, $y$-axis, color, size, shape, alpha).
-3. **Geometry (`geom_*()`):** The visual shape representing data points (points, lines, bars, boxes).
+2. **Aesthetics (`aes()`):** Visual channels ($x$, $y$, color, size, shape, alpha).
+3. **Geometries (`geom_*()`):** Visual representation (points, lines, bars, boxes).
+
+---
 
 ## Building a Scatterplot: Step-by-Step
 
@@ -85,32 +104,43 @@ p <- ggplot(data = airquality, aes(x = Temp, y = Ozone))
 # Step 2: Add Points
 p + geom_point()
 
-# Step 3: Map a 3rd Variable to Color (Month)
+# Step 3: Map a 3rd Variable to Color
 p + geom_point(aes(color = factor(Month)), size = 2.5, alpha = 0.8)
 ```
 
+---
+
+## Aesthetic Mapping vs. Setting Constants
+
 ::: {.columns}
 ::: {.column width="50%"}
-### Mapping vs. Setting Aesthetics
-* **Inside `aes()`:** Maps a **variable** from your dataset (e.g. `aes(color = Month)`).
-* **Outside `aes()`:** Sets a **fixed constant** for all points (e.g. `color = "navy"`, `size = 3`).
+### Mapping Inside `aes()`
+Connects a visual channel to a **variable** in your data:
+
+```r
+# Color varies by Month
+geom_point(aes(color = factor(Month)))
+```
 :::
 
 ::: {.column width="50%"}
-### Common Beginner Mistake
-```r
-# ❌ INCORRECT: puts "blue" in legend!
-geom_point(aes(color = "blue"))
+### Setting Outside `aes()`
+Sets a **fixed constant** for all observations:
 
-# ✅ CORRECT: sets color of all points
-geom_point(color = "blue")
+```r
+# All points are navy and size 3
+geom_point(color = "navy", size = 3, alpha = 0.7)
 ```
 :::
+:::
+
+::: {.callout-tip}
+*Never put fixed values inside `aes()` (e.g. `aes(color = "blue")`), as R will treat `"blue"` as a single-level categorical factor!*
 :::
 
 ---
 
-## 👥 Paired Exercise 1: Environmental Air Quality Scatterplot (10 min)
+## 👥 Paired Exercise 1: Air Quality Scatterplot (10 min)
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -118,17 +148,16 @@ geom_point(color = "blue")
 
 In your `week-04-inclass.qmd` worksheet:
 1. Use the built-in `airquality` dataset.
-2. Create a scatterplot of Solar Radiation (`Solar.R`, $x$-axis) vs Ozone (`Ozone`, $y$-axis).
+2. Create a scatterplot of Solar Radiation (`Solar.R`, $x$) vs Ozone (`Ozone`, $y$).
 3. Map Wind Speed (`Wind`) to the **color** aesthetic.
 4. Set point transparency `alpha = 0.7` and `size = 3` (outside `aes`).
-5. Add a smooth trendline using `geom_smooth(method = "loess", color = "black")`.
+5. Add a smooth trendline using `geom_smooth(method = "loess", color = "darkblue")`.
 :::
 
 ::: {.column width="50%"}
-### Expected Learning
+### Key Observation
 
-* Observe that high solar radiation and low wind correlate with peak ozone pollution.
-* Notice how `ggplot2` handles missing `NA` values automatically with a gentle warning.
+* High solar radiation paired with low wind velocity correlates strongly with peak ozone pollution episodes.
 :::
 :::
 
@@ -136,57 +165,63 @@ In your `week-04-inclass.qmd` worksheet:
 
 # Cycle 2: Visualizing Distributions {background-color="#2c3e50"}
 
-## 1. Single Continuous Variable: Histograms & Density
+## Histograms (`geom_histogram`)
 
-::: {.columns}
-::: {.column width="50%"}
-### Histogram (`geom_histogram`)
+Visualizing a single continuous variable:
 
 ```r
 ggplot(airquality, aes(x = Temp)) +
-  geom_histogram(
-    binwidth = 5,
-    fill = "#3498db",
-    color = "white"
-  )
+  geom_histogram(binwidth = 5, fill = "#3498db", color = "white") +
+  labs(x = "Temperature (°F)", y = "Count")
 ```
-* Always experiment with `binwidth`!
-:::
 
-::: {.column width="50%"}
-### Density Curve (`geom_density`)
+* Always test multiple `binwidth` values to avoid hiding peaks or creating artificial noise.
+
+---
+
+## Density Curves (`geom_density`)
+
+Smooth probability density estimates:
 
 ```r
 ggplot(airquality, aes(x = Temp, fill = factor(Month))) +
-  geom_density(alpha = 0.4)
+  geom_density(alpha = 0.4) +
+  labs(x = "Temperature (°F)", y = "Density", fill = "Month")
 ```
-* Shows smooth probability density estimates across subgroups.
-:::
-:::
 
-## 2. Comparing Groups: Boxplots & Violins
+* Use `alpha = 0.4` so overlapping sub-populations remain visible.
+
+---
+
+## Boxplots (`geom_boxplot`)
+
+Comparing distributions across categorical groups:
 
 ```r
-# Boxplot with overlaid jittered points
+ggplot(airquality, aes(x = factor(Month), y = Ozone, fill = factor(Month))) +
+  geom_boxplot(outlier.shape = 1, alpha = 0.7) +
+  labs(x = "Month", y = "Ozone (ppb)")
+```
+
+* Displays 5-number summary (Min, Q1, Median, Q3, Max) + outlier flags.
+
+---
+
+## Boxplot + Jitter Overlay (`geom_jitter`)
+
+Layering raw observations over boxplots reveals sample sizes and local clusters:
+
+```r
 ggplot(airquality, aes(x = factor(Month), y = Ozone, fill = factor(Month))) +
   geom_boxplot(outlier.shape = NA, alpha = 0.7) +
   geom_jitter(width = 0.2, alpha = 0.5, color = "black")
 ```
 
-::: {.columns}
-::: {.column width="50%"}
-### Why Boxplots?
-* Displays the 5-number summary (Min, Q1, Median, Q3, Max) + outliers.
-* Robust against extreme skewness.
-:::
+* Set `outlier.shape = NA` on the boxplot to prevent plotting outliers twice!
 
-::: {.column width="50%"}
-### Adding Jittered Points (`geom_jitter`)
-* Prevents overplotting and reveals exact sample size and density clusters.
-:::
-:::
+---
 
-## 3. Discrete Counts: `geom_bar` vs `geom_col`
+## Discrete Counts: `geom_bar` vs. `geom_col`
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -205,7 +240,6 @@ ggplot(airquality, aes(x = factor(Month))) +
 When data already has a numeric height column:
 
 ```r
-# Data has pre-computed totals
 summary_df <- data.frame(
   region = c("North", "South", "West"),
   admissions = c(120, 340, 210)
@@ -218,22 +252,22 @@ ggplot(summary_df, aes(x = region, y = admissions)) +
 
 ---
 
-## 👥 Paired Exercise 2: Comparing Ozone Across Summer Months (10 min)
+## 👥 Paired Exercise 2: Comparing Ozone by Month (10 min)
 
 ::: {.columns}
 ::: {.column width="50%"}
 ### Task
 
 In `week-04-inclass.qmd`:
-1. Using `airquality`, generate a **violin plot** of `Wind` speed grouped by `Month` (`x = factor(Month)`, `y = Wind`).
-2. Overlay a narrow boxplot (`width = 0.15`, `fill = "white"`) inside each violin.
-3. Color the violins by `factor(Month)`.
+1. Build a **violin plot** comparing `Ozone` across Months (`x = factor(Month)`, `y = Ozone`).
+2. Fill violins by `factor(Month)` with `alpha = 0.5`.
+3. Overlay a narrow boxplot (`width = 0.2`, `fill = "white"`) inside each violin.
 :::
 
 ::: {.column width="50%"}
 ### Pro-Tip
 
-Layer order matters in `ggplot2`! Put `geom_violin()` first, then `geom_boxplot()` on top so the boxplot sits cleanly inside the violin contour.
+Layer order matters! Put `geom_violin()` first, then `geom_boxplot()` on top so the boxplot sits cleanly inside the violin body.
 :::
 :::
 
@@ -241,15 +275,9 @@ Layer order matters in `ggplot2`! Put `geom_violin()` first, then `geom_boxplot(
 
 # Cycle 3: Small Multiples & Trendlines {background-color="#2c3e50"}
 
-## Faceting: The Power of Small Multiples
+## Faceting with `facet_wrap`
 
-Instead of cramming 6 groups into one messy plot, split your plot into **small multiples**!
-
-::: {.columns}
-::: {.column width="50%"}
-### 1. `facet_wrap(~ variable)`
-
-Splits by a single categorical variable across rows and columns:
+Split complex multi-group data into clean sub-panels:
 
 ```r
 ggplot(airquality, aes(x = Temp, y = Ozone)) +
@@ -257,150 +285,135 @@ ggplot(airquality, aes(x = Temp, y = Ozone)) +
   geom_smooth(method = "lm", se = FALSE, color = "red") +
   facet_wrap(~ Month, nrow = 1)
 ```
-:::
 
-::: {.column width="50%"}
-### 2. `facet_grid(var1 ~ var2)`
+* `nrow = 1` aligns all panels in a single horizontal strip.
 
-Forms a 2D matrix of subplots (rows $	imes$ cols):
-
-```r
-# Example syntax:
-# facet_grid(sex ~ smoker)
-```
-:::
-:::
+---
 
 ## Controlling Facet Scales
 
-By default, all facets share the exact same $x$ and $y$ axis limits (`scales = "fixed"`).
+By default, all subplots share the exact same axis limits (`scales = "fixed"`).
 
 ```r
-# Allow each facet to have its own independent y-axis limit:
+# Independent y-axis limits for each panel:
 facet_wrap(~ Month, scales = "free_y")
 
-# Allow both axes to vary freely:
+# Completely independent axes:
 facet_wrap(~ Month, scales = "free")
 ```
 
 ::: {.callout-note}
-*Keep scales fixed when comparing absolute magnitudes across groups; use `free_y` when inspecting internal shapes of skewed sub-populations.*
+*Use fixed scales when comparing absolute quantities; use free scales when comparing internal distribution shapes.*
 :::
 
 ---
 
-## 👥 Paired Exercise 3: Multi-Panel Pollution Analysis (10 min)
+## 👥 Paired Exercise 3: Multi-Panel Trends (10 min)
 
 ::: {.columns}
 ::: {.column width="50%"}
 ### Task
 
 In `week-04-inclass.qmd`:
-1. Plot `Temp` ($x$-axis) vs `Ozone` ($y$-axis) from `airquality`.
+1. Plot `Temp` ($x$) vs `Ozone` ($y$) from `airquality`.
 2. Add points with `alpha = 0.6`.
 3. Add a linear regression line (`geom_smooth(method = "lm", color = "darkred")`).
-4. Facet by `Month` in a single row (`nrow = 1`).
-5. Describe in 1 sentence: Does the temperature-ozone relationship hold consistently across all 5 months?
+4. Facet by `Month` into a single row (`nrow = 1`).
 :::
 
 ::: {.column width="50%"}
 ### Discussion
 
-Notice how the slope changes between May (Month 5) and August (Month 8)!
+Observe how the slope of the temperature-ozone relationship changes between early summer (May) and late summer (August)!
 :::
 :::
 
 ---
 
-# Cycle 4: Polishing Publication-Ready Graphics {background-color="#2c3e50"}
+# Cycle 4: Polishing Publication Graphics {background-color="#2c3e50"}
 
-## Labels, Titles, and Captions: `labs()`
+## Informative Labels: `labs()`
 
-A plot is only as good as its labels. Never leave raw code names (`Temp`, `Solar.R`, `Month`) on a final figure!
+Never leave raw column names on a presentation or report figure:
 
 ```r
-p_final <- ggplot(airquality, aes(x = Temp, y = Ozone, color = Wind)) +
+p_pub <- ggplot(airquality, aes(x = Temp, y = Ozone, color = Wind)) +
   geom_point(size = 3, alpha = 0.8) +
   geom_smooth(method = "lm", color = "black", linetype = "dashed", se = FALSE) +
   labs(
-    title = "Air Quality & Ozone Concentrations in New York City",
-    subtitle = "Daily measurements from May to September 1973 (LaGuardia Airport)",
+    title = "Air Pollution Dynamics at LaGuardia Airport",
+    subtitle = "Daily measurements of Ozone, Temperature, and Wind (May - Sep 1973)",
     x = "Maximum Daily Temperature (°F)",
-    y = "Mean Ozone (parts per billion)",
+    y = "Mean Ozone (ppb)",
     color = "Wind Speed\n(mph)",
-    caption = "Source: New York State Department of Environmental Conservation"
+    caption = "Source: NYS Department of Environmental Conservation"
   )
 ```
 
-## Color Palettes & Built-In Themes
+---
+
+## Colorblind-Safe Scales & Themes
 
 ::: {.columns}
 ::: {.column width="50%"}
-### Accessible Palettes
+### Viridis Palettes
 ```r
-# Continuous Viridis
-p_final + scale_color_viridis_c(option = "magma")
-
-# Discrete Brewer
-# scale_fill_brewer(palette = "Dark2")
+p_pub + 
+  scale_color_viridis_c(option = "viridis")
 ```
+* Perceptually uniform and legible in grayscale.
 :::
 
 ::: {.column width="50%"}
 ### Clean Themes
 ```r
-# theme_minimal() or theme_classic()
-p_final + 
+p_pub + 
   scale_color_viridis_c(option = "viridis") +
   theme_minimal(base_size = 13) +
-  theme(
-    legend.position = "right",
-    plot.title = element_text(face = "bold", size = 15)
-  )
+  theme(legend.position = "bottom")
 ```
 :::
 :::
 
-## Saving High-Resolution Figures: `ggsave()`
+---
+
+## Saving Figures: `ggsave()`
+
+Save vector or high-resolution raster images for publications and reports:
 
 ```r
-# Saves the last displayed plot (or a specified plot object)
 ggsave(
-  filename = "figures/fig1_ozone_temperature.png",
-  plot = p_final,
+  filename = "figures/figure1_ozone.png",
+  plot = p_pub,
   width = 8,
   height = 5,
-  dpi = 300  # Publication quality
+  dpi = 300
 )
 ```
 
 ---
 
-# AI Corner: The Truncated Axis & Overplotting Trap {background-color="#8e44ad"}
+# AI Corner: Misleading Visuals & Baselines {background-color="#8e44ad"}
 
-## Spotting Misleading Visuals
+## Spotting Truncated Baselines
 
 ::: {.columns}
 ::: {.column width="50%"}
 ### ❌ What AI Generated
-
 ```r
-# AI Prompt: "Plot hospital admissions by month"
-# AI code:
-ggplot(df, aes(x = month, y = rate)) +
+# AI Prompt: "Bar chart of mortality rate"
+ggplot(df, aes(x = year, y = rate)) +
   geom_col() +
-  coord_cartesian(ylim = c(45, 52)) # Truncated!
+  coord_cartesian(ylim = c(48, 52))
 ```
-
-**The Danger:** Truncating the $y$-axis baseline on bar charts creates optical illusions, making a 2% fluctuation look like a 500% surge!
+* Truncating the $y$-axis baseline makes a 1% change look like a 500% surge!
 :::
 
 ::: {.column width="50%"}
-### ✅ The Verified Standard
-
-* **Bar charts MUST start at 0:** Always include the zero baseline for area/length geoms (`geom_col`, `geom_bar`).
-* **For Overplotting:** Use `geom_jitter()`, `alpha < 0.5`, or 2D density contours rather than overlapping solid points.
-* **Color Accessibility:** Always test palettes with colorblind simulators (`viridis` is colorblind-friendly by default).
+### ✅ The Verified Rule
+* **Length/Area geoms (`geom_col`, `geom_bar`) MUST start at 0.**
+* **For Overplotting:** Use `geom_jitter()`, `alpha < 0.5`, or 2D density contours.
+* **Color Accessibility:** Always use colorblind-friendly scales (`viridis`).
 :::
 :::
 
@@ -410,12 +423,12 @@ ggplot(df, aes(x = month, y = rate)) +
 
 ::: {.columns}
 ::: {.column width="50%"}
-### What We Learned Today
+### Today\'s Key Takeaways
 
 1. Grammar of Graphics: Data + `aes()` + `geom_*()`.
-2. Choosing the right geom for continuous vs. discrete health metrics.
-3. Splitting complex data into small multiples with `facet_wrap()`.
-4. Polishing figures with `labs()`, `theme_minimal()`, and `viridis`.
+2. Right geoms for continuous vs. discrete health variables.
+3. Multi-panel small multiples with `facet_wrap()`.
+4. Professional polish with `labs()`, `theme_minimal()`, and `viridis`.
 :::
 
 ::: {.column width="50%"}
@@ -423,6 +436,6 @@ ggplot(df, aes(x = month, y = rate)) +
 
 * **Homework 4:** Released today (due next Wednesday, Sep 30).
 * **Next Week:** Data Wrangling with `dplyr` & Pipes (filter, mutate, select, arrange).
-* 📝 **Quiz 2 (Weeks 3–4):** Administered during the last 20 minutes of Week 5!
+* 📝 **Quiz 2 (Weeks 3–4):** In the last 20 minutes of Week 5!
 :::
 :::

@@ -313,7 +313,6 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
-      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -437,7 +436,7 @@ Yang Feng
 </div>
 </div>
 </section>
-<section id="the-modern-data-science-stack" class="slide level2 scrollable">
+<section id="the-modern-data-science-stack" class="slide level2">
 <h2>The Modern Data Science Stack</h2>
 <p>In this course, you will master five core technologies:</p>
 <ol type="1">
@@ -571,7 +570,7 @@ flowchart LR
 <li><strong>Textbook:</strong> <em>R Programming: Zero to Pro</em> (Free online: <a href="https://r02pro.github.io/">r02pro.github.io</a>).</li>
 </ul>
 </section>
-<section id="in-class-exercise-1a-12-min" class="slide level2 scrollable">
+<section id="in-class-exercise-1a-12-min" class="slide level2">
 <h2>💻 In-Class Exercise 1A (12 min)</h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -597,7 +596,7 @@ flowchart LR
 <h1>Cycle 2: Reproducible Reports with Quarto</h1>
 
 </section>
-<section id="why-quarto" class="slide level2 scrollable">
+<section id="why-quarto" class="slide level2">
 <h2>Why Quarto?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -691,7 +690,7 @@ flowchart LR
 <span id="cb8-5"><a></a><span class="co">#| fig-width: 7     # Control plot width</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Click the <strong>Render</strong> button (or <code>Ctrl/Cmd + Shift + K</code>) in RStudio to generate your HTML report!</p>
 </section>
-<section id="in-class-exercise-1b-15-min" class="slide level2 scrollable">
+<section id="in-class-exercise-1b-15-min" class="slide level2">
 <h2>💻 In-Class Exercise 1B (15 min)</h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -764,7 +763,7 @@ flowchart LR
 </div>
 </div>
 </section>
-<section id="how-homework-works-instant-feedback" class="slide level2 scrollable">
+<section id="how-homework-works-instant-feedback" class="slide level2">
 <h2>How Homework Works (Instant Feedback)</h2>
 <ol type="1">
 <li><strong>Accept:</strong> Click the invitation link for <code>weekly-exercise-01</code>.</li>
@@ -829,7 +828,7 @@ flowchart LR
 </div>
 </div>
 </section>
-<section id="summary-what-to-do-before-week-2" class="slide level2 scrollable">
+<section id="summary-what-to-do-before-week-2" class="slide level2">
 <h2>Summary &amp; What To Do Before Week 2</h2>
 <ol type="1">
 <li><p><strong>Complete &amp; Push:</strong> In-class exercise 1 <code>.qmd</code> to your GitHub repo.</p></li>
@@ -1032,7 +1031,12 @@ flowchart LR
         height: 700,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0.1,
+        margin: 6.0e-2,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 2,
 
         math: {
           mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',

@@ -313,7 +313,6 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
-      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -512,7 +511,7 @@ flowchart LR
 <span id="cb6-6"><a></a><span class="fu">sd</span>(chol, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)    <span class="co"># Standard deviation (20.8)</span></span>
 <span id="cb6-7"><a></a><span class="fu">summary</span>(chol)             <span class="co"># 5-number summary + Mean + NAs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="in-class-exercise-2a-12-min" class="slide level2 scrollable">
+<section id="in-class-exercise-2a-12-min" class="slide level2">
 <h2>💻 In-Class Exercise 2A (12 min)</h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -613,7 +612,7 @@ flowchart LR
 </div>
 </div>
 </section>
-<section id="in-class-exercise-2b-12-min" class="slide level2 scrollable">
+<section id="in-class-exercise-2b-12-min" class="slide level2">
 <h2>💻 In-Class Exercise 2B (12 min)</h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -724,7 +723,7 @@ flowchart LR
 <span id="cb17-10"><a></a>scores</span>
 <span id="cb17-11"><a></a><span class="co"># 88 NA 90 NA 72</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="in-class-exercise-2c-15-min" class="slide level2 scrollable">
+<section id="in-class-exercise-2c-15-min" class="slide level2">
 <h2>💻 In-Class Exercise 2C (15 min)</h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -821,7 +820,7 @@ flowchart LR
 </div>
 </div>
 </section>
-<section id="summary-week-2-checklist" class="slide level2 scrollable">
+<section id="summary-week-2-checklist" class="slide level2">
 <h2>Summary &amp; Week 2 Checklist</h2>
 <ol type="1">
 <li><strong>Submit Homework 1:</strong> Due <strong>tonight at 11:59 PM</strong> on GitHub.</li>
@@ -1024,7 +1023,12 @@ flowchart LR
         height: 700,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0.1,
+        margin: 6.0e-2,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 2,
 
         math: {
           mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',

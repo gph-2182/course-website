@@ -523,112 +523,140 @@
     "href": "weeks/slides/week-04-slides.html#welcome-to-week-4",
     "title": "Week 4: Data Visualization with ggplot2",
     "section": "Welcome to Week 4!",
-    "text": "Welcome to Week 4!\n\n\nToday's Roadmap\n\nThe Grammar of Graphics: Data, aesthetics, and geometric layers.\nVisualizing Distributions: Histograms, densities, boxplots, and violin plots.\nSmall Multiples & Trends: Faceting and smooth regression curves.\nPublication Polish: Scales, colorblind-safe palettes, and themes.\nAI Corner: Spotting misleading axes and accessibility traps.\n\n\nToday's Milestones\n\nHomework 3: Due tonight at 11:59 PM.\nHomework 4: Released today (Data Visualization with ggplot2).\nLooking Ahead: Quiz 2 will take place next week (Week 5)."
+    "text": "Welcome to Week 4!\n\n\nToday's Roadmap\n\nThe Grammar of Graphics: Data, aesthetics, geometries.\nVisualizing Distributions: Histograms, densities, boxplots.\nSmall Multiples & Trends: Faceting & smooth curves.\nPublication Polish: Scales, viridis palettes, themes.\nAI Corner: Spotting misleading axes and chartjunk.\n\n\nToday's Milestones\n\nHomework 3: Due tonight at 11:59 PM.\nHomework 4: Released today (ggplot2 visualization).\nLooking Ahead: Quiz 2 takes place next week in Week 5."
   },
   {
     "objectID": "weeks/slides/week-04-slides.html#why-ggplot2",
     "href": "weeks/slides/week-04-slides.html#why-ggplot2",
     "title": "Week 4: Data Visualization with ggplot2",
     "section": "Why ggplot2?",
-    "text": "Why ggplot2?\nCreated by Hadley Wickham based on Leland Wilkinson's The Grammar of Graphics.\n\n\nBase R Graphics (plot())\n\nFast for quick sketches.\nHard to customize multi-layer legends, colors, and facets.\nUses pen-on-paper model (cannot easily modify earlier elements).\n\n\nggplot2 (library(ggplot2))\n\nLayered system: Add data, aesthetics, geometries, facets, and themes step-by-step using +.\nAutomatic, consistent legends and scales.\nStandard across global health, epidemiology, and statistical science."
+    "text": "Why ggplot2?\nCreated by Hadley Wickham based on Leland Wilkinson's The Grammar of Graphics.\n\nDeclarative System: You describe what you want to see, not low-level drawing steps.\nLayered Composition: Stack data, aesthetics, geometries, facets, and themes using +.\nPublication Standard: Automatic legends, consistent scales, and reproducible output."
+  },
+  {
+    "objectID": "weeks/slides/week-04-slides.html#base-r-vs.-ggplot2",
+    "href": "weeks/slides/week-04-slides.html#base-r-vs.-ggplot2",
+    "title": "Week 4: Data Visualization with ggplot2",
+    "section": "Base R vs. ggplot2",
+    "text": "Base R vs. ggplot2\n\n\nBase R (plot())\n\nFast for quick disposable sketches.\nPen-on-paper model (cannot easily modify earlier layers).\nHard to build multi-panel legends or faceting.\n\n\nggplot2 (library(ggplot2))\n\nObject-oriented: store plots in variables (p &lt;- ggplot(...)).\nEffortless layering and faceting.\nStandard across biomedical and epidemiology research."
   },
   {
     "objectID": "weeks/slides/week-04-slides.html#the-3-core-components-of-every-plot",
     "href": "weeks/slides/week-04-slides.html#the-3-core-components-of-every-plot",
     "title": "Week 4: Data Visualization with ggplot2",
     "section": "The 3 Core Components of Every Plot",
-    "text": "The 3 Core Components of Every Plot\nggplot(data = &lt;DATA&gt;, mapping = aes(&lt;MAPPINGS&gt;)) +\n  &lt;GEOM_FUNCTION&gt;()\n\nData: A data.frame or tibble.\nAesthetic Mapping (aes()): How variables connect to visual properties (\\(x\\)-axis, \\(y\\)-axis, color, size, shape, alpha).\nGeometry (geom_*()): The visual shape representing data points (points, lines, bars, boxes)."
+    "text": "The 3 Core Components of Every Plot\n\\[  ext{Plot} =     ext{Data} +     ext{Aesthetic Mappings} +   ext{Geometric Layers}\\]\nggplot(data = &lt;DATA&gt;, mapping = aes(&lt;MAPPINGS&gt;)) +\n  &lt;GEOM_FUNCTION&gt;()\n\nData: A data.frame or tibble.\nAesthetics (aes()): Visual channels (\\(x\\), \\(y\\), color, size, shape, alpha).\nGeometries (geom_*()): Visual representation (points, lines, bars, boxes)."
   },
   {
     "objectID": "weeks/slides/week-04-slides.html#building-a-scatterplot-step-by-step",
     "href": "weeks/slides/week-04-slides.html#building-a-scatterplot-step-by-step",
     "title": "Week 4: Data Visualization with ggplot2",
     "section": "Building a Scatterplot: Step-by-Step",
-    "text": "Building a Scatterplot: Step-by-Step\nlibrary(ggplot2)\n\n# Step 1: Canvas (blank)\np &lt;- ggplot(data = airquality, aes(x = Temp, y = Ozone))\n\n# Step 2: Add Points\np + geom_point()\n\n# Step 3: Map a 3rd Variable to Color (Month)\np + geom_point(aes(color = factor(Month)), size = 2.5, alpha = 0.8)\n\n\nMapping vs. Setting Aesthetics\n\nInside aes(): Maps a variable from your dataset (e.g. aes(color = Month)).\nOutside aes(): Sets a fixed constant for all points (e.g. color = \"navy\", size = 3).\n\n\nCommon Beginner Mistake\n# ❌ INCORRECT: puts \"blue\" in legend!\ngeom_point(aes(color = \"blue\"))\n\n# ✅ CORRECT: sets color of all points\ngeom_point(color = \"blue\")"
+    "text": "Building a Scatterplot: Step-by-Step\nlibrary(ggplot2)\n\n# Step 1: Canvas (blank)\np &lt;- ggplot(data = airquality, aes(x = Temp, y = Ozone))\n\n# Step 2: Add Points\np + geom_point()\n\n# Step 3: Map a 3rd Variable to Color\np + geom_point(aes(color = factor(Month)), size = 2.5, alpha = 0.8)"
   },
   {
-    "objectID": "weeks/slides/week-04-slides.html#paired-exercise-1-environmental-air-quality-scatterplot-10-min",
-    "href": "weeks/slides/week-04-slides.html#paired-exercise-1-environmental-air-quality-scatterplot-10-min",
+    "objectID": "weeks/slides/week-04-slides.html#aesthetic-mapping-vs.-setting-constants",
+    "href": "weeks/slides/week-04-slides.html#aesthetic-mapping-vs.-setting-constants",
     "title": "Week 4: Data Visualization with ggplot2",
-    "section": "👥 Paired Exercise 1: Environmental Air Quality Scatterplot (10 min)",
-    "text": "👥 Paired Exercise 1: Environmental Air Quality Scatterplot (10 min)\n\n\nTask\nIn your week-04-inclass.qmd worksheet: 1. Use the built-in airquality dataset. 2. Create a scatterplot of Solar Radiation (Solar.R, \\(x\\)-axis) vs Ozone (Ozone, \\(y\\)-axis). 3. Map Wind Speed (Wind) to the color aesthetic. 4. Set point transparency alpha = 0.7 and size = 3 (outside aes). 5. Add a smooth trendline using geom_smooth(method = \"loess\", color = \"black\").\n\nExpected Learning\n\nObserve that high solar radiation and low wind correlate with peak ozone pollution.\nNotice how ggplot2 handles missing NA values automatically with a gentle warning."
+    "section": "Aesthetic Mapping vs. Setting Constants",
+    "text": "Aesthetic Mapping vs. Setting Constants\n\n\nMapping Inside aes()\nConnects a visual channel to a variable in your data:\n# Color varies by Month\ngeom_point(aes(color = factor(Month)))\n\nSetting Outside aes()\nSets a fixed constant for all observations:\n# All points are navy and size 3\ngeom_point(color = \"navy\", size = 3, alpha = 0.7)\n\n\n\n\n\n\n\n\nTip\n\n\nNever put fixed values inside aes() (e.g. aes(color = \"blue\")), as R will treat \"blue\" as a single-level categorical factor!"
   },
   {
-    "objectID": "weeks/slides/week-04-slides.html#single-continuous-variable-histograms-density",
-    "href": "weeks/slides/week-04-slides.html#single-continuous-variable-histograms-density",
+    "objectID": "weeks/slides/week-04-slides.html#paired-exercise-1-air-quality-scatterplot-10-min",
+    "href": "weeks/slides/week-04-slides.html#paired-exercise-1-air-quality-scatterplot-10-min",
     "title": "Week 4: Data Visualization with ggplot2",
-    "section": "1. Single Continuous Variable: Histograms & Density",
-    "text": "1. Single Continuous Variable: Histograms & Density\n\n\nHistogram (geom_histogram)\nggplot(airquality, aes(x = Temp)) +\n  geom_histogram(\n    binwidth = 5,\n    fill = \"#3498db\",\n    color = \"white\"\n  )\n\nAlways experiment with binwidth!\n\n\nDensity Curve (geom_density)\nggplot(airquality, aes(x = Temp, fill = factor(Month))) +\n  geom_density(alpha = 0.4)\n\nShows smooth probability density estimates across subgroups."
+    "section": "👥 Paired Exercise 1: Air Quality Scatterplot (10 min)",
+    "text": "👥 Paired Exercise 1: Air Quality Scatterplot (10 min)\n\n\nTask\nIn your week-04-inclass.qmd worksheet: 1. Use the built-in airquality dataset. 2. Create a scatterplot of Solar Radiation (Solar.R, \\(x\\)) vs Ozone (Ozone, \\(y\\)). 3. Map Wind Speed (Wind) to the color aesthetic. 4. Set point transparency alpha = 0.7 and size = 3 (outside aes). 5. Add a smooth trendline using geom_smooth(method = \"loess\", color = \"darkblue\").\n\nKey Observation\n\nHigh solar radiation paired with low wind velocity correlates strongly with peak ozone pollution episodes."
   },
   {
-    "objectID": "weeks/slides/week-04-slides.html#comparing-groups-boxplots-violins",
-    "href": "weeks/slides/week-04-slides.html#comparing-groups-boxplots-violins",
+    "objectID": "weeks/slides/week-04-slides.html#histograms-geom_histogram",
+    "href": "weeks/slides/week-04-slides.html#histograms-geom_histogram",
     "title": "Week 4: Data Visualization with ggplot2",
-    "section": "2. Comparing Groups: Boxplots & Violins",
-    "text": "2. Comparing Groups: Boxplots & Violins\n# Boxplot with overlaid jittered points\nggplot(airquality, aes(x = factor(Month), y = Ozone, fill = factor(Month))) +\n  geom_boxplot(outlier.shape = NA, alpha = 0.7) +\n  geom_jitter(width = 0.2, alpha = 0.5, color = \"black\")\n\n\nWhy Boxplots?\n\nDisplays the 5-number summary (Min, Q1, Median, Q3, Max) + outliers.\nRobust against extreme skewness.\n\n\nAdding Jittered Points (geom_jitter)\n\nPrevents overplotting and reveals exact sample size and density clusters."
+    "section": "Histograms (geom_histogram)",
+    "text": "Histograms (geom_histogram)\nVisualizing a single continuous variable:\nggplot(airquality, aes(x = Temp)) +\n  geom_histogram(binwidth = 5, fill = \"#3498db\", color = \"white\") +\n  labs(x = \"Temperature (°F)\", y = \"Count\")\n\nAlways test multiple binwidth values to avoid hiding peaks or creating artificial noise."
   },
   {
-    "objectID": "weeks/slides/week-04-slides.html#discrete-counts-geom_bar-vs-geom_col",
-    "href": "weeks/slides/week-04-slides.html#discrete-counts-geom_bar-vs-geom_col",
+    "objectID": "weeks/slides/week-04-slides.html#density-curves-geom_density",
+    "href": "weeks/slides/week-04-slides.html#density-curves-geom_density",
     "title": "Week 4: Data Visualization with ggplot2",
-    "section": "3. Discrete Counts: geom_bar vs geom_col",
-    "text": "3. Discrete Counts: geom_bar vs geom_col\n\n\ngeom_bar() (Counts Rows)\nWhen R calculates frequency for you:\n# Data has raw individual rows\nggplot(airquality, aes(x = factor(Month))) +\n  geom_bar(fill = \"steelblue\")\n\ngeom_col() (Pre-Summarized)\nWhen data already has a numeric height column:\n# Data has pre-computed totals\nsummary_df &lt;- data.frame(\n  region = c(\"North\", \"South\", \"West\"),\n  admissions = c(120, 340, 210)\n)\nggplot(summary_df, aes(x = region, y = admissions)) +\n  geom_col(fill = \"darkgreen\")"
+    "section": "Density Curves (geom_density)",
+    "text": "Density Curves (geom_density)\nSmooth probability density estimates:\nggplot(airquality, aes(x = Temp, fill = factor(Month))) +\n  geom_density(alpha = 0.4) +\n  labs(x = \"Temperature (°F)\", y = \"Density\", fill = \"Month\")\n\nUse alpha = 0.4 so overlapping sub-populations remain visible."
   },
   {
-    "objectID": "weeks/slides/week-04-slides.html#paired-exercise-2-comparing-ozone-across-summer-months-10-min",
-    "href": "weeks/slides/week-04-slides.html#paired-exercise-2-comparing-ozone-across-summer-months-10-min",
+    "objectID": "weeks/slides/week-04-slides.html#boxplots-geom_boxplot",
+    "href": "weeks/slides/week-04-slides.html#boxplots-geom_boxplot",
     "title": "Week 4: Data Visualization with ggplot2",
-    "section": "👥 Paired Exercise 2: Comparing Ozone Across Summer Months (10 min)",
-    "text": "👥 Paired Exercise 2: Comparing Ozone Across Summer Months (10 min)\n\n\nTask\nIn week-04-inclass.qmd: 1. Using airquality, generate a violin plot of Wind speed grouped by Month (x = factor(Month), y = Wind). 2. Overlay a narrow boxplot (width = 0.15, fill = \"white\") inside each violin. 3. Color the violins by factor(Month).\n\nPro-Tip\nLayer order matters in ggplot2! Put geom_violin() first, then geom_boxplot() on top so the boxplot sits cleanly inside the violin contour."
+    "section": "Boxplots (geom_boxplot)",
+    "text": "Boxplots (geom_boxplot)\nComparing distributions across categorical groups:\nggplot(airquality, aes(x = factor(Month), y = Ozone, fill = factor(Month))) +\n  geom_boxplot(outlier.shape = 1, alpha = 0.7) +\n  labs(x = \"Month\", y = \"Ozone (ppb)\")\n\nDisplays 5-number summary (Min, Q1, Median, Q3, Max) + outlier flags."
   },
   {
-    "objectID": "weeks/slides/week-04-slides.html#faceting-the-power-of-small-multiples",
-    "href": "weeks/slides/week-04-slides.html#faceting-the-power-of-small-multiples",
+    "objectID": "weeks/slides/week-04-slides.html#boxplot-jitter-overlay-geom_jitter",
+    "href": "weeks/slides/week-04-slides.html#boxplot-jitter-overlay-geom_jitter",
     "title": "Week 4: Data Visualization with ggplot2",
-    "section": "Faceting: The Power of Small Multiples",
-    "text": "Faceting: The Power of Small Multiples\nInstead of cramming 6 groups into one messy plot, split your plot into small multiples!\n\n\n1. facet_wrap(~ variable)\nSplits by a single categorical variable across rows and columns:\nggplot(airquality, aes(x = Temp, y = Ozone)) +\n  geom_point(color = \"navy\", alpha = 0.7) +\n  geom_smooth(method = \"lm\", se = FALSE, color = \"red\") +\n  facet_wrap(~ Month, nrow = 1)\n\n2. facet_grid(var1 ~ var2)\nForms a 2D matrix of subplots (rows $ imes$ cols):\n# Example syntax:\n# facet_grid(sex ~ smoker)"
+    "section": "Boxplot + Jitter Overlay (geom_jitter)",
+    "text": "Boxplot + Jitter Overlay (geom_jitter)\nLayering raw observations over boxplots reveals sample sizes and local clusters:\nggplot(airquality, aes(x = factor(Month), y = Ozone, fill = factor(Month))) +\n  geom_boxplot(outlier.shape = NA, alpha = 0.7) +\n  geom_jitter(width = 0.2, alpha = 0.5, color = \"black\")\n\nSet outlier.shape = NA on the boxplot to prevent plotting outliers twice!"
+  },
+  {
+    "objectID": "weeks/slides/week-04-slides.html#discrete-counts-geom_bar-vs.-geom_col",
+    "href": "weeks/slides/week-04-slides.html#discrete-counts-geom_bar-vs.-geom_col",
+    "title": "Week 4: Data Visualization with ggplot2",
+    "section": "Discrete Counts: geom_bar vs. geom_col",
+    "text": "Discrete Counts: geom_bar vs. geom_col\n\n\ngeom_bar() (Counts Rows)\nWhen R calculates frequency for you:\n# Data has raw individual rows\nggplot(airquality, aes(x = factor(Month))) +\n  geom_bar(fill = \"steelblue\")\n\ngeom_col() (Pre-Summarized)\nWhen data already has a numeric height column:\nsummary_df &lt;- data.frame(\n  region = c(\"North\", \"South\", \"West\"),\n  admissions = c(120, 340, 210)\n)\nggplot(summary_df, aes(x = region, y = admissions)) +\n  geom_col(fill = \"darkgreen\")"
+  },
+  {
+    "objectID": "weeks/slides/week-04-slides.html#paired-exercise-2-comparing-ozone-by-month-10-min",
+    "href": "weeks/slides/week-04-slides.html#paired-exercise-2-comparing-ozone-by-month-10-min",
+    "title": "Week 4: Data Visualization with ggplot2",
+    "section": "👥 Paired Exercise 2: Comparing Ozone by Month (10 min)",
+    "text": "👥 Paired Exercise 2: Comparing Ozone by Month (10 min)\n\n\nTask\nIn week-04-inclass.qmd: 1. Build a violin plot comparing Ozone across Months (x = factor(Month), y = Ozone). 2. Fill violins by factor(Month) with alpha = 0.5. 3. Overlay a narrow boxplot (width = 0.2, fill = \"white\") inside each violin.\n\nPro-Tip\nLayer order matters! Put geom_violin() first, then geom_boxplot() on top so the boxplot sits cleanly inside the violin body."
+  },
+  {
+    "objectID": "weeks/slides/week-04-slides.html#faceting-with-facet_wrap",
+    "href": "weeks/slides/week-04-slides.html#faceting-with-facet_wrap",
+    "title": "Week 4: Data Visualization with ggplot2",
+    "section": "Faceting with facet_wrap",
+    "text": "Faceting with facet_wrap\nSplit complex multi-group data into clean sub-panels:\nggplot(airquality, aes(x = Temp, y = Ozone)) +\n  geom_point(color = \"navy\", alpha = 0.7) +\n  geom_smooth(method = \"lm\", se = FALSE, color = \"red\") +\n  facet_wrap(~ Month, nrow = 1)\n\nnrow = 1 aligns all panels in a single horizontal strip."
   },
   {
     "objectID": "weeks/slides/week-04-slides.html#controlling-facet-scales",
     "href": "weeks/slides/week-04-slides.html#controlling-facet-scales",
     "title": "Week 4: Data Visualization with ggplot2",
     "section": "Controlling Facet Scales",
-    "text": "Controlling Facet Scales\nBy default, all facets share the exact same \\(x\\) and \\(y\\) axis limits (scales = \"fixed\").\n# Allow each facet to have its own independent y-axis limit:\nfacet_wrap(~ Month, scales = \"free_y\")\n\n# Allow both axes to vary freely:\nfacet_wrap(~ Month, scales = \"free\")\n\n\n\n\n\n\nNote\n\n\nKeep scales fixed when comparing absolute magnitudes across groups; use free_y when inspecting internal shapes of skewed sub-populations."
+    "text": "Controlling Facet Scales\nBy default, all subplots share the exact same axis limits (scales = \"fixed\").\n# Independent y-axis limits for each panel:\nfacet_wrap(~ Month, scales = \"free_y\")\n\n# Completely independent axes:\nfacet_wrap(~ Month, scales = \"free\")\n\n\n\n\n\n\nNote\n\n\nUse fixed scales when comparing absolute quantities; use free scales when comparing internal distribution shapes."
   },
   {
-    "objectID": "weeks/slides/week-04-slides.html#paired-exercise-3-multi-panel-pollution-analysis-10-min",
-    "href": "weeks/slides/week-04-slides.html#paired-exercise-3-multi-panel-pollution-analysis-10-min",
+    "objectID": "weeks/slides/week-04-slides.html#paired-exercise-3-multi-panel-trends-10-min",
+    "href": "weeks/slides/week-04-slides.html#paired-exercise-3-multi-panel-trends-10-min",
     "title": "Week 4: Data Visualization with ggplot2",
-    "section": "👥 Paired Exercise 3: Multi-Panel Pollution Analysis (10 min)",
-    "text": "👥 Paired Exercise 3: Multi-Panel Pollution Analysis (10 min)\n\n\nTask\nIn week-04-inclass.qmd: 1. Plot Temp (\\(x\\)-axis) vs Ozone (\\(y\\)-axis) from airquality. 2. Add points with alpha = 0.6. 3. Add a linear regression line (geom_smooth(method = \"lm\", color = \"darkred\")). 4. Facet by Month in a single row (nrow = 1). 5. Describe in 1 sentence: Does the temperature-ozone relationship hold consistently across all 5 months?\n\nDiscussion\nNotice how the slope changes between May (Month 5) and August (Month 8)!"
+    "section": "👥 Paired Exercise 3: Multi-Panel Trends (10 min)",
+    "text": "👥 Paired Exercise 3: Multi-Panel Trends (10 min)\n\n\nTask\nIn week-04-inclass.qmd: 1. Plot Temp (\\(x\\)) vs Ozone (\\(y\\)) from airquality. 2. Add points with alpha = 0.6. 3. Add a linear regression line (geom_smooth(method = \"lm\", color = \"darkred\")). 4. Facet by Month into a single row (nrow = 1).\n\nDiscussion\nObserve how the slope of the temperature-ozone relationship changes between early summer (May) and late summer (August)!"
   },
   {
-    "objectID": "weeks/slides/week-04-slides.html#labels-titles-and-captions-labs",
-    "href": "weeks/slides/week-04-slides.html#labels-titles-and-captions-labs",
+    "objectID": "weeks/slides/week-04-slides.html#informative-labels-labs",
+    "href": "weeks/slides/week-04-slides.html#informative-labels-labs",
     "title": "Week 4: Data Visualization with ggplot2",
-    "section": "Labels, Titles, and Captions: labs()",
-    "text": "Labels, Titles, and Captions: labs()\nA plot is only as good as its labels. Never leave raw code names (Temp, Solar.R, Month) on a final figure!\np_final &lt;- ggplot(airquality, aes(x = Temp, y = Ozone, color = Wind)) +\n  geom_point(size = 3, alpha = 0.8) +\n  geom_smooth(method = \"lm\", color = \"black\", linetype = \"dashed\", se = FALSE) +\n  labs(\n    title = \"Air Quality & Ozone Concentrations in New York City\",\n    subtitle = \"Daily measurements from May to September 1973 (LaGuardia Airport)\",\n    x = \"Maximum Daily Temperature (°F)\",\n    y = \"Mean Ozone (parts per billion)\",\n    color = \"Wind Speed\\n(mph)\",\n    caption = \"Source: New York State Department of Environmental Conservation\"\n  )"
+    "section": "Informative Labels: labs()",
+    "text": "Informative Labels: labs()\nNever leave raw column names on a presentation or report figure:\np_pub &lt;- ggplot(airquality, aes(x = Temp, y = Ozone, color = Wind)) +\n  geom_point(size = 3, alpha = 0.8) +\n  geom_smooth(method = \"lm\", color = \"black\", linetype = \"dashed\", se = FALSE) +\n  labs(\n    title = \"Air Pollution Dynamics at LaGuardia Airport\",\n    subtitle = \"Daily measurements of Ozone, Temperature, and Wind (May - Sep 1973)\",\n    x = \"Maximum Daily Temperature (°F)\",\n    y = \"Mean Ozone (ppb)\",\n    color = \"Wind Speed\\n(mph)\",\n    caption = \"Source: NYS Department of Environmental Conservation\"\n  )"
   },
   {
-    "objectID": "weeks/slides/week-04-slides.html#color-palettes-built-in-themes",
-    "href": "weeks/slides/week-04-slides.html#color-palettes-built-in-themes",
+    "objectID": "weeks/slides/week-04-slides.html#colorblind-safe-scales-themes",
+    "href": "weeks/slides/week-04-slides.html#colorblind-safe-scales-themes",
     "title": "Week 4: Data Visualization with ggplot2",
-    "section": "Color Palettes & Built-In Themes",
-    "text": "Color Palettes & Built-In Themes\n\n\nAccessible Palettes\n# Continuous Viridis\np_final + scale_color_viridis_c(option = \"magma\")\n\n# Discrete Brewer\n# scale_fill_brewer(palette = \"Dark2\")\n\nClean Themes\n# theme_minimal() or theme_classic()\np_final + \n  scale_color_viridis_c(option = \"viridis\") +\n  theme_minimal(base_size = 13) +\n  theme(\n    legend.position = \"right\",\n    plot.title = element_text(face = \"bold\", size = 15)\n  )"
+    "section": "Colorblind-Safe Scales & Themes",
+    "text": "Colorblind-Safe Scales & Themes\n\n\nViridis Palettes\np_pub + \n  scale_color_viridis_c(option = \"viridis\")\n\nPerceptually uniform and legible in grayscale.\n\n\nClean Themes\np_pub + \n  scale_color_viridis_c(option = \"viridis\") +\n  theme_minimal(base_size = 13) +\n  theme(legend.position = \"bottom\")"
   },
   {
-    "objectID": "weeks/slides/week-04-slides.html#saving-high-resolution-figures-ggsave",
-    "href": "weeks/slides/week-04-slides.html#saving-high-resolution-figures-ggsave",
+    "objectID": "weeks/slides/week-04-slides.html#saving-figures-ggsave",
+    "href": "weeks/slides/week-04-slides.html#saving-figures-ggsave",
     "title": "Week 4: Data Visualization with ggplot2",
-    "section": "Saving High-Resolution Figures: ggsave()",
-    "text": "Saving High-Resolution Figures: ggsave()\n# Saves the last displayed plot (or a specified plot object)\nggsave(\n  filename = \"figures/fig1_ozone_temperature.png\",\n  plot = p_final,\n  width = 8,\n  height = 5,\n  dpi = 300  # Publication quality\n)"
+    "section": "Saving Figures: ggsave()",
+    "text": "Saving Figures: ggsave()\nSave vector or high-resolution raster images for publications and reports:\nggsave(\n  filename = \"figures/figure1_ozone.png\",\n  plot = p_pub,\n  width = 8,\n  height = 5,\n  dpi = 300\n)"
   },
   {
-    "objectID": "weeks/slides/week-04-slides.html#spotting-misleading-visuals",
-    "href": "weeks/slides/week-04-slides.html#spotting-misleading-visuals",
+    "objectID": "weeks/slides/week-04-slides.html#spotting-truncated-baselines",
+    "href": "weeks/slides/week-04-slides.html#spotting-truncated-baselines",
     "title": "Week 4: Data Visualization with ggplot2",
-    "section": "Spotting Misleading Visuals",
-    "text": "Spotting Misleading Visuals\n\n\n❌ What AI Generated\n# AI Prompt: \"Plot hospital admissions by month\"\n# AI code:\nggplot(df, aes(x = month, y = rate)) +\n  geom_col() +\n  coord_cartesian(ylim = c(45, 52)) # Truncated!\nThe Danger: Truncating the \\(y\\)-axis baseline on bar charts creates optical illusions, making a 2% fluctuation look like a 500% surge!\n\n✅ The Verified Standard\n\nBar charts MUST start at 0: Always include the zero baseline for area/length geoms (geom_col, geom_bar).\nFor Overplotting: Use geom_jitter(), alpha &lt; 0.5, or 2D density contours rather than overlapping solid points.\nColor Accessibility: Always test palettes with colorblind simulators (viridis is colorblind-friendly by default)."
+    "section": "Spotting Truncated Baselines",
+    "text": "Spotting Truncated Baselines\n\n\n❌ What AI Generated\n# AI Prompt: \"Bar chart of mortality rate\"\nggplot(df, aes(x = year, y = rate)) +\n  geom_col() +\n  coord_cartesian(ylim = c(48, 52))\n\nTruncating the \\(y\\)-axis baseline makes a 1% change look like a 500% surge!\n\n\n✅ The Verified Rule\n\nLength/Area geoms (geom_col, geom_bar) MUST start at 0.\nFor Overplotting: Use geom_jitter(), alpha &lt; 0.5, or 2D density contours.\nColor Accessibility: Always use colorblind-friendly scales (viridis)."
   },
   {
     "objectID": "weeks/slides/week-03-slides.html#welcome-to-week-3",
@@ -642,7 +670,7 @@
     "href": "weeks/slides/week-03-slides.html#what-is-a-matrix",
     "title": "Week 3: Matrices, Lists, Data Frames & Data Import",
     "section": "What is a Matrix?",
-    "text": "What is a Matrix?\nA matrix is a 2-dimensional collection of elements of the same basic type (homogeneous), arranged in rows and columns.\n\n\nCreating a Matrix\n# By default, R fills matrices COLUMN-BY-COLUMN\nm1 &lt;- matrix(1:6, nrow = 2, ncol = 3)\nm1\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\nFilling Row-by-Row\n# Use byrow = TRUE to fill row-by-row\nm2 &lt;- matrix(1:6, nrow = 2, ncol = 3, byrow = TRUE)\nm2\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6"
+    "text": "What is a Matrix?\nA matrix is a 2-dimensional collection of elements of the same basic type (homogeneous), arranged in rows and columns.\n\n\nColumn-by-Column (Default)\nm1 &lt;- matrix(1:6, nrow = 2, ncol = 3)\nm1\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\nRow-by-Row (byrow = TRUE)\nm2 &lt;- matrix(1:6, nrow = 2, ncol = 3, byrow = TRUE)\nm2\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6"
   },
   {
     "objectID": "weeks/slides/week-03-slides.html#dimensions-naming",
@@ -687,11 +715,11 @@
     "text": "The Crucial Difference: $ vs [[ ]] vs [ ]\n\n\n1. $ or [[ ]] (Extract Contents)\nExtracts the raw object inside the list compartment:\n# Returns a NUMERIC VECTOR\npatient_record$sbp_history\npatient_record[[\"sbp_history\"]]\n\n# Now you can do math!\nmean(patient_record$sbp_history) # 134.6\n\n2. [ ] (Sub-list / Slice)\nReturns a smaller list containing that compartment:\n# Returns a LIST of length 1\nsub_list &lt;- patient_record[4]\ntypeof(sub_list) # \"list\"\n\n# mean(sub_list) WILL FAIL!\n# Lists cannot be averaged directly.\n\n\n\n\n\n\n\n\nTip\n\n\nThink of a list as a train with cargo cars. [4] gives you the 4th car; [[4]] opens the car and gives you the cargo inside!"
   },
   {
-    "objectID": "weeks/slides/week-03-slides.html#paired-exercise-2-clinical-trial-patient-list-10-min",
-    "href": "weeks/slides/week-03-slides.html#paired-exercise-2-clinical-trial-patient-list-10-min",
+    "objectID": "weeks/slides/week-03-slides.html#paired-exercise-2-patient-trial-list-10-min",
+    "href": "weeks/slides/week-03-slides.html#paired-exercise-2-patient-trial-list-10-min",
     "title": "Week 3: Matrices, Lists, Data Frames & Data Import",
-    "section": "👥 Paired Exercise 2: Clinical Trial Patient List (10 min)",
-    "text": "👥 Paired Exercise 2: Clinical Trial Patient List (10 min)\n\n\nTask\nIn week-03-inclass.qmd: 1. Build a list study_subject containing: * name: \"Jordan Lee\" * arm: \"Treatment_A\" * viral_loads: c(45000, 12000, 850, 40) * adverse_events: 0 2. Extract the viral_loads vector and calculate the percentage reduction from baseline (visit 1 to visit 4). 3. Add a new element to the list named completed set to TRUE.\n\nExpected Output\nBaseline: 45000\nFinal: 40\nReduction: 99.91%\n\n$completed\n[1] TRUE\nTime Remaining: 10 minutes."
+    "section": "👥 Paired Exercise 2: Patient Trial List (10 min)",
+    "text": "👥 Paired Exercise 2: Patient Trial List (10 min)\n\n\nTask\nIn week-03-inclass.qmd: 1. Build a list study_subject containing: * name: \"Jordan Lee\" * arm: \"Treatment_A\" * viral_loads: c(45000, 12000, 850, 40) * adverse_events: 0 2. Extract the viral_loads vector and calculate the percentage reduction from baseline (visit 1 to visit 4). 3. Add a new element to the list named completed set to TRUE.\n\nExpected Output\nBaseline: 45000\nFinal: 40\nReduction: 99.91%\n\n$completed\n[1] TRUE\nTime Remaining: 10 minutes."
   },
   {
     "objectID": "weeks/slides/week-03-slides.html#data-frames-the-heart-of-data-analysis",
@@ -705,28 +733,28 @@
     "href": "weeks/slides/week-03-slides.html#tibbles-vs.-base-data-frames",
     "title": "Week 3: Matrices, Lists, Data Frames & Data Import",
     "section": "Tibbles vs. Base Data Frames",
-    "text": "Tibbles vs. Base Data Frames\nA tibble (tibble::tibble()) is a modern data frame with refined behavior:\n\n\nBase data.frame\n\nPrints all rows and columns to console (can flood screen).\nMay coerce strings or drop dimensions unpredictably (df[, 1] becomes a vector).\nPartial name matching (df$d might match df$diabetes).\n\n\ntibble (library(tibble))\n\nClean printing: shows top 10 rows and variable types (&lt;chr&gt;, &lt;dbl&gt;, &lt;lgl&gt;).\nStrict subsetting: tb[, 1] always stays a tibble.\nNever coerces types or uses partial matching.\n\n\n\nlibrary(tibble)\ncohort_tb &lt;- as_tibble(cohort)\ncohort_tb"
+    "text": "Tibbles vs. Base Data Frames\nA tibble (tibble::tibble()) is a modern data frame with refined behavior:\n\n\nBase data.frame\n\nPrints all rows and columns to console (can flood screen).\nMay coerce strings or drop dimensions unpredictably (df[, 1] becomes a vector).\nPartial name matching (df$d might match df$diabetes).\n\n\ntibble (library(tibble))\n\nClean printing: shows top 10 rows and variable types (&lt;chr&gt;, &lt;dbl&gt;, &lt;lgl&gt;).\nStrict subsetting: tb[, 1] always stays a tibble.\nNever coerces types or uses partial matching."
   },
   {
     "objectID": "weeks/slides/week-03-slides.html#subsetting-filtering-data-frames",
     "href": "weeks/slides/week-03-slides.html#subsetting-filtering-data-frames",
     "title": "Week 3: Matrices, Lists, Data Frames & Data Import",
     "section": "Subsetting & Filtering Data Frames",
-    "text": "Subsetting & Filtering Data Frames\n# 1. Accessing columns\ncohort$bmi\ncohort[[\"age\"]]\n\n# 2. Creating a new computed column\ncohort$bmi_high &lt;- cohort$bmi &gt;= 30.0\n\n# 3. Filtering rows by condition\n# Syntax: df[condition, ]\nseniors &lt;- cohort[cohort$age &gt;= 60, ]\nseniors\n\n# 4. Complex filtering: BMI &gt; 25 AND non-diabetic\noverweight_non_diab &lt;- cohort[cohort$bmi &gt; 25 & !cohort$diabetes, ]"
+    "text": "Subsetting & Filtering Data Frames\n# 1. Accessing columns\ncohort$bmi\ncohort[[\"age\"]]\n\n# 2. Creating a new computed column\ncohort$bmi_high &lt;- cohort$bmi &gt;= 30.0\n\n# 3. Filtering rows by condition: df[condition, ]\nseniors &lt;- cohort[cohort$age &gt;= 60, ]\nseniors\n\n# 4. Complex filtering: BMI &gt; 25 AND non-diabetic\noverweight_non_diab &lt;- cohort[cohort$bmi &gt; 25 & !cohort$diabetes, ]"
   },
   {
-    "objectID": "weeks/slides/week-03-slides.html#paired-exercise-3-cohort-filtering-mutating-10-min",
-    "href": "weeks/slides/week-03-slides.html#paired-exercise-3-cohort-filtering-mutating-10-min",
+    "objectID": "weeks/slides/week-03-slides.html#paired-exercise-3-cohort-filtering-10-min",
+    "href": "weeks/slides/week-03-slides.html#paired-exercise-3-cohort-filtering-10-min",
     "title": "Week 3: Matrices, Lists, Data Frames & Data Import",
-    "section": "👥 Paired Exercise 3: Cohort Filtering & Mutating (10 min)",
-    "text": "👥 Paired Exercise 3: Cohort Filtering & Mutating (10 min)\n\n\nTask\nIn week-03-inclass.qmd: 1. Use the provided patients data frame. 2. Add a new column pulse_pressure computed as sbp - dbp. 3. Filter all patients who meet both criteria: * Age &gt;= 50 * pulse_pressure &gt; 45 4. Calculate the average bmi of this high-risk sub-cohort.\n\nHints\n\nRemember to put a comma after the row condition: patients[condition, ]\nUse mean(..., na.rm = TRUE) if missing values are present."
+    "section": "👥 Paired Exercise 3: Cohort Filtering (10 min)",
+    "text": "👥 Paired Exercise 3: Cohort Filtering (10 min)\n\n\nTask\nIn week-03-inclass.qmd: 1. Use the provided patients data frame. 2. Add a new column pulse_pressure computed as sbp - dbp. 3. Filter all patients who meet both criteria: * Age &gt;= 50 * pulse_pressure &gt; 45 4. Calculate the average bmi of this high-risk sub-cohort.\n\nHints\n\nRemember the comma after row condition: patients[condition, ]\nUse mean(..., na.rm = TRUE) if missing values exist."
   },
   {
-    "objectID": "weeks/slides/week-03-slides.html#importing-real-data",
-    "href": "weeks/slides/week-03-slides.html#importing-real-data",
+    "objectID": "weeks/slides/week-03-slides.html#importing-real-data-csv-excel",
+    "href": "weeks/slides/week-03-slides.html#importing-real-data-csv-excel",
     "title": "Week 3: Matrices, Lists, Data Frames & Data Import",
-    "section": "Importing Real Data",
-    "text": "Importing Real Data\nMost health data arrives as CSV (Comma-Separated Values) or Excel spreadsheets.\n\n\n1. Reading CSV Files with readr\nlibrary(readr)\n\n# read_csv() returns a clean tibble\nnhanes_data &lt;- read_csv(\n  \"data/nhanes_sample.csv\",\n  na = c(\"\", \"NA\", \"999\", \"Unknown\")\n)\n\nhead(nhanes_data)\n\n2. Reading Excel with readxl\nlibrary(readxl)\n\n# Check available sheets\nexcel_sheets(\"data/clinical_trial.xlsx\")\n\n# Read specific sheet\ntrial_data &lt;- read_excel(\n  \"data/clinical_trial.xlsx\",\n  sheet = \"Baseline_Vitals\",\n  na = \"NA\"\n)"
+    "section": "Importing Real Data (CSV & Excel)",
+    "text": "Importing Real Data (CSV & Excel)\n\n\n1. Reading CSV Files (readr)\nlibrary(readr)\n\n# read_csv() returns a clean tibble\nnhanes_data &lt;- read_csv(\n  \"data/nhanes_sample.csv\",\n  na = c(\"\", \"NA\", \"999\", \"Unknown\")\n)\n\nhead(nhanes_data)\n\n2. Reading Excel (readxl)\nlibrary(readxl)\n\n# Check available sheets\nexcel_sheets(\"data/clinical_trial.xlsx\")\n\n# Read specific sheet\ntrial_data &lt;- read_excel(\n  \"data/clinical_trial.xlsx\",\n  sheet = \"Baseline_Vitals\",\n  na = \"NA\"\n)"
   },
   {
     "objectID": "weeks/slides/week-03-slides.html#exporting-cleaned-datasets",
@@ -740,7 +768,7 @@
     "href": "weeks/slides/week-03-slides.html#the-unknown-string-trap",
     "title": "Week 3: Matrices, Lists, Data Frames & Data Import",
     "section": "The “Unknown” String Trap",
-    "text": "The “Unknown” String Trap\n\n\n❌ What AI Generated\n# Prompt: \"Read this blood pressure dataset from CSV\"\n# AI code:\nbp_df &lt;- read.csv(\"bp_data.csv\")\nmean(bp_df$systolic)\nOutput:\n[1] NA (or Warning: argument is not numeric)\nWhy? In the CSV, row 42 contained \"Unknown\" instead of a number. Base read.csv converted the entire systolic column to character!\n\n✅ The Verified Fix\nAlways specify explicit na strings upon import:\nlibrary(readr)\nbp_df &lt;- read_csv(\n  \"bp_data.csv\",\n  na = c(\"\", \"NA\", \"Unknown\", \"Refused\", \"-99\")\n)\n\n# Verify column types\nspec(bp_df)\nmean(bp_df$systolic, na.rm = TRUE)\nNever trust that numbers imported as numeric — always check str() or glimpse()!"
+    "text": "The “Unknown” String Trap\n\n\n❌ What AI Generated\n# Prompt: \"Read this blood pressure dataset from CSV\"\nbp_df &lt;- read.csv(\"bp_data.csv\")\nmean(bp_df$systolic)\nOutput: [1] NA\nWhy? In the CSV, row 42 contained \"Unknown\". Base read.csv converted the entire systolic column to character!\n\n✅ The Verified Fix\nAlways specify explicit na strings upon import:\nlibrary(readr)\nbp_df &lt;- read_csv(\n  \"bp_data.csv\",\n  na = c(\"\", \"NA\", \"Unknown\", \"Refused\", \"-99\")\n)\n\n# Verify column types\nspec(bp_df)\nmean(bp_df$systolic, na.rm = TRUE)"
   },
   {
     "objectID": "weeks/slides/week-03-slides.html#quiz-1-instructions",
