@@ -1,0 +1,6 @@
+id,age,cholesterol,treated
+P1,45,210,Yes
+P2,62,Unknown,No
+P3,58,195,Yes
+P4,71,240,Refused
+P5,39,-99,Yes
