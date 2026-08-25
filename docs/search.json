@@ -11,49 +11,91 @@
     "href": "syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "The official syllabus PDF is posted on Brightspace. Key points are summarized below."
+    "text": "Download Official Syllabus\n\n\n\nYou can download the official GPH-formatted Word syllabus here: 📥 GPH-GU 2182 Syllabus (DOCX)."
   },
   {
-    "objectID": "syllabus.html#logistics",
-    "href": "syllabus.html#logistics",
+    "objectID": "syllabus.html#course-information",
+    "href": "syllabus.html#course-information",
     "title": "Syllabus",
-    "section": "Logistics",
-    "text": "Logistics\n\nCourse: GPH-GU 2182 Statistical Programming in R (3 credits)\nTime: Wednesdays 2:00–4:40 PM, Fall 2026\nLocation: 70 Washington Sq S (Bobst), Room LL138\nInstructor: Yang Feng · yf31@nyu.edu · Office: 708 Broadway, Room 433\nOffice hours: TBD\nCourse assistants: TBD"
+    "section": "Course Information",
+    "text": "Course Information\n\n\n\nField\nDetails\n\n\n\n\nCourse\nGPH-GU 2182: Statistical Programming in R (3 credits)\n\n\nSchedule\nWednesdays 2:00 PM – 4:40 PM\n\n\nLocation\n70 Washington Sq S (Bobst Library), Room LL138\n\n\nSemester\nFall 2026\n\n\nInstructor\nYang Feng, PhD (yf31@nyu.edu) · Office: 708 Broadway, Room 433\n\n\nOffice Hours\nWednesdays 11:00 AM – 1:00 PM (or by appointment)\n\n\nCourse Assistant\nTBD (TBD@nyu.edu)\n\n\nCourse Website\nhttps://gph-2182.github.io/\n\n\nClassroom 50\nhttps://classroom50.org/"
   },
   {
-    "objectID": "syllabus.html#grading",
-    "href": "syllabus.html#grading",
+    "objectID": "syllabus.html#course-description",
+    "href": "syllabus.html#course-description",
     "title": "Syllabus",
-    "section": "Grading",
-    "text": "Grading\n\n\n\n\n\n\n\n\nComponent\nWeight\nNotes\n\n\n\n\nAttendance\n5%\nChecked every session\n\n\nIn-class exercises (14)\n10%\nGood-faith completion; lowest 2 dropped\n\n\nWeekly exercises (12)\n35%\nAutograded on GitHub; lowest 2 dropped\n\n\nIn-class quizzes (5)\n20%\nWeeks 3, 5, 7, 9, 11; no AI; lowest dropped\n\n\nFinal individual project\n30%\nQuarto report + video walkthrough + AI appendix\n\n\n\nGrading scale (graduate). A: 94–100 · A−: 90–93 · B+: 87–89 · B: 83–86 · B−: 80–82 · C+: 77–79 · C: 73–76 · C−: 70–72 · F: below 70"
+    "section": "Course Description",
+    "text": "Course Description\nR is one of the most popular programming languages in statistics and data science. This course will introduce various R programming topics, including R objects, data visualization, data import & export, data manipulation, creating functions and iterations for statistical simulations, and writing high-quality reports with R Markdown. The course will focus on public health datasets as illustrations to best meet the practical needs of GPH students but is also open to those of other backgrounds. By the end of the course, students will be able to comfortably program in R for effective data preprocessing, analysis and presentation. This course does not require prior experience in programming or statistics and serves as a foundation for other courses in biostatistics, epidemiology, and data science."
   },
   {
-    "objectID": "syllabus.html#assessments-in-brief",
-    "href": "syllabus.html#assessments-in-brief",
+    "objectID": "syllabus.html#course-overview",
+    "href": "syllabus.html#course-overview",
     "title": "Syllabus",
-    "section": "Assessments in brief",
-    "text": "Assessments in brief\nWeekly exercises are released before class on Wednesdays in Weeks 1–12 and due 11:59 PM the following Wednesday. They are distributed and submitted through GitHub; an autograder reports which questions pass every time you push, and you may resubmit freely before the deadline. Late: 20% penalty within 24h, 40% within 48h, zero after that.\nIn-class quizzes (15 minutes, five total: Weeks 3, 5, 7, 9, 11) are paper-based hand-fluency checks completed individually without laptops, phones, or AI assistance during the last 20 minutes of class. To provide flexibility for unexpected illness or travel, your lowest quiz score is automatically dropped (the best 4 of 5 count, 3.75% each, 15% total).\nThe final project is an individual analysis of a public-health dataset: a reproducible Quarto report in a GitHub repository, a 5-minute recorded video walkthrough, and an AI-use appendix. Released Week 10, due 11:59 PM December 16. No late submissions."
+    "section": "Course Overview",
+    "text": "Course Overview\nThis course equips graduate students with foundational and modern computing skills for reproducible public health data science. Using a dual-track pedagogical approach, students learn fundamental computational primitives alongside modern, expressive tidyverse workflows. The curriculum covers Quarto reproducible publishing, vectors, matrices, lists, data frames, publication-quality graphics with ggplot2, robust data wrangling with dplyr and tidyr, string and factor manipulation, functional programming with purrr, and Monte Carlo simulation. Students will also master responsible, ethical AI-assisted programming to accelerate learning, debugging, and code documentation while building genuine human fluency."
   },
   {
-    "objectID": "syllabus.html#software-all-free",
-    "href": "syllabus.html#software-all-free",
+    "objectID": "syllabus.html#course-format",
+    "href": "syllabus.html#course-format",
     "title": "Syllabus",
-    "section": "Software (all free)",
-    "text": "Software (all free)\nR, RStudio (primary in-class demo IDE) / Positron (supported next-gen IDE), Quarto, Git, and a free GitHub account. Free-tier AI chatbots are sufficient for all coursework. No purchases are required."
+    "section": "Course Format",
+    "text": "Course Format\nThis is a 3-credit in-person course, including 14 in-person class sessions (14 × 160 minutes = 2,240 minutes) and 10 minutes of individual final project consultation, totaling 2,250 minutes of instructional time."
   },
   {
-    "objectID": "syllabus.html#ai-policy",
-    "href": "syllabus.html#ai-policy",
+    "objectID": "syllabus.html#learning-objectives-competencies",
+    "href": "syllabus.html#learning-objectives-competencies",
     "title": "Syllabus",
-    "section": "AI policy",
-    "text": "AI policy\nSee the AI Policy page for the three-zone policy."
+    "section": "Learning Objectives & Competencies",
+    "text": "Learning Objectives & Competencies\n\n\n\n\n\n\n\n\nLearning Objective\nCompetency\nCourse Component\n\n\n\n\n1. Develop R and Quarto code for reproducible data analysis and publication.\nUse statistical software proficiently for data management, manipulation, storage, resource sharing, and analysis. (BC-3)\nLessons 1, 10, 12, 13; In-class 1, 10, 12, 13; Weekly Exercises 1, 9, 11, 12; Final Project\n\n\n2. Create and manipulate foundational R objects (vectors, matrices, lists, and data frames).\nUse statistical software proficiently for data management, manipulation, storage, resource sharing, and analysis. (BC-3)\nLessons 2, 3, 7; In-class 2, 3, 7; Weekly Exercises 2, 3, 7; Quizzes 1, 3; Final Project\n\n\n3. Apply R for publication-quality data visualization with ggplot2.\nUse statistical software proficiently for data management, manipulation, storage, resource sharing, and analysis. (BC-3)Communicate study results clearly and accurately in written reports and with effective data visualization methods. (BC-4)\nLessons 4, 12; In-class 4, 12; Weekly Exercises 4, 11; Quiz 2; Final Project\n\n\n4. Apply R for real-world data import, type cleaning, validation, and export.\nUse statistical software proficiently for data management, manipulation, storage, resource sharing, and analysis. (BC-3)\nLessons 3, 6; In-class 3, 6; Weekly Exercises 3, 6; Quizzes 1, 3; Final Project\n\n\n5. Apply R for advanced data wrangling, relational joins, and tidy reshaping.\nTranslate hypotheses and associated outcome measures into appropriate study designs. (BC-1)Use statistical software proficiently for data management, manipulation, storage, resource sharing, and analysis. (BC-3)\nLessons 5, 6, 7; In-class 5, 6, 7; Weekly Exercises 5, 6, 7; Quizzes 2, 3; Final Project\n\n\n6. Implement custom functions, iteration, and Monte Carlo statistical simulations.\nUse statistical software proficiently for data management, manipulation, storage, resource sharing, and analysis. (BC-3)\nLessons 8, 9, 10; In-class 8, 9, 10; Weekly Exercises 8, 9, 10; Quizzes 4, 5; Final Project\n\n\n7. Synthesize findings into a reproducible statistical report with Quarto and responsible AI auditing.\nUse statistical software proficiently for data management, manipulation, storage, resource sharing, and analysis. (BC-3)Communicate study results clearly and accurately in written reports and with effective data visualization methods. (BC-4)\nLessons 1, 12, 13, 14; In-class 1, 12, 13; Weekly Exercises 1, 11, 12; Final Project"
   },
   {
-    "objectID": "syllabus.html#university-policies",
-    "href": "syllabus.html#university-policies",
+    "objectID": "syllabus.html#pre-requisites",
+    "href": "syllabus.html#pre-requisites",
     "title": "Syllabus",
-    "section": "University policies",
-    "text": "University policies\nThe full statements on academic integrity, plagiarism, disability accommodations (Moses Center), and the GPH DEI statement are in the official syllabus PDF on Brightspace."
+    "section": "Pre-Requisites",
+    "text": "Pre-Requisites\nNo Pre-requisites."
+  },
+  {
+    "objectID": "syllabus.html#course-requirements-and-expectations",
+    "href": "syllabus.html#course-requirements-and-expectations",
+    "title": "Syllabus",
+    "section": "Course Requirements and Expectations",
+    "text": "Course Requirements and Expectations\n\nAttendance (5%): Checked every session. Up to 2 sessions may be missed with prior notice for illness or academic travel without penalty.\nIn-Class Paired Exercises (10%): Active paired programming in every session. Graded for completeness and effort (not strict correctness). Lowest 2 scores dropped.\nWeekly Exercises (35%): 12 autograded assignments submitted via GitHub. Immediate automated feedback upon push. Lowest 2 scores dropped. Late: 20% within 24h, 40% within 48h, zero after 48h.\nIn-Class Quizzes (20%): Five 15-minute paper-based, closed-book quizzes (Weeks 3, 5, 7, 9, 11) during the final 20 minutes of class. Lowest 1 quiz score dropped (best 4 of 5 count, 5% each).\nFinal Individual Project (30%): Comprehensive reproducible public health analysis with Quarto report, 5-minute video walkthrough, and AI-use appendix. Released Week 10; due Dec 16 at 11:59 PM."
+  },
+  {
+    "objectID": "syllabus.html#grading-components",
+    "href": "syllabus.html#grading-components",
+    "title": "Syllabus",
+    "section": "Grading Components",
+    "text": "Grading Components\n\n\n\n\n\n\n\n\nComponent\nWeight\nPolicy\n\n\n\n\nAttendance\n5%\nChecked every session; up to 2 excused absences\n\n\nIn-Class Exercises (14)\n10%\nPaired programming; lowest 2 dropped\n\n\nWeekly Autograded Exercises (12)\n35%\nDistributed via GitHub; lowest 2 dropped\n\n\nIn-Class Quizzes (5)\n20%\nPaper-based (Weeks 3, 5, 7, 9, 11); lowest 1 dropped\n\n\nFinal Individual Project\n30%\nQuarto report + Video Walkthrough + AI Appendix\n\n\nTotal\n100%\n\n\n\n\n\nGrading Scale (Graduate Courses)\n\nA: 94–100 · A−: 90–93\nB+: 87–89 · B: 83–86 · B−: 80–82\nC+: 77–79 · C: 73–76 · C−: 70–72\nF: Below 70"
+  },
+  {
+    "objectID": "syllabus.html#statement-on-the-use-of-ai-technology",
+    "href": "syllabus.html#statement-on-the-use-of-ai-technology",
+    "title": "Syllabus",
+    "section": "Statement on the Use of AI Technology",
+    "text": "Statement on the Use of AI Technology\nThis course uses a Three-Zone AI Policy: - 🟢 Green Zone (Permitted with Citation): Weekly exercises, in-class practice, and final project development. You may consult LLMs (ChatGPT, Claude, GitHub Copilot) for code explanations, syntax queries, and debugging hints. All AI assistance must be acknowledged in an AI-Use Appendix. - 🟡 Yellow Zone (Guided / Supervised): In-class AI auditing activities where we evaluate AI-generated code quality and hallucinated arguments. - 🔴 Red Zone (Strictly Prohibited): In-class paper quizzes, uncredited code submission, or presenting AI-generated work as your own independent reasoning.\nSee the dedicated AI Policy Page for full guidelines and citation templates."
+  },
+  {
+    "objectID": "syllabus.html#reading-reference-materials",
+    "href": "syllabus.html#reading-reference-materials",
+    "title": "Syllabus",
+    "section": "Reading & Reference Materials",
+    "text": "Reading & Reference Materials\n\nPrimary Textbook: Feng, Y. (2026). R Programming: Zero to Pro (R02Pro). Available online: https://r02pro.github.io/\nSupplementary Reference: Wickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for Data Science (2nd ed.). O’Reilly. Available online: https://r4ds.hadley.nz/"
+  },
+  {
+    "objectID": "syllabus.html#gph-community-statement",
+    "href": "syllabus.html#gph-community-statement",
+    "title": "Syllabus",
+    "section": "GPH Community Statement",
+    "text": "GPH Community Statement\nThe NYU School of Global Public Health (GPH) is committed to maintaining and celebrating a diverse, just, and inclusive environment for all of our students, faculty, and staff around the world. GPH promotes a welcoming learning environment that embraces cultural humility, and respects and values differences. These differences can include race, ethnicity, religion, gender identity, sexual orientation, physical, mental and emotional abilities, and socioeconomic status. In this course, we encourage all students to share and discuss different perspectives, beliefs, and experiences while treating all with dignity and respect."
+  },
+  {
+    "objectID": "syllabus.html#statement-of-academic-integrity",
+    "href": "syllabus.html#statement-of-academic-integrity",
+    "title": "Syllabus",
+    "section": "Statement of Academic Integrity",
+    "text": "Statement of Academic Integrity\nThe NYU School of Global Public Health values both open inquiry and academic integrity. Students in the program are expected to follow standards of excellence set forth by New York University. Such standards include respect, honesty and responsibility. The GPH does not tolerate violations to academic integrity including plagiarism, cheating, unapproved duplicate submissions, or presenting work generated by commercial firms or AI tools as your own independent effort without explicit authorization and citation.\n\nStudents with Disabilities\nStudents with disabilities should contact the Moses Center for Students with Disabilities regarding the resources available to them and to determine what classroom accommodations should be made available. More information can be found at Moses Center for Student Accessibility. Please provide your accommodation letter as early in the semester as possible."
   },
   {
     "objectID": "index.html",

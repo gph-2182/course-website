@@ -1,65 +1,128 @@
 ---
 title: "Syllabus"
+subtitle: "GPH-GU 2182: Statistical Programming in R · Fall 2026"
+format:
+  html:
+    toc: true
+    number-sections: false
 ---
 
-The official syllabus PDF is posted on Brightspace. Key points are summarized
-below.
+::: {.callout-note}
+### Download Official Syllabus
+You can download the official GPH-formatted Word syllabus here: [📥 GPH-GU 2182 Syllabus (DOCX)](https://raw.githubusercontent.com/gph-2182/course-website/main/syllabus/GPH-GU_2182_Syllabus_Fall_2026.docx).
+:::
 
-## Logistics
+## Course Information
 
-- **Course:** GPH-GU 2182 Statistical Programming in R (3 credits)
-- **Time:** Wednesdays 2:00–4:40 PM, Fall 2026
-- **Location:** 70 Washington Sq S (Bobst), Room LL138
-- **Instructor:** Yang Feng · yf31@nyu.edu · Office: 708 Broadway, Room 433
-- **Office hours:** TBD
-- **Course assistants:** TBD
+| Field | Details |
+|---|---|
+| **Course** | GPH-GU 2182: Statistical Programming in R (3 credits) |
+| **Schedule** | Wednesdays 2:00 PM – 4:40 PM |
+| **Location** | 70 Washington Sq S (Bobst Library), Room LL138 |
+| **Semester** | Fall 2026 |
+| **Instructor** | Yang Feng, PhD (`yf31@nyu.edu`) · Office: 708 Broadway, Room 433 |
+| **Office Hours** | Wednesdays 11:00 AM – 1:00 PM (or by appointment) |
+| **Course Assistant** | TBD (`TBD@nyu.edu`) |
+| **Course Website** | [https://gph-2182.github.io/](https://gph-2182.github.io/) |
+| **Classroom 50** | [https://classroom50.org/](https://classroom50.org/) |
 
-## Grading
+---
 
-| Component | Weight | Notes |
+## Course Description
+
+R is one of the most popular programming languages in statistics and data science. This course will introduce various R programming topics, including R objects, data visualization, data import & export, data manipulation, creating functions and iterations for statistical simulations, and writing high-quality reports with R Markdown. The course will focus on public health datasets as illustrations to best meet the practical needs of GPH students but is also open to those of other backgrounds. By the end of the course, students will be able to comfortably program in R for effective data preprocessing, analysis and presentation. This course does not require prior experience in programming or statistics and serves as a foundation for other courses in biostatistics, epidemiology, and data science.
+
+---
+
+## Course Overview
+
+This course equips graduate students with foundational and modern computing skills for reproducible public health data science. Using a dual-track pedagogical approach, students learn fundamental computational primitives alongside modern, expressive tidyverse workflows. The curriculum covers Quarto reproducible publishing, vectors, matrices, lists, data frames, publication-quality graphics with `ggplot2`, robust data wrangling with `dplyr` and `tidyr`, string and factor manipulation, functional programming with `purrr`, and Monte Carlo simulation. Students will also master responsible, ethical AI-assisted programming to accelerate learning, debugging, and code documentation while building genuine human fluency.
+
+---
+
+## Course Format
+
+This is a 3-credit in-person course, including 14 in-person class sessions (14 × 160 minutes = 2,240 minutes) and 10 minutes of individual final project consultation, totaling 2,250 minutes of instructional time.
+
+---
+
+## Learning Objectives & Competencies
+
+| Learning Objective | Competency | Course Component |
 |---|---|---|
-| Attendance | 5% | Checked every session |
-| In-class exercises (14) | 10% | Good-faith completion; lowest 2 dropped |
-| Weekly exercises (12) | 35% | Autograded on GitHub; lowest 2 dropped |
-| In-class quizzes (5) | 20% | Weeks 3, 5, 7, 9, 11; no AI; lowest dropped |
-| Final individual project | 30% | Quarto report + video walkthrough + AI appendix |
+| **1. Develop R and Quarto code for reproducible data analysis and publication.** | Use statistical software proficiently for data management, manipulation, storage, resource sharing, and analysis. (BC-3) | Lessons 1, 10, 12, 13; In-class 1, 10, 12, 13; Weekly Exercises 1, 9, 11, 12; Final Project |
+| **2. Create and manipulate foundational R objects (vectors, matrices, lists, and data frames).** | Use statistical software proficiently for data management, manipulation, storage, resource sharing, and analysis. (BC-3) | Lessons 2, 3, 7; In-class 2, 3, 7; Weekly Exercises 2, 3, 7; Quizzes 1, 3; Final Project |
+| **3. Apply R for publication-quality data visualization with ggplot2.** | Use statistical software proficiently for data management, manipulation, storage, resource sharing, and analysis. (BC-3)<br>Communicate study results clearly and accurately in written reports and with effective data visualization methods. (BC-4) | Lessons 4, 12; In-class 4, 12; Weekly Exercises 4, 11; Quiz 2; Final Project |
+| **4. Apply R for real-world data import, type cleaning, validation, and export.** | Use statistical software proficiently for data management, manipulation, storage, resource sharing, and analysis. (BC-3) | Lessons 3, 6; In-class 3, 6; Weekly Exercises 3, 6; Quizzes 1, 3; Final Project |
+| **5. Apply R for advanced data wrangling, relational joins, and tidy reshaping.** | Translate hypotheses and associated outcome measures into appropriate study designs. (BC-1)<br>Use statistical software proficiently for data management, manipulation, storage, resource sharing, and analysis. (BC-3) | Lessons 5, 6, 7; In-class 5, 6, 7; Weekly Exercises 5, 6, 7; Quizzes 2, 3; Final Project |
+| **6. Implement custom functions, iteration, and Monte Carlo statistical simulations.** | Use statistical software proficiently for data management, manipulation, storage, resource sharing, and analysis. (BC-3) | Lessons 8, 9, 10; In-class 8, 9, 10; Weekly Exercises 8, 9, 10; Quizzes 4, 5; Final Project |
+| **7. Synthesize findings into a reproducible statistical report with Quarto and responsible AI auditing.** | Use statistical software proficiently for data management, manipulation, storage, resource sharing, and analysis. (BC-3)<br>Communicate study results clearly and accurately in written reports and with effective data visualization methods. (BC-4) | Lessons 1, 12, 13, 14; In-class 1, 12, 13; Weekly Exercises 1, 11, 12; Final Project |
 
-**Grading scale (graduate).** A: 94–100 · A−: 90–93 · B+: 87–89 · B: 83–86 ·
-B−: 80–82 · C+: 77–79 · C: 73–76 · C−: 70–72 · F: below 70
+---
 
-## Assessments in brief
+## Pre-Requisites
 
-**Weekly exercises** are released before class on Wednesdays in Weeks 1–12
-and due 11:59 PM the following Wednesday. They are distributed and submitted
-through GitHub; an autograder reports which questions pass every time you push,
-and you may resubmit freely before the deadline. Late: 20% penalty within 24h,
-40% within 48h, zero after that.
+**No Pre-requisites.**
 
+---
 
-**In-class quizzes** (15 minutes, five total: Weeks 3, 5, 7, 9, 11) are
-paper-based hand-fluency checks completed individually without laptops, phones,
-or AI assistance during the last 20 minutes of class. To provide flexibility for
-unexpected illness or travel, your **lowest quiz score is automatically dropped**
-(the best 4 of 5 count, 3.75% each, 15% total).
+## Course Requirements and Expectations
 
+- **Attendance (5%):** Checked every session. Up to 2 sessions may be missed with prior notice for illness or academic travel without penalty.
+- **In-Class Paired Exercises (10%):** Active paired programming in every session. Graded for completeness and effort (not strict correctness). Lowest 2 scores dropped.
+- **Weekly Exercises (35%):** 12 autograded assignments submitted via GitHub. Immediate automated feedback upon push. Lowest 2 scores dropped. Late: 20% within 24h, 40% within 48h, zero after 48h.
+- **In-Class Quizzes (20%):** Five 15-minute paper-based, closed-book quizzes (Weeks 3, 5, 7, 9, 11) during the final 20 minutes of class. Lowest 1 quiz score dropped (best 4 of 5 count, 5% each).
+- **Final Individual Project (30%):** Comprehensive reproducible public health analysis with Quarto report, 5-minute video walkthrough, and AI-use appendix. Released Week 10; due Dec 16 at 11:59 PM.
 
-**The final project** is an individual analysis of a public-health dataset:
-a reproducible Quarto report in a GitHub repository, a 5-minute recorded video
-walkthrough, and an AI-use appendix. Released Week 10, due 11:59 PM December
-16. No late submissions.
+---
 
-## Software (all free)
+## Grading Components
 
-R, RStudio (primary in-class demo IDE) / Positron (supported next-gen IDE), Quarto, Git, and a free GitHub account. Free-tier AI chatbots are
-sufficient for all coursework. No purchases are required.
+| Component | Weight | Policy |
+|---|---|---|
+| Attendance | 5% | Checked every session; up to 2 excused absences |
+| In-Class Exercises (14) | 10% | Paired programming; lowest 2 dropped |
+| Weekly Autograded Exercises (12) | 35% | Distributed via GitHub; lowest 2 dropped |
+| In-Class Quizzes (5) | 20% | Paper-based (Weeks 3, 5, 7, 9, 11); lowest 1 dropped |
+| Final Individual Project | 30% | Quarto report + Video Walkthrough + AI Appendix |
+| **Total** | **100%** | |
 
+### Grading Scale (Graduate Courses)
+* **A:** 94–100 · **A−:** 90–93
+* **B+:** 87–89 · **B:** 83–86 · **B−:** 80–82
+* **C+:** 77–79 · **C:** 73–76 · **C−:** 70–72
+* **F:** Below 70
 
-## AI policy
+---
 
-See the [AI Policy page](ai-policy.qmd) for the three-zone policy.
+## Statement on the Use of AI Technology
 
-## University policies
+This course uses a **Three-Zone AI Policy**:
+- 🟢 **Green Zone (Permitted with Citation):** Weekly exercises, in-class practice, and final project development. You may consult LLMs (ChatGPT, Claude, GitHub Copilot) for code explanations, syntax queries, and debugging hints. All AI assistance must be acknowledged in an AI-Use Appendix.
+- 🟡 **Yellow Zone (Guided / Supervised):** In-class AI auditing activities where we evaluate AI-generated code quality and hallucinated arguments.
+- 🔴 **Red Zone (Strictly Prohibited):** In-class paper quizzes, uncredited code submission, or presenting AI-generated work as your own independent reasoning.
 
-The full statements on academic integrity, plagiarism, disability
-accommodations (Moses Center), and the GPH DEI statement are in the official
-syllabus PDF on Brightspace.
+See the dedicated [AI Policy Page](ai-policy.qmd) for full guidelines and citation templates.
+
+---
+
+## Reading & Reference Materials
+
+* **Primary Textbook:** Feng, Y. (2026). *R Programming: Zero to Pro (R02Pro)*. Available online: [https://r02pro.github.io/](https://r02pro.github.io/)
+* **Supplementary Reference:** Wickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). *R for Data Science (2nd ed.)*. O'Reilly. Available online: [https://r4ds.hadley.nz/](https://r4ds.hadley.nz/)
+
+---
+
+## GPH Community Statement
+
+The NYU School of Global Public Health (GPH) is committed to maintaining and celebrating a diverse, just, and inclusive environment for all of our students, faculty, and staff around the world. GPH promotes a welcoming learning environment that embraces cultural humility, and respects and values differences. These differences can include race, ethnicity, religion, gender identity, sexual orientation, physical, mental and emotional abilities, and socioeconomic status. In this course, we encourage all students to share and discuss different perspectives, beliefs, and experiences while treating all with dignity and respect.
+
+---
+
+## Statement of Academic Integrity
+
+The NYU School of Global Public Health values both open inquiry and academic integrity. Students in the program are expected to follow standards of excellence set forth by New York University. Such standards include respect, honesty and responsibility. The GPH does not tolerate violations to academic integrity including plagiarism, cheating, unapproved duplicate submissions, or presenting work generated by commercial firms or AI tools as your own independent effort without explicit authorization and citation.
+
+### Students with Disabilities
+
+Students with disabilities should contact the Moses Center for Students with Disabilities regarding the resources available to them and to determine what classroom accommodations should be made available. More information can be found at [Moses Center for Student Accessibility](https://www.nyu.edu/life/safety-health-wellness/students-with-disabilities.html). Please provide your accommodation letter as early in the semester as possible.
