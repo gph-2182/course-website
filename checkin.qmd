@@ -12,21 +12,22 @@ format:
 Please verify that you are physically in **Bobst Library LL138** and enter today's 4-digit PIN shown on the projector screen.
 :::
 
-<div class="card shadow-sm border-0 p-4 text-center my-4" style="max-width: 500px; margin: 0 auto;">
+```{=html}
+<div class="card shadow-sm border-0 p-4 text-center my-4" style="max-width: 520px; margin: 0 auto; background-color: #ffffff;">
   <div class="mb-3">
     <span class="badge bg-primary text-white fs-6 px-3 py-2">NYU SSO Verification</span>
   </div>
-  <h4 class="fw-bold text-primary mb-3">Today's Attendance Form</h4>
+  <h3 class="fw-bold text-primary mb-2">Today's Attendance Form</h3>
   <p class="text-muted small mb-4">You must be signed in with your official <code>@nyu.edu</code> account.</p>
   
   <div class="d-grid gap-2">
-    <a id="checkin-link" href="https://forms.gle/gph2182checkin" target="_blank" class="btn btn-primary btn-lg fw-bold py-3 shadow-sm">
+    <a id="checkin-link" href="https://forms.gle/gph2182checkin" target="_blank" class="btn btn-primary btn-lg fw-bold py-3 shadow-sm" style="font-size: 1.15rem;">
       📝 Open NYU Check-In Form
     </a>
   </div>
   
-  <div class="mt-4 pt-3 border-top text-muted small">
-    <strong>Need help?</strong> If the form does not open, let the Course Assistant (CA) know before 2:05 PM to mark you present on the physical roster.
+  <div class="mt-4 pt-3 border-top text-muted small text-start">
+    <strong>💡 Tip:</strong> If the Google Form does not load, please inform the Course Assistant (CA) before <strong>2:05 PM</strong> to check you in on the physical roster.
   </div>
 </div>
 
@@ -38,3 +39,4 @@ if (formUrl) {
   document.getElementById('checkin-link').href = decodeURIComponent(formUrl);
 }
 </script>
+```
