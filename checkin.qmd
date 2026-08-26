@@ -21,7 +21,7 @@ Please verify that you are physically in **Bobst Library LL138** and enter today
   <p class="text-muted small mb-4">You must be signed in with your official <code>@nyu.edu</code> account.</p>
   
   <div class="d-grid gap-2">
-    <a id="checkin-link" href="https://forms.gle/gph2182checkin" target="_blank" class="btn btn-primary btn-lg fw-bold py-3 shadow-sm" style="font-size: 1.15rem;">
+    <a id="checkin-link" href="https://docs.google.com/forms/d/e/1FAIpQLSefstFykRNFvIkyM8EA9-8oIh8wHHWavcGbfTL3NHLgxodrxA/viewform" target="_blank" class="btn btn-primary btn-lg fw-bold py-3 shadow-sm" style="font-size: 1.15rem;">
       📝 Open NYU Check-In Form
     </a>
   </div>
@@ -30,13 +30,4 @@ Please verify that you are physically in **Bobst Library LL138** and enter today
     <strong>💡 Tip:</strong> If the Google Form does not load, please inform the Course Assistant (CA) before <strong>2:05 PM</strong> to check you in on the physical roster.
   </div>
 </div>
-
-<script>
-// Optional: If a custom Google Form URL is set in URL parameters, redirect or update
-const urlParams = new URLSearchParams(window.location.search);
-const formUrl = urlParams.get('form');
-if (formUrl) {
-  document.getElementById('checkin-link').href = decodeURIComponent(formUrl);
-}
-</script>
 ```
