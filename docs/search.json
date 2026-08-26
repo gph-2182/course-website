@@ -568,6 +568,13 @@
     "text": "Welcome to Week 4!\n\n\nToday's Roadmap\n\nThe Grammar of Graphics: Data, aesthetics, geometries.\nVisualizing Distributions: Histograms, densities, boxplots.\nSmall Multiples & Trends: Faceting & smooth curves.\nPublication Polish: Scales, viridis palettes, themes.\nAI Corner: Spotting misleading axes and chartjunk.\n\n\nToday's Milestones\n\nHomework 3: Due tonight at 11:59 PM.\nHomework 4: Released today (ggplot2 visualization).\nLooking Ahead: Quiz 2 takes place next week in Week 5."
   },
   {
+    "objectID": "weeks/slides/week-04-slides.html#welcome-check-in",
+    "href": "weeks/slides/week-04-slides.html#welcome-check-in",
+    "title": "Week 4: Data Visualization with ggplot2",
+    "section": "Welcome & Check-In",
+    "text": "Welcome & Check-In\n\n\n📋 Walk-In Check-In Protocol\n\nFind any open desk and unpack your laptop.\nScan the QR code or enter today’s 4-digit PIN on screen to check in.\nAt 2:03 PM, random pairs will be generated on the screen.\nMove to your assigned station to sit with your partner before lecture starts!\n\n\n\n\n\n\n\n\n👥 Today’s Roles\n\n\n\n🚀 Driver (Student A): Types for Cycles 1 & 2\n🧭 Navigator (Student B): Types for Cycles 3 & 4\nSwap keyboard & roles at mid-class break!"
+  },
+  {
     "objectID": "weeks/slides/week-04-slides.html#why-ggplot2",
     "href": "weeks/slides/week-04-slides.html#why-ggplot2",
     "title": "Week 4: Data Visualization with ggplot2",
@@ -706,6 +713,13 @@
     "title": "Week 3: Matrices, Lists, Data Frames & Data Import",
     "section": "Welcome to Week 3!",
     "text": "Welcome to Week 3!\n\n\nToday's Roadmap\n\nMatrices & 2D Indexing: 2D homogeneous data, row/col operations.\nLists: Storing heterogeneous objects of different types & lengths.\nData Frames & Tibbles: The cornerstone of statistical data in R.\nData Import & Export: Loading real-world CSV & Excel files into R.\nAI Corner: Debugging messy imports & type-parsing traps.\n\n\nToday's Milestones\n\nHomework 2: Due tonight at 11:59 PM.\nHomework 3: Released today (Matrices, Lists, Data Frames & Import).\n📝 Quiz 1 (Weeks 1–2): Administered during the last 20 minutes of class (4:20–4:40 PM). Closed-book, paper handout."
+  },
+  {
+    "objectID": "weeks/slides/week-03-slides.html#welcome-check-in",
+    "href": "weeks/slides/week-03-slides.html#welcome-check-in",
+    "title": "Week 3: Matrices, Lists, Data Frames & Data Import",
+    "section": "Welcome & Check-In",
+    "text": "Welcome & Check-In\n\n\n📋 Walk-In Check-In Protocol\n\nFind any open desk and unpack your laptop.\nScan the QR code or enter today’s 4-digit PIN on screen to check in.\nAt 2:03 PM, random pairs will be generated on the screen.\nMove to your assigned station to sit with your partner before lecture starts!\n\n\n\n\n\n\n\n\n👥 Today’s Roles\n\n\n\n🚀 Driver (Student A): Types for Cycles 1 & 2\n🧭 Navigator (Student B): Types for Cycles 3 & 4\nSwap keyboard & roles at mid-class break!"
   },
   {
     "objectID": "weeks/slides/week-03-slides.html#what-is-a-matrix",
@@ -930,6 +944,13 @@
     ]
   },
   {
+    "objectID": "weeks/slides/week-01-slides.html#welcome-check-in",
+    "href": "weeks/slides/week-01-slides.html#welcome-check-in",
+    "title": "Week 1: Welcome & The Modern R Toolkit",
+    "section": "Welcome & Check-In",
+    "text": "Welcome & Check-In\n\n\n📋 Walk-In Check-In Protocol\n\nFind any open desk and unpack your laptop.\nScan the QR code or enter today’s 4-digit PIN on screen to check in.\nAt 2:03 PM, random pairs will be generated on the screen.\nMove to your assigned station to sit with your partner before lecture starts!\n\n\n\n\n\n\n\n\n👥 Today’s Roles\n\n\n\n🚀 Driver (Student A): Types for Cycles 1 & 2\n🧭 Navigator (Student B): Types for Cycles 3 & 4\nSwap keyboard & roles at mid-class break!"
+  },
+  {
     "objectID": "weeks/slides/week-01-slides.html#why-statistical-programming-in-r",
     "href": "weeks/slides/week-01-slides.html#why-statistical-programming-in-r",
     "title": "Week 1: Welcome & The Modern R Toolkit",
@@ -1068,6 +1089,13 @@
     "title": "Week 1: Welcome & The Modern R Toolkit",
     "section": "Summary & What To Do Before Week 2",
     "text": "Summary & What To Do Before Week 2\n\nComplete & Push: In-class exercise 1 .qmd to your GitHub repo.\nWeekly Exercise 1: Released before class on GitHub. Due Wednesday Sep 9 at 11:59 PM.\nRead for Next Week: R02Pro Chapters 2–3 (Vectors & Subsetting).\nOffice Hours: Posted on the course website.\n\n🔗 Useful Links:\n\nCourse Website: gph-2182.github.io\nTextbook: r02pro.github.io\n\n\n\n\nGPH-GU 2182 · Week 1"
+  },
+  {
+    "objectID": "weeks/slides/week-02-slides.html#welcome-check-in",
+    "href": "weeks/slides/week-02-slides.html#welcome-check-in",
+    "title": "Week 2: Vectors & Subsetting",
+    "section": "Welcome & Check-In",
+    "text": "Welcome & Check-In\n\n\n📋 Walk-In Check-In Protocol\n\nFind any open desk and unpack your laptop.\nScan the QR code or enter today’s 4-digit PIN on screen to check in.\nAt 2:03 PM, random pairs will be generated on the screen.\nMove to your assigned station to sit with your partner before lecture starts!\n\n\n\n\n\n\n\n\n👥 Today’s Roles\n\n\n\n🚀 Driver (Student A): Types for Cycles 1 & 2\n🧭 Navigator (Student B): Types for Cycles 3 & 4\nSwap keyboard & roles at mid-class break!"
   },
   {
     "objectID": "weeks/slides/week-02-slides.html#todays-roadmap-the-backbone-of-r",
