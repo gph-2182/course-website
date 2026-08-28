@@ -51,6 +51,10 @@ jobs:
 
       - name: Run automated release manager & render website
         run: |
+          # Start from a clean output directory so files whose sources are
+          # gated (unreleased slides/exercises) never survive from the
+          # docs/ folder committed by local renders.
+          rm -rf docs
           quarto render
 
       - name: Deploy to GitHub Pages
