@@ -94,6 +94,16 @@ This is a 3-credit in-person course, including 14 in-person class sessions (14 �
 * **C+:** 77–79 · **C:** 73–76 · **C−:** 70–72
 * **F:** Below 70
 
+### Extra Credit: Textbook Proofreading (up to +2%)
+
+Our textbook, [*R Programming: Zero to Pro*](https://r02pro.github.io/), is open source, and you can help improve it while you study. You may earn extra credit added directly to your final course grade:
+
+- **+0.5%** for each pull request to [r02pro/r02pro_source](https://github.com/r02pro/r02pro_source) that gets merged (typos, grammar, code fixes; use the edit button on any book page).
+- **+0.25%** for each issue the instructor labels `accepted` (confusing explanations, wrong output, suggestions you cannot fix yourself).
+- Capped at **+2%** total.
+
+Rules: contributions count from Sep 2 through Dec 16, 2026 (11:59 PM ET); submit under the GitHub account you use for this course; search existing pull requests and issues first, since the first report wins and duplicates earn no credit; each pull request should cover one section; you must personally verify every problem you report (see the course AI policy). Read the [contributing guide](https://github.com/r02pro/r02pro_source/blob/main/CONTRIBUTING.md) before your first submission. As a bonus, every contributor is permanently named in the book's acknowledgments.
+
 ---
 
 ## Statement on the Use of AI Technology
