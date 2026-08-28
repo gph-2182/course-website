@@ -1,0 +1,7 @@
+# Pre-render Mermaid diagrams to static SVG at build time (requires Chrome/Chromium
+# on the render machine). The default client-side renderer (mermaid-format: js)
+# ships a 2.7 MB mermaid bundle that fails to execute on some mobile WebKit
+# browsers, leaving raw diagram code visible on phones.
+format:
+  revealjs:
+    mermaid-format: svg

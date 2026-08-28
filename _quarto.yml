@@ -59,4 +59,6 @@ format:
     css: styles.css
     toc: true
     html-math-method: katex
+    # Pre-render Mermaid to static SVG (see weeks/slides/_metadata.yml for why)
+    mermaid-format: svg
 
