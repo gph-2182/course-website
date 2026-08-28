@@ -8,6 +8,7 @@ subtitle: "Nov 25, 2026 · 2:00–4:40 PM · Bobst LL138"
 - **Read:** R02Pro Ch 14
 - Review the newly released weekly exercise and prepare questions.
 - Complete Weekly Exercise 11 (due tonight at 11:59 PM).
+- 🔍 **Proofreading corner:** spot a typo or unclear passage in Ch 14? [Submit a PR or issue](https://github.com/r02pro/r02pro_source/blob/main/CONTRIBUTING.md) for extra credit (see [syllabus](../syllabus.qmd)).
 
 ## Topics
 

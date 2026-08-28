@@ -7,6 +7,7 @@ subtitle: "Sep 2, 2026 · 2:00–4:40 PM · Bobst LL138"
 
 - **Read:** R02Pro Ch 1
 - Review the newly released weekly exercise and prepare questions.
+- 🔍 **Proofreading corner:** spot a typo or unclear passage in Ch 1? [Submit a PR or issue](https://github.com/r02pro/r02pro_source/blob/main/CONTRIBUTING.md) for extra credit (see [syllabus](../syllabus.qmd)).
 
 ## Topics
 
