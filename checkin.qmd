@@ -14,9 +14,6 @@ Please verify that you are physically in **Bobst Library LL138** and enter today
 
 ```{=html}
 <div class="card shadow-sm border-0 p-4 text-center my-4" style="max-width: 520px; margin: 0 auto; background-color: #ffffff;">
-  <div class="mb-3">
-    <span class="badge bg-primary text-white fs-6 px-3 py-2">NYU SSO Verification</span>
-  </div>
   <h3 class="fw-bold text-primary mb-2">Today's Attendance Form</h3>
   <p class="text-muted small mb-4">You must be signed in with your official <code>@nyu.edu</code> account.</p>
   

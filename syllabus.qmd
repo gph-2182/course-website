@@ -21,8 +21,9 @@ You can download the official GPH-formatted Word syllabus here: [📥 GPH-GU 218
 | **Location** | 70 Washington Sq S (Bobst Library), Room LL138 |
 | **Semester** | Fall 2026 |
 | **Instructor** | Yang Feng, PhD (`yf31@nyu.edu`) · Office: 708 Broadway, Room 415 |
-| **Office Hours** | TBD (or by appointment) |
-| **Course Assistant** | TBD (`TBD@nyu.edu`) |
+| **Instructor Office Hours** | Fridays 3:00 PM (Zoom link available on Brightspace) or by appointment |
+| **Course Assistant** | Sabrina Wu (`jw6557@nyu.edu`) |
+| **TA Office Hours** | Wednesdays 10:00 AM (Zoom link available on Brightspace) |
 | **Course Website** | [https://gph-2182.github.io/](https://gph-2182.github.io/) |
 | **Classroom 50** | [https://classroom50.org/](https://classroom50.org/) |
 

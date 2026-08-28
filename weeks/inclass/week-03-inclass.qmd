@@ -1,24 +1,27 @@
 ---
 title: "Week 3 In-Class Exercises: Matrices, Lists & Data Frames"
 subtitle: "GPH-GU 2182 · Fall 2026 · Paired Programming"
+author: "YOUR NAME & PARTNER NAME"
+date: "September 16, 2026"
 format:
   html:
     toc: true
-    number-sections: false
+    number-sections: true
+    code-tools:
+      source: true
+      toggle: false
+      caption: "Source Code"
 ---
 
 ::: {.callout-note}
 ### Instructions
-Work in pairs. One person types (driver), the other reviews and advises (navigator). Swap roles halfway through! Push your final rendered `.qmd` and `.html` to your GitHub repository by the end of class for participation credit.
+Work in pairs. One person types (driver), the other reviews and advises (navigator). Swap roles halfway through!
+
+* 📥 **[Download `week-03-inclass.qmd`](https://raw.githubusercontent.com/gph-2182/course-website/main/weeks/inclass/week-03-inclass.qmd)** to open and edit in RStudio (or use the **`</> Source Code`** button at the top right).
+* Render this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit.
 :::
 
-<a class="btn btn-primary mb-3" href="https://raw.githubusercontent.com/gph-2182/course-website/main/weeks/inclass/week-03-inclass.qmd" download="week-03-inclass.qmd" role="button">
-📥 Download Starter Code (`.qmd`)
-</a>
-
----
-
-## Exercise 1: Hospital ICU Capacity Matrix (Cycle 1)
+# Exercise 1: Hospital ICU Capacity Matrix (Cycle 1)
 
 A municipal health department monitors daily ICU admissions across three regional hospital sites.
 
@@ -26,61 +29,43 @@ A municipal health department monitors daily ICU admissions across three regiona
 #| label: ex1-matrix
 # 1. Create a 3x3 matrix named icu_admissions from the vector below, filled row-by-row
 raw_counts <- c(12, 18, 5, 24, 30, 11, 8, 15, 4)
-icu_admissions <- matrix(raw_counts, nrow = 3, ncol = 3, byrow = TRUE)
+
 
 # 2. Assign rownames: "Mon", "Tue", "Wed" and colnames: "Site_1", "Site_2", "Site_3"
-rownames(icu_admissions) <- c("Mon", "Tue", "Wed")
-colnames(icu_admissions) <- c("Site_1", "Site_2", "Site_3")
-icu_admissions
+
 
 # 3. Calculate total admissions for each hospital site across all three days
-site_totals <- colSums(icu_admissions)
-site_totals
+
 
 # 4. Extract admissions for Tuesday across all sites as a named vector
-tue_vitals <- icu_admissions["Tue", ]
-tue_vitals
+
 
 # 5. Extract all entries in the matrix where daily admissions were >= 20
-high_admission_days <- icu_admissions[icu_admissions >= 20]
-high_admission_days
+
 ```
 
----
-
-## Exercise 2: Clinical Trial Patient Record List (Cycle 2)
+# Exercise 2: Clinical Trial Patient Record List (Cycle 2)
 
 ```{r}
 #| label: ex2-list
 # 1. Construct a clinical trial patient record list named patient_profile
-patient_profile <- list(
-  subject_id = "SUBJ-1049",
-  treatment_arm = "High_Dose",
-  age = 58,
-  viral_loads = c(45000, 12000, 850, 40),
-  side_effects = c("Headache", "Fatigue"),
-  site_info = list(city = "New York", hospital = "Bellevue")
-)
+#    with: subject_id ("SUBJ-1049"), treatment_arm ("High_Dose"), age (58),
+#    viral_loads (c(45000, 12000, 850, 40)), side_effects (c("Headache", "Fatigue")),
+#    and site_info (list with city="New York", hospital="Bellevue")
+
 
 # 2. Extract the viral_loads vector using [[ ]] and compute the percentage reduction:
 #    ((baseline - final) / baseline) * 100
-baseline_vl <- patient_profile[["viral_loads"]][1]
-final_vl <- patient_profile[["viral_loads"]][4]
-pct_reduction <- ((baseline_vl - final_vl) / baseline_vl) * 100
-pct_reduction
+
 
 # 3. Access the nested hospital name using $
-study_hospital <- patient_profile$site_info$hospital
-study_hospital
+
 
 # 4. Add a new element named status set to "Completed"
-patient_profile$status <- "Completed"
-str(patient_profile)
+
 ```
 
----
-
-## Exercise 3: Patient Cohort Data Frame & Subsetting (Cycle 3)
+# Exercise 3: Patient Cohort Data Frame & Subsetting (Cycle 3)
 
 ```{r}
 #| label: ex3-dataframe
@@ -96,23 +81,19 @@ cohort_df <- data.frame(
 )
 
 # 1. Add a new column pulse_pressure = sbp - dbp
-cohort_df$pulse_pressure <- cohort_df$sbp - cohort_df$dbp
+
 
 # 2. Add a boolean column hypertensive = (sbp >= 140 | dbp >= 90)
-cohort_df$hypertensive <- cohort_df$sbp >= 140 | cohort_df$dbp >= 90
+
 
 # 3. Filter all patients who are hypertensive AND smokers
-high_risk <- cohort_df[cohort_df$hypertensive & cohort_df$smoker, ]
-high_risk
+
 
 # 4. Compute the average BMI of hypertensive patients vs non-hypertensive patients
-mean(cohort_df$bmi[cohort_df$hypertensive])
-mean(cohort_df$bmi[!cohort_df$hypertensive])
+
 ```
 
----
-
-## Exercise 4: Reading CSV Data & Type Verification (Cycle 4 + AI Corner)
+# Exercise 4: Reading CSV Data & Type Verification (Cycle 4 + AI Corner)
 
 ```{r}
 #| label: ex4-import
@@ -128,20 +109,16 @@ P5,39,-99,Yes"
 writeLines(sample_csv, "test_cohort.csv")
 
 # 2. Read the CSV treating Unknown, Refused, and -99 as NA
-cleaned_cohort <- read_csv(
-  "test_cohort.csv",
-  na = c("", "NA", "Unknown", "Refused", "-99")
-)
+
 
 # 3. Verify that cholesterol is recognized as numeric (<dbl>)
-spec(cleaned_cohort)
+
 
 # 4. Compute the mean cholesterol among valid cases
-mean(cleaned_cohort$cholesterol, na.rm = TRUE)
+
 ```
 
----
-
-## 📝 Quiz 1 (4:20–4:40 PM)
+# 📝 Quiz 1 (4:20–4:40 PM)
 
 *Please put all laptops away for the 15-minute paper-based Quiz 1.*
+

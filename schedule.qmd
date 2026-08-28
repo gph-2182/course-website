@@ -13,12 +13,13 @@ All sessions meet **Wednesdays 2:00–4:40 PM** in Bobst LL138. Readings should 
 | **Sep 23** | [Week 4: Data Visualization with ggplot2](weeks/week-04.qmd) | R02Pro Ch 6–7 | Weekly exercise 3 · In-class exercise 4 |
 | **Sep 30** | [Week 5: Data Wrangling with dplyr & Pipes](weeks/week-05.qmd) | R02Pro Ch 8.1–8.4, 8.9 | Weekly exercise 4 · In-class exercise 5 · **Quiz 2** |
 | **Oct 7** | [Week 6: Advanced Wrangling, Joins & Tidy Data](weeks/week-06.qmd) | R02Pro Ch 8.5–8.8, Ch 9 | Weekly exercise 5 · In-class exercise 6 |
-| **Oct 14** | [Week 7: Strings, Factors & Dates](weeks/week-07.qmd) | R02Pro Ch 10, Ch 3.6, Ch 3.11 | Weekly exercise 6 · In-class exercise 7 · **Quiz 3** |
-| **Oct 21** | [Week 8: Control Flow & Iteration](weeks/week-08.qmd) | R02Pro Ch 12 | Weekly exercise 7 · In-class exercise 8 |
-| **Oct 28** | [Week 9: Writing Custom Functions & purrr](weeks/week-09.qmd) | R02Pro Ch 13 | Weekly exercise 8 · In-class exercise 9 · **Quiz 4** |
-| **Nov 4** | [Week 10: Statistical Simulation & Sampling](weeks/week-10.qmd) | R02Pro Ch 11.1–11.4 | Weekly exercise 9 · In-class exercise 10 · *Final Project Released* |
-| **Nov 11** | [Week 11: Statistical Modeling & Regression](weeks/week-11.qmd) | R02Pro Ch 11.5–11.6 | Weekly exercise 10 · In-class exercise 11 · **Quiz 5** |
-| **Nov 18** | [Week 12: Advanced Quarto, Tables & Case Studies](weeks/week-12.qmd) | R02Pro Ch 14 | Weekly exercise 11 · In-class exercise 12 |
+| *Oct 14* | *No class — Legislative Monday* | | |
+| **Oct 21** | [Week 7: Strings, Factors & Dates](weeks/week-07.qmd) | R02Pro Ch 10, Ch 3.6, Ch 3.11 | Weekly exercise 6 · In-class exercise 7 · **Quiz 3** |
+| **Oct 28** | [Week 8: Control Flow & Iteration](weeks/week-08.qmd) | R02Pro Ch 12 | Weekly exercise 7 · In-class exercise 8 |
+| **Nov 4** | [Week 9: Writing Custom Functions & purrr](weeks/week-09.qmd) | R02Pro Ch 13 | Weekly exercise 8 · In-class exercise 9 · **Quiz 4** |
+| **Nov 11** | [Week 10: Statistical Simulation & Sampling](weeks/week-10.qmd) | R02Pro Ch 11.1–11.4 | Weekly exercise 9 · In-class exercise 10 · *Final Project Released* |
+| **Nov 18** | [Week 11: Statistical Modeling & Regression](weeks/week-11.qmd) | R02Pro Ch 11.5–11.6 | Weekly exercise 10 · In-class exercise 11 · **Quiz 5** |
+| **Nov 25** | [Week 12: Advanced Quarto, Tables & Case Studies](weeks/week-12.qmd) | R02Pro Ch 14 | Weekly exercise 11 · In-class exercise 12 |
 | **Dec 2** | [Week 13: Scientific Communication & Project Workshop](weeks/week-13.qmd) | Supplementary | Weekly exercise 12 · In-class exercise 13 |
 | **Dec 9** | [Week 14: Project Presentations & The Future of R](weeks/week-14.qmd) | Supplementary | In-class exercise 14 |
 | **Dec 16** | **Final Project Due (11:59 PM)** | | Final Report + 5-min Video + AI Appendix |

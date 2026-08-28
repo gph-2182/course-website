@@ -44,6 +44,6 @@ No prior programming or statistics experience is required.
 ## Getting started (before Week 1)
 
 1. Install [R](https://cloud.r-project.org/), then
-   [RStudio Desktop](https://posit.co/download/rstudio-desktop/) (both free).
+   [RStudio Desktop](https://docs.posit.co/ide/user/#rstudio-ide-oss-downloads) (both free).
 2. Create a free [GitHub account](https://github.com/signup) with your NYU email.
 3. That's it. We will set up everything else together in the first class.

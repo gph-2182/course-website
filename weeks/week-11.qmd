@@ -1,6 +1,6 @@
 ---
 title: "Week 11: Statistical Modeling & Regression"
-subtitle: "Nov 11, 2026 · 2:00–4:40 PM · Bobst LL138"
+subtitle: "Nov 18, 2026 · 2:00–4:40 PM · Bobst LL138"
 ---
 
 ## Before class
