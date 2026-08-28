@@ -1,0 +1,435 @@
+---
+title: "Week 7: Strings, Factors & Dates"
+subtitle: "GPH-GU 2182: Statistical Programming in R · Fall 2026"
+author: "Yang Feng, PhD"
+institute: "New York University · School of Global Public Health"
+date: "October 21, 2026"
+format:
+  revealjs:
+    theme: default
+    css: ../../styles.css
+    slide-number: true
+    preview-links: auto
+    chalkboard: true
+    transition: slide
+    width: 1280
+    height: 720
+    margin: 0.06
+    min-scale: 0.2
+    max-scale: 2.0
+    auto-stretch: false
+---
+
+## Welcome Back! (Week 7)
+
+::: {.columns}
+::: {.column width="50%"}
+### Today's Roadmap
+
+1. **Strings I:** `stringr` detection, extraction, replacement.
+2. **Strings II:** Regular expression building blocks.
+3. **Factors:** `forcats` for ordered, lumped categories.
+4. **Dates:** `lubridate` parsing and date arithmetic.
+5. **AI Corner:** Auditing AI-written regex.
+:::
+
+::: {.column width="50%"}
+### Today's Milestones
+
+* **Homework 6:** Due tonight at 11:59 PM.
+* **Homework 7:** Released today (strings, factors, dates).
+* **📝 Quiz 3:** Final 20 minutes of class (covers Weeks 5–6).
+:::
+:::
+
+---
+
+# Cycle 1: Working with Strings {background-color="#2c3e50"}
+
+
+## Welcome & Check-In {background-color="#57068c"}
+
+::: {.columns}
+::: {.column width="58%"}
+### 📋 Walk-In Check-In Protocol
+
+1. **Find any open desk** and unpack your laptop.
+2. **Scan the QR code** or enter today's 4-digit PIN on screen to check in.
+3. **At 2:03 PM**, random pairs will be generated on the screen.
+4. **Move to your assigned station** to sit with your partner *before* lecture starts!
+:::
+
+::: {.column width="42%"}
+::: {.callout-note appearance="simple"}
+### 👥 Today's Roles
+* **🚀 Driver (Student A):** Types for Cycles 1 & 2
+* **🧭 Navigator (Student B):** Types for Cycles 3 & 4
+* *Swap keyboard & roles at mid-class break!*
+:::
+:::
+:::
+
+
+## Why Text Data Matters in Public Health
+
+Free-text fields are everywhere, and they are **messy**:
+
+* Diagnosis descriptions: `"Type 2 diabetes mellitus"` vs `"T2DM"` vs `"type II diabetes"`
+* Medication entries: `"metformin 500mg BID"`, `"METFORMIN 500 MG"`
+* Site codes: `"NYC-BK-014"`, `"nyc-qn-101"`
+
+```r
+library(stringr)   # every function starts with str_
+library(dplyr)
+```
+
+*`stringr` gives consistent, pipe-friendly tools: the first argument is always the string vector.*
+
+---
+
+## The Core `stringr` Verbs
+
+```r
+meds <- c("metformin 500mg", "Lisinopril 10mg", "atorvastatin 20mg")
+```
+
+| Function | Question | Example | Result |
+|:---|:---|:---|:---|
+| `str_detect()` | Does it match? | `str_detect(meds, "statin")` | `F F T` |
+| `str_count()` | How many matches? | `str_count(meds, "m")` | `3 0 1` |
+| `str_extract()` | What matched? | `str_extract(meds, "\\d+mg")` | `"500mg" "10mg" "20mg"` |
+| `str_replace()` | Swap the match | `str_replace(meds, "mg", " mg")` | adds a space |
+
+* `str_to_lower()`, `str_to_upper()`, `str_trim()`, `str_length()` handle cleanup basics.
+
+---
+
+## `str_detect()` Powers `filter()`
+
+```r
+# gm rows for countries whose name contains "stan"
+gm |>
+  filter(year == 2008, str_detect(country, "stan")) |>
+  select(country, life_expectancy)
+```
+
+```r
+# Case-insensitive matching: normalize first
+gm |>
+  filter(str_detect(str_to_lower(country), "united"))
+```
+
+*Pattern matching + last week's verbs = powerful cohort selection.*
+
+---
+
+## 👥 Paired Exercise 1: Medication Cleanup (10 min)
+
+::: {.columns}
+::: {.column width="55%"}
+### Task
+
+Your worksheet defines a messy `prescriptions` tibble.
+
+1. Add `drug_lower`: the `drug` column in lowercase (`str_to_lower`).
+2. Filter to rows where `drug_lower` contains `"metformin"`.
+3. Extract the dose (digits followed by `"mg"`) into a `dose` column with `str_extract()`.
+4. Count how many prescriptions mention `"bid"` (twice daily) using `str_detect()` + `sum()`.
+:::
+
+::: {.column width="45%"}
+### Checklist
+
+* Normalize case **before** matching.
+* The regex `"\\d+mg"` reads: one or more digits, then `mg`.
+* `sum()` of a logical counts the `TRUE`s (Week 2!).
+:::
+:::
+
+---
+
+# Cycle 2: Regular Expression Building Blocks {background-color="#2c3e50"}
+
+## Regex: A Pattern Mini-Language
+
+| Pattern | Matches | Example |
+|:---|:---|:---|
+| `abc` | literal text | `"abc"` |
+| `.` | any single character | `"a.c"` matches `"abc"`, `"a2c"` |
+| `\\d` | any digit | `"\\d\\d"` matches `"42"` |
+| `\\w` | letter, digit, or `_` | |
+| `\\s` | whitespace | |
+| `[abc]` | one of a, b, c | `"[TF]"` matches `"T"` or `"F"` |
+| `[0-9]` | character range | same as `\\d` |
+
+::: {.callout-tip}
+In R strings you must **double** the backslash: the regex `\d` is typed `"\\d"`.
+:::
+
+---
+
+## Quantifiers & Anchors
+
+| Pattern | Meaning |
+|:---|:---|
+| `x?` | zero or one `x` |
+| `x*` | zero or more |
+| `x+` | one or more |
+| `x{3}` | exactly three |
+| `^x` | starts with `x` |
+| `x$` | ends with `x` |
+
+```r
+codes <- c("NYC-BK-014", "BOS-DT-2", "NYC-QN-101", "nyc-si-77")
+
+str_detect(codes, "^NYC")        # starts with NYC (case-sensitive!)
+str_extract(codes, "\\d+$")      # trailing run of digits
+str_detect(codes, "^[A-Z]{3}-")  # three capitals then a dash
+```
+
+---
+
+## `str_replace()` and `str_replace_all()`
+
+```r
+notes <- c("pt reports HTN; hx of htn in family",
+           "no HTN noted")
+
+# First match only
+str_replace(notes, "HTN", "hypertension")
+
+# Every match, case-normalized first
+notes |>
+  str_to_lower() |>
+  str_replace_all("htn", "hypertension")
+```
+
+* Great for expanding abbreviations before analysis.
+* `str_remove()` / `str_remove_all()` are shortcuts for replacing with `""`.
+
+---
+
+## 👥 Paired Exercise 2: Parsing Site Codes (10 min)
+
+::: {.columns}
+::: {.column width="55%"}
+### Task
+
+Using the `site_codes` vector in your worksheet:
+
+1. Which codes are valid, i.e. match `"^[A-Z]{3}-[A-Z]{2}-\\d+$"`? (`str_detect`)
+2. Extract the numeric site number at the end of each code.
+3. Extract the 2-letter borough segment between the dashes with `str_extract()` and `"-[A-Z]{2}-"`, then clean the dashes with `str_remove_all()`.
+4. Standardize all codes to uppercase; how many *become* valid?
+:::
+
+::: {.column width="45%"}
+### Checklist
+
+* Anchors `^` and `$` force a **full** match.
+* Build regex incrementally: test each piece.
+* Invalid-then-valid after uppercasing shows why we normalize early!
+:::
+:::
+
+---
+
+# Cycle 3: Factors with forcats {background-color="#2c3e50"}
+
+## Factors: Categorical Data Done Right
+
+A **factor** stores a categorical variable with known, fixed **levels**:
+
+```r
+library(forcats)
+
+severity <- factor(c("mild", "severe", "moderate", "mild", "severe"),
+                   levels = c("mild", "moderate", "severe"))
+levels(severity)
+table(severity)
+```
+
+* Levels control **ordering** in tables, models, and `ggplot2` axes.
+* Without explicit levels, R sorts alphabetically: rarely what you want!
+
+---
+
+## `fct_reorder()`: Order Levels by a Statistic
+
+The #1 factor trick for readable plots: order categories by their **value**, not alphabetically.
+
+```r
+library(ggplot2)
+
+gm |>
+  filter(year == 2008) |>
+  drop_na(life_expectancy, region) |>
+  group_by(region) |>
+  summarize(mean_le = mean(life_expectancy)) |>
+  ggplot(aes(x = mean_le, y = fct_reorder(region, mean_le))) +
+  geom_col(fill = "steelblue") +
+  labs(y = NULL, x = "Mean life expectancy (2008)")
+```
+
+*Bars now rise in order: instantly readable.*
+
+---
+
+## `fct_lump()`: Collapse Rare Categories
+
+Too many categories? Keep the most common, lump the rest into `"Other"`:
+
+```r
+gm |>
+  filter(year == 2008) |>
+  drop_na(region) |>
+  mutate(region_top = fct_lump(region, n = 5)) |>
+  count(region_top, sort = TRUE)
+```
+
+* `fct_lump(f, n = 5)`: keep the 5 largest levels + `"Other"`.
+* Also useful: `fct_infreq()` (order by frequency), `fct_rev()` (reverse).
+
+---
+
+## 👥 Paired Exercise 3: Ordered Regional Charts (10 min)
+
+::: {.columns}
+::: {.column width="55%"}
+### Task
+
+1. From `gm` 2008, compute mean `child_mortality` per `region` (drop missing values).
+2. Make a horizontal bar chart *without* `fct_reorder()`: note the alphabetical mess.
+3. Remake it with `fct_reorder(region, mean_cm)`.
+4. Use `fct_lump(region, n = 6)` on the raw rows, then `count()` the lumped factor.
+:::
+
+::: {.column width="45%"}
+### Checklist
+
+* `fct_reorder(category, value)` inside `aes()`.
+* Compare the two charts: which tells the story faster?
+* Lumping keeps dashboards uncluttered.
+:::
+:::
+
+---
+
+# Cycle 4: Dates with lubridate {background-color="#2c3e50"}
+
+## Parsing Dates: Match the Order
+
+```r
+library(lubridate)
+
+ymd("2026-10-21")        # ISO style
+mdy("10/21/2026")        # US style
+dmy("21.10.2026")        # European style
+
+visit_dates <- ymd(c("2026-01-15", "2026-03-02", "2026-10-21"))
+```
+
+* Function name = the order of **y**ear, **m**onth, **d**ay in your raw text.
+* Parsing returns a true `Date` object: sortable, plottable, subtractable.
+
+---
+
+## Date Components & Arithmetic
+
+```r
+d <- ymd("2026-10-21")
+
+year(d);  month(d);  day(d)
+wday(d, label = TRUE)          # Wed
+
+# Date arithmetic
+d + days(30)                   # follow-up in 30 days
+d - years(1)                   # one year ago
+```
+
+```r
+# Elapsed time between events
+admit    <- ymd("2026-09-30")
+discharge <- ymd("2026-10-21")
+as.numeric(discharge - admit)   # length of stay in days
+```
+
+---
+
+## Intervals & Age Computation
+
+```r
+dob   <- ymd("1985-06-15")
+visit <- ymd("2026-10-21")
+
+# Exact age in years at visit
+age <- interval(dob, visit) / years(1)
+floor(age)   # completed years: 41
+```
+
+::: {.callout-warning}
+Never compute age as `(visit - dob) / 365.25` for clinical work; leap years and month lengths make `interval() / years(1)` the reliable idiom.
+:::
+
+---
+
+## AI Corner: The Overconfident Regex {background-color="#8e44ad"}
+
+Asked to extract doses like `"500mg"`, an AI wrote:
+
+```r
+str_extract(rx, "[0-9]*mg")
+```
+
+**Audit findings:**
+
+1. `*` means *zero or more*: the pattern happily matches a bare `"mg"` with **no digits at all**.
+2. It misses `"500 mg"` (space before the unit) — silently returning `NA`.
+3. Nobody tested edge cases.
+
+```r
+# The audited version: at least one digit, optional space
+str_extract(rx, "\\d+ ?mg")
+```
+
+::: {.callout-important}
+*Regex from AI is a hypothesis, not an answer. Always test on: a normal case, a spaced case, and a should-NOT-match case.*
+:::
+
+---
+
+## 📝 Quiz 3 (Final 20 Minutes)
+
+* **Coverage:** Weeks 5–6 (dplyr verbs, pipes, grouped summaries, joins, pivoting).
+* **Format:** Paper-based, closed-book, no electronic devices.
+* **Length:** 15 minutes, short answer + code reading.
+
+::: {.callout-note}
+Laptops closed, please. Your in-class worksheet should already be pushed to GitHub before the quiz begins.
+:::
+
+---
+
+# Wrap-Up & Next Steps
+
+## Before We Meet Again
+
+::: {.columns}
+::: {.column width="50%"}
+### 📌 To Do This Week
+
+* **Homework 7** (strings, factors, dates): due **Wednesday, Oct 28 at 11:59 PM**.
+* **Read:** R02Pro Ch 12 (control flow & iteration).
+* Push today's worksheet to GitHub **tonight**.
+:::
+
+::: {.column width="50%"}
+### 🔭 Next Week (Oct 28)
+
+* `if` / `else` decisions and vectorized `ifelse()`.
+* `for` and `while` loops; accumulator patterns.
+* When *not* to loop: vectorization first!
+:::
+:::
+
+*Questions? Office hours are listed on the syllabus page, or email anytime.*

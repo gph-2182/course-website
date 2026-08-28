@@ -1,0 +1,526 @@
+---
+title: "Week 5: Data Wrangling with dplyr & Pipes"
+subtitle: "GPH-GU 2182: Statistical Programming in R · Fall 2026"
+author: "Yang Feng, PhD"
+institute: "New York University · School of Global Public Health"
+date: "September 30, 2026"
+format:
+  revealjs:
+    theme: default
+    css: ../../styles.css
+    slide-number: true
+    preview-links: auto
+    chalkboard: true
+    transition: slide
+    width: 1280
+    height: 720
+    margin: 0.06
+    min-scale: 0.2
+    max-scale: 2.0
+    auto-stretch: false
+---
+
+## Welcome to Week 5!
+
+::: {.columns}
+::: {.column width="50%"}
+### Today's Roadmap
+
+1. **The Pipe (`|>`):** Readable multi-step pipelines.
+2. **Row Operations:** `filter()` and `arrange()`.
+3. **Column Operations:** `select()` and `rename()`.
+4. **Creating Variables:** `mutate()` for new columns.
+5. **AI Corner:** Auditing AI-written pipelines.
+:::
+
+::: {.column width="50%"}
+### Today's Milestones
+
+* **Homework 4:** Due tonight at 11:59 PM.
+* **Homework 5:** Released today (`dplyr` wrangling).
+* **📝 Quiz 2:** Final 20 minutes of class (covers Weeks 3–4).
+:::
+:::
+
+---
+
+# Cycle 1: Pipes & Filtering Rows {background-color="#2c3e50"}
+
+
+## Welcome & Check-In {background-color="#57068c"}
+
+::: {.columns}
+::: {.column width="58%"}
+### 📋 Walk-In Check-In Protocol
+
+1. **Find any open desk** and unpack your laptop.
+2. **Scan the QR code** or enter today's 4-digit PIN on screen to check in.
+3. **At 2:03 PM**, random pairs will be generated on the screen.
+4. **Move to your assigned station** to sit with your partner *before* lecture starts!
+:::
+
+::: {.column width="42%"}
+::: {.callout-note appearance="simple"}
+### 👥 Today's Roles
+* **🚀 Driver (Student A):** Types for Cycles 1 & 2
+* **🧭 Navigator (Student B):** Types for Cycles 3 & 4
+* *Swap keyboard & roles at mid-class break!*
+:::
+:::
+:::
+
+
+## Why Data Wrangling?
+
+Analysts spend **50–80%** of their time preparing data, not modeling it.
+
+* **Raw public health data is messy:** inconsistent units, irrelevant columns, impossible values, mixed granularities.
+* **`dplyr`** gives you a small vocabulary of *verbs*, each doing one thing well:
+
+| Verb | Question it answers |
+|:---|:---|
+| `filter()` | Which **rows** do I keep? |
+| `arrange()` | In what **order** should rows appear? |
+| `select()` | Which **columns** do I keep? |
+| `rename()` | What should columns be **called**? |
+| `mutate()` | What **new columns** do I need? |
+
+---
+
+## Today's Dataset: Global Health (`gm`)
+
+The `gm` dataset from the `r02pro` package tracks health indicators for world countries over time.
+
+```r
+library(r02pro)
+library(dplyr)
+
+gm   # 65,531 rows x 33 columns
+```
+
+* `country`, `continent`, `year`, `population`
+* `life_expectancy`, `child_mortality`, `sugar`, `food_supply`
+* `smoking_male`, `smoking_female`, `GDP_per_capita`, `HDI`
+
+*One row = one country in one year.*
+
+---
+
+## The Native Pipe `|>`
+
+The pipe takes the object on its **left** and passes it as the **first argument** to the function on its **right**.
+
+::: {.columns}
+::: {.column width="50%"}
+### Nested (hard to read)
+
+```r
+head(filter(gm, year == 2008), 3)
+```
+
+Read from the *inside out*. 😵
+:::
+
+::: {.column width="50%"}
+### Piped (reads like a recipe)
+
+```r
+gm |>
+  filter(year == 2008) |>
+  head(3)
+```
+
+Read *top to bottom*: take `gm`, **then** filter, **then** show 3 rows.
+:::
+:::
+
+::: {.callout-tip}
+Type `|>` quickly with **Cmd/Ctrl + Shift + M** (after enabling the native pipe in RStudio: Tools → Global Options → Code → "Use native pipe operator").
+:::
+
+---
+
+## `filter()`: Keeping Rows That Match
+
+`filter()` keeps rows where a logical condition is `TRUE` (the same logicals you built in Week 2!).
+
+```r
+# Countries observed in 2008 with life expectancy over 80
+gm |>
+  filter(year == 2008, life_expectancy > 80)
+```
+
+* Multiple conditions separated by commas are combined with **AND** (`&`).
+* Use `|` explicitly for **OR**:
+
+```r
+# Rows from Africa OR Europe
+gm |> filter(continent == "Africa" | continent == "Europe")
+
+# Equivalent shortcut with %in%
+gm |> filter(continent %in% c("Africa", "Europe"))
+```
+
+---
+
+## `filter()` and Missing Values
+
+`filter()` **silently drops** rows where the condition evaluates to `NA`!
+
+```r
+# Rows where sugar consumption exceeds 40 g/day
+gm |> filter(sugar > 40)          # NA rows are gone, no warning
+
+# Keep only rows where sugar was actually measured
+gm |> filter(!is.na(sugar))
+
+# Explicitly inspect the missing rows
+gm |> filter(is.na(sugar))
+```
+
+::: {.callout-warning}
+Always ask: *"How many rows did I lose, and why?"* Check with `nrow()` before and after filtering.
+:::
+
+---
+
+## `arrange()`: Ordering Rows
+
+```r
+# Lowest child mortality first
+gm |>
+  filter(year == 2008) |>
+  arrange(child_mortality)
+
+# Highest first: wrap in desc()
+gm |>
+  filter(year == 2008) |>
+  arrange(desc(life_expectancy))
+
+# Tie-breakers: sort by continent, then by population within continent
+gm |> arrange(continent, desc(population))
+```
+
+* `NA` values are always placed **last**, regardless of direction.
+
+---
+
+## 👥 Paired Exercise 1: High Smoking Rates (10 min)
+
+::: {.columns}
+::: {.column width="55%"}
+### Task
+
+In your `week-05-inclass.qmd` worksheet:
+
+1. Start from `gm` and keep only rows for the year **2008**.
+2. Keep countries where `smoking_male` is **not missing**.
+3. Keep countries where `smoking_male` exceeds **50** (percent).
+4. Arrange the result from highest to lowest `smoking_male`.
+5. Report how many countries remain using `nrow()`.
+:::
+
+::: {.column width="45%"}
+### Checklist
+
+* One single pipeline using `|>`.
+* `filter()` conditions can share one call or chain several.
+* Did you remember `desc()`?
+:::
+:::
+
+---
+
+# Cycle 2: Selecting & Renaming Columns {background-color="#2c3e50"}
+
+## `select()`: Keeping Columns
+
+With 33 columns, most analyses need only a handful:
+
+```r
+# Keep identification + outcome columns
+gm |> select(country, year, life_expectancy)
+
+# Keep a consecutive range of columns
+gm |> select(country:year)
+
+# Drop columns with a minus sign
+gm |> select(-population, -HDI)
+```
+
+---
+
+## `select()` Helper Functions
+
+Match columns by **name pattern** instead of typing them all:
+
+```r
+# All smoking-related columns
+gm |> select(country, year, starts_with("smoking"))
+
+# All columns measured separately for each sex
+gm |> select(country, year, ends_with("_male"), ends_with("_female"))
+
+# Any column mentioning cancer
+gm |> select(country, year, contains("cancer"))
+```
+
+* `starts_with()`, `ends_with()`, `contains()` are your workhorses.
+* `where(is.numeric)` selects by column **type**.
+
+---
+
+## `rename()`: Clear Column Names
+
+`rename(new_name = old_name)`, and the rest of the data stays untouched:
+
+```r
+gm |>
+  select(country, year, life_expectancy, GDP_per_capita) |>
+  rename(life_exp = life_expectancy,
+         gdp = GDP_per_capita)
+```
+
+::: {.callout-tip}
+`select()` can rename *while* selecting: `select(life_exp = life_expectancy)`. Use `rename()` when you want to keep all other columns.
+:::
+
+---
+
+## 👥 Paired Exercise 2: A Tidy Cancer Table (10 min)
+
+::: {.columns}
+::: {.column width="55%"}
+### Task
+
+1. From `gm`, keep rows for **2008** only.
+2. Select `country`, `continent`, and every column that **contains** `"lungcancer"`.
+3. Rename `lungcancer_newcases_female` to `lung_f` and `lungcancer_newcases_male` to `lung_m`.
+4. Arrange by `lung_m` in descending order and display the top rows with `head()`.
+:::
+
+::: {.column width="45%"}
+### Checklist
+
+* One pipeline, four verbs.
+* `contains()` saves typing long names.
+* Rename **after** selecting: shorter names to work with!
+:::
+:::
+
+---
+
+# Cycle 3: Creating New Variables with `mutate()` {background-color="#2c3e50"}
+
+## `mutate()`: New Columns from Old
+
+`mutate()` adds columns to the **end** of the data frame; existing columns are preserved.
+
+```r
+gm |>
+  filter(year == 2008) |>
+  select(country, population, GDP_per_capita) |>
+  mutate(gdp_total = GDP_per_capita * population)
+```
+
+* Right side is any vectorized expression (Week 2 arithmetic!).
+* New columns can be built from columns you *just* created:
+
+```r
+gm |>
+  mutate(gdp_total    = GDP_per_capita * population,
+         gdp_billions = gdp_total / 1e9)
+```
+
+---
+
+## `mutate()` with Logical Columns
+
+A comparison creates a `TRUE`/`FALSE` column, ready for later filtering:
+
+```r
+gm |>
+  filter(year == 2008) |>
+  select(country, life_expectancy) |>
+  mutate(above_80 = life_expectancy > 80)
+```
+
+```r
+# Unit conversions are classic mutate() one-liners
+gm |>
+  mutate(pop_millions = population / 1e6)
+```
+
+::: {.callout-warning}
+`mutate()` never changes the original `gm` object. To keep your work, **assign** the result: `gm2008_clean <- gm |> ...`
+:::
+
+---
+
+## Putting It All Together
+
+A complete wrangling pipeline, start to finish:
+
+```r
+smoking_2008 <- gm |>
+  filter(year == 2008, !is.na(smoking_male), !is.na(smoking_female)) |>
+  select(country, continent, population,
+         starts_with("smoking")) |>
+  rename(male = smoking_male, female = smoking_female) |>
+  mutate(gap = male - female,
+         pop_millions = population / 1e6) |>
+  arrange(desc(gap))
+
+head(smoking_2008)
+```
+
+*Every verb answers one question. The pipeline tells the whole story.*
+
+---
+
+## 👥 Paired Exercise 3: Food & Longevity (10 min)
+
+::: {.columns}
+::: {.column width="55%"}
+### Task
+
+1. From `gm`, keep **2008** rows with non-missing `food_supply` and `life_expectancy`.
+2. Select `country`, `continent`, `food_supply`, `life_expectancy`.
+3. Create `food_kcal_deficit`: `2500 - food_supply` (positive = below the 2,500 kcal benchmark).
+4. Create `long_lived`: `TRUE` when `life_expectancy` is at least 75.
+5. Arrange by `food_kcal_deficit` (largest deficit first) and inspect the top 10.
+:::
+
+::: {.column width="45%"}
+### Checklist
+
+* Two new columns in **one** `mutate()` call.
+* `arrange(desc(...))` for the sort.
+* `head(..., 10)` at the end of the pipe.
+:::
+:::
+
+---
+
+# Cycle 4: Pipelines in Practice + Quiz {background-color="#2c3e50"}
+
+## Debugging Pipelines: Read Them Like Steps
+
+Run a pipeline **one verb at a time** to find where things go wrong:
+
+```r
+gm |>
+  filter(year == 2008)            # Step 1: run up to here. Rows look right?
+
+gm |>
+  filter(year == 2008) |>
+  select(country, sugar)          # Step 2: expected columns present?
+```
+
+* Highlight everything *up to* (but not including) a pipe and press **Cmd/Ctrl + Enter**.
+* `nrow()`, `names()`, and `head()` are your cheap diagnostic probes.
+
+---
+
+## Common `dplyr` Pitfalls
+
+::: {.columns}
+::: {.column width="50%"}
+### 1. `=` vs `==` inside `filter()`
+
+```r
+gm |> filter(year = 2008)   # ERROR
+gm |> filter(year == 2008)  # correct
+```
+
+### 2. Forgetting to assign
+
+```r
+gm |> mutate(x = sugar * 7)
+# printed... and discarded!
+```
+:::
+
+::: {.column width="50%"}
+### 3. Quoting column names
+
+```r
+gm |> select("country")  # works, but
+gm |> select(country)    # idiomatic
+```
+
+### 4. Overwriting your raw data
+
+```r
+gm <- gm |> filter(year == 2008)
+# original gm is gone for this session!
+# Use a new name: gm_2008
+```
+:::
+:::
+
+---
+
+## AI Corner: Auditing an AI-Written Pipeline {background-color="#8e44ad"}
+
+An AI assistant produced this code for *"average sugar consumption in Asia in 2008"*:
+
+```r
+gm %>%
+  group_by(continent) %>%
+  summarize(mean_sugar = mean(sugar))
+```
+
+**Three audit findings:**
+
+1. It used verbs (`group_by`, `summarize`) we can't verify yet, when a simple `filter()` + `mean()` answers the question.
+2. It never filtered `year == 2008`, so it silently averages **all years**.
+3. `mean(sugar)` returns `NA` because missing values were never handled.
+
+```r
+# A verifiable Week-5 answer:
+asia_sugar <- gm |> filter(year == 2008, continent == "Asia", !is.na(sugar))
+mean(asia_sugar$sugar)
+```
+
+::: {.callout-important}
+*Zone 2 rule: you may only submit AI-assisted code that you can explain and verify line by line.*
+:::
+
+---
+
+## 📝 Quiz 2 (Final 20 Minutes)
+
+* **Coverage:** Weeks 3–4 (data structures, import, `ggplot2`).
+* **Format:** Paper-based, closed-book, no electronic devices.
+* **Length:** 15 minutes, short answer + code reading.
+
+::: {.callout-note}
+Laptops closed, please. Your in-class worksheet should already be pushed to GitHub before the quiz begins.
+:::
+
+---
+
+# Wrap-Up & Next Steps
+
+## Before We Meet Again
+
+::: {.columns}
+::: {.column width="50%"}
+### 📌 To Do This Week
+
+* **Homework 5** (dplyr wrangling): due **Wednesday, Oct 7 at 11:59 PM**.
+* **Read:** R02Pro Ch 8.5–8.8 & Ch 9 (grouped summaries, joins, tidy data).
+* Push today's in-class worksheet to GitHub **tonight**.
+:::
+
+::: {.column width="50%"}
+### 🔭 Next Week (Oct 7)
+
+* `group_by()` + `summarize()`: one row per group.
+* Combining tables with joins (`left_join()`).
+* Reshaping data with `tidyr` (`pivot_longer`, `pivot_wider`).
+:::
+:::
+
+*Questions? Office hours are listed on the syllabus page, or email anytime.*

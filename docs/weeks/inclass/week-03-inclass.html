@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="YOUR NAME &amp; PARTNER NAME">
+<meta name="dcterms.date" content="2026-09-16">
 
 <title>Statistical Programming in R - Week 3 In-Class Exercises: Matrices, Lists &amp; Data Frames</title>
 <style>
@@ -172,11 +174,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exercise-1-hospital-icu-capacity-matrix-cycle-1" id="toc-exercise-1-hospital-icu-capacity-matrix-cycle-1" class="nav-link active" data-scroll-target="#exercise-1-hospital-icu-capacity-matrix-cycle-1">Exercise 1: Hospital ICU Capacity Matrix (Cycle 1)</a></li>
-  <li><a href="#exercise-2-clinical-trial-patient-record-list-cycle-2" id="toc-exercise-2-clinical-trial-patient-record-list-cycle-2" class="nav-link" data-scroll-target="#exercise-2-clinical-trial-patient-record-list-cycle-2">Exercise 2: Clinical Trial Patient Record List (Cycle 2)</a></li>
-  <li><a href="#exercise-3-patient-cohort-data-frame-subsetting-cycle-3" id="toc-exercise-3-patient-cohort-data-frame-subsetting-cycle-3" class="nav-link" data-scroll-target="#exercise-3-patient-cohort-data-frame-subsetting-cycle-3">Exercise 3: Patient Cohort Data Frame &amp; Subsetting (Cycle 3)</a></li>
-  <li><a href="#exercise-4-reading-csv-data-type-verification-cycle-4-ai-corner" id="toc-exercise-4-reading-csv-data-type-verification-cycle-4-ai-corner" class="nav-link" data-scroll-target="#exercise-4-reading-csv-data-type-verification-cycle-4-ai-corner">Exercise 4: Reading CSV Data &amp; Type Verification (Cycle 4 + AI Corner)</a></li>
-  <li><a href="#quiz-1-420440-pm" id="toc-quiz-1-420440-pm" class="nav-link" data-scroll-target="#quiz-1-420440-pm">📝 Quiz 1 (4:20–4:40 PM)</a></li>
+  <li><a href="#exercise-1-hospital-icu-capacity-matrix-cycle-1" id="toc-exercise-1-hospital-icu-capacity-matrix-cycle-1" class="nav-link active" data-scroll-target="#exercise-1-hospital-icu-capacity-matrix-cycle-1"><span class="header-section-number">1</span> Exercise 1: Hospital ICU Capacity Matrix (Cycle 1)</a></li>
+  <li><a href="#exercise-2-clinical-trial-patient-record-list-cycle-2" id="toc-exercise-2-clinical-trial-patient-record-list-cycle-2" class="nav-link" data-scroll-target="#exercise-2-clinical-trial-patient-record-list-cycle-2"><span class="header-section-number">2</span> Exercise 2: Clinical Trial Patient Record List (Cycle 2)</a></li>
+  <li><a href="#exercise-3-patient-cohort-data-frame-subsetting-cycle-3" id="toc-exercise-3-patient-cohort-data-frame-subsetting-cycle-3" class="nav-link" data-scroll-target="#exercise-3-patient-cohort-data-frame-subsetting-cycle-3"><span class="header-section-number">3</span> Exercise 3: Patient Cohort Data Frame &amp; Subsetting (Cycle 3)</a></li>
+  <li><a href="#exercise-4-reading-csv-data-type-verification-cycle-4-ai-corner" id="toc-exercise-4-reading-csv-data-type-verification-cycle-4-ai-corner" class="nav-link" data-scroll-target="#exercise-4-reading-csv-data-type-verification-cycle-4-ai-corner"><span class="header-section-number">4</span> Exercise 4: Reading CSV Data &amp; Type Verification (Cycle 4 + AI Corner)</a></li>
+  <li><a href="#quiz-1-420440-pm" id="toc-quiz-1-420440-pm" class="nav-link" data-scroll-target="#quiz-1-420440-pm"><span class="header-section-number">5</span> 📝 Quiz 1 (4:20–4:40 PM)</a></li>
   </ul>
 </nav>
     </div>
@@ -185,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 3 In-Class Exercises: Matrices, Lists &amp; Data Frames</h1>
+<div class="quarto-title-block"><div><h1 class="title">Week 3 In-Class Exercises: Matrices, Lists &amp; Data Frames</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Source Code</button></div></div>
 <p class="subtitle lead">GPH-GU 2182 · Fall 2026 · Paired Programming</p>
 </div>
 
@@ -193,7 +195,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>YOUR NAME &amp; PARTNER NAME </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 16, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -213,190 +227,107 @@ Instructions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Work in pairs. One person types (driver), the other reviews and advises (navigator). Swap roles halfway through! Push your final rendered <code>.qmd</code> and <code>.html</code> to your GitHub repository by the end of class for participation credit.</p>
+<p>Work in pairs. One person types (driver), the other reviews and advises (navigator). Swap roles halfway through!</p>
+<ul>
+<li>📥 <strong><a href="https://raw.githubusercontent.com/gph-2182/gph-2182.github.io/main/weeks/inclass/week-03-inclass.qmd">Download <code>week-03-inclass.qmd</code></a></strong> to open and edit in RStudio (or use the <strong><code>&lt;/&gt; Source Code</code></strong> button at the top right).</li>
+<li>Render this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit.</li>
+</ul>
 </div>
 </div>
-<p><a class="btn btn-primary mb-3" href="https://raw.githubusercontent.com/gph-2182/course-website/main/weeks/inclass/week-03-inclass.qmd" download="week-03-inclass.qmd" role="button"> 📥 Download Starter Code (<code>.qmd</code>) </a></p>
-<hr>
-<section id="exercise-1-hospital-icu-capacity-matrix-cycle-1" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1-hospital-icu-capacity-matrix-cycle-1">Exercise 1: Hospital ICU Capacity Matrix (Cycle 1)</h2>
+<section id="exercise-1-hospital-icu-capacity-matrix-cycle-1" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Exercise 1: Hospital ICU Capacity Matrix (Cycle 1)</h1>
 <p>A municipal health department monitors daily ICU admissions across three regional hospital sites.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create a 3x3 matrix named icu_admissions from the vector below, filled row-by-row</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>raw_counts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">5</span>, <span class="dv">24</span>, <span class="dv">30</span>, <span class="dv">11</span>, <span class="dv">8</span>, <span class="dv">15</span>, <span class="dv">4</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>icu_admissions <span class="ot">&lt;-</span> <span class="fu">matrix</span>(raw_counts, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Assign rownames: "Mon", "Tue", "Wed" and colnames: "Site_1", "Site_2", "Site_3"</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(icu_admissions) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Mon"</span>, <span class="st">"Tue"</span>, <span class="st">"Wed"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(icu_admissions) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Site_1"</span>, <span class="st">"Site_2"</span>, <span class="st">"Site_3"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>icu_admissions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    Site_1 Site_2 Site_3
-Mon     12     18      5
-Tue     24     30     11
-Wed      8     15      4</code></pre>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Calculate total admissions for each hospital site across all three days</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Extract admissions for Tuesday across all sites as a named vector</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Extract all entries in the matrix where daily admissions were &gt;= 20</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Calculate total admissions for each hospital site across all three days</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>site_totals <span class="ot">&lt;-</span> <span class="fu">colSums</span>(icu_admissions)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>site_totals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Site_1 Site_2 Site_3 
-    44     63     20 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Extract admissions for Tuesday across all sites as a named vector</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tue_vitals <span class="ot">&lt;-</span> icu_admissions[<span class="st">"Tue"</span>, ]</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>tue_vitals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Site_1 Site_2 Site_3 
-    24     30     11 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Extract all entries in the matrix where daily admissions were &gt;= 20</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>high_admission_days <span class="ot">&lt;-</span> icu_admissions[icu_admissions <span class="sc">&gt;=</span> <span class="dv">20</span>]</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>high_admission_days</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 24 30</code></pre>
-</div>
-</div>
-<hr>
 </section>
-<section id="exercise-2-clinical-trial-patient-record-list-cycle-2" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2-clinical-trial-patient-record-list-cycle-2">Exercise 2: Clinical Trial Patient Record List (Cycle 2)</h2>
+<section id="exercise-2-clinical-trial-patient-record-list-cycle-2" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Exercise 2: Clinical Trial Patient Record List (Cycle 2)</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Construct a clinical trial patient record list named patient_profile</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>patient_profile <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">subject_id =</span> <span class="st">"SUBJ-1049"</span>,</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">treatment_arm =</span> <span class="st">"High_Dose"</span>,</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="dv">58</span>,</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">viral_loads =</span> <span class="fu">c</span>(<span class="dv">45000</span>, <span class="dv">12000</span>, <span class="dv">850</span>, <span class="dv">40</span>),</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">side_effects =</span> <span class="fu">c</span>(<span class="st">"Headache"</span>, <span class="st">"Fatigue"</span>),</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">site_info =</span> <span class="fu">list</span>(<span class="at">city =</span> <span class="st">"New York"</span>, <span class="at">hospital =</span> <span class="st">"Bellevue"</span>)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Extract the viral_loads vector using [[ ]] and compute the percentage reduction:</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#    ((baseline - final) / baseline) * 100</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>baseline_vl <span class="ot">&lt;-</span> patient_profile[[<span class="st">"viral_loads"</span>]][<span class="dv">1</span>]</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>final_vl <span class="ot">&lt;-</span> patient_profile[[<span class="st">"viral_loads"</span>]][<span class="dv">4</span>]</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>pct_reduction <span class="ot">&lt;-</span> ((baseline_vl <span class="sc">-</span> final_vl) <span class="sc">/</span> baseline_vl) <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>pct_reduction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 99.91111</code></pre>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Construct a clinical trial patient record list named patient_profile</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#    with: subject_id ("SUBJ-1049"), treatment_arm ("High_Dose"), age (58),</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#    viral_loads (c(45000, 12000, 850, 40)), side_effects (c("Headache", "Fatigue")),</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#    and site_info (list with city="New York", hospital="Bellevue")</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Extract the viral_loads vector using [[ ]] and compute the percentage reduction:</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#    ((baseline - final) / baseline) * 100</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Access the nested hospital name using $</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Add a new element named status set to "Completed"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Access the nested hospital name using $</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>study_hospital <span class="ot">&lt;-</span> patient_profile<span class="sc">$</span>site_info<span class="sc">$</span>hospital</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>study_hospital</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Bellevue"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Add a new element named status set to "Completed"</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>patient_profile<span class="sc">$</span>status <span class="ot">&lt;-</span> <span class="st">"Completed"</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(patient_profile)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>List of 7
- $ subject_id   : chr "SUBJ-1049"
- $ treatment_arm: chr "High_Dose"
- $ age          : num 58
- $ viral_loads  : num [1:4] 45000 12000 850 40
- $ side_effects : chr [1:2] "Headache" "Fatigue"
- $ site_info    :List of 2
-  ..$ city    : chr "New York"
-  ..$ hospital: chr "Bellevue"
- $ status       : chr "Completed"</code></pre>
-</div>
-</div>
-<hr>
 </section>
-<section id="exercise-3-patient-cohort-data-frame-subsetting-cycle-3" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3-patient-cohort-data-frame-subsetting-cycle-3">Exercise 3: Patient Cohort Data Frame &amp; Subsetting (Cycle 3)</h2>
+<section id="exercise-3-patient-cohort-data-frame-subsetting-cycle-3" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Exercise 3: Patient Cohort Data Frame &amp; Subsetting (Cycle 3)</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Here is a sample cohort of cardiology patients</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>cohort_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">patient_id =</span> <span class="fu">c</span>(<span class="st">"P01"</span>, <span class="st">"P02"</span>, <span class="st">"P03"</span>, <span class="st">"P04"</span>, <span class="st">"P05"</span>, <span class="st">"P06"</span>),</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">62</span>, <span class="dv">38</span>, <span class="dv">71</span>, <span class="dv">55</span>, <span class="dv">68</span>),</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">sbp =</span> <span class="fu">c</span>(<span class="dv">120</span>, <span class="dv">145</span>, <span class="dv">118</span>, <span class="dv">160</span>, <span class="dv">135</span>, <span class="dv">150</span>),</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">dbp =</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">92</span>, <span class="dv">76</span>, <span class="dv">98</span>, <span class="dv">88</span>, <span class="dv">95</span>),</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">bmi =</span> <span class="fu">c</span>(<span class="fl">24.2</span>, <span class="fl">31.0</span>, <span class="fl">27.5</span>, <span class="fl">29.8</span>, <span class="fl">22.1</span>, <span class="fl">33.4</span>),</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">smoker =</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>),</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Add a new column pulse_pressure = sbp - dbp</span></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>cohort_df<span class="sc">$</span>pulse_pressure <span class="ot">&lt;-</span> cohort_df<span class="sc">$</span>sbp <span class="sc">-</span> cohort_df<span class="sc">$</span>dbp</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Add a boolean column hypertensive = (sbp &gt;= 140 | dbp &gt;= 90)</span></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>cohort_df<span class="sc">$</span>hypertensive <span class="ot">&lt;-</span> cohort_df<span class="sc">$</span>sbp <span class="sc">&gt;=</span> <span class="dv">140</span> <span class="sc">|</span> cohort_df<span class="sc">$</span>dbp <span class="sc">&gt;=</span> <span class="dv">90</span></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Filter all patients who are hypertensive AND smokers</span></span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>high_risk <span class="ot">&lt;-</span> cohort_df[cohort_df<span class="sc">$</span>hypertensive <span class="sc">&amp;</span> cohort_df<span class="sc">$</span>smoker, ]</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>high_risk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  patient_id age sbp dbp  bmi smoker pulse_pressure hypertensive
-2        P02  62 145  92 31.0   TRUE             53         TRUE
-4        P04  71 160  98 29.8   TRUE             62         TRUE
-6        P06  68 150  95 33.4   TRUE             55         TRUE</code></pre>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Here is a sample cohort of cardiology patients</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cohort_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">patient_id =</span> <span class="fu">c</span>(<span class="st">"P01"</span>, <span class="st">"P02"</span>, <span class="st">"P03"</span>, <span class="st">"P04"</span>, <span class="st">"P05"</span>, <span class="st">"P06"</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">62</span>, <span class="dv">38</span>, <span class="dv">71</span>, <span class="dv">55</span>, <span class="dv">68</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">sbp =</span> <span class="fu">c</span>(<span class="dv">120</span>, <span class="dv">145</span>, <span class="dv">118</span>, <span class="dv">160</span>, <span class="dv">135</span>, <span class="dv">150</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">dbp =</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">92</span>, <span class="dv">76</span>, <span class="dv">98</span>, <span class="dv">88</span>, <span class="dv">95</span>),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">bmi =</span> <span class="fu">c</span>(<span class="fl">24.2</span>, <span class="fl">31.0</span>, <span class="fl">27.5</span>, <span class="fl">29.8</span>, <span class="fl">22.1</span>, <span class="fl">33.4</span>),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">smoker =</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>),</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Add a new column pulse_pressure = sbp - dbp</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Add a boolean column hypertensive = (sbp &gt;= 140 | dbp &gt;= 90)</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Filter all patients who are hypertensive AND smokers</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Compute the average BMI of hypertensive patients vs non-hypertensive patients</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Compute the average BMI of hypertensive patients vs non-hypertensive patients</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(cohort_df<span class="sc">$</span>bmi[cohort_df<span class="sc">$</span>hypertensive])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 31.4</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(cohort_df<span class="sc">$</span>bmi[<span class="sc">!</span>cohort_df<span class="sc">$</span>hypertensive])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 24.6</code></pre>
-</div>
-</div>
-<hr>
 </section>
-<section id="exercise-4-reading-csv-data-type-verification-cycle-4-ai-corner" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4-reading-csv-data-type-verification-cycle-4-ai-corner">Exercise 4: Reading CSV Data &amp; Type Verification (Cycle 4 + AI Corner)</h2>
+<section id="exercise-4-reading-csv-data-type-verification-cycle-4-ai-corner" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Exercise 4: Reading CSV Data &amp; Type Verification (Cycle 4 + AI Corner)</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create a mini sample CSV with messy missing values</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>sample_csv <span class="ot">&lt;-</span> <span class="st">"id,age,cholesterol,treated</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="st">P1,45,210,Yes</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="st">P2,62,Unknown,No</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="st">P3,58,195,Yes</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="st">P4,71,240,Refused</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="st">P5,39,-99,Yes"</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(sample_csv, <span class="st">"test_cohort.csv"</span>)</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Read the CSV treating Unknown, Refused, and -99 as NA</span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>cleaned_cohort <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"test_cohort.csv"</span>,</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">na =</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="st">"NA"</span>, <span class="st">"Unknown"</span>, <span class="st">"Refused"</span>, <span class="st">"-99"</span>)</span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 5 Columns: 4
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (2): id, treated
-dbl (2): age, cholesterol
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create a mini sample CSV with messy missing values</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>sample_csv <span class="ot">&lt;-</span> <span class="st">"id,age,cholesterol,treated</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">P1,45,210,Yes</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="st">P2,62,Unknown,No</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">P3,58,195,Yes</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="st">P4,71,240,Refused</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="st">P5,39,-99,Yes"</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(sample_csv, <span class="st">"test_cohort.csv"</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Read the CSV treating Unknown, Refused, and -99 as NA</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Verify that cholesterol is recognized as numeric (&lt;dbl&gt;)</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Compute the mean cholesterol among valid cases</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Verify that cholesterol is recognized as numeric (&lt;dbl&gt;)</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">spec</span>(cleaned_cohort)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>cols(
-  id = col_character(),
-  age = col_double(),
-  cholesterol = col_double(),
-  treated = col_character()
-)</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Compute the mean cholesterol among valid cases</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(cleaned_cohort<span class="sc">$</span>cholesterol, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 215</code></pre>
-</div>
-</div>
-<hr>
 </section>
-<section id="quiz-1-420440-pm" class="level2">
-<h2 class="anchored" data-anchor-id="quiz-1-420440-pm">📝 Quiz 1 (4:20–4:40 PM)</h2>
+<section id="quiz-1-420440-pm" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> 📝 Quiz 1 (4:20–4:40 PM)</h1>
 <p><em>Please put all laptops away for the 15-minute paper-based Quiz 1.</em></p>
 
+
+<!-- -->
 
 </section>
 
@@ -624,6 +555,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -926,7 +908,132 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Week 3 In-Class Exercises: Matrices, Lists &amp; Data Frames"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "GPH-GU 2182 · Fall 2026 · Paired Programming"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "YOUR NAME &amp; PARTNER NAME"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "September 16, 2026"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools:</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">      source: true</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">      toggle: false</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">      caption: "Source Code"</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">### Instructions</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>Work in pairs. One person types (driver), the other reviews and advises (navigator). Swap roles halfway through!</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>📥 **[Download `week-03-inclass.qmd`](https://raw.githubusercontent.com/gph-2182/gph-2182.github.io/main/weeks/inclass/week-03-inclass.qmd)** to open and edit in RStudio (or use the **`&lt;/&gt; Source Code`** button at the top right).</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Render this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit.</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 1: Hospital ICU Capacity Matrix (Cycle 1)</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>A municipal health department monitors daily ICU admissions across three regional hospital sites.</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex1-matrix</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create a 3x3 matrix named icu_admissions from the vector below, filled row-by-row</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>raw_counts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">5</span>, <span class="dv">24</span>, <span class="dv">30</span>, <span class="dv">11</span>, <span class="dv">8</span>, <span class="dv">15</span>, <span class="dv">4</span>)</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Assign rownames: "Mon", "Tue", "Wed" and colnames: "Site_1", "Site_2", "Site_3"</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Calculate total admissions for each hospital site across all three days</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Extract admissions for Tuesday across all sites as a named vector</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Extract all entries in the matrix where daily admissions were &gt;= 20</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 2: Clinical Trial Patient Record List (Cycle 2)</span></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex2-list</span></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Construct a clinical trial patient record list named patient_profile</span></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="co">#    with: subject_id ("SUBJ-1049"), treatment_arm ("High_Dose"), age (58),</span></span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a><span class="co">#    viral_loads (c(45000, 12000, 850, 40)), side_effects (c("Headache", "Fatigue")),</span></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a><span class="co">#    and site_info (list with city="New York", hospital="Bellevue")</span></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Extract the viral_loads vector using [[ ]] and compute the percentage reduction:</span></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a><span class="co">#    ((baseline - final) / baseline) * 100</span></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Access the nested hospital name using $</span></span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Add a new element named status set to "Completed"</span></span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 3: Patient Cohort Data Frame &amp; Subsetting (Cycle 3)</span></span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex3-dataframe</span></span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a><span class="co"># Here is a sample cohort of cardiology patients</span></span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>cohort_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>  <span class="at">patient_id =</span> <span class="fu">c</span>(<span class="st">"P01"</span>, <span class="st">"P02"</span>, <span class="st">"P03"</span>, <span class="st">"P04"</span>, <span class="st">"P05"</span>, <span class="st">"P06"</span>),</span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">62</span>, <span class="dv">38</span>, <span class="dv">71</span>, <span class="dv">55</span>, <span class="dv">68</span>),</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>  <span class="at">sbp =</span> <span class="fu">c</span>(<span class="dv">120</span>, <span class="dv">145</span>, <span class="dv">118</span>, <span class="dv">160</span>, <span class="dv">135</span>, <span class="dv">150</span>),</span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>  <span class="at">dbp =</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">92</span>, <span class="dv">76</span>, <span class="dv">98</span>, <span class="dv">88</span>, <span class="dv">95</span>),</span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>  <span class="at">bmi =</span> <span class="fu">c</span>(<span class="fl">24.2</span>, <span class="fl">31.0</span>, <span class="fl">27.5</span>, <span class="fl">29.8</span>, <span class="fl">22.1</span>, <span class="fl">33.4</span>),</span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>  <span class="at">smoker =</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>),</span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Add a new column pulse_pressure = sbp - dbp</span></span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Add a boolean column hypertensive = (sbp &gt;= 140 | dbp &gt;= 90)</span></span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Filter all patients who are hypertensive AND smokers</span></span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Compute the average BMI of hypertensive patients vs non-hypertensive patients</span></span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 4: Reading CSV Data &amp; Type Verification (Cycle 4 + AI Corner)</span></span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex4-import</span></span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create a mini sample CSV with messy missing values</span></span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a>sample_csv <span class="ot">&lt;-</span> <span class="st">"id,age,cholesterol,treated</span></span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a><span class="st">P1,45,210,Yes</span></span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a><span class="st">P2,62,Unknown,No</span></span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a><span class="st">P3,58,195,Yes</span></span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a><span class="st">P4,71,240,Refused</span></span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a><span class="st">P5,39,-99,Yes"</span></span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(sample_csv, <span class="st">"test_cohort.csv"</span>)</span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Read the CSV treating Unknown, Refused, and -99 as NA</span></span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Verify that cholesterol is recognized as numeric (&lt;dbl&gt;)</span></span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Compute the mean cholesterol among valid cases</span></span>
+<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a><span class="fu"># 📝 Quiz 1 (4:20–4:40 PM)</span></span>
+<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a>*Please put all laptops away for the 15-minute paper-based Quiz 1.*</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

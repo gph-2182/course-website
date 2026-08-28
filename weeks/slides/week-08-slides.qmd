@@ -1,0 +1,442 @@
+---
+title: "Week 8: Control Flow & Iteration"
+subtitle: "GPH-GU 2182: Statistical Programming in R · Fall 2026"
+author: "Yang Feng, PhD"
+institute: "New York University · School of Global Public Health"
+date: "October 28, 2026"
+format:
+  revealjs:
+    theme: default
+    css: ../../styles.css
+    slide-number: true
+    preview-links: auto
+    chalkboard: true
+    transition: slide
+    width: 1280
+    height: 720
+    margin: 0.06
+    min-scale: 0.2
+    max-scale: 2.0
+    auto-stretch: false
+---
+
+## Welcome to Week 8!
+
+::: {.columns}
+::: {.column width="50%"}
+### Today's Roadmap
+
+1. **Decisions:** `if` / `else if` / `else`.
+2. **Vectorized Decisions:** `ifelse()` and `case_when()`.
+3. **Repetition:** `for` loops & accumulators.
+4. **Open-Ended Repetition:** `while` loops.
+5. **AI Corner:** The loop that should have been a vector.
+:::
+
+::: {.column width="50%"}
+### Today's Milestones
+
+* **Homework 7:** Due tonight at 11:59 PM.
+* **Homework 8:** Released today (control flow & iteration).
+* **Looking Ahead:** Quiz 4 (Weeks 7–8) takes place next week.
+:::
+:::
+
+---
+
+# Cycle 1: Making Decisions with if / else {background-color="#2c3e50"}
+
+
+## Welcome & Check-In {background-color="#57068c"}
+
+::: {.columns}
+::: {.column width="58%"}
+### 📋 Walk-In Check-In Protocol
+
+1. **Find any open desk** and unpack your laptop.
+2. **Scan the QR code** or enter today's 4-digit PIN on screen to check in.
+3. **At 2:03 PM**, random pairs will be generated on the screen.
+4. **Move to your assigned station** to sit with your partner *before* lecture starts!
+:::
+
+::: {.column width="42%"}
+::: {.callout-note appearance="simple"}
+### 👥 Today's Roles
+* **🚀 Driver (Student A):** Types for Cycles 1 & 2
+* **🧭 Navigator (Student B):** Types for Cycles 3 & 4
+* *Swap keyboard & roles at mid-class break!*
+:::
+:::
+:::
+
+
+## `if`: Run Code Conditionally
+
+```r
+sbp <- 165
+
+if (sbp >= 180) {
+  print("Hypertensive crisis: seek care immediately")
+} else if (sbp >= 140) {
+  print("Stage 2 hypertension")
+} else if (sbp >= 130) {
+  print("Stage 1 hypertension")
+} else {
+  print("Not hypertensive")
+}
+```
+
+* The condition must be a **single** `TRUE` or `FALSE`.
+* Branches are checked **top to bottom**; the first match wins: order matters!
+
+---
+
+## `if` Traps to Avoid
+
+::: {.columns}
+::: {.column width="50%"}
+### Vector condition = error
+
+```r
+sbp_vec <- c(120, 165, 190)
+if (sbp_vec >= 140) { ... }
+# Error: the condition has length > 1
+```
+
+`if` inspects **one** value; vectors need `ifelse()` (next!).
+:::
+
+::: {.column width="50%"}
+### `NA` condition = error
+
+```r
+x <- NA
+if (x > 5) { ... }
+# Error: missing value where
+# TRUE/FALSE needed
+```
+
+Guard first: `if (!is.na(x) && x > 5)`.
+:::
+:::
+
+---
+
+## Vectorized Decisions: `ifelse()`
+
+`ifelse(condition_vector, value_if_true, value_if_false)` decides **element by element**:
+
+```r
+sbp_vec <- c(120, 165, 190, 135)
+
+ifelse(sbp_vec >= 140, "elevated", "normal")
+#> "normal" "elevated" "elevated" "normal"
+```
+
+```r
+# Perfect inside mutate()
+gm |>
+  filter(year == 2008) |>
+  mutate(le_group = ifelse(life_expectancy >= 75, "high", "lower"))
+```
+
+---
+
+## Many Categories: `case_when()`
+
+Nested `ifelse()` calls get unreadable fast: `dplyr::case_when()` scales cleanly:
+
+```r
+gm |>
+  filter(year == 2008) |>
+  mutate(bp_stage = case_when(
+    child_mortality >= 100 ~ "very high",
+    child_mortality >= 50  ~ "high",
+    child_mortality >= 10  ~ "moderate",
+    !is.na(child_mortality) ~ "low",
+    TRUE ~ NA
+  ))
+```
+
+* Conditions are checked in order; first `TRUE` wins (like `else if` chains).
+* The final `TRUE ~ ...` is the catch-all "else".
+
+---
+
+## 👥 Paired Exercise 1: BP Stage Classifier (10 min)
+
+::: {.columns}
+::: {.column width="55%"}
+### Task
+
+1. Assign `sbp <- 152` and write an `if`/`else if`/`else` chain printing the correct stage (crisis ≥ 180, stage 2 ≥ 140, stage 1 ≥ 130, else normal).
+2. Re-run with `sbp <- 128` and `sbp <- 185`: confirm each branch.
+3. For the vector `sbp_clinic` in your worksheet, use `ifelse()` to label `"refer"` (≥ 140) vs `"routine"`.
+4. Rewrite step 3 with `case_when()` adding a third `"crisis"` (≥ 180) tier.
+:::
+
+::: {.column width="45%"}
+### Checklist
+
+* Branch order: highest threshold first!
+* `ifelse()` for two outcomes, `case_when()` for three+.
+* Test values at the **boundaries** (140, 180).
+:::
+:::
+
+---
+
+# Cycle 2: for Loops {background-color="#2c3e50"}
+
+## The `for` Loop
+
+Repeat a code block once per element of a vector:
+
+```r
+sites <- c("Brooklyn", "Queens", "Bronx")
+
+for (s in sites) {
+  print(paste("Auditing site:", s))
+}
+```
+
+```r
+# Looping over positions with seq_along()
+wait_times <- c(45, 12, 85, 30)
+
+for (i in seq_along(wait_times)) {
+  print(paste("Patient", i, "waited", wait_times[i], "minutes"))
+}
+```
+
+* Use `seq_along(x)`, never `1:length(x)`: it behaves correctly when `x` is empty.
+
+---
+
+## The Accumulator Pattern
+
+Build a result **before** the loop, fill it **inside** the loop:
+
+```r
+# Cumulative case counts over an outbreak week
+daily_cases <- c(3, 7, 12, 20, 31, 26, 18)
+
+total_so_far <- numeric(length(daily_cases))  # pre-allocate!
+running_total <- 0
+
+for (i in seq_along(daily_cases)) {
+  running_total <- running_total + daily_cases[i]
+  total_so_far[i] <- running_total
+}
+
+total_so_far
+#> 3 10 22 42 73 99 117
+```
+
+::: {.callout-tip}
+Pre-allocating with `numeric(n)` beats growing a vector with `c()` inside the loop: both cleaner and dramatically faster.
+:::
+
+---
+
+## Vectorize First, Loop Second
+
+Most "loops" in R are already built in:
+
+| Loop version | Vectorized version |
+|:---|:---|
+| sum with accumulator | `sum(x)` |
+| running total loop | `cumsum(x)` |
+| elementwise transform loop | `x * 2`, `log(x)` |
+| conditional relabel loop | `ifelse(...)` |
+
+**Reach for a loop when steps depend on previous results** (simulations, iterative algorithms) or when you must produce side effects (saving files, printing reports).
+
+---
+
+## 👥 Paired Exercise 2: Outbreak Accumulator (10 min)
+
+::: {.columns}
+::: {.column width="55%"}
+### Task
+
+Your worksheet provides `daily_cases` for a 10-day outbreak.
+
+1. Write a `for` loop with an accumulator computing the cumulative cases vector.
+2. Verify your loop against `cumsum(daily_cases)`: they must be identical.
+3. Add a second accumulator inside the same loop that counts how many days exceeded 25 cases.
+4. Verify with `sum(daily_cases > 25)`.
+:::
+
+::: {.column width="45%"}
+### Checklist
+
+* Pre-allocate with `numeric(length(...))`.
+* `seq_along()` for the index.
+* Every loop should have a vectorized cross-check when one exists!
+:::
+:::
+
+---
+
+# Cycle 3: while Loops {background-color="#2c3e50"}
+
+## `while`: Repeat Until a Condition Fails
+
+Use when you **don't know in advance** how many iterations you need:
+
+```r
+# An intervention cuts weekly cases by 20%.
+# How many weeks until fewer than 10 cases?
+cases <- 200
+weeks <- 0
+
+while (cases >= 10) {
+  cases <- cases * 0.8
+  weeks <- weeks + 1
+}
+
+weeks    # 14
+cases    # 8.8
+```
+
+---
+
+## `while` Safety Rules
+
+::: {.columns}
+::: {.column width="50%"}
+### 1. The condition must eventually fail
+
+```r
+while (cases >= 10) {
+  # forgot to update cases...
+  weeks <- weeks + 1
+}
+# infinite loop! (Esc to stop)
+```
+:::
+
+::: {.column width="50%"}
+### 2. Add a guard rail
+
+```r
+while (cases >= 10 && weeks < 1000) {
+  cases <- cases * 0.8
+  weeks <- weeks + 1
+}
+```
+
+A hard cap turns a hang into a debuggable result.
+:::
+:::
+
+::: {.callout-warning}
+Every `while` body must move the state **toward** the exit condition.
+:::
+
+---
+
+## 👥 Paired Exercise 3: Elimination Countdown (10 min)
+
+::: {.columns}
+::: {.column width="55%"}
+### Task
+
+A vaccination campaign reduces measles cases by 35% per month, starting from 5,000 cases.
+
+1. Write a `while` loop: how many months until fewer than 50 cases?
+2. Track the case count *history* by appending to a vector inside the loop.
+3. Add a guard rail capping the loop at 100 months.
+4. Change the reduction to 10%: how does the answer change?
+:::
+
+::: {.column width="45%"}
+### Checklist
+
+* Initialize `cases`, `months`, and the history **before** the loop.
+* Update the state *inside* the loop.
+* Compare 35% vs 10%: nonlinear payoff of stronger interventions!
+:::
+:::
+
+---
+
+# Cycle 4: Integration + AI Corner {background-color="#2c3e50"}
+
+## Combining Loops with Last Week's Tools
+
+Loop over groups, applying a full pipeline each time:
+
+```r
+continents <- c("Africa", "Asia", "Europe")
+
+for (ct in continents) {
+  n_hi <- gm |>
+    filter(year == 2008, continent == ct,
+           !is.na(life_expectancy), life_expectancy >= 75) |>
+    nrow()
+  print(paste(ct, "has", n_hi, "countries with life expectancy >= 75"))
+}
+```
+
+*Next week: `purrr::map()` will make this pattern even cleaner.*
+
+---
+
+## AI Corner: The Unnecessary Loop {background-color="#8e44ad"}
+
+Asked to flag high-mortality countries, an AI wrote:
+
+```r
+flags <- c()
+for (i in 1:nrow(df)) {
+  if (is.na(df$child_mortality[i])) {
+    flags <- c(flags, NA)
+  } else if (df$child_mortality[i] > 50) {
+    flags <- c(flags, "high")
+  } else {
+    flags <- c(flags, "low")
+  }
+}
+```
+
+**Audit findings:**
+
+1. Growing `flags` with `c()` re-copies the vector every iteration: quadratic slowdown.
+2. `1:nrow(df)` breaks on an empty data frame (`1:0` runs twice!).
+3. Three branches of loop for what one vectorized line does:
+
+```r
+flags <- ifelse(df$child_mortality > 50, "high", "low")   # NA stays NA for free
+```
+
+::: {.callout-important}
+*Correct output is not enough: audit AI code for idiom and scalability too.*
+:::
+
+---
+
+# Wrap-Up & Next Steps
+
+## Before We Meet Again
+
+::: {.columns}
+::: {.column width="50%"}
+### 📌 To Do This Week
+
+* **Homework 8** (control flow & iteration): due **Wednesday, Nov 4 at 11:59 PM**.
+* **Read:** R02Pro Ch 13 (functions & functional programming).
+* Push today's worksheet to GitHub **tonight**.
+:::
+
+::: {.column width="50%"}
+### 🔭 Next Week (Nov 4)
+
+* 📝 **Quiz 4** (covers Weeks 7–8) at end of class.
+* Writing your own functions: arguments, defaults, return values.
+* `purrr::map()` family: iteration without loops.
+:::
+:::
+
+*Questions? Office hours are listed on the syllabus page, or email anytime.*

@@ -1,0 +1,454 @@
+---
+title: "Week 6: Advanced Wrangling, Joins & Tidy Data"
+subtitle: "GPH-GU 2182: Statistical Programming in R · Fall 2026"
+author: "Yang Feng, PhD"
+institute: "New York University · School of Global Public Health"
+date: "October 7, 2026"
+format:
+  revealjs:
+    theme: default
+    css: ../../styles.css
+    slide-number: true
+    preview-links: auto
+    chalkboard: true
+    transition: slide
+    width: 1280
+    height: 720
+    margin: 0.06
+    min-scale: 0.2
+    max-scale: 2.0
+    auto-stretch: false
+---
+
+## Welcome to Week 6!
+
+::: {.columns}
+::: {.column width="50%"}
+### Today's Roadmap
+
+1. **Grouped Summaries:** `group_by()` + `summarize()`.
+2. **Counting:** `count()` and weighted counts.
+3. **Joining Tables:** `left_join()`, `inner_join()`, `anti_join()`.
+4. **Tidy Data:** `pivot_longer()` & `pivot_wider()`.
+5. **AI Corner:** Join key traps in AI-generated code.
+:::
+
+::: {.column width="50%"}
+### Today's Milestones
+
+* **Homework 5:** Due tonight at 11:59 PM.
+* **Homework 6:** Released today, due **Oct 21** (two weeks: no class Oct 14!).
+* **Looking Ahead:** Quiz 3 (Weeks 5–6) takes place in Week 7.
+:::
+:::
+
+---
+
+# Cycle 1: Grouped Summaries {background-color="#2c3e50"}
+
+
+## Welcome & Check-In {background-color="#57068c"}
+
+::: {.columns}
+::: {.column width="58%"}
+### 📋 Walk-In Check-In Protocol
+
+1. **Find any open desk** and unpack your laptop.
+2. **Scan the QR code** or enter today's 4-digit PIN on screen to check in.
+3. **At 2:03 PM**, random pairs will be generated on the screen.
+4. **Move to your assigned station** to sit with your partner *before* lecture starts!
+:::
+
+::: {.column width="42%"}
+::: {.callout-note appearance="simple"}
+### 👥 Today's Roles
+* **🚀 Driver (Student A):** Types for Cycles 1 & 2
+* **🧭 Navigator (Student B):** Types for Cycles 3 & 4
+* *Swap keyboard & roles at mid-class break!*
+:::
+:::
+:::
+
+
+## From Rows to Summaries
+
+Last week's verbs kept data at the **row level**. Public health questions usually need **group-level** answers:
+
+* What is the *average life expectancy per continent*?
+* How many countries per region exceeded a smoking threshold?
+* What is each hospital's *median wait time*?
+
+```r
+library(r02pro)
+library(dplyr)
+library(tidyr)
+```
+
+---
+
+## `summarize()`: Collapse to One Row
+
+Without grouping, `summarize()` collapses the whole table to a single row:
+
+```r
+gm |>
+  filter(year == 2008, !is.na(life_expectancy)) |>
+  summarize(mean_le = mean(life_expectancy),
+            sd_le   = sd(life_expectancy),
+            n       = n())
+```
+
+* Each argument creates one **column**; the right side must return **one value**.
+* `n()` counts rows and takes no arguments.
+
+---
+
+## `group_by()`: One Row *Per Group*
+
+`group_by()` changes what "everything" means for the next verbs:
+
+```r
+gm |>
+  filter(year == 2008, !is.na(life_expectancy)) |>
+  group_by(continent) |>
+  summarize(mean_le = mean(life_expectancy),
+            n_countries = n())
+```
+
+| continent | mean_le | n_countries |
+|:---|---:|---:|
+| Africa | 58.5 | 51 |
+| Americas | 73.4 | 33 |
+| Asia | 70.6 | 47 |
+| ... | ... | ... |
+
+*One row per continent: the group becomes the unit of analysis.*
+
+---
+
+## Grouping by Multiple Variables
+
+```r
+gm |>
+  filter(year %in% c(1998, 2008), !is.na(life_expectancy)) |>
+  group_by(continent, year) |>
+  summarize(mean_le = mean(life_expectancy), .groups = "drop")
+```
+
+* One row per **continent × year** combination.
+* `.groups = "drop"` returns an ordinary ungrouped tibble (and silences the message).
+
+::: {.callout-warning}
+A grouped tibble stays grouped! Later verbs operate *within groups* until you `ungroup()` or use `.groups = "drop"`.
+:::
+
+---
+
+## `count()`: The Fast Path for Frequencies
+
+```r
+# How many countries per continent in 2008?
+gm |> filter(year == 2008) |> count(continent)
+
+# Sorted, largest group first
+gm |> filter(year == 2008) |> count(continent, sort = TRUE)
+```
+
+`count(x)` is shorthand for `group_by(x) |> summarize(n = n())`.
+
+---
+
+## 👥 Paired Exercise 1: Continental Report Card (10 min)
+
+::: {.columns}
+::: {.column width="55%"}
+### Task
+
+1. From `gm`, keep 2008 rows with non-missing `child_mortality`.
+2. Group by `continent`.
+3. Summarize: `mean_cm` (mean child mortality), `max_cm` (maximum), and `n_countries` with `n()`.
+4. Arrange the result from highest to lowest `mean_cm`.
+:::
+
+::: {.column width="45%"}
+### Checklist
+
+* `filter` **before** `group_by`.
+* Three summary columns in one `summarize()`.
+* Which continent carries the highest burden?
+:::
+:::
+
+---
+
+# Cycle 2: Joining Tables {background-color="#2c3e50"}
+
+## Why Joins? Data Lives in Pieces
+
+Real public health data arrives as **separate tables**:
+
+```r
+patients <- tibble(
+  patient_id = c("P1", "P2", "P3", "P4"),
+  age        = c(34, 58, 41, 29),
+  clinic_id  = c("C1", "C2", "C1", "C3")
+)
+
+clinics <- tibble(
+  clinic_id = c("C1", "C2"),
+  borough   = c("Brooklyn", "Queens")
+)
+```
+
+*To analyze patients by borough, the tables must be **joined** on the shared key `clinic_id`.*
+
+---
+
+## `left_join()`: Keep All Rows on the Left
+
+```r
+patients |> left_join(clinics, by = "clinic_id")
+```
+
+| patient_id | age | clinic_id | borough |
+|:---|---:|:---|:---|
+| P1 | 34 | C1 | Brooklyn |
+| P2 | 58 | C2 | Queens |
+| P3 | 41 | C1 | Brooklyn |
+| P4 | 29 | C3 | **NA** |
+
+* **Every** patient is kept; unmatched keys get `NA`.
+* The workhorse join for adding context columns to a primary table.
+
+---
+
+## `inner_join()` and `anti_join()`
+
+::: {.columns}
+::: {.column width="50%"}
+### `inner_join()`: matches only
+
+```r
+patients |>
+  inner_join(clinics, by = "clinic_id")
+# P4 (clinic C3) disappears
+```
+
+Keeps rows present in **both** tables.
+:::
+
+::: {.column width="50%"}
+### `anti_join()`: the leftovers
+
+```r
+patients |>
+  anti_join(clinics, by = "clinic_id")
+# ONLY P4
+```
+
+Keeps left rows with **no match**: your data-quality audit tool!
+:::
+:::
+
+::: {.callout-tip}
+Before trusting a join, `count()` the key in both tables: duplicated keys multiply rows!
+:::
+
+---
+
+## 👥 Paired Exercise 2: Lab Results Lookup (10 min)
+
+::: {.columns}
+::: {.column width="55%"}
+### Task
+
+Your worksheet defines `visits` (patient visits) and `lab_results` (test outcomes).
+
+1. `left_join()` the two tables by `visit_id`; how many rows result?
+2. Use `anti_join()` to list visits with **no lab result on file**.
+3. Use `inner_join()` and then `group_by(clinic) |> summarize(mean_glucose = mean(glucose))`.
+:::
+
+::: {.column width="45%"}
+### Checklist
+
+* `by = "visit_id"` spelled explicitly.
+* `anti_join` result should surprise you: which visits are they?
+* Cycle 1 + Cycle 2 skills combine in step 3!
+:::
+:::
+
+---
+
+# Cycle 3: Tidy Data & Pivoting {background-color="#2c3e50"}
+
+## What Is Tidy Data?
+
+1. Every **column** is a variable.
+2. Every **row** is an observation.
+3. Every **cell** is a single value.
+
+**Untidy (wide):** one row per patient, one column *per visit*
+
+| patient | bp_visit1 | bp_visit2 | bp_visit3 |
+|:---|---:|---:|---:|
+| P1 | 142 | 138 | 131 |
+| P2 | 129 | 125 | 122 |
+
+**Tidy (long):** one row per patient-visit
+
+| patient | visit | bp |
+|:---|:---|---:|
+| P1 | visit1 | 142 |
+| P1 | visit2 | 138 |
+| ... | ... | ... |
+
+---
+
+## `pivot_longer()`: Wide → Long
+
+```r
+library(tidyr)
+
+bp_wide |>
+  pivot_longer(cols = starts_with("bp_"),
+               names_to = "visit",
+               values_to = "bp",
+               names_prefix = "bp_")
+```
+
+* `cols`: which columns to stack (select-style helpers work!).
+* `names_to`: new column holding the old column **names**.
+* `values_to`: new column holding the old cell **values**.
+* `names_prefix`: strip repeated text from the names.
+
+*Why? `ggplot2` and `group_by()` need long data: one row per observation.*
+
+---
+
+## `pivot_wider()`: Long → Wide
+
+The inverse: spread a name-value pair back into columns (great for human-readable tables):
+
+```r
+bp_long |>
+  pivot_wider(names_from = visit, values_from = bp)
+```
+
+```r
+# Classic use: a summary table with one column per year
+gm |>
+  filter(year %in% c(1998, 2008), !is.na(life_expectancy)) |>
+  group_by(continent, year) |>
+  summarize(mean_le = mean(life_expectancy), .groups = "drop") |>
+  pivot_wider(names_from = year, values_from = mean_le)
+```
+
+---
+
+## `drop_na()`: Explicit Missing-Row Removal
+
+```r
+# Drop rows missing ANY column
+gm |> drop_na()
+
+# Drop rows missing specific columns only (usual practice)
+gm |> drop_na(life_expectancy, sugar)
+```
+
+Equivalent to chained `filter(!is.na(...))` calls, but reads more clearly in pipelines.
+
+---
+
+## 👥 Paired Exercise 3: Reshaping a BP Study (10 min)
+
+::: {.columns}
+::: {.column width="55%"}
+### Task
+
+Your worksheet defines `bp_wide` (blood pressure over 3 visits).
+
+1. Pivot `bp_wide` into long form `bp_long` (`visit`, `bp` columns; strip the `"bp_"` prefix).
+2. Group `bp_long` by `visit` and summarize the mean BP per visit.
+3. Pivot `bp_long` back to wide and confirm it matches the original.
+:::
+
+::: {.column width="45%"}
+### Checklist
+
+* `starts_with("bp_")` selects the pivot columns.
+* Is mean BP falling across visits?
+* Round-trip pivots are a great self-check!
+:::
+:::
+
+---
+
+# Cycle 4: Integration + AI Corner {background-color="#2c3e50"}
+
+## A Full Mini-Analysis, End to End
+
+*"Which continents improved life expectancy most between 1998 and 2008?"*
+
+```r
+gm |>
+  filter(year %in% c(1998, 2008)) |>
+  drop_na(life_expectancy) |>
+  group_by(continent, year) |>
+  summarize(mean_le = mean(life_expectancy), .groups = "drop") |>
+  pivot_wider(names_from = year, values_from = mean_le,
+              names_prefix = "y") |>
+  mutate(gain = y2008 - y1998) |>
+  arrange(desc(gain))
+```
+
+*Six verbs, one readable story: filter → clean → group → summarize → reshape → derive.*
+
+---
+
+## AI Corner: The Join That Quietly Doubled the Data {background-color="#8e44ad"}
+
+An AI assistant merged medication records onto patients:
+
+```r
+patients |> left_join(prescriptions, by = "patient_id")
+```
+
+It ran without errors, but the patient count **doubled**: patients with multiple prescriptions now appear once *per prescription*, so every later average is silently weighted by prescription count.
+
+**Audit protocol for every join:**
+
+1. `nrow()` before and after: did the row count change? Why?
+2. `count(patient_id) |> filter(n > 1)`: are keys unique where you assumed?
+3. `anti_join()` both directions: what failed to match?
+
+::: {.callout-important}
+*An AI can write a syntactically perfect join that is statistically wrong. The audit is your job.*
+:::
+
+---
+
+# Wrap-Up & Next Steps
+
+## Before We Meet Again
+
+::: {.columns}
+::: {.column width="50%"}
+### 📌 To Do (Two Weeks!)
+
+* **No class Oct 14** (Legislative Monday).
+* **Homework 6:** due **Wednesday, Oct 21 at 11:59 PM**.
+* **Read:** R02Pro Ch 10, 3.6, 3.11 (strings, factors, dates).
+* Push today's worksheet to GitHub **tonight**.
+:::
+
+::: {.column width="50%"}
+### 🔭 Week 7 (Oct 21)
+
+* 📝 **Quiz 3** (covers Weeks 5–6) at end of class.
+* `stringr`: pattern matching & regex basics.
+* `forcats` for factors; `lubridate` for dates.
+:::
+:::
+
+*Questions? Office hours are listed on the syllabus page, or email anytime.*

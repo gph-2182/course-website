@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="YOUR NAME &amp; PARTNER NAME">
-<meta name="dcterms.date" content="2026-09-23">
+<meta name="dcterms.date" content="2026-10-07">
 
-<title>Statistical Programming in R - Week 4 In-Class Exercises: Data Visualization with ggplot2</title>
+<title>Statistical Programming in R - Week 6 In-Class Exercises: Advanced Wrangling, Joins &amp; Tidy Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -174,10 +174,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exercise-1-environmental-air-quality-scatterplot-cycle-1" id="toc-exercise-1-environmental-air-quality-scatterplot-cycle-1" class="nav-link active" data-scroll-target="#exercise-1-environmental-air-quality-scatterplot-cycle-1"><span class="header-section-number">1</span> Exercise 1: Environmental Air Quality Scatterplot (Cycle 1)</a></li>
-  <li><a href="#exercise-2-comparing-ozone-across-summer-months-cycle-2" id="toc-exercise-2-comparing-ozone-across-summer-months-cycle-2" class="nav-link" data-scroll-target="#exercise-2-comparing-ozone-across-summer-months-cycle-2"><span class="header-section-number">2</span> Exercise 2: Comparing Ozone Across Summer Months (Cycle 2)</a></li>
-  <li><a href="#exercise-3-small-multiples-with-facet_wrap-cycle-3" id="toc-exercise-3-small-multiples-with-facet_wrap-cycle-3" class="nav-link" data-scroll-target="#exercise-3-small-multiples-with-facet_wrap-cycle-3"><span class="header-section-number">3</span> Exercise 3: Small Multiples with <code>facet_wrap</code> (Cycle 3)</a></li>
-  <li><a href="#exercise-4-publication-ready-polishing-cycle-4-ai-corner" id="toc-exercise-4-publication-ready-polishing-cycle-4-ai-corner" class="nav-link" data-scroll-target="#exercise-4-publication-ready-polishing-cycle-4-ai-corner"><span class="header-section-number">4</span> Exercise 4: Publication-Ready Polishing (Cycle 4 + AI Corner)</a></li>
+  <li><a href="#exercise-1-continental-report-card-cycle-1" id="toc-exercise-1-continental-report-card-cycle-1" class="nav-link active" data-scroll-target="#exercise-1-continental-report-card-cycle-1"><span class="header-section-number">1</span> Exercise 1: Continental Report Card (Cycle 1)</a></li>
+  <li><a href="#exercise-2-lab-results-lookup-with-joins-cycle-2" id="toc-exercise-2-lab-results-lookup-with-joins-cycle-2" class="nav-link" data-scroll-target="#exercise-2-lab-results-lookup-with-joins-cycle-2"><span class="header-section-number">2</span> Exercise 2: Lab Results Lookup with Joins (Cycle 2)</a></li>
+  <li><a href="#exercise-3-reshaping-a-blood-pressure-study-cycle-3" id="toc-exercise-3-reshaping-a-blood-pressure-study-cycle-3" class="nav-link" data-scroll-target="#exercise-3-reshaping-a-blood-pressure-study-cycle-3"><span class="header-section-number">3</span> Exercise 3: Reshaping a Blood Pressure Study (Cycle 3)</a></li>
+  <li><a href="#exercise-4-integration-challenge-ai-corner-cycle-4" id="toc-exercise-4-integration-challenge-ai-corner-cycle-4" class="nav-link" data-scroll-target="#exercise-4-integration-challenge-ai-corner-cycle-4"><span class="header-section-number">4</span> Exercise 4: Integration Challenge + AI Corner (Cycle 4)</a></li>
   </ul>
 </nav>
     </div>
@@ -186,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Week 4 In-Class Exercises: Data Visualization with ggplot2</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Source Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Week 6 In-Class Exercises: Advanced Wrangling, Joins &amp; Tidy Data</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Source Code</button></div></div>
 <p class="subtitle lead">GPH-GU 2182 · Fall 2026 · Paired Programming</p>
 </div>
 
@@ -204,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 23, 2026</p>
+      <p class="date">October 7, 2026</p>
     </div>
   </div>
   
@@ -228,51 +228,81 @@ Instructions
 <div class="callout-body-container callout-body">
 <p>Work in pairs. One person types (driver), the other reviews and advises (navigator). Swap roles halfway through!</p>
 <ul>
-<li>📥 <strong><a href="https://raw.githubusercontent.com/gph-2182/gph-2182.github.io/main/weeks/inclass/week-04-inclass.qmd">Download <code>week-04-inclass.qmd</code></a></strong> to open and edit in RStudio (or use the <strong><code>&lt;/&gt; Source Code</code></strong> button at the top right).</li>
+<li>📥 <strong><a href="https://raw.githubusercontent.com/gph-2182/gph-2182.github.io/main/weeks/inclass/week-06-inclass.qmd">Download <code>week-06-inclass.qmd</code></a></strong> to open and edit in RStudio (or use the <strong><code>&lt;/&gt; Source Code</code></strong> button at the top right).</li>
 <li>Render this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit.</li>
 </ul>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(r02pro)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="exercise-1-environmental-air-quality-scatterplot-cycle-1" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Exercise 1: Environmental Air Quality Scatterplot (Cycle 1)</h1>
-<p>Using the built-in <code>airquality</code> dataset, visualize the relationship between solar radiation and ozone concentrations.</p>
+<section id="exercise-1-continental-report-card-cycle-1" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Exercise 1: Continental Report Card (Cycle 1)</h1>
+<p>Summarize the global burden of child mortality by continent using <code>gm</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create a scatterplot of Solar.R (x) vs Ozone (y)</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Map Wind speed to the point color aesthetic</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Set alpha = 0.7 and size = 3 outside aes()</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Add a smooth trendline with geom_smooth(method = "loess", color = "darkblue")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="exercise-2-comparing-ozone-across-summer-months-cycle-2" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Exercise 2: Comparing Ozone Across Summer Months (Cycle 2)</h1>
-<p>Compare the distribution of ozone levels across the five summer months (May = 5 through September = 9).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Build a violin plot comparing Ozone across Months (x = factor(Month), y = Ozone)</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Fill the violins by factor(Month) with alpha = 0.5</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Overlay a boxplot inside the violins with width = 0.2 and fill = "white"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Suppress duplicate outlier points on the boxplot using outlier.shape = NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. From gm, keep 2008 rows with non-missing child_mortality</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Group by continent</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Summarize: mean_cm = mean(child_mortality), max_cm = max(child_mortality),</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#    n_countries = n()</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Arrange the result from highest to lowest mean_cm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="exercise-3-small-multiples-with-facet_wrap-cycle-3" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Exercise 3: Small Multiples with <code>facet_wrap</code> (Cycle 3)</h1>
-<p>Examine how the temperature-ozone relationship changes month by month.</p>
+<section id="exercise-2-lab-results-lookup-with-joins-cycle-2" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Exercise 2: Lab Results Lookup with Joins (Cycle 2)</h1>
+<p>A clinic network stores visits and lab results in separate tables.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create a scatterplot of Temp (x) vs Ozone (y)</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Add points with alpha = 0.6</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Add a linear regression line using geom_smooth(method = "lm", color = "red", se = FALSE)</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Facet by Month into a single row using facet_wrap(~ Month, nrow = 1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>visits <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">visit_id =</span> <span class="fu">c</span>(<span class="st">"V01"</span>, <span class="st">"V02"</span>, <span class="st">"V03"</span>, <span class="st">"V04"</span>, <span class="st">"V05"</span>, <span class="st">"V06"</span>),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">clinic   =</span> <span class="fu">c</span>(<span class="st">"Downtown"</span>, <span class="st">"Downtown"</span>, <span class="st">"Uptown"</span>, <span class="st">"Uptown"</span>, <span class="st">"Midtown"</span>, <span class="st">"Midtown"</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">age      =</span> <span class="fu">c</span>(<span class="dv">52</span>, <span class="dv">34</span>, <span class="dv">68</span>, <span class="dv">45</span>, <span class="dv">59</span>, <span class="dv">71</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>lab_results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">visit_id =</span> <span class="fu">c</span>(<span class="st">"V01"</span>, <span class="st">"V03"</span>, <span class="st">"V04"</span>, <span class="st">"V06"</span>),</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">glucose  =</span> <span class="fu">c</span>(<span class="dv">112</span>, <span class="dv">145</span>, <span class="dv">98</span>, <span class="dv">160</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. left_join() visits and lab_results by "visit_id". How many rows result? Why?</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Use anti_join() to list the visits with NO lab result on file</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Use inner_join(), then group_by(clinic) |&gt; summarize(mean_glucose = mean(glucose))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="exercise-4-publication-ready-polishing-cycle-4-ai-corner" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Exercise 4: Publication-Ready Polishing (Cycle 4 + AI Corner)</h1>
-<p>Take the multi-panel temperature plot from Exercise 3 and polish it to publication standards.</p>
+<section id="exercise-3-reshaping-a-blood-pressure-study-cycle-3" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Exercise 3: Reshaping a Blood Pressure Study (Cycle 3)</h1>
+<p>A hypertension study measured systolic blood pressure at three follow-up visits (wide format).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Map Wind speed to color using scale_color_viridis_c(option = "viridis")</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Add complete titles, subtitle, axis labels, and caption</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Apply theme_minimal() and position the legend at the bottom</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>bp_wide <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">patient   =</span> <span class="fu">c</span>(<span class="st">"P1"</span>, <span class="st">"P2"</span>, <span class="st">"P3"</span>, <span class="st">"P4"</span>),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">bp_visit1 =</span> <span class="fu">c</span>(<span class="dv">142</span>, <span class="dv">129</span>, <span class="dv">155</span>, <span class="dv">137</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">bp_visit2 =</span> <span class="fu">c</span>(<span class="dv">138</span>, <span class="dv">125</span>, <span class="dv">149</span>, <span class="dv">133</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">bp_visit3 =</span> <span class="fu">c</span>(<span class="dv">131</span>, <span class="dv">122</span>, <span class="dv">144</span>, <span class="dv">128</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Pivot bp_wide into long form bp_long with columns patient, visit, bp</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#    (use cols = starts_with("bp_"), names_prefix = "bp_" to strip the prefix)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Group bp_long by visit and summarize mean_bp = mean(bp)</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Pivot bp_long back to wide format and confirm it matches bp_wide</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-4-integration-challenge-ai-corner-cycle-4" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Exercise 4: Integration Challenge + AI Corner (Cycle 4)</h1>
+<p>Which continents improved life expectancy the most between 1998 and 2008?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build ONE pipeline from gm that:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Keeps rows for years 1998 and 2008 (year %in% c(1998, 2008))</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Drops rows missing life_expectancy (drop_na())</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Groups by continent and year, then summarizes mean_le = mean(life_expectancy)</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#    (use .groups = "drop")</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Pivots wider: names_from = year, values_from = mean_le, names_prefix = "y"</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Adds gain = y2008 - y1998 and arranges by gain, largest first</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># AI Corner: ask your AI assistant the same question, then audit its answer.</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Does it filter the years? Handle NAs? Can you verify every verb it used?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
@@ -858,85 +888,119 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Week 4 In-Class Exercises: Data Visualization with ggplot2"</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "GPH-GU 2182 · Fall 2026 · Paired Programming"</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "YOUR NAME &amp; PARTNER NAME"</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "September 23, 2026"</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools:</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">      source: true</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">      toggle: false</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">      caption: "Source Code"</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="fu">### Instructions</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>Work in pairs. One person types (driver), the other reviews and advises (navigator). Swap roles halfway through!</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>📥 **[Download `week-04-inclass.qmd`](https://raw.githubusercontent.com/gph-2182/gph-2182.github.io/main/weeks/inclass/week-04-inclass.qmd)** to open and edit in RStudio (or use the **`&lt;/&gt; Source Code`** button at the top right).</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Render this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit.</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 1: Environmental Air Quality Scatterplot (Cycle 1)</span></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>Using the built-in <span class="in">`airquality`</span> dataset, visualize the relationship between solar radiation and ozone concentrations.</span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex1-scatterplot</span></span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create a scatterplot of Solar.R (x) vs Ozone (y)</span></span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Map Wind speed to the point color aesthetic</span></span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Set alpha = 0.7 and size = 3 outside aes()</span></span>
-<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Add a smooth trendline with geom_smooth(method = "loess", color = "darkblue")</span></span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 2: Comparing Ozone Across Summer Months (Cycle 2)</span></span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>Compare the distribution of ozone levels across the five summer months (May = 5 through September = 9).</span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex2-distributions</span></span>
-<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Build a violin plot comparing Ozone across Months (x = factor(Month), y = Ozone)</span></span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Fill the violins by factor(Month) with alpha = 0.5</span></span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Overlay a boxplot inside the violins with width = 0.2 and fill = "white"</span></span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Suppress duplicate outlier points on the boxplot using outlier.shape = NA</span></span>
-<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 3: Small Multiples with `facet_wrap` (Cycle 3)</span></span>
-<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>Examine how the temperature-ozone relationship changes month by month.</span>
-<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex3-facets</span></span>
-<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create a scatterplot of Temp (x) vs Ozone (y)</span></span>
-<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Add points with alpha = 0.6</span></span>
-<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Add a linear regression line using geom_smooth(method = "lm", color = "red", se = FALSE)</span></span>
-<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Facet by Month into a single row using facet_wrap(~ Month, nrow = 1)</span></span>
-<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 4: Publication-Ready Polishing (Cycle 4 + AI Corner)</span></span>
-<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>Take the multi-panel temperature plot from Exercise 3 and polish it to publication standards.</span>
-<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex4-publication</span></span>
-<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Map Wind speed to color using scale_color_viridis_c(option = "viridis")</span></span>
-<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Add complete titles, subtitle, axis labels, and caption</span></span>
-<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Apply theme_minimal() and position the legend at the bottom</span></span>
-<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb8" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Week 6 In-Class Exercises: Advanced Wrangling, Joins &amp; Tidy Data"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "GPH-GU 2182 · Fall 2026 · Paired Programming"</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "YOUR NAME &amp; PARTNER NAME"</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "October 7, 2026"</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools:</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">      source: true</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">      toggle: false</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">      caption: "Source Code"</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">### Instructions</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>Work in pairs. One person types (driver), the other reviews and advises (navigator). Swap roles halfway through!</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>📥 **[Download `week-06-inclass.qmd`](https://raw.githubusercontent.com/gph-2182/gph-2182.github.io/main/weeks/inclass/week-06-inclass.qmd)** to open and edit in RStudio (or use the **`&lt;/&gt; Source Code`** button at the top right).</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Render this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit.</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(r02pro)</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 1: Continental Report Card (Cycle 1)</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>Summarize the global burden of child mortality by continent using <span class="in">`gm`</span>.</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex1-group-summarize</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. From gm, keep 2008 rows with non-missing child_mortality</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Group by continent</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Summarize: mean_cm = mean(child_mortality), max_cm = max(child_mortality),</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a><span class="co">#    n_countries = n()</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Arrange the result from highest to lowest mean_cm</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 2: Lab Results Lookup with Joins (Cycle 2)</span></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>A clinic network stores visits and lab results in separate tables.</span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex2-data</span></span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a>visits <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a>  <span class="at">visit_id =</span> <span class="fu">c</span>(<span class="st">"V01"</span>, <span class="st">"V02"</span>, <span class="st">"V03"</span>, <span class="st">"V04"</span>, <span class="st">"V05"</span>, <span class="st">"V06"</span>),</span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>  <span class="at">clinic   =</span> <span class="fu">c</span>(<span class="st">"Downtown"</span>, <span class="st">"Downtown"</span>, <span class="st">"Uptown"</span>, <span class="st">"Uptown"</span>, <span class="st">"Midtown"</span>, <span class="st">"Midtown"</span>),</span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a>  <span class="at">age      =</span> <span class="fu">c</span>(<span class="dv">52</span>, <span class="dv">34</span>, <span class="dv">68</span>, <span class="dv">45</span>, <span class="dv">59</span>, <span class="dv">71</span>)</span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a>lab_results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a>  <span class="at">visit_id =</span> <span class="fu">c</span>(<span class="st">"V01"</span>, <span class="st">"V03"</span>, <span class="st">"V04"</span>, <span class="st">"V06"</span>),</span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>  <span class="at">glucose  =</span> <span class="fu">c</span>(<span class="dv">112</span>, <span class="dv">145</span>, <span class="dv">98</span>, <span class="dv">160</span>)</span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex2-joins</span></span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. left_join() visits and lab_results by "visit_id". How many rows result? Why?</span></span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Use anti_join() to list the visits with NO lab result on file</span></span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Use inner_join(), then group_by(clinic) |&gt; summarize(mean_glucose = mean(glucose))</span></span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 3: Reshaping a Blood Pressure Study (Cycle 3)</span></span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a>A hypertension study measured systolic blood pressure at three follow-up visits (wide format).</span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex3-data</span></span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a>bp_wide <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a>  <span class="at">patient   =</span> <span class="fu">c</span>(<span class="st">"P1"</span>, <span class="st">"P2"</span>, <span class="st">"P3"</span>, <span class="st">"P4"</span>),</span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a>  <span class="at">bp_visit1 =</span> <span class="fu">c</span>(<span class="dv">142</span>, <span class="dv">129</span>, <span class="dv">155</span>, <span class="dv">137</span>),</span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a>  <span class="at">bp_visit2 =</span> <span class="fu">c</span>(<span class="dv">138</span>, <span class="dv">125</span>, <span class="dv">149</span>, <span class="dv">133</span>),</span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a>  <span class="at">bp_visit3 =</span> <span class="fu">c</span>(<span class="dv">131</span>, <span class="dv">122</span>, <span class="dv">144</span>, <span class="dv">128</span>)</span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex3-pivot</span></span>
+<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Pivot bp_wide into long form bp_long with columns patient, visit, bp</span></span>
+<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a><span class="co">#    (use cols = starts_with("bp_"), names_prefix = "bp_" to strip the prefix)</span></span>
+<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Group bp_long by visit and summarize mean_bp = mean(bp)</span></span>
+<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Pivot bp_long back to wide format and confirm it matches bp_wide</span></span>
+<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 4: Integration Challenge + AI Corner (Cycle 4)</span></span>
+<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a>Which continents improved life expectancy the most between 1998 and 2008?</span>
+<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex4-integration</span></span>
+<span id="cb8-116"><a href="#cb8-116" aria-hidden="true" tabindex="-1"></a><span class="co"># Build ONE pipeline from gm that:</span></span>
+<span id="cb8-117"><a href="#cb8-117" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Keeps rows for years 1998 and 2008 (year %in% c(1998, 2008))</span></span>
+<span id="cb8-118"><a href="#cb8-118" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Drops rows missing life_expectancy (drop_na())</span></span>
+<span id="cb8-119"><a href="#cb8-119" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Groups by continent and year, then summarizes mean_le = mean(life_expectancy)</span></span>
+<span id="cb8-120"><a href="#cb8-120" aria-hidden="true" tabindex="-1"></a><span class="co">#    (use .groups = "drop")</span></span>
+<span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Pivots wider: names_from = year, values_from = mean_le, names_prefix = "y"</span></span>
+<span id="cb8-122"><a href="#cb8-122" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Adds gain = y2008 - y1998 and arranges by gain, largest first</span></span>
+<span id="cb8-123"><a href="#cb8-123" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a><span class="co"># AI Corner: ask your AI assistant the same question, then audit its answer.</span></span>
+<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a><span class="co"># Does it filter the years? Handle NAs? Can you verify every verb it used?</span></span>
+<span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

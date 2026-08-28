@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="YOUR NAME &amp; PARTNER NAME">
-<meta name="dcterms.date" content="2026-09-23">
+<meta name="dcterms.date" content="2026-10-21">
 
-<title>Statistical Programming in R - Week 4 In-Class Exercises: Data Visualization with ggplot2</title>
+<title>Statistical Programming in R - Week 7 In-Class Exercises: Strings, Factors &amp; Dates</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -174,10 +174,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exercise-1-environmental-air-quality-scatterplot-cycle-1" id="toc-exercise-1-environmental-air-quality-scatterplot-cycle-1" class="nav-link active" data-scroll-target="#exercise-1-environmental-air-quality-scatterplot-cycle-1"><span class="header-section-number">1</span> Exercise 1: Environmental Air Quality Scatterplot (Cycle 1)</a></li>
-  <li><a href="#exercise-2-comparing-ozone-across-summer-months-cycle-2" id="toc-exercise-2-comparing-ozone-across-summer-months-cycle-2" class="nav-link" data-scroll-target="#exercise-2-comparing-ozone-across-summer-months-cycle-2"><span class="header-section-number">2</span> Exercise 2: Comparing Ozone Across Summer Months (Cycle 2)</a></li>
-  <li><a href="#exercise-3-small-multiples-with-facet_wrap-cycle-3" id="toc-exercise-3-small-multiples-with-facet_wrap-cycle-3" class="nav-link" data-scroll-target="#exercise-3-small-multiples-with-facet_wrap-cycle-3"><span class="header-section-number">3</span> Exercise 3: Small Multiples with <code>facet_wrap</code> (Cycle 3)</a></li>
-  <li><a href="#exercise-4-publication-ready-polishing-cycle-4-ai-corner" id="toc-exercise-4-publication-ready-polishing-cycle-4-ai-corner" class="nav-link" data-scroll-target="#exercise-4-publication-ready-polishing-cycle-4-ai-corner"><span class="header-section-number">4</span> Exercise 4: Publication-Ready Polishing (Cycle 4 + AI Corner)</a></li>
+  <li><a href="#exercise-1-medication-string-cleanup-cycle-1" id="toc-exercise-1-medication-string-cleanup-cycle-1" class="nav-link active" data-scroll-target="#exercise-1-medication-string-cleanup-cycle-1"><span class="header-section-number">1</span> Exercise 1: Medication String Cleanup (Cycle 1)</a></li>
+  <li><a href="#exercise-2-validating-surveillance-site-codes-cycle-2" id="toc-exercise-2-validating-surveillance-site-codes-cycle-2" class="nav-link" data-scroll-target="#exercise-2-validating-surveillance-site-codes-cycle-2"><span class="header-section-number">2</span> Exercise 2: Validating Surveillance Site Codes (Cycle 2)</a></li>
+  <li><a href="#exercise-3-ordered-regional-charts-with-forcats-cycle-3" id="toc-exercise-3-ordered-regional-charts-with-forcats-cycle-3" class="nav-link" data-scroll-target="#exercise-3-ordered-regional-charts-with-forcats-cycle-3"><span class="header-section-number">3</span> Exercise 3: Ordered Regional Charts with forcats (Cycle 3)</a></li>
+  <li><a href="#exercise-4-dates-length-of-stay-cycle-4-ai-corner" id="toc-exercise-4-dates-length-of-stay-cycle-4-ai-corner" class="nav-link" data-scroll-target="#exercise-4-dates-length-of-stay-cycle-4-ai-corner"><span class="header-section-number">4</span> Exercise 4: Dates &amp; Length of Stay (Cycle 4 + AI Corner)</a></li>
   </ul>
 </nav>
     </div>
@@ -186,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Week 4 In-Class Exercises: Data Visualization with ggplot2</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Source Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Week 7 In-Class Exercises: Strings, Factors &amp; Dates</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Source Code</button></div></div>
 <p class="subtitle lead">GPH-GU 2182 · Fall 2026 · Paired Programming</p>
 </div>
 
@@ -204,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 23, 2026</p>
+      <p class="date">October 21, 2026</p>
     </div>
   </div>
   
@@ -228,51 +228,84 @@ Instructions
 <div class="callout-body-container callout-body">
 <p>Work in pairs. One person types (driver), the other reviews and advises (navigator). Swap roles halfway through!</p>
 <ul>
-<li>📥 <strong><a href="https://raw.githubusercontent.com/gph-2182/gph-2182.github.io/main/weeks/inclass/week-04-inclass.qmd">Download <code>week-04-inclass.qmd</code></a></strong> to open and edit in RStudio (or use the <strong><code>&lt;/&gt; Source Code</code></strong> button at the top right).</li>
+<li>📥 <strong><a href="https://raw.githubusercontent.com/gph-2182/gph-2182.github.io/main/weeks/inclass/week-07-inclass.qmd">Download <code>week-07-inclass.qmd</code></a></strong> to open and edit in RStudio (or use the <strong><code>&lt;/&gt; Source Code</code></strong> button at the top right).</li>
 <li>Render this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit.</li>
 </ul>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(r02pro)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="exercise-1-environmental-air-quality-scatterplot-cycle-1" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Exercise 1: Environmental Air Quality Scatterplot (Cycle 1)</h1>
-<p>Using the built-in <code>airquality</code> dataset, visualize the relationship between solar radiation and ozone concentrations.</p>
+<section id="exercise-1-medication-string-cleanup-cycle-1" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Exercise 1: Medication String Cleanup (Cycle 1)</h1>
+<p>A clinic’s prescription log was hand-entered with inconsistent formatting.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create a scatterplot of Solar.R (x) vs Ozone (y)</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Map Wind speed to the point color aesthetic</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Set alpha = 0.7 and size = 3 outside aes()</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Add a smooth trendline with geom_smooth(method = "loess", color = "darkblue")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>prescriptions <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">rx_id =</span> <span class="fu">c</span>(<span class="st">"R1"</span>, <span class="st">"R2"</span>, <span class="st">"R3"</span>, <span class="st">"R4"</span>, <span class="st">"R5"</span>, <span class="st">"R6"</span>),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">drug  =</span> <span class="fu">c</span>(<span class="st">"Metformin 500mg BID"</span>, <span class="st">"LISINOPRIL 10mg"</span>, <span class="st">"metformin 850mg"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Atorvastatin 20mg"</span>, <span class="st">"METFORMIN 500mg bid"</span>, <span class="st">"amlodipine 5mg"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="exercise-2-comparing-ozone-across-summer-months-cycle-2" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Exercise 2: Comparing Ozone Across Summer Months (Cycle 2)</h1>
-<p>Compare the distribution of ozone levels across the five summer months (May = 5 through September = 9).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Build a violin plot comparing Ozone across Months (x = factor(Month), y = Ozone)</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Fill the violins by factor(Month) with alpha = 0.5</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Overlay a boxplot inside the violins with width = 0.2 and fill = "white"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Suppress duplicate outlier points on the boxplot using outlier.shape = NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="exercise-3-small-multiples-with-facet_wrap-cycle-3" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Exercise 3: Small Multiples with <code>facet_wrap</code> (Cycle 3)</h1>
-<p>Examine how the temperature-ozone relationship changes month by month.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create a scatterplot of Temp (x) vs Ozone (y)</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Add points with alpha = 0.6</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Add a linear regression line using geom_smooth(method = "lm", color = "red", se = FALSE)</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Facet by Month into a single row using facet_wrap(~ Month, nrow = 1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Add a column drug_lower with the drug text in lowercase (str_to_lower)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Filter to rows where drug_lower contains "metformin"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Add a dose column extracted with str_extract() and the pattern "\\d+mg"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. How many prescriptions mention "bid" (any case)? Use str_detect() on</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#    drug_lower and sum() the logical vector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="exercise-4-publication-ready-polishing-cycle-4-ai-corner" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Exercise 4: Publication-Ready Polishing (Cycle 4 + AI Corner)</h1>
-<p>Take the multi-panel temperature plot from Exercise 3 and polish it to publication standards.</p>
+<section id="exercise-2-validating-surveillance-site-codes-cycle-2" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Exercise 2: Validating Surveillance Site Codes (Cycle 2)</h1>
+<p>Valid site codes look like <code>"NYC-BK-014"</code>: three capital letters, two capital letters, then digits.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Map Wind speed to color using scale_color_viridis_c(option = "viridis")</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Add complete titles, subtitle, axis labels, and caption</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Apply theme_minimal() and position the legend at the bottom</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>site_codes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"NYC-BK-014"</span>, <span class="st">"BOS-DT-2"</span>, <span class="st">"nyc-qn-101"</span>, <span class="st">"NYC-SI-77"</span>,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                <span class="st">"CHI-NW-0009"</span>, <span class="st">"NYCBK14"</span>, <span class="st">"PHL-CC-31X"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Which codes match "^[A-Z]{3}-[A-Z]{2}-\\d+$"? Use str_detect()</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Extract the trailing site number from each code with str_extract() and "\\d+$"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Extract the middle 2-letter segment using str_extract() with "-[A-Z]{2}-",</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#    then remove the dashes with str_remove_all()</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Convert all codes to uppercase with str_to_upper() and re-run the check</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#    from step 1. How many codes are valid now?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-3-ordered-regional-charts-with-forcats-cycle-3" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Exercise 3: Ordered Regional Charts with forcats (Cycle 3)</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. From gm, keep 2008 rows, drop rows missing child_mortality or region,</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#    group by region, and summarize mean_cm = mean(child_mortality)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Draw a horizontal bar chart: aes(x = mean_cm, y = region), geom_col().</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#    Notice the unhelpful alphabetical ordering!</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Redraw the chart with y = fct_reorder(region, mean_cm)</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Separately: on the filtered 2008 rows, create region_top = fct_lump(region, n = 6)</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#    and count(region_top, sort = TRUE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-4-dates-length-of-stay-cycle-4-ai-corner" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Exercise 4: Dates &amp; Length of Stay (Cycle 4 + AI Corner)</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>admissions <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">patient   =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>),</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">dob       =</span> <span class="fu">c</span>(<span class="st">"1985-06-15"</span>, <span class="st">"1992-11-03"</span>, <span class="st">"1978-02-28"</span>, <span class="st">"2001-07-19"</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">admitted  =</span> <span class="fu">c</span>(<span class="st">"10/02/2026"</span>, <span class="st">"10/05/2026"</span>, <span class="st">"09/28/2026"</span>, <span class="st">"10/12/2026"</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">discharged =</span> <span class="fu">c</span>(<span class="st">"10/09/2026"</span>, <span class="st">"10/06/2026"</span>, <span class="st">"10/15/2026"</span>, <span class="st">"10/13/2026"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Parse dob with ymd(), and admitted/discharged with mdy() (mutate all three)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Add los_days: the length of stay in days, as.numeric(discharged - admitted)</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Add age_years: floor(interval(dob, admitted) / years(1))</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. AI Corner: an AI computed age as (admitted - dob) / 365.25.</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#    Compute that too (as.numeric(...) / 365.25) and compare: for which</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#    patients does floor() of the two methods disagree? Why is interval() safer?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
@@ -858,85 +891,122 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Week 4 In-Class Exercises: Data Visualization with ggplot2"</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "GPH-GU 2182 · Fall 2026 · Paired Programming"</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "YOUR NAME &amp; PARTNER NAME"</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "September 23, 2026"</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools:</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">      source: true</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">      toggle: false</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">      caption: "Source Code"</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="fu">### Instructions</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>Work in pairs. One person types (driver), the other reviews and advises (navigator). Swap roles halfway through!</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>📥 **[Download `week-04-inclass.qmd`](https://raw.githubusercontent.com/gph-2182/gph-2182.github.io/main/weeks/inclass/week-04-inclass.qmd)** to open and edit in RStudio (or use the **`&lt;/&gt; Source Code`** button at the top right).</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Render this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit.</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 1: Environmental Air Quality Scatterplot (Cycle 1)</span></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>Using the built-in <span class="in">`airquality`</span> dataset, visualize the relationship between solar radiation and ozone concentrations.</span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex1-scatterplot</span></span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create a scatterplot of Solar.R (x) vs Ozone (y)</span></span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Map Wind speed to the point color aesthetic</span></span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Set alpha = 0.7 and size = 3 outside aes()</span></span>
-<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Add a smooth trendline with geom_smooth(method = "loess", color = "darkblue")</span></span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 2: Comparing Ozone Across Summer Months (Cycle 2)</span></span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>Compare the distribution of ozone levels across the five summer months (May = 5 through September = 9).</span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex2-distributions</span></span>
-<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Build a violin plot comparing Ozone across Months (x = factor(Month), y = Ozone)</span></span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Fill the violins by factor(Month) with alpha = 0.5</span></span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Overlay a boxplot inside the violins with width = 0.2 and fill = "white"</span></span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Suppress duplicate outlier points on the boxplot using outlier.shape = NA</span></span>
-<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 3: Small Multiples with `facet_wrap` (Cycle 3)</span></span>
-<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>Examine how the temperature-ozone relationship changes month by month.</span>
-<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex3-facets</span></span>
-<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create a scatterplot of Temp (x) vs Ozone (y)</span></span>
-<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Add points with alpha = 0.6</span></span>
-<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Add a linear regression line using geom_smooth(method = "lm", color = "red", se = FALSE)</span></span>
-<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Facet by Month into a single row using facet_wrap(~ Month, nrow = 1)</span></span>
-<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 4: Publication-Ready Polishing (Cycle 4 + AI Corner)</span></span>
-<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>Take the multi-panel temperature plot from Exercise 3 and polish it to publication standards.</span>
-<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex4-publication</span></span>
-<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Map Wind speed to color using scale_color_viridis_c(option = "viridis")</span></span>
-<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Add complete titles, subtitle, axis labels, and caption</span></span>
-<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Apply theme_minimal() and position the legend at the bottom</span></span>
-<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Week 7 In-Class Exercises: Strings, Factors &amp; Dates"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "GPH-GU 2182 · Fall 2026 · Paired Programming"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "YOUR NAME &amp; PARTNER NAME"</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "October 21, 2026"</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools:</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">      source: true</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">      toggle: false</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">      caption: "Source Code"</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="fu">### Instructions</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>Work in pairs. One person types (driver), the other reviews and advises (navigator). Swap roles halfway through!</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>📥 **[Download `week-07-inclass.qmd`](https://raw.githubusercontent.com/gph-2182/gph-2182.github.io/main/weeks/inclass/week-07-inclass.qmd)** to open and edit in RStudio (or use the **`&lt;/&gt; Source Code`** button at the top right).</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Render this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit.</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(r02pro)</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 1: Medication String Cleanup (Cycle 1)</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>A clinic's prescription log was hand-entered with inconsistent formatting.</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex1-data</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>prescriptions <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">rx_id =</span> <span class="fu">c</span>(<span class="st">"R1"</span>, <span class="st">"R2"</span>, <span class="st">"R3"</span>, <span class="st">"R4"</span>, <span class="st">"R5"</span>, <span class="st">"R6"</span>),</span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>  <span class="at">drug  =</span> <span class="fu">c</span>(<span class="st">"Metformin 500mg BID"</span>, <span class="st">"LISINOPRIL 10mg"</span>, <span class="st">"metformin 850mg"</span>,</span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Atorvastatin 20mg"</span>, <span class="st">"METFORMIN 500mg bid"</span>, <span class="st">"amlodipine 5mg"</span>)</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex1-strings</span></span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Add a column drug_lower with the drug text in lowercase (str_to_lower)</span></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Filter to rows where drug_lower contains "metformin"</span></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Add a dose column extracted with str_extract() and the pattern "\\d+mg"</span></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. How many prescriptions mention "bid" (any case)? Use str_detect() on</span></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a><span class="co">#    drug_lower and sum() the logical vector</span></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 2: Validating Surveillance Site Codes (Cycle 2)</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>Valid site codes look like <span class="in">`"NYC-BK-014"`</span>: three capital letters, two capital letters, then digits.</span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex2-data</span></span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>site_codes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"NYC-BK-014"</span>, <span class="st">"BOS-DT-2"</span>, <span class="st">"nyc-qn-101"</span>, <span class="st">"NYC-SI-77"</span>,</span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>                <span class="st">"CHI-NW-0009"</span>, <span class="st">"NYCBK14"</span>, <span class="st">"PHL-CC-31X"</span>)</span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex2-regex</span></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Which codes match "^[A-Z]{3}-[A-Z]{2}-\\d+$"? Use str_detect()</span></span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Extract the trailing site number from each code with str_extract() and "\\d+$"</span></span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Extract the middle 2-letter segment using str_extract() with "-[A-Z]{2}-",</span></span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a><span class="co">#    then remove the dashes with str_remove_all()</span></span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Convert all codes to uppercase with str_to_upper() and re-run the check</span></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a><span class="co">#    from step 1. How many codes are valid now?</span></span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 3: Ordered Regional Charts with forcats (Cycle 3)</span></span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex3-factors</span></span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. From gm, keep 2008 rows, drop rows missing child_mortality or region,</span></span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a><span class="co">#    group by region, and summarize mean_cm = mean(child_mortality)</span></span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Draw a horizontal bar chart: aes(x = mean_cm, y = region), geom_col().</span></span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a><span class="co">#    Notice the unhelpful alphabetical ordering!</span></span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Redraw the chart with y = fct_reorder(region, mean_cm)</span></span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Separately: on the filtered 2008 rows, create region_top = fct_lump(region, n = 6)</span></span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a><span class="co">#    and count(region_top, sort = TRUE)</span></span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 4: Dates &amp; Length of Stay (Cycle 4 + AI Corner)</span></span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex4-data</span></span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a>admissions <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a>  <span class="at">patient   =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>),</span>
+<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a>  <span class="at">dob       =</span> <span class="fu">c</span>(<span class="st">"1985-06-15"</span>, <span class="st">"1992-11-03"</span>, <span class="st">"1978-02-28"</span>, <span class="st">"2001-07-19"</span>),</span>
+<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a>  <span class="at">admitted  =</span> <span class="fu">c</span>(<span class="st">"10/02/2026"</span>, <span class="st">"10/05/2026"</span>, <span class="st">"09/28/2026"</span>, <span class="st">"10/12/2026"</span>),</span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a>  <span class="at">discharged =</span> <span class="fu">c</span>(<span class="st">"10/09/2026"</span>, <span class="st">"10/06/2026"</span>, <span class="st">"10/15/2026"</span>, <span class="st">"10/13/2026"</span>)</span>
+<span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ex4-dates</span></span>
+<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Parse dob with ymd(), and admitted/discharged with mdy() (mutate all three)</span></span>
+<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Add los_days: the length of stay in days, as.numeric(discharged - admitted)</span></span>
+<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Add age_years: floor(interval(dob, admitted) / years(1))</span></span>
+<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. AI Corner: an AI computed age as (admitted - dob) / 365.25.</span></span>
+<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a><span class="co">#    Compute that too (as.numeric(...) / 365.25) and compare: for which</span></span>
+<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a><span class="co">#    patients does floor() of the two methods disagree? Why is interval() safer?</span></span>
+<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
