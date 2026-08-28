@@ -38,6 +38,11 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Install headless Chrome for Mermaid pre-rendering
+        # mermaid-format: svg renders diagrams at build time via a headless
+        # browser; without this Quarto prompts to install one and CI hangs.
+        run: quarto install chrome-headless-shell --no-prompt
+
       - name: Install R packages
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
