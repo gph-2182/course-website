@@ -191,6 +191,20 @@ library(r02pro)
 
 * **Textbook:** *R Programming: Zero to Pro* (Free online: [r02pro.github.io](https://r02pro.github.io/)).
 
+## 📖 Help Improve the Textbook (Extra Credit)
+
+The textbook is **open source**; you will read it every week, so you are its best proofreaders.
+
+* Spot a typo or code error? Click the **edit button** on any book page, fork, fix, and submit a **pull request**: **+0.5%** per merged PR.
+* Found something confusing you cannot fix? **Open an issue**: **+0.25%** if accepted.
+* Capped at **+2%** on your final grade. First report wins, so search existing PRs/issues before submitting.
+* Every contributor is **named in the book's acknowledgments**, permanently.
+
+::: {.callout-tip}
+### Get started today
+⭐ Star and 👀 watch [github.com/r02pro/r02pro_source](https://github.com/r02pro/r02pro_source), then read the [contributing guide](https://github.com/r02pro/r02pro_source/blob/main/CONTRIBUTING.md). Full rules in the [syllabus](../../syllabus.qmd).
+:::
+
 ## 💻 In-Class Exercise 1A (12 min)
 
 ::: {.callout-important}
