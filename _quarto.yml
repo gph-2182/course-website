@@ -2,6 +2,8 @@ project:
   type: website
   output-dir: docs
   pre-render: tools/prepare-release.sh
+  resources:
+    - "weeks/inclass/*.qmd"
 
 website:
   site-url: "https://gph-2182.github.io/"

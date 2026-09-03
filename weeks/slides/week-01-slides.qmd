@@ -355,7 +355,7 @@ flowchart LR
 
 ## How Homework Works (Instant Feedback)
 
-1. **Accept:** Click the invitation link for `weekly-exercise-01`.
+1. **Accept:** Click the **accept link** for `weekly-exercise-01` on the Week 1 page (after joining the org and linking your NetID).
 2. **Clone:** In RStudio $\rightarrow$ *New Project $\rightarrow$ Version Control $\rightarrow$ Git $\rightarrow$ Paste URL*.
 3. **Solve:** Open `exercise.qmd`, assign answers to `q1`, `q2`, etc.
 4. **Render:** Confirm the HTML compiles cleanly.

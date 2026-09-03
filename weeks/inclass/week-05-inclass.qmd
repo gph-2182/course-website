@@ -17,7 +17,7 @@ format:
 ### Instructions
 Work in pairs. One person types (driver), the other reviews and advises (navigator). Swap roles halfway through!
 
-* 📥 **[Download `week-05-inclass.qmd`](https://raw.githubusercontent.com/gph-2182/gph-2182.github.io/main/weeks/inclass/week-05-inclass.qmd)** to open and edit in RStudio (or use the **`</> Source Code`** button at the top right).
+* 📥 **[Download `week-05-inclass.qmd`](https://gph-2182.github.io/weeks/inclass/week-05-inclass.qmd)** to open and edit in RStudio (or use the **`</> Source Code`** button at the top right).
 * Render this Quarto document to HTML and push it to your GitHub repository by the end of class for participation credit.
 :::
 
