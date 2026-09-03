@@ -36,5 +36,5 @@ If your invitation expired or never arrived, email the instructor and a new one 
 
 ## Due
 
-- In-class exercise 1 (pushed to GitHub by end of class)
+- ~~In-class exercise 1~~ **Not required.** Because of the GitHub setup problems in class, in-class exercise 1 does not need to be submitted and will not count against you. Do still set up your in-class repository (above) before Week 2.
 
