@@ -8,7 +8,7 @@ All sessions meet **Wednesdays 2:00–4:40 PM** in Bobst LL138. Readings should 
 | Date | Topic | Readings | Assignments due |
 | :--- | :--- | :--- | :--- |
 | **Sep 2** | [Week 1: Welcome + The Modern R Toolkit](weeks/week-01.qmd) | R02Pro Ch 1 | In-class exercise 1 |
-| **Sep 9** | [Week 2: Vectors & Subsetting](weeks/week-02.qmd) | R02Pro Ch 2–3 | Weekly exercise 1 · In-class exercise 2 |
+| **Sep 9** | [Week 2: Vectors & Subsetting](weeks/week-02.qmd) | R02Pro Ch 2–3 | Weekly exercise 1 *(extended to Thu Sep 10)* · In-class exercise 2 |
 | **Sep 16** | [Week 3: Matrices, Lists, Data Frames & Data Import](weeks/week-03.qmd) | R02Pro Ch 4–5 | Weekly exercise 2 · In-class exercise 3 · **Quiz 1** |
 | **Sep 23** | [Week 4: Data Visualization with ggplot2](weeks/week-04.qmd) | R02Pro Ch 6–7 | Weekly exercise 3 · In-class exercise 4 |
 | **Sep 30** | [Week 5: Data Wrangling with dplyr & Pipes](weeks/week-05.qmd) | R02Pro Ch 8.1–8.4, 8.9 | Weekly exercise 4 · In-class exercise 5 · **Quiz 2** |

@@ -418,7 +418,7 @@ flowchart LR
 ## Summary & What To Do Before Week 2
 
 1. **Complete & Push:** In-class exercise 1 `.qmd` to your GitHub repo.
-2. **Weekly Exercise 1:** Released before class on GitHub. Due **Wednesday Sep 9 at 11:59 PM**.
+2. **Weekly Exercise 1:** Released before class on GitHub. Due **Thursday Sep 10 at 11:59 PM** (extended).
 3. **Read for Next Week:** R02Pro Chapters 2–3 (Vectors & Subsetting).
 
 4. **Office Hours:** Posted on the course website.
