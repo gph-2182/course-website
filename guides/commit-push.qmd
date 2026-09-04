@@ -1,0 +1,189 @@
+---
+title: "Committing, pushing, and pulling"
+subtitle: "Guide 4 of 4 · every time you work"
+---
+
+## The mental model
+
+Saving a file and saving your work are different things. Git puts three
+checkpoints between the file on your disk and the copy on GitHub, and almost
+every confusion about Git comes from collapsing them.
+
+| Step | What it does | Where the work now is |
+|---|---|---|
+| **Save** (Ctrl/Cmd+S) | Writes your edits to the file | On your disk only |
+| **Stage** (tick the box) | Marks a file as part of the next snapshot | Chosen, not yet recorded |
+| **Commit** | Records a permanent snapshot with a message | In your local history |
+| **Push** | Uploads your commits to GitHub | On GitHub, visible to others |
+
+The consequence worth memorizing: **a commit is not on GitHub until you push.**
+Every term, someone commits diligently all week, never pushes, and believes the
+work was submitted. Only what is pushed exists to anyone but you.
+
+**Pull** is the reverse of push: it brings down commits made elsewhere (by a
+collaborator, by your other laptop, or by an edit you made on github.com in the
+browser).
+
+## The routine
+
+Once your project is open in RStudio, you will use the **Git** tab in the
+top-right pane. Files appear there as soon as they change.
+
+### 1. Pull before you start
+
+Click the blue **Pull** arrow. If you are the only person working, this usually
+reports "Already up to date", which takes a second and saves you the rejected
+push described below.
+
+### 2. Do your work, and save
+
+Nothing Git-related here. Edit, save, run, render.
+
+### 3. Stage what belongs in this snapshot
+
+In the Git tab, tick the **Staged** checkbox next to each file you want to
+include. The two-letter status codes mean:
+
+| Code | Meaning |
+|---|---|
+| `M` | Modified: the file existed and you changed it |
+| `A` | Added: a new file, now staged |
+| `?` | Untracked: a new file Git has never seen (`git status` calls it `??`) |
+| `D` | Deleted |
+| `R` | Renamed |
+
+Stage your source files. Do not stage things that are generated, huge, or
+private: see [what not to commit](#what-not-to-commit).
+
+### 4. Commit
+
+Click **Commit**. A window opens showing your staged changes line by line, with
+additions in green and deletions in red. Read that diff: it is the cheapest bug
+check you will ever get.
+
+Write a message in the box and click **Commit**.
+
+A good message says what changed and why, in the present tense, in one line:
+
+- Good: `Add Q3 boxplot and fix filter on year`
+- Good: `Correct sample size in the summary table`
+- Less useful: `update`, `stuff`, `asdf`, `final FINAL v2`
+
+You are writing to your future self, who will scroll this history in three
+months looking for the commit where something broke.
+
+### 5. Push
+
+Close the commit window and click the green **Push** arrow. When it finishes,
+your work is on GitHub.
+
+If Push asks for a username and password, your token is not set up: go back to
+[guide 2](github-setup.qmd). If it reports that updates were rejected, click
+**Pull** first, then Push again.
+
+### 6. Confirm
+
+Open the repository on github.com and look at it. Your files should be there,
+with your commit message and a timestamp beside them. This takes five seconds
+and is the only real proof that the work is submitted.
+
+::: {.callout-tip}
+## In this course
+
+After you push, click the **Actions** tab on your repository page. Within about
+two minutes the autograder reports which questions passed. You can revise and
+push as often as you like before the deadline: only the final state counts, so a
+red X on an early attempt costs you nothing.
+:::
+
+## What not to commit {#what-not-to-commit}
+
+Git is for source, not for output or secrets.
+
+| Do commit | Do not commit |
+|---|---|
+| `.R` and `.qmd` files | Tokens, passwords, API keys |
+| Small input data | Data you are not allowed to redistribute |
+| `.gitignore`, `README.md`, `.Rproj` | Files over 100 MB (GitHub refuses them) |
+| Anything needed to reproduce the work | `.Rproj.user/`, `.Rhistory`, `.RData` |
+
+A `.gitignore` file lists patterns Git should ignore, so those files stop
+appearing in the Git tab entirely. RStudio creates a sensible one for you when it
+makes a project. To add to it:
+
+```r
+usethis::use_git_ignore(c("*.csv", "secrets.R"))
+```
+
+::: {.callout-important}
+Committing a secret and then deleting it does not remove it: it stays in the
+history and is still readable. If you push a token or password, revoke it
+immediately on GitHub and issue a new one. That is the fix; editing the file is
+not.
+:::
+
+## The same thing in the Terminal
+
+The Git tab is a friendly front end for a handful of commands. If you prefer typing, or
+you are on a machine without RStudio, these are the equivalents. Run them in the
+RStudio **Terminal** tab or any shell, from inside the project folder.
+
+```bash
+git status                        # what has changed, and what is staged
+git add exercise.qmd              # stage one file
+git add .                         # stage everything changed
+git commit -m "Add Q3 boxplot"    # record a snapshot
+git push                          # upload to GitHub
+git pull                          # download from GitHub
+git log --oneline                 # your history, one commit per line
+```
+
+`git status` is the single most useful command in Git. When you are lost, run
+it: it tells you where you are and usually suggests the command you want next.
+
+## Undoing things
+
+Nothing here loses committed work. Git makes it genuinely hard to destroy
+something you have committed, which is most of the point of using it.
+
+| You want to | In RStudio | In the Terminal |
+|---|---|---|
+| Unstage a file | Untick its Staged box | `git restore --staged FILE` |
+| Throw away uncommitted edits to a file | Git tab > select > More > Revert | `git restore FILE` |
+| Fix the message on the last commit | Commit window > tick **Amend previous commit** | `git commit --amend` |
+| See what changed in a file | Git tab > select > Diff | `git diff FILE` |
+| Look at an old version | Git tab > History (clock icon) | `git log -p FILE` |
+
+::: {.callout-warning}
+Reverting uncommitted changes is the one genuinely destructive action in that
+table. Those edits were never recorded, so Git cannot bring them back. Commit
+first when you are unsure: a messy commit is always better than lost work.
+:::
+
+Only amend a commit you have not pushed yet. Amending rewrites history, and
+rewriting history that others have already pulled creates a mess for them.
+
+## When two people edit the same lines
+
+If you and a collaborator change the same lines of the same file, a pull
+produces a **merge conflict**. Git marks the disagreement inside the file:
+
+```
+<<<<<<< HEAD
+mean_age <- mean(df$age, na.rm = TRUE)
+=======
+mean_age <- mean(df$age)
+>>>>>>> origin/main
+```
+
+To resolve it: open the file, delete the three marker lines, keep the code you
+want (which may be a blend of both), save, then stage and commit as usual. The
+commit that follows is the resolution.
+
+Conflicts are normal collaboration, not a failure. They are also much rarer when
+everyone pulls before starting and pushes when they finish.
+
+## Something went wrong
+
+Every common Git and GitHub error, with what it means and how to fix it, is on
+the [error messages page](troubleshooting.qmd).

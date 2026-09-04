@@ -18,6 +18,8 @@ website:
         text: Syllabus
       - href: schedule.qmd
         text: Schedule
+      - href: guides/index.qmd
+        text: Guides
       - href: project.qmd
         text: Final Project
       - href: ai-policy.qmd
@@ -49,6 +51,21 @@ website:
             - weeks/week-12.qmd
             - weeks/week-13.qmd
             - weeks/week-14.qmd
+    - title: "Guides"
+      style: docked
+      contents:
+        - guides/index.qmd
+        - section: "Setup, once"
+          contents:
+            - guides/install.qmd
+            - guides/github-setup.qmd
+            - guides/rstudio-projects.qmd
+        - section: "Every week"
+          contents:
+            - guides/commit-push.qmd
+        - section: "When things break"
+          contents:
+            - guides/troubleshooting.qmd
   page-footer:
     left: "GPH-GU 2182 · Fall 2026 · Yang Feng, NYU School of Global Public Health"
     right: "Built with [Quarto](https://quarto.org)"

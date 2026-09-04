@@ -1,0 +1,170 @@
+---
+title: "Connecting RStudio to GitHub"
+subtitle: "Guide 2 of 4 · do this once"
+---
+
+This is the step that fails most often, and always for one of two reasons: Git
+does not know who you are, or GitHub will not accept your password. Both are
+fixed below, permanently, in about ten minutes.
+
+Work through the five steps in order. Everything goes in the RStudio
+**Console** (the pane where R runs), not the Terminal.
+
+## 1. Create a GitHub account
+
+Sign up at [github.com/signup](https://github.com/signup). Two pieces of advice
+you will be glad of later:
+
+- **Choose a username you would put on a CV.** It becomes part of every URL you
+  share, it is public, and changing it later breaks your links. Something close
+  to your real name works well.
+- **Use an email address you will keep.** If you sign up with a school address,
+  add a personal one as a secondary email under **Settings > Emails** before you
+  graduate, so you do not lose the account when the school address is closed.
+
+::: {.callout-tip}
+## In this course
+
+Sign up with your NYU address so the roster can match your account to your
+NetID. You will also be invited to the course GitHub organization by email:
+accept that invitation before anything else, because the assignment links do
+not work until you are a member. Invitations expire after seven days.
+:::
+
+## 2. Tell Git who you are
+
+Git stamps every commit with a name and an email. It refuses to commit until you
+supply them.
+
+```r
+install.packages(c("usethis", "gitcreds"))   # if you have not already
+
+usethis::use_git_config(
+  user.name  = "Your Name",
+  user.email = "you@example.edu"
+)
+```
+
+Use the email address attached to your GitHub account. If the two do not match,
+your commits will still work but GitHub will not credit them to your profile.
+
+The name is a display name, not a login, so write it the way you would sign an
+email. A username with no spaces works too.
+
+## 3. Create a personal access token
+
+GitHub stopped accepting account passwords for Git operations in 2021. When
+RStudio asks you to push and you type your GitHub password, it will be rejected
+every time. You need a **personal access token** (PAT) instead: a long random
+string that acts as a password for Git alone, and that you can revoke without
+touching your account.
+
+```r
+usethis::create_github_token()
+```
+
+This opens GitHub in your browser with the right permissions already ticked. On
+that page:
+
+1. Replace the placeholder **Note** (`DESCRIBE THE TOKEN'S USE CASE`) with
+   something you will recognize later, such as `RStudio on my laptop`.
+2. Set the **Expiration**. The default is 30 days, which is almost never what
+   you want: your pushes will silently start failing a month from now. Open the
+   dropdown, choose **Custom**, and pick a date at the end of your project or
+   term.
+3. Leave the checked scopes alone. `usethis` has already selected **repo**,
+   **user**, **gist**, and **workflow**, which is what RStudio needs.
+4. Scroll down and click **Generate token**.
+
+::: {.callout-important}
+## Copy the token now
+
+The token is shown exactly once. Copy it before you leave the page. If you lose
+it, nothing is broken, you just generate a new one and start this step again.
+
+Treat it like a password: never paste it into a script, a `.qmd` file, or a
+chat message, and never commit it. If it ever leaks, delete it under
+**Settings > Developer settings > Personal access tokens** and make a new one.
+:::
+
+::: {.callout-tip}
+## In this course
+
+Set the expiration to **December 31, 2026**, which covers the whole semester
+with room to spare. A 30-day default token expires in the middle of October,
+which is exactly when you do not want to be debugging authentication.
+:::
+
+## 4. Store the token
+
+Back in the RStudio Console:
+
+```r
+gitcreds::gitcreds_set()
+```
+
+Paste the token when prompted and press Enter. It goes into your operating
+system's credential store (Keychain on macOS, Credential Manager on Windows), so
+you do this once per computer, not once per project.
+
+If a token is already stored, `gitcreds_set()` shows you a short menu; choose
+the option to **replace** it.
+
+## 5. Check the whole setup
+
+```r
+usethis::git_sitrep()
+```
+
+This prints a situation report. These are the lines that matter:
+
+```
+Git config (global)
+* Name: 'Your Name'
+* Email: 'you@example.edu'
+...
+GitHub
+* Default GitHub host: 'https://github.com'
+* Personal access token for 'https://github.com': '<discovered>'
+* GitHub user: 'yourusername'
+* Token scopes: 'gist, repo, user, workflow'
+```
+
+Name and email filled in, a token **discovered**, and a GitHub username shown
+means you are connected. If the token line says `<unset>`, step 4 did not take
+effect: run `gitcreds::gitcreds_set()` again.
+
+Do not worry about the other lines. `Vaccinated: FALSE` and an unset global
+gitignore are suggestions, not problems, and nothing on this page depends on
+them.
+
+## When your token expires
+
+Tokens are supposed to expire. When yours does, pushes start failing with an
+authentication error even though nothing about your setup changed. GitHub emails
+you a warning a week beforehand.
+
+The fix is steps 3 and 4 again:
+
+```r
+usethis::create_github_token()   # generate a fresh one
+gitcreds::gitcreds_set()         # choose "replace" and paste it
+```
+
+You do not need to touch your repositories, and no work is lost.
+
+## A note on SSH keys
+
+There is a second way to authenticate, using an SSH key pair instead of a token.
+It is a little more setup once and a little less maintenance afterward, and it
+is a perfectly good choice if you already have keys.
+
+Tokens are recommended here because they work identically on every operating
+system, they are what `usethis` automates, and expiry makes them safer on a
+shared or borrowed machine. If you want SSH, `usethis::use_git_protocol("ssh")`
+and the [Happy Git with R](https://happygitwithr.com/ssh-keys) chapter cover it.
+
+## Next
+
+You are connected. Now [set up an RStudio project](rstudio-projects.qmd) so you
+have somewhere to put the work.

@@ -40,6 +40,7 @@ No prior programming or statistics experience is required.
 | Schedule | [Week-by-week schedule](schedule.qmd) |
 | Syllabus | [Full syllabus](syllabus.qmd) |
 | AI policy | [The three zones](ai-policy.qmd) |
+| Setup help | [R, RStudio, Git, and GitHub guides](guides/index.qmd) |
 
 ## Getting started (before Week 1)
 
@@ -47,3 +48,7 @@ No prior programming or statistics experience is required.
    [RStudio Desktop](https://docs.posit.co/ide/user/#rstudio-ide-oss-downloads) (both free).
 2. Create a free [GitHub account](https://github.com/signup) with your NYU email.
 3. That's it. We will set up everything else together in the first class.
+
+Step-by-step instructions, including installing Git and connecting it to
+RStudio, are in the [setup guides](guides/index.qmd). Those pages stay up all
+semester, so use them as the reference whenever something breaks.

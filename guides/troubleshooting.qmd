@@ -1,0 +1,369 @@
+---
+title: "Error messages, decoded"
+subtitle: "What Git and GitHub are actually telling you"
+---
+
+Git's error messages are written for people who already understand Git. This
+page translates the ones you are most likely to meet, roughly in the order
+people meet them.
+
+**Find your error by its text.** Use Ctrl/Cmd+F on this page and search for a
+distinctive phrase from the message you got.
+
+## Quick index
+
+| The message you saw | Jump to |
+|---|---|
+| `git: command not found` | [Git is not installed](#git-not-found) |
+| No Git tab in RStudio | [No Git tab](#no-git-tab) |
+| `Please tell me who you are` | [Git does not know your name](#who-are-you) |
+| `Authentication failed`, `Invalid username or password` | [Password rejected](#auth-failed) |
+| `Support for password authentication was removed` | [Password rejected](#auth-failed) |
+| `remote: Repository not found` | [Repository not found](#repo-not-found) |
+| `Updates were rejected` | [Push rejected](#rejected) |
+| `Your local changes would be overwritten by merge` | [Pull blocked by local edits](#pull-blocked) |
+| `<<<<<<< HEAD` inside a file | [Merge conflict](#conflict) |
+| `fatal: not a git repository` | [Not a repository](#not-a-repo) |
+| `Permission denied (publickey)` | [SSH key problem](#publickey) |
+| `does not exist` from `create_from_github()` | [Destination folder missing](#destdir) |
+| `this exceeds GitHub's file size limit` | [File too large](#too-large) |
+| `You are in detached HEAD state` | [Detached HEAD](#detached-head) |
+| `Everything up-to-date` but GitHub looks empty | [Pushing the wrong branch](#wrong-branch) |
+
+---
+
+## Git is not installed, or RStudio cannot find it {#git-not-found}
+
+**You see:** `git: command not found`, or `bash: git: No such file or directory`,
+or RStudio's **Tools > Global Options > Git/SVN** box is empty.
+
+**What it means:** Git is a separate program from R and RStudio, and either it
+was never installed or RStudio has not noticed it.
+
+**Fix:**
+
+- macOS: run `xcode-select --install` in the RStudio Terminal tab.
+- Windows: install Git for Windows from
+  [git-scm.com/download/win](https://git-scm.com/download/win), accepting all
+  defaults.
+- Then **restart RStudio**. It only looks for Git at startup, so a running
+  RStudio will not see a fresh installation.
+
+If Git is installed but the Git/SVN box is still empty, type the path in
+yourself: `/usr/bin/git` on macOS, `C:/Program Files/Git/bin/git.exe` on
+Windows. Then restart RStudio.
+
+Full instructions: [Installing R, RStudio, and Git](install.qmd).
+
+---
+
+## There is no Git tab in RStudio {#no-git-tab}
+
+**You see:** the top-right pane shows Environment, History, and Connections, but
+no Git.
+
+**What it means:** almost always that you opened a plain folder or a loose file
+rather than an RStudio project that is also a Git repository.
+
+**Fix, in order of likelihood:**
+
+1. Check the **top-right corner** of the window. If it says "Project: (None)",
+   you do not have a project open. Open the `.Rproj` file in the folder, or use
+   **File > Recent Projects**.
+2. If you downloaded the repository as a ZIP from GitHub, that copy is not a
+   repository at all: the Git history is not included in a ZIP. Delete it and
+   clone properly, per [guide 3](rstudio-projects.qmd).
+3. If the project is open and it really was cloned, check **Tools > Global
+   Options > Git/SVN** and confirm **Enable version control interface** is
+   ticked and the Git path is filled in. Restart RStudio afterward.
+
+---
+
+## Git does not know your name {#who-are-you}
+
+**You see:**
+
+```
+*** Please tell me who you are.
+Run
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+```
+
+**What it means:** Git stamps every commit with an author and refuses to commit
+without one.
+
+**Fix:** in the RStudio Console:
+
+```r
+usethis::use_git_config(
+  user.name  = "Your Name",
+  user.email = "you@example.edu"
+)
+```
+
+Use the email on your GitHub account, so your commits are credited to your
+profile. Then commit again.
+
+---
+
+## Your password is rejected {#auth-failed}
+
+**You see:** `Authentication failed`, `Invalid username or password`,
+`fatal: Authentication failed for 'https://github.com/...'`, or
+`remote: Support for password authentication was removed on August 13, 2021`.
+
+**What it means:** GitHub does not accept account passwords for Git operations.
+It needs a personal access token. If RStudio is prompting you for a password at
+all, no token is stored.
+
+**Fix:**
+
+```r
+usethis::create_github_token()   # opens GitHub; set Expiration to a date you choose
+gitcreds::gitcreds_set()         # paste the token here
+usethis::git_sitrep()            # confirm it is stored
+```
+
+If this used to work and just stopped, your old token expired. The fix is the
+same: generate a new one and store it with `gitcreds_set()`, choosing
+**replace** when it offers the menu.
+
+Full walkthrough: [Connecting RStudio to GitHub](github-setup.qmd).
+
+---
+
+## Repository not found {#repo-not-found}
+
+**You see:** `remote: Repository not found`, or `fatal: repository
+'https://github.com/...' not found`.
+
+**What it means:** GitHub is saying "either that repository does not exist, or
+you are not allowed to see it". It gives the same message for both, on purpose,
+so that private repository names cannot be probed.
+
+**Check, in order:**
+
+1. **Typo in the URL.** Owner and repository name are both case-sensitive in
+   practice. Copy the URL from your browser rather than retyping it.
+2. **You are not signed in as the right account.** Run
+   `usethis::git_sitrep()` and look at the GitHub user it reports. A stored
+   token for a personal account cannot see a private organization repository.
+3. **You do not have access yet.** If it is private and belongs to someone else,
+   you need to be added as a collaborator or organization member.
+
+::: {.callout-tip}
+## In this course
+
+This usually means you have not accepted the GitHub organization invitation
+that was emailed to you, or it expired after seven days. Ask for a fresh
+invitation, accept it, then try again.
+:::
+
+---
+
+## Updates were rejected {#rejected}
+
+**You see:**
+
+```
+! [rejected]  main -> main (fetch first)
+error: failed to push some refs
+hint: Updates were rejected because the remote contains work that you do
+      not have locally.
+```
+
+**What it means:** GitHub has commits that your computer does not. Git refuses
+to push, because doing so would erase them. This is Git protecting you.
+
+**Fix:** click **Pull**, then **Push**. That downloads the missing commits and
+merges them with yours.
+
+This happens most often when you edited a file directly on github.com in the
+browser, or worked from a second computer. If the pull produces a conflict, see
+[merge conflict](#conflict) below.
+
+---
+
+## Pull blocked by local changes {#pull-blocked}
+
+**You see:** `error: Your local changes to the following files would be
+overwritten by merge` followed by a file name.
+
+**What it means:** you have uncommitted edits to a file that the incoming
+commits also change. Git will not silently discard your edits.
+
+**Fix:** commit your edits first, then pull.
+
+```bash
+git add .
+git commit -m "Work in progress"
+git pull
+```
+
+Committing is the right move even if the work is unfinished. A commit is a
+private checkpoint, not a publication, and you can always tidy the history
+later.
+
+---
+
+## Merge conflict {#conflict}
+
+**You see:** markers like these inside one of your files, and Git reports
+`CONFLICT (content): Merge conflict in exercise.qmd`.
+
+```
+<<<<<<< HEAD
+mean_age <- mean(df$age, na.rm = TRUE)
+=======
+mean_age <- mean(df$age)
+>>>>>>> origin/main
+```
+
+**What it means:** two commits changed the same lines and Git will not guess
+which one wins. The text between `<<<<<<< HEAD` and `=======` is yours; the text
+between `=======` and `>>>>>>>` is the incoming version.
+
+**Fix:** open the file, decide what the lines should say (possibly a blend of
+both), delete all three marker lines, save, then stage and commit. That commit
+is the resolution.
+
+Nothing is broken while a conflict is open, and nothing is lost. Take your time.
+
+---
+
+## Not a git repository {#not-a-repo}
+
+**You see:** `fatal: not a git repository (or any of the parent directories):
+.git`.
+
+**What it means:** you are running a Git command in a folder that Git does not
+manage.
+
+**Fix:** you are probably in the wrong directory. Check with `getwd()` in the
+Console, and open the right project. If this folder genuinely should be a
+repository, make it one with `usethis::use_git()`.
+
+---
+
+## Permission denied (publickey) {#publickey}
+
+**You see:** `git@github.com: Permission denied (publickey). fatal: Could not
+read from remote repository.`
+
+**What it means:** the repository's remote URL uses SSH (`git@github.com:...`),
+but GitHub does not have an SSH key that matches yours.
+
+**Fix, the simple way:** switch that repository to HTTPS, which uses the token
+you already have.
+
+```bash
+git remote set-url origin https://github.com/owner/repository-name.git
+```
+
+**Fix, the other way:** set up an SSH key, as described in the
+[Happy Git with R SSH chapter](https://happygitwithr.com/ssh-keys).
+
+---
+
+## create_from_github() says the folder does not exist {#destdir}
+
+**You see:** an error from `usethis::create_from_github()` complaining that the
+`destdir` path does not exist or is not a directory.
+
+**What it means:** `create_from_github()` will not create the parent folder for
+you; it requires it to be there already.
+
+**Fix:** create it first, in the same block:
+
+```r
+dir.create("~/gph2182", showWarnings = FALSE)
+usethis::create_from_github("owner/repository-name", destdir = "~/gph2182")
+```
+
+`showWarnings = FALSE` makes the first line harmless when the folder already
+exists.
+
+---
+
+## File too large {#too-large}
+
+**You see:** `remote: error: File data/big.csv is 214.00 MB; this exceeds
+GitHub's file size limit of 100.00 MB`.
+
+**What it means:** GitHub refuses individual files over 100 MB, and warns above
+50 MB. The whole push fails, not just that file.
+
+**Fix:** stop tracking the file, and ignore it going forward.
+
+```bash
+git rm --cached data/big.csv
+```
+
+```r
+usethis::use_git_ignore("data/big.csv")
+```
+
+Then commit and push again. Note that if the large file is already in an earlier
+commit, removing it now is not enough: the history still contains it, and
+cleaning that up is a bigger job. It is far easier to keep large data out of Git
+from the start, and to store it elsewhere with a script that downloads it.
+
+---
+
+## You are in detached HEAD state {#detached-head}
+
+**You see:** `You are in 'detached HEAD' state`, usually after clicking around
+in the History view.
+
+**What it means:** you are looking at an old commit rather than at the tip of a
+branch. It is a viewing mode, not damage. Commits made here can be hard to find
+later.
+
+**Fix:** go back to your branch.
+
+```bash
+git checkout main
+```
+
+If you made commits while detached and want to keep them, `git switch -c
+rescue-branch` before checking out `main`, and ask for help merging them.
+
+---
+
+## Push succeeds but GitHub looks unchanged {#wrong-branch}
+
+**You see:** `Everything up-to-date`, or a successful push, but the repository
+page on github.com does not show your work.
+
+**Check three things:**
+
+1. **Which branch you are on.** The Git tab shows it at the top right of the
+   pane. If you are on a branch other than `main`, your commits went there;
+   GitHub's repository page shows `main` by default. Use the branch dropdown on
+   GitHub to look, then merge or open a pull request.
+2. **Which repository you are looking at.** Confusing a fork, a template, and
+   your own copy is easy. Run `git remote -v` and compare it against the URL in
+   your browser.
+3. **Whether you actually committed.** `Everything up-to-date` means there were
+   no new commits to send. Saved but uncommitted files are still only on your
+   disk. Check the Git tab: any files still listed are not committed.
+
+---
+
+## Still stuck?
+
+Before asking anyone, collect these three things. With them, almost any question
+gets answered in one reply; without them, the answer is always "what does the
+error say?".
+
+1. **The exact error text**, copied as text or a screenshot. Not a paraphrase:
+   the specific words are what identify the problem.
+2. **The output of `usethis::git_sitrep()`**, which shows your Git identity,
+   your token, and the repository's remote in one block. It contains no
+   secrets, so it is safe to share.
+3. **What you did immediately before**, in one sentence.
+
+Pasting all three into an AI assistant resolves most setup problems in a couple
+of turns. If it does not, bring the same three things to office hours or an
+email.

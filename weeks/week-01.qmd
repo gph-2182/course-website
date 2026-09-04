@@ -34,6 +34,17 @@ subtitle: "Sep 2, 2026 · 2:00–4:40 PM · Bobst LL138"
 If your invitation expired or never arrived, email the instructor and a new one will be sent.
 :::
 
+::: {.callout-tip}
+### Git and GitHub setup, written out
+
+Everything we did in class is documented step by step in the
+[setup guides](../guides/index.qmd): [installing the software](../guides/install.qmd),
+[connecting RStudio to GitHub](../guides/github-setup.qmd),
+[cloning a repository into a project](../guides/rstudio-projects.qmd), and
+[committing and pushing](../guides/commit-push.qmd). If you hit an error
+message, look it up on the [decoder page](../guides/troubleshooting.qmd).
+:::
+
 ## Due
 
 - ~~In-class exercise 1~~ **Not required.** Because of the GitHub setup problems in class, in-class exercise 1 does not need to be submitted and will not count against you. Do still set up your in-class repository (above) before Week 2.

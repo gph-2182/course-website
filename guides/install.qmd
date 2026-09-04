@@ -1,0 +1,131 @@
+---
+title: "Installing R, RStudio, and Git"
+subtitle: "Guide 1 of 4 · do this once"
+---
+
+You need three separate pieces of software. They are easy to confuse, so it is
+worth being clear about what each one is:
+
+| Software | What it is | Do you ever open it? |
+|---|---|---|
+| **R** | The language itself, plus the engine that runs your code | No, RStudio talks to it for you |
+| **RStudio** | The editor you actually work in | Yes, this is the icon you click |
+| **Git** | The version-control program that records your work | Rarely, RStudio drives it for you |
+
+Install them in that order: R first, then RStudio, then Git.
+
+## 1. Install R
+
+Download it from [cloud.r-project.org](https://cloud.r-project.org/) and run the
+installer with all the default options.
+
+- **macOS:** choose the `.pkg` that matches your chip. Apple Silicon (M1 through
+  M4) needs the **arm64** build; older Intel Macs need the **x86_64** build. If
+  you pick the wrong one, R will still install but some packages will fail to
+  load later.
+- **Windows:** click "install R for the first time", then download the `.exe`.
+
+## 2. Install RStudio
+
+Download **RStudio Desktop** (the free open-source edition) from
+[posit.co](https://posit.co/download/rstudio-desktop/) and install it with the
+defaults.
+
+Open RStudio once. It should find R by itself and print a banner in the Console
+starting with `R version`, followed by whatever version you just installed. If
+RStudio opens but the Console is
+empty or complains that it cannot find R, R did not install correctly: reinstall
+it and then restart RStudio.
+
+Quarto, which turns your `.qmd` files into documents, ships inside RStudio. You
+do not install it separately.
+
+## 3. Install Git
+
+::: {.panel-tabset}
+
+### macOS
+
+Open the **Terminal** tab in RStudio (bottom-left pane, next to Console) and run:
+
+```bash
+xcode-select --install
+```
+
+A system dialog appears. Click **Install** and wait a few minutes. This installs
+Apple's command line developer tools, which include Git.
+
+If it says `command line tools are already installed`, you already have Git and
+you are done with this step.
+
+### Windows
+
+Download **Git for Windows** from [git-scm.com/download/win](https://git-scm.com/download/win)
+and run the installer.
+
+Accept every default. The defaults matter more than they look: they put `git` on
+your system path, which is what lets RStudio find it. Do not change the editor or
+path options unless you know why you are changing them.
+
+After it finishes, **restart RStudio**. RStudio only looks for Git when it
+starts, so a running RStudio will not notice the new installation.
+
+### Linux
+
+```bash
+sudo apt install git      # Debian, Ubuntu
+sudo dnf install git      # Fedora
+```
+
+:::
+
+## 4. Check that it worked
+
+In RStudio, click the **Terminal** tab (bottom-left pane, beside Console) and
+type:
+
+```bash
+git --version
+```
+
+You want a version number back, such as `git version 2.39.5`. Any version is
+fine; Git is stable and old versions work. If you get
+`command not found`, see [Git is not installed or RStudio cannot find it](troubleshooting.qmd#git-not-found).
+
+Then confirm RStudio itself knows where Git lives: **Tools > Global Options >
+Git/SVN**. The "Git executable" box should hold a real path (`/usr/bin/git` on
+macOS, something like `C:/Program Files/Git/bin/git.exe` on Windows) and
+**Enable version control interface for RStudio projects** should be checked.
+
+## 5. Install the R packages you will need
+
+Paste this into the **Console** (the pane where R runs, not the Terminal) and
+press Enter:
+
+```r
+install.packages(c("tidyverse", "usethis", "gitcreds"))
+```
+
+This takes several minutes the first time. Some output scrolls by in red; that is
+normal progress reporting, not an error. What matters is whether the final lines
+say the packages were unpacked and the prompt `>` comes back.
+
+If you are asked *"Do you want to install from sources the package which needs
+compilation?"*, answer `no` unless you have a reason to compile.
+
+::: {.callout-tip}
+## In this course
+
+Add the course textbook package as well:
+
+```r
+install.packages("r02pro")
+```
+
+That gives you the `gm` and `sahp` datasets used throughout the exercises.
+:::
+
+## Next
+
+Software installed. Now [connect RStudio to GitHub](github-setup.qmd) so you can
+actually save work there.

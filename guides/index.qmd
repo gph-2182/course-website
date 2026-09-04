@@ -1,0 +1,60 @@
+---
+title: "Setup Guides"
+subtitle: "R, RStudio, Git, and GitHub, explained once and kept here"
+---
+
+These are the reference pages for the plumbing of the course: getting the
+software installed, connecting RStudio to GitHub, organizing your work as
+projects, and saving that work with commits and pushes.
+
+We will walk through all of it together in class. These pages exist so that you
+never have to reconstruct it from memory or from your notes. Bookmark this page.
+
+## Start here
+
+If you are setting up for the first time, work through the guides in this
+order. The first three are done **once**. The fourth you will use every week.
+
+| | Guide | When |
+|---|---|---|
+| 1 | [Installing R, RStudio, and Git](install.qmd) | Once, before Week 1 |
+| 2 | [Connecting RStudio to GitHub](github-setup.qmd) | Once (and again when your token expires) |
+| 3 | [RStudio projects and cloning a repository](rstudio-projects.qmd) | Once per repository |
+| 4 | [Committing, pushing, and pulling](commit-push.qmd) | Every time you work |
+
+There is a fifth page that is not part of the sequence:
+[**Error messages, decoded**](troubleshooting.qmd) is a lookup table of every
+Git and GitHub error you are likely to hit, with what each one means and how to
+fix it. Go there whenever something breaks.
+
+## The one-time checklist
+
+You are fully set up when all five of these are true:
+
+- [ ] R and RStudio open, and `git --version` prints a version number in the RStudio **Terminal** tab.
+- [ ] You have a GitHub account, and you can sign in to it.
+- [ ] `usethis::git_sitrep()` shows your name, your email, and a stored GitHub token.
+- [ ] You can open a repository in RStudio and see a **Git** tab in the top-right pane.
+- [ ] You can commit a change and push it, and see it appear on github.com.
+
+If any line fails, the guide that covers it is linked in the table above.
+
+## If you get stuck
+
+Read the exact error message, then look it up on the
+[error messages page](troubleshooting.qmd). Nearly every Git problem people hit
+is one of about a dozen errors, and all of them are listed there with fixes.
+
+If that does not resolve it, paste the exact error (or a screenshot) into an AI
+assistant and ask what it means. If you are still stuck after that, bring the
+error text to office hours or email it. Please do not spend an evening fighting
+the setup alone: it is not what this course is testing.
+
+::: {.callout-note appearance="simple"}
+## Not in this course? Welcome anyway
+
+These guides are written to stand on their own. Anything specific to
+GPH-GU 2182 is fenced off in a box labelled **In this course**; everything
+outside those boxes applies to any R user setting up Git and GitHub. You are
+welcome to link to these pages or adapt them for your own students.
+:::

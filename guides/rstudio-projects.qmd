@@ -1,0 +1,162 @@
+---
+title: "RStudio projects and cloning a repository"
+subtitle: "Guide 3 of 4 · do this once per repository"
+---
+
+## What a project is, and why it matters
+
+An RStudio **project** is a folder with an `.Rproj` file in it. That one file
+changes how RStudio behaves in three ways that save you hours:
+
+- **The working directory is the project folder.** Every file path in your code
+  can be written relative to the project, so `read_csv("data/survey.csv")` works
+  on your laptop, on a lab machine, and on your grader's computer. You never
+  need `setwd()` again, and you should never use it.
+- **Each project gets its own session.** Open two projects and you get two
+  separate R sessions, with their own environments and command histories. Work
+  on one analysis does not leak into another.
+- **RStudio shows you the Git tab.** Version control only appears when the
+  folder RStudio has open is a Git repository *and* an RStudio project.
+
+The rule that follows from this: **always open your work by opening the project,
+never by opening a single `.R` or `.qmd` file from your file browser.** Opening a
+loose file gives you the editor without the working directory, without the Git
+tab, and with paths that break.
+
+## Keep your projects in one folder
+
+Before you clone anything, decide where projects live and stick to it. One
+folder in your home directory, holding one subfolder per project:
+
+```
+~/gph2182/
+  weekly-exercise-01-yourusername/
+  weekly-exercise-02-yourusername/
+  in-class-exercises-yourusername/
+```
+
+This matters more than it sounds. Over a semester you accumulate a dozen
+repositories, and if they are scattered across Desktop, Downloads, and a
+half-synced cloud folder, you will lose one. With a single parent folder,
+switching between them is **File > Recent Projects**.
+
+::: {.callout-warning}
+## Cloud-synced folders
+
+Putting Git repositories inside Dropbox, OneDrive, iCloud Drive, or Google Drive
+causes real trouble: the sync client and Git both try to manage the same files
+and can corrupt the repository's internal state. Git is already your backup, and
+GitHub is already your cloud copy. Use a plain local folder.
+:::
+
+## Situation A: the repository already exists on GitHub
+
+This is the common case: someone has given you a URL, or you accepted an
+assignment and GitHub created a repository for you. You want a local copy, which
+is called **cloning**.
+
+Copy the repository URL first. On the repository's GitHub page, click the green
+**Code** button and copy the HTTPS URL. It looks like
+`https://github.com/owner/repository-name.git`. The URL in your browser's
+address bar works too.
+
+Then use either route below.
+
+### Route 1: the RStudio menu
+
+1. **File > New Project > Version Control > Git**
+2. Paste the URL into **Repository URL**. The project directory name fills in by
+   itself; leave it.
+3. Set **Create project as subdirectory of** to your projects folder
+   (`~/gph2182`, or wherever you chose above).
+4. Click **Create Project**.
+
+RStudio downloads the repository and opens it as a project.
+
+### Route 2: one line in the Console
+
+Faster once you are comfortable, and it needs no clicking:
+
+```r
+dir.create("~/gph2182", showWarnings = FALSE)
+usethis::create_from_github("owner/repository-name", destdir = "~/gph2182")
+```
+
+`owner/repository-name` is the last two segments of the repository URL. The
+first line creates the parent folder if it does not exist yet, which matters
+because `create_from_github()` fails with an error if the destination folder is
+missing. Cloud services can also quietly remove empty folders, so leaving it in
+does no harm.
+
+This requires the GitHub setup from [guide 2](github-setup.qmd) to be finished,
+because it authenticates as you.
+
+::: {.callout-tip}
+## In this course
+
+Accepting an assignment on Classroom 50 creates a private repository named like
+`gph-gu-2182-fall-2026-weekly-exercise-01-yourusername` inside the `gph-2182`
+organization. So the one-liner is:
+
+```r
+dir.create("~/gph2182", showWarnings = FALSE)
+usethis::create_from_github(
+  "gph-2182/gph-gu-2182-fall-2026-weekly-exercise-01-yourusername",
+  destdir = "~/gph2182"
+)
+```
+
+with your own username on the end.
+:::
+
+## Situation B: you are starting something new
+
+You have an idea, or an analysis, and nothing exists yet. Build it locally, then
+publish it:
+
+```r
+usethis::create_project("~/gph2182/my-analysis")   # new project, opens in RStudio
+usethis::use_git()                                 # make it a Git repository
+usethis::use_github()                              # create it on GitHub and push
+```
+
+`use_git()` will offer to commit the existing files and to restart RStudio: say
+yes to both. `use_github()` creates the remote repository under your account and
+pushes your first commit, so the project exists on github.com when it finishes.
+
+The menu equivalent of the first line is **File > New Project > New Directory >
+New Project**.
+
+## Situation C: opening a project you already have
+
+**File > Recent Projects**, or double-click the `.Rproj` file in the folder. The
+project name is always shown in the top-right corner of the RStudio window, so
+you can tell at a glance which one you have open.
+
+## Did it work?
+
+Three checks, in order of usefulness:
+
+1. **A Git tab** appears in the top-right pane, beside Environment and History.
+   If it is missing, that is the whole problem: see
+   [No Git tab](troubleshooting.qmd#no-git-tab).
+2. **The project name** shows in the top-right corner of the window, not
+   "Project: (None)".
+3. **`getwd()`** in the Console prints the project folder.
+
+## Working inside a project
+
+- Write paths relative to the project root: `"data/raw.csv"`, not
+  `"/Users/you/Desktop/data/raw.csv"`. The second one only works on your
+  computer.
+- Keep a shape that others can read: `data/` for inputs, `R/` for scripts,
+  `figures/` for output.
+- If you need to build paths from subfolders robustly, `here::here("data", "raw.csv")`
+  resolves them from the project root no matter where the calling file lives.
+- Do not put your token, passwords, or API keys in project files. They will be
+  committed and pushed along with everything else.
+
+## Next
+
+You have a project with a Git tab. Now
+[commit and push your work](commit-push.qmd).
